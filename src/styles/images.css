@@ -1,0 +1,10 @@
+.image-diptych {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+}
+
+.image-diptych img {
+  object-fit: cover;
+  width: 100%;
+}
