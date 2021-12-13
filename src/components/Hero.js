@@ -1,8 +1,8 @@
 import React from 'react';
-import { InlineTextarea, BlocksControls } from 'react-tinacms-inline';
+import { InlineTextarea, BlocksControls, InlineWysiwyg } from 'react-tinacms-inline';
 import '../styles/hero.css';
 
-export function Hero({ text_color, background_color, align }) {
+export function Hero({ text_color, background_color, align, subtext }) {
   return (
     <div
       className="hero"
@@ -14,12 +14,20 @@ export function Hero({ text_color, background_color, align }) {
       }}
     >
       <div className="wrapper wrapper--narrow">
-        <h1>
-          <InlineTextarea name="headline" focusRing={false} />
+        <h1 style={{
+          color: text_color || '#000'
+        }}>
+          <InlineTextarea name="headline" focusRing={false} style={{
+          color: text_color + `!important` || '#000'
+        }} />
         </h1>
-        <p>
-          <InlineTextarea name="subtext" focusRing={false} />
-        </p>
+        <InlineWysiwyg name="text" format="html">
+            <p
+              dangerouslySetInnerHTML={{
+                __html: subtext,
+              }}
+            />
+          </InlineWysiwyg>
       </div>
     </div>
   );

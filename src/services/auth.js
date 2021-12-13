@@ -14,20 +14,24 @@ export const isBrowser = typeof window !== "undefined";
 
 // Helper function to get the current status of the user
 export const isLoggedIn = async (token) => {
-  // Check if code is executing in browser or not
-
+  // Check if code is executing in browser or not 
   if (typeof token === "undefined") {
     if (!isBrowser) {
       return Promise.resolve(false);
     }
     // Check if we already have access token in localStorage
     token =
-      Cookies.get("access-token") !== null
-        ? JSON.parse(Cookies.get("access-token"))
+      Cookies.get("auth") !== null
+        ? JSON.parse(Cookies.get("auth"))
         : null;
   } else {
     token = JSON.parse(
-      decodeURIComponent(setCookie.parseString(token)["access-token"])
+      decodeURIComponent(
+        typeof setCookie.parseString(token, {map: true}).auth !== 'undefined' ?
+          setCookie.parseString(token, {map: true}).auth
+        :
+        setCookie.parseString(token, {map: true}).value
+      )
     );
   }
 
@@ -93,7 +97,7 @@ export const handleLogin = async (username, password) => {
  */
 export const handleLogout = async () => {
   const drupallogout = await drupalLogout();
-  Cookies.remove("access-token");
+  Cookies.remove("auth");
   navigate("/user/login");
 };
 
@@ -149,7 +153,7 @@ const saveToken = (json) => {
   const token = { ...json };
   token.date = Math.floor(Date.now() / 1000);
   token.expirationDate = token.date + token.expires_in;
-  Cookies.set("access-token", JSON.stringify(token));
+  Cookies.set("auth", JSON.stringify(token));
   return token;
 };
 

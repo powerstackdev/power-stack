@@ -1,16 +1,16 @@
 import React from 'react';
 import { useForm, usePlugin, useCMS } from 'tinacms';
-import { imagesBlock } from '../../../../components/Images';
-import { paragraphBlock } from '../../../../components/Paragraph';
-import { featureListBlock } from '../../../../components/FeatureList';
+import { imagesBlock } from '../../../components/Images';
+import { paragraphBlock } from '../../../components/Paragraph';
+import { featureListBlock } from '../../../components/FeatureList';
 import { InlineForm, InlineBlocks } from 'react-tinacms-inline';
-import { heroBlock } from '../../../../components/Hero';
-import data from '../../../../data/data.json';
-import '../../../../styles/index.css'
-import Layout from '../../../../components/layout';
-import Seo from '../../../../components/seo';
+import { heroBlock } from '../../../components/Hero';
+import data from '../../../data/data.json';
+import '../../../styles/index.css'
+import Layout from '../../../components/layout';
+import Seo from '../../../components/seo';
 
-import { isLoggedIn } from '../../../../services/auth';
+import { isLoggedIn } from '../../../services/auth';
 
 const EditPage = ({ serverData }) => {
     console.log(data)
