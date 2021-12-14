@@ -1,8 +1,8 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from "react";
+import { Link } from "gatsby";
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout/Layout";
+import Seo from "../components/Misc/Seo";
 
 const UsingSSR = ({ serverData }) => {
   return (
@@ -19,29 +19,32 @@ const UsingSSR = ({ serverData }) => {
       </p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
-  )
-}
+  );
+};
 
-export default UsingSSR
+export default UsingSSR;
 
 export async function getServerData() {
   try {
-    const res = await fetch(process.env.GATSBY_DRUPAL_HOST + `/jsonapi/menu_items/admin`, {
-      headers: {
-        "api-key": "1d30a1ea6ebb5918f5f454cab859055b"
+    const res = await fetch(
+      process.env.GATSBY_DRUPAL_HOST + `/jsonapi/menu_items/admin`,
+      {
+        headers: {
+          "api-key": "1d30a1ea6ebb5918f5f454cab859055b",
+        },
       }
-    })
+    );
     if (!res.ok) {
-      throw new Error(`Response failed`)
+      throw new Error(`Response failed`);
     }
     return {
       props: await res.json(),
-    }
+    };
   } catch (error) {
     return {
       status: 500,
       headers: {},
       props: {},
-    }
+    };
   }
 }

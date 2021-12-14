@@ -43,7 +43,7 @@
     "react-sortable-tree": "^2.8.0",
     "react-time-ago": "^7.1.4",
     "react-tinacms-editor": "^0.52.10",
-    "react-tinacms-inline": "^0.53.10",
+    "react-tinacms-inline": "0.53.3",
     "set-cookie-parser": "^2.4.8",
     "stream-browserify": "^3.0.0",
     "styled-components": "^5.3.3",

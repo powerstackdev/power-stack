@@ -1,72 +1,51 @@
-import React from 'react';
-import { useForm, usePlugin, useCMS } from 'tinacms';
-import { imagesBlock } from '../../../components/Images';
-import { paragraphBlock } from '../../../components/Paragraph';
-import { featureListBlock } from '../../../components/FeatureList';
-import { InlineForm, InlineBlocks } from 'react-tinacms-inline';
-import { heroBlock } from '../../../components/Hero';
-import data from '../../../data/data.json';
-import '../../../styles/index.css'
-import Layout from '../../../components/layout';
-import Seo from '../../../components/seo';
-
-import { isLoggedIn } from '../../../services/auth';
+import React from "react";
+import { useForm, usePlugin, useCMS } from "tinacms";
+import { imagesBlock } from "../../../components/Images/Images";
+import { paragraphBlock } from "../../../components/Text/Paragraph";
+import { featureListBlock } from "../../../components/Features/FeatureList";
+import { InlineForm, InlineBlocks } from "react-tinacms-inline";
+import { heroBlock } from "../../../components/Heros/Hero";
+import Seo from "../../../components/Misc/Seo";
+import { isLoggedIn } from "../../../services/Auth";
+import {
+  processDrupalImageData,
+  processDrupalFeaturesData,
+  processDrupalParagraphData,
+} from "../../../utils/GetRequestUtils";
+import { formatDrupalType } from "../../../utils/Utils";
+import Header from "../../../components/Headers/Header";
+import Footer from "../../../components/Footers/Footer";
 
 const EditPage = ({ serverData }) => {
-    console.log(data)
-    console.log(serverData.content)
-  // data.blocks[0].headline = serverData.content.data[0].attributes.title
-  // data.blocks[5] = {
-  //     _template: 'paragraph',
-  //     text: serverData.content.data[0].attributes.body.processed
-  // }
-  let blocks = []
-  
-  serverData.content.included.map(
-    (value, index) => {
-      const type = value.type.replace("paragraph--", "")
-      let fields = {}
-      Object.keys(value.attributes).map(
-        (key) => {
-          const fieldPrefix = 'field_'
-          if (key.startsWith(fieldPrefix)) {
-            const title = key.replace(fieldPrefix, "")
-            let attribute = value.attributes[key]
-            switch (title) {
-              case "subtext":
-              case 'text' :
-                attribute = attribute.processed
-                break;
-              case 'text_color':
-              case 'background_color' : 
-                attribute = attribute.color
-                break;
-            }
-            return fields[title] = attribute
-          }
-        }
-      )
-      switch(type) {
+  let data = {};
+  let blocks = [];
+  if (!serverData.content.data[0].field_page_builder.data) {
+    serverData.content.data[0].field_page_builder.forEach((value, index) => {
+      let type = formatDrupalType(value.type);
+
+      switch (type) {
         case "images":
+          blocks[index] = processDrupalImageData(type, value);
+          break;
+
         case "features":
+          blocks[index] = processDrupalFeaturesData(type, value);
           break;
 
         default:
-          blocks[index] = {
-            _template: type,
-            ...fields
-          }; 
+          blocks[index] = processDrupalParagraphData(type, value);
       }
-    }
-  )
-  data.blocks = blocks
+    });
+  }
+
+  data.blocks = blocks;
 
   const cms = useCMS();
   const formConfig = {
-    id: '../../../data/data.json',
     initialValues: data,
-    onSubmit() {
-      cms.alerts.success('Saved!');
+    onSubmit(data) {
+      console.log(data);
+      cms.alerts.success("Saved!");
     },
   };
 
@@ -75,41 +54,59 @@ const EditPage = ({ serverData }) => {
   usePlugin(form);
 
   return (
-      <>
-      <Seo title="Edit page" />
-      <div className='home'>
-        <InlineForm form={form}>
-          <InlineBlocks name='blocks' blocks={HOME_BLOCKS} />
-        </InlineForm>
-      </div>
-      </>
+    <>
+      {console.log(serverData)}
+      {!serverData ? (
+        (window.location.href = `/admin/login`)
+      ) : (
+        <>
+          <Seo title="Edit page" />
+          <Header siteTitle={serverData.content.data[0].title} />
+          <div className="home">
+            <InlineForm form={form}>
+              <InlineBlocks name="blocks" blocks={availableBlocks} />
+            </InlineForm>
+          </div>
+          <Footer />
+        </>
+      )}
+    </>
   );
-}
+};
 
-const HOME_BLOCKS = {
+const availableBlocks = {
   hero: heroBlock,
-  images: imagesBlock,
   paragraph: paragraphBlock,
+  images: imagesBlock,
   features: featureListBlock,
 };
 
-export default EditPage
+export default EditPage;
 
 export async function getServerData({ params, headers }) {
+  const token = await isLoggedIn(Object.fromEntries(headers).cookie);
 
-  const token = await isLoggedIn(Object.fromEntries(headers).cookie)
+  const requestHeaders = {
+    headers: {
+      Authorization: `Bearer ${token.access_token}`,
+    },
+  };
 
-
-  const requestHeaders = {headers: {
-    Authorization: `Bearer ${token.access_token}`
-  }}
-
-  const currentRoute = `jsonapi/node?filter[drupal_internal__nid]=` + params['*'] + `&include=field_page_builder`
+  const currentRoute =
+    `jsonapi/node?filter[drupal_internal__nid]=` +
+    params["*"] +
+    `&include=field_page_builder,field_page_builder.field_left,field_page_builder.field_left.field_image,field_page_builder.field_right,field_page_builder.field_right.field_image,field_page_builder.field_feature&jsonapi_include=1`;
 
   try {
     const [adminMenu, content] = await Promise.all([
-      fetch(process.env.GATSBY_DRUPAL_HOST + `/jsonapi/menu_items/admin`, requestHeaders),
-      fetch(process.env.GATSBY_DRUPAL_HOST + `/`+ currentRoute, requestHeaders),
+      fetch(
+        process.env.GATSBY_DRUPAL_HOST + `/jsonapi/menu_items/admin`,
+        requestHeaders
+      ),
+      fetch(
+        process.env.GATSBY_DRUPAL_HOST + `/` + currentRoute,
+        requestHeaders
+      ),
     ]);
 
     // if (
@@ -121,15 +118,13 @@ export async function getServerData({ params, headers }) {
     //   throw new Error(`Response failed`);
     // }
 
-    if (
-      !adminMenu.ok
-    ) {
+    if (!adminMenu.ok) {
       throw new Error(`Response failed`);
     }
     return {
       props: {
         adminMenu: await adminMenu.json(),
-        content: await content.json()
+        content: await content.json(),
       },
     };
   } catch (error) {

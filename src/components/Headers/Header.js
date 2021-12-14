@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx } from "theme-ui";
 
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { DrupalAdminMenu } from "./DrupalAdminMenu"
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import { DrupalAdminMenu } from "../Menus/DrupalAdminMenu";
 
 const Header = ({ siteTitle, serverData }) => (
   <header
@@ -29,17 +28,17 @@ const Header = ({ siteTitle, serverData }) => (
           {siteTitle}
         </Link>
       </h1>
-      <DrupalAdminMenu serverData={serverData} />
+      {serverData && <DrupalAdminMenu serverData={serverData} />}
     </div>
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

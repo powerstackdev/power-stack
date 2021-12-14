@@ -1,6 +1,5 @@
-import React from 'react';
-import { BlocksControls, InlineTextarea } from 'react-tinacms-inline';
-import '../styles/features.css';
+import React from "react";
+import { BlocksControls, InlineTextarea } from "react-tinacms-inline";
 
 function Feature({ index }) {
   return (
@@ -20,12 +19,12 @@ function Feature({ index }) {
 export const featureBlock = {
   Component: Feature,
   template: {
-    label: 'Feature',
+    label: "Feature",
     defaultItem: {
-      _template: 'feature',
-      heading: 'Marie Skłodowska Curie',
+      _template: "feature",
+      heading: "Marie Skłodowska Curie",
       supporting_copy:
-        'Rich in mystery muse about vastness is bearable only through love Ut enim ad minima veniam at the edge of forever are creatures of the cosmos. ',
+        "Rich in mystery muse about vastness is bearable only through love Ut enim ad minima veniam at the edge of forever are creatures of the cosmos. ",
     },
     fields: [],
   },
