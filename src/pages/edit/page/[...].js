@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import { useForm, usePlugin, useCMS } from "tinacms";
 import { imagesBlock } from "../../../components/Images/Images";
 import { paragraphBlock } from "../../../components/Text/Paragraph";
@@ -17,7 +18,17 @@ import Header from "../../../components/Headers/Header";
 import Footer from "../../../components/Footers/Footer";
 
 const EditPage = ({ serverData }) => {
-  let data = {};
+  const data = useStaticQuery(graphql`
+    query TinaSiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  let drupalData = {};
   let blocks = [];
   if (!serverData.content.data[0].field_page_builder.data) {
     serverData.content.data[0].field_page_builder.forEach((value, index) => {
@@ -38,11 +49,11 @@ const EditPage = ({ serverData }) => {
     });
   }
 
-  data.blocks = blocks;
+  drupalData.blocks = blocks;
 
   const cms = useCMS();
   const formConfig = {
-    initialValues: data,
+    initialValues: drupalData,
     onSubmit(data) {
       console.log(data);
       cms.alerts.success("Saved!");
@@ -61,7 +72,8 @@ const EditPage = ({ serverData }) => {
       ) : (
         <>
           <Seo title="Edit page" />
-          <Header siteTitle={serverData.content.data[0].title} />
+          <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+          <h1>{serverData.content.data[0].title}</h1>
           <div className="home">
             <InlineForm form={form}>
               <InlineBlocks name="blocks" blocks={availableBlocks} />

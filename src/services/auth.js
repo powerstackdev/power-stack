@@ -14,20 +14,23 @@ export const isBrowser = typeof window !== "undefined";
 
 // Helper function to get the current status of the user
 export const isLoggedIn = async (token) => {
-  // Check if code is executing in browser or not
+  // Check if code is executing in browser or not 
   if (typeof token === "undefined") {
     if (!isBrowser) {
       return Promise.resolve(false);
     }
     // Check if we already have access token in localStorage
     token =
-      Cookies.get("auth") !== null ? JSON.parse(Cookies.get("auth")) : null;
+      Cookies.get("auth") !== null
+        ? JSON.parse(Cookies.get("auth"))
+        : null;
   } else {
     token = JSON.parse(
       decodeURIComponent(
-        typeof setCookie.parseString(token, { map: true }).auth !== "undefined"
-          ? setCookie.parseString(token, { map: true }).auth
-          : setCookie.parseString(token, { map: true }).value
+        typeof setCookie.parseString(token, {map: true}).auth !== 'undefined' ?
+          setCookie.parseString(token, {map: true}).auth
+        :
+        setCookie.parseString(token, {map: true}).value
       )
     );
   }
