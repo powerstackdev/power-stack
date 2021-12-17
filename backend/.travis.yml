@@ -1,0 +1,14 @@
+dist: bionic
+
+language: minimal
+
+install:
+  - curl -fsSL https://get.docksal.io | bash
+  - fin version
+  - fin sysinfo
+
+before_script:
+  - fin init
+
+script:
+  - fin test

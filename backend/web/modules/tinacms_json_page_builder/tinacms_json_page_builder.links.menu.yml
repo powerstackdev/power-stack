@@ -1,0 +1,6 @@
+tinacms_json_page_builder.settings_form:
+  title: TinaCMS JSON Page Builder
+  description: Configure TinaCMS JSON Page Builder.
+  parent: system.admin_config_system
+  route_name: tinacms_json_page_builder.settings_form
+  weight: 10
