@@ -1,8 +1,16 @@
-tinacms_json_page_builder.create_update_node_form:
+tinacms_json_page_builder.create_update_node:
   path: '/api/tinacms/page/create'
   defaults:
     _title: 'JSON Upload'
     _controller: '\Drupal\tinacms_json_page_builder\Controller\TinacmsJsonPageBuilderController::action'
+  requirements:
+    _permission: 'access content'
+
+tinacms_json_page_builder.create_update_media:
+  path: '/api/tinacms/media/create'
+  defaults:
+    _title: 'Media Store Create'
+    _controller: '\Drupal\tinacms_json_page_builder\Controller\TinacmsMediaController::action'
   requirements:
     _permission: 'access content'
 

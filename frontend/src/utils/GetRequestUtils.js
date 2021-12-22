@@ -1,22 +1,30 @@
 import { formatDrupalType, drupalFieldPrefix } from "./Utils";
 
 export const processDrupalImageData = (type, value) => {
+  let fields = {};
+
+  let images = value.field_image.map((value) => {
+
+    let innerType = formatDrupalType(value.type);
+    console.log(value)
+    fields["image"] = {
+      src: process.env.GATSBY_DRUPAL_HOST + `/` + value.field_media.field_media_image.uri.url,
+      alt: value.field_media.field_media_image.meta.alt,
+      mid: value.field_media.drupal_internal__mid,
+      vid: value.field_media.drupal_internal__vid
+    }
+    fields["id"] = value.drupal_internal__id;
+    fields["vid"] = value.drupal_internal__revision_id;
+    return {
+      _template: innerType,
+      ...fields,
+    };
+  });
+  images["id"] = value.drupal_internal__id;
+  images["vid"] = value.drupal_internal__revision_id;
   return {
     _template: type,
-    left: {
-      src:
-        process.env.GATSBY_DRUPAL_HOST +
-        `/` +
-        value.field_left.field_image.uri.url,
-      alt: value.field_left.field_image.meta.alt,
-    },
-    right: {
-      src:
-        process.env.GATSBY_DRUPAL_HOST +
-        `/` +
-        value.field_right.field_image.uri.url,
-      alt: value.field_right.field_image.meta.alt,
-    },
+    images,
     id: value.drupal_internal__id,
     vid: value.drupal_internal__revision_id
   };

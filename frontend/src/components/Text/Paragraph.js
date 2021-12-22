@@ -16,7 +16,6 @@ function Paragraph({ index, data }) {
           }}
         >
           <InlineWysiwyg name="text" format="html">
-            {console.log(data)}
             <p
               className="paragraph__text"
               dangerouslySetInnerHTML={{
