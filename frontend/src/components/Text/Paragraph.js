@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import Zoom from 'react-reveal/Zoom';
 
 import { BlocksControls, InlineWysiwyg } from "react-tinacms-inline";
 
@@ -15,14 +16,16 @@ function Paragraph({ index, data }) {
             p: `5rem 4rem`,
           }}
         >
-          <InlineWysiwyg name="text" format="html">
-            <p
-              className="paragraph__text"
-              dangerouslySetInnerHTML={{
-                __html: data.text,
-              }}
-            />
-          </InlineWysiwyg>
+          <Zoom>
+            <InlineWysiwyg name="text" format="html">
+              <p
+                className="paragraph__text"
+                dangerouslySetInnerHTML={{
+                  __html: data.text,
+                }}
+              />
+            </InlineWysiwyg>
+          </Zoom>
         </div>
       </div>
     </BlocksControls>

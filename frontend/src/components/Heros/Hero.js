@@ -1,15 +1,16 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-
 import { InlineText, BlocksControls, InlineWysiwyg } from 'react-tinacms-inline';
+import Zoom from 'react-reveal/Zoom';
+import {darken} from "@theme-ui/color";
 
 export function Hero({ text_color, background_color, align, subtext }) {
   return (
     <div
       className="hero"
-      style={{
+      sx={{
         color: text_color || '#000',
-        backgroundColor: background_color || 'aliceblue',
+        backgroundImage: (theme) => `linear-gradient(45deg, ${background_color || 'aliceblue'}, ${darken(background_color, .2)(theme)})`,
         textAlign: align,
         justifyContent: align === 'left' ? 'start' : align,
       }}
@@ -20,18 +21,18 @@ export function Hero({ text_color, background_color, align, subtext }) {
          m: `0 auto`,
          p: `5rem 4rem`
       }}>
-        <h1 style={{
-          color: text_color || '#000'
-        }}>
-          <InlineText name="headline" focusRing={false} />
-        </h1>
-        <InlineWysiwyg name="subtext" format="html">
-          <p
-            dangerouslySetInnerHTML={{
-              __html: subtext,
-            }}
-          />
-        </InlineWysiwyg>
+        <Zoom>
+          <h1>
+            <InlineText name="headline" focusRing={false} />
+          </h1>
+          <InlineWysiwyg name="subtext" format="html">
+            <p
+              dangerouslySetInnerHTML={{
+                __html: subtext,
+              }}
+            />
+          </InlineWysiwyg>
+        </Zoom>
       </div>
     </div>
   );

@@ -30,6 +30,7 @@ const Layout = ({ children, serverData }) => {
       <div
         style={{
           margin: `0 auto`,
+          maxWidth: `1200px`
         }}
       >
         <main>{children}</main>

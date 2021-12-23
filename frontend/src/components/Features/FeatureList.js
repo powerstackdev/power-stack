@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui";
 import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
 import { featureBlock } from "./Feature";
+import { lighten } from "@theme-ui/color"
 
 function FeatureList({ index }) {
   return (
@@ -27,6 +28,7 @@ function FeatureList({ index }) {
           }}
         />
       </div>
+
     </BlocksControls>
   );
 }

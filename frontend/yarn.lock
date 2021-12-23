@@ -1040,6 +1040,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.14.0":
+  version "7.16.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.5.tgz#7f3e34bf8bdbbadf03fbb7b1ea0d929569c9487a"
+  integrity sha512-TXWihFIS3Pyv5hzR7j6ihmeLkZfrXGxAr5UfSl8CHf+6q/wpiYDkUau0czckpYG8QmnCIuPpdLtuA9VmuGGyMA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.15.5":
   version "7.16.4"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.16.4.tgz#f62a5b14fc0e881668f26739f28bcdaacedd3080"
@@ -2086,6 +2093,14 @@
     "@theme-ui/css" "0.12.1"
     deepmerge "^4.2.2"
 
+"@theme-ui/color@^0.12.1":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@theme-ui/color/-/color-0.12.1.tgz#c4af16448ada9cb1e0854ce332e91ae05d6764cf"
+  integrity sha512-2TyuydLabp3VQaDz/U7PsWHAEuOkKV4BMiDZ+C4Lu3pgX7tb9418JrbkakEFiAyWzsE872VkuUAIFQzb+Rw21g==
+  dependencies:
+    "@theme-ui/css" "0.12.1"
+    polished "^4.0.5"
+
 "@theme-ui/components@0.12.1":
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.12.1.tgz#3bd4e8973c0f388996f8203aa2dc519e9b081a8e"
@@ -2355,6 +2370,42 @@
   version "0.56.3"
   resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.3.tgz#bb6e2950058cbf652c2b1de0e6b51c2e77a7b97c"
   integrity sha512-ME9MUIpjMWYd94N7sCCtjHz5tlwj78VUDO3HRcALgDD8ksanIF/y2ZRGmwmj2O8rJtVvzsTww2yArDGt/EMOnA==
+  dependencies:
+    "@sambego/storybook-styles" "^1.0.0"
+    "@types/atob" "^2.1.2"
+    "@types/cors" "^2.8.12"
+    "@types/express" "^4.17.13"
+    "@types/multer" "^1.4.7"
+    "@types/prop-types" "^15.7.4"
+    "@udecode/plate" "^7.0.3"
+    atob "2.1.2"
+    color-string "^1.5.3"
+    cors "^2.8.5"
+    express "^4.17.1"
+    final-form "^4.20.2"
+    final-form-arrays "^3.0.1"
+    lodash.get "^4.4.2"
+    moment ">=2 <=3"
+    multer "1.4.2"
+    path "^0.12.7"
+    prop-types "15.7.2"
+    react-beautiful-dnd "^11.0.5"
+    react-color "^2.17.3"
+    react-datetime "^2.16.3"
+    react-dropzone "10.1.8"
+    react-final-form "^6.3.0"
+    react-icons "^4.3.1"
+    simple-git "1.126.0"
+    slate "^0.66.0"
+    slate-history "^0.66.0"
+    slate-hyperscript "^0.66.0"
+    slate-react "^0.66.0"
+    webfontloader "1.6.28"
+
+"@tinacms/toolkit@^0.56.4":
+  version "0.56.4"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-0.56.4.tgz#5599eeeabb185fcef8b8a1830d714a6f72efe966"
+  integrity sha512-nZk/mtwI0CsJHsxLT497vJ/XJWY+qRGxjkGXBiSfST0jTIOV2Pt+pumMj+aLj6Gmf8xt1NUOL046RJHw7CE6Mg==
   dependencies:
     "@sambego/storybook-styles" "^1.0.0"
     "@types/atob" "^2.1.2"
@@ -10833,6 +10884,13 @@ pngjs@^3.0.0, pngjs@^3.3.3:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.4.0.tgz#99ca7d725965fb655814eaf65f38f12bbdbf555f"
   integrity sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==
+
+polished@^4.0.5:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-4.1.3.tgz#7a3abf2972364e7d97770b827eec9a9e64002cfc"
+  integrity sha512-ocPAcVBUOryJEKe0z2KLd1l9EBa1r5mSwlKpExmrLzsnIzJo4axsoU9O2BjOTkDGDT4mZ0WFE5XKTlR3nLnZOA==
+  dependencies:
+    "@babel/runtime" "^7.14.0"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

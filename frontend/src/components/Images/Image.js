@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui";
 
 import { BlocksControls, InlineImage } from "react-tinacms-inline";
+import Zoom from 'react-reveal/Zoom';
 
 function Image({ data, index }) {
   return (
@@ -14,16 +15,18 @@ function Image({ data, index }) {
           },
         }}
       >
-        {console.log('ImageData', data)}
-        <InlineImage
-          name="image.src"
-          parse={(media) => `${media.src}`}
-          previewSrc={(src) => src}
-          focusRing={false}
-          alt={data.image?.alt}
-          mid={(media) => `${media.mid}`}
-          vid={data.image?.vid}
-        />
+        <Zoom>
+          <InlineImage
+            name="image.src"
+            parse={(media) => `${media.src}`}
+            previewSrc={(src) => src}
+            focusRing={false}
+            alt={data.image?.alt}
+            mid={(media) => `${media.mid}`}
+            vid={data.image?.vid}
+          />
+        </Zoom>
+
       </div>
 
     </BlocksControls>
@@ -38,9 +41,7 @@ export const imageBlock = {
       _template: "image",
       image: {
         src: "/martin-sanchez-unsplash-square.jpg",
-        alt: "dunes",
-        mid: '',
-        vid: '',
+        alt: "",
       },
     },
     fields: [

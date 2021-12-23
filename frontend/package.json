@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "@nosferatu500/theme-file-explorer": "^3.0.11",
+    "@theme-ui/color": "^0.12.1",
     "@theme-ui/presets": "^0.12.1",
     "@tinacms/icons": "^0.42.1",
     "@tinacms/react-forms": "^0.43.3",
+    "@tinacms/toolkit": "^0.56.4",
     "absolution": "^1.0.2",
     "axios": "^0.24.0",
     "form-data": "^4.0.0",

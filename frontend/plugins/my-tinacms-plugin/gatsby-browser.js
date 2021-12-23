@@ -1,5 +1,6 @@
 import * as React from "react"
 import { TinaProvider, TinaCMS } from "tinacms"
+import { DragDropContext } from 'react-beautiful-dnd';
 import DummyMediaStore from '../../src/mediaStore';
 
 export const wrapRootElement = ({ element }, options) => {
@@ -9,7 +10,7 @@ export const wrapRootElement = ({ element }, options) => {
       toolbar: true,
       media: new DummyMediaStore(),
     })
-    return <TinaProvider cms={window.tinacms}>{element}</TinaProvider>
+    return <TinaProvider cms={window.tinacms}><DragDropContext>{element}</DragDropContext></TinaProvider>
   }
   
 }

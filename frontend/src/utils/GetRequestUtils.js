@@ -2,11 +2,10 @@ import { formatDrupalType, drupalFieldPrefix } from "./Utils";
 
 export const processDrupalImageData = (type, value) => {
   let fields = {};
-
   let images = value.field_image.map((value) => {
 
     let innerType = formatDrupalType(value.type);
-    console.log(value)
+
     fields["image"] = {
       src: process.env.GATSBY_DRUPAL_HOST + `/` + value.field_media.field_media_image.uri.url,
       alt: value.field_media.field_media_image.meta.alt,
@@ -26,7 +25,8 @@ export const processDrupalImageData = (type, value) => {
     _template: type,
     images,
     id: value.drupal_internal__id,
-    vid: value.drupal_internal__revision_id
+    vid: value.drupal_internal__revision_id,
+    columns: value.field_columns
   };
 };
 

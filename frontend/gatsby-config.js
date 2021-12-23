@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Drupal Admin Demo`,
+    title: `Quantum`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
@@ -14,7 +14,6 @@ module.exports = {
       resolve: 'gatsby-plugin-theme-ui',
       options: {
         prismPreset: 'night-owl',
-        preset: '@theme-ui/preset-roboto',
       },
     },
     "gatsby-plugin-image",

@@ -1,1 +1,1 @@
-// export { wrapRootElement } from './src/apollo/wrap-root-element';
+// export { wrapRootElement } from './src/apolo/wrap-root-element';

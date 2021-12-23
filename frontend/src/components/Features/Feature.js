@@ -1,19 +1,21 @@
 import React from "react";
 import { BlocksControls, InlineTextarea } from "react-tinacms-inline";
 import { Card, Text } from 'theme-ui';
+import Zoom from 'react-reveal/Zoom';
 
 function Feature({ index }) {
   return (
     <BlocksControls index={index}>
-      <Card className="feature">
-        <h3>
-          <InlineTextarea name="heading" focusRing={false} />
-        </h3>
-        <Text>
-          <InlineTextarea name="supporting_copy" focusRing={false} />
-        </Text>
-      </Card>
-
+      <Zoom>
+        <Card className="feature">
+          <h3>
+            <InlineTextarea name="heading" focusRing={false} />
+          </h3>
+          <Text>
+            <InlineTextarea name="supporting_copy" focusRing={false} />
+          </Text>
+        </Card>
+      </Zoom>
     </BlocksControls>
   );
 }

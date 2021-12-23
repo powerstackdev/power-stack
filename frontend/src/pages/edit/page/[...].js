@@ -6,6 +6,7 @@ import qs from 'qs';
 import {imageListBlock} from "../../../components/Images/ImageList";
 import {paragraphBlock} from "../../../components/Text/Paragraph";
 import {featureListBlock} from "../../../components/Features/FeatureList";
+import {accordionListBlock} from "../../../components/Accordions/AccordionList";
 import {InlineForm, InlineBlocks} from "react-tinacms-inline";
 import {heroBlock} from "../../../components/Heros/Hero";
 import Seo from "../../../components/Misc/Seo";
@@ -111,6 +112,7 @@ const availableBlocks = {
     paragraph: paragraphBlock,
     images: imageListBlock,
     features: featureListBlock,
+    accordions: accordionListBlock
 };
 
 export default EditPage;

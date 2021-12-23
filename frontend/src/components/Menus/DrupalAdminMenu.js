@@ -1,10 +1,13 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+
 import * as React from "react";
 import { Link } from "gatsby";
 
 export const DrupalAdminMenu = ({ serverData }) => {
   return (
     <nav>
-      <ul style={{ display: "flex", flex: 1 }}>
+      <ul style={{ display: "flex", flex: 1, float: "right" }}>
         {serverData &&
           serverData.data.map((link) => (
             <>
@@ -12,9 +15,9 @@ export const DrupalAdminMenu = ({ serverData }) => {
               link.attributes.parent === "system.admin" ? (
                 <li
                   key={link.attributes.title}
-                  style={{
+                  sx={{
                     listStyleType: `none`,
-                    padding: `1rem`,
+                    px: 3,
                   }}
                 >
                   <Link style={{ color: `white` }} to={link.attributes.url}>

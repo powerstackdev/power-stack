@@ -3,7 +3,8 @@ import { jsx } from "theme-ui";
 import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
 import { imageBlock } from "./Image";
 
-function ImageList({ index }) {
+function ImageList({ data, index }) {
+  const columns = `1fr `.repeat(data.columns ? data.columns : 2)
   return (
     <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
       <div
@@ -21,7 +22,7 @@ function ImageList({ index }) {
           className="image-list"
           sx={{
             display: `grid`,
-            gridTemplateColumns: `1fr 1fr`,
+            gridTemplateColumns: columns,
             gridGap: `3rem`,
             gridTemplateRows: `auto`,
           }}
@@ -46,18 +47,24 @@ export const imageListBlock = {
           _template: "image",
           image: {
             src: "/martin-sanchez-unsplash-square.jpg",
-            alt: "dunes",
+            alt: "",
           },
         },
         {
           _template: "image",
           image: {
             src: "/martin-sanchez-unsplash-square.jpg",
-            alt: "dunes",
+            alt: "",
           },
         },
       ],
     },
-    fields: [],
+    fields: [
+      {
+        name: "columns",
+        label: "Number of images per row",
+        component: "number",
+      },
+    ],
   },
 };
