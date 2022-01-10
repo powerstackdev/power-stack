@@ -1,8 +1,9 @@
 import * as React from "react";
 import { navigate } from "gatsby";
+import { isBrowser } from "../utils/Utils";
 
 const Home = () => {
-  navigate("/admin/content");
+  isBrowser() && navigate("/admin/content");
   return null
 };
 
