@@ -1,12 +1,14 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import {Button, jsx} from 'theme-ui'
 
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { Grid } from "theme-ui"
 import { DrupalAdminMenu } from "../Menus/DrupalAdminMenu"
+import Menu from "gatsby-plugin-drupal-menus";
 import Logo from "../../images/quantum.svg"
 import { darken } from "@theme-ui/color";
+import { isLoggedIn } from "../../services/Auth";
 
 const Header = ({ siteTitle, serverData }) => (
   <header
@@ -20,7 +22,7 @@ const Header = ({ siteTitle, serverData }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <Grid gap={2} columns={[2, '1fr 4fr']}>
+      <Grid gap={2} columns={[3, '1fr 6fr 1fr']}>
         <h1 style={{ margin: 0 }}>
           <img src={ Logo } height={35} sx={{
             verticalAlign: `middle`
@@ -38,7 +40,28 @@ const Header = ({ siteTitle, serverData }) => (
             {siteTitle}
           </Link>
         </h1>
-        {serverData && <DrupalAdminMenu serverData={serverData} />}
+        {serverData
+          ?
+          <DrupalAdminMenu serverData={serverData} />
+          :
+          <div sx={{
+            a: {
+              color: `white`,
+              textDecoration: "none"
+            },
+            nav: {
+              ul: {display: "flex", flex: 1, float: "right", listStyle: "none"}
+            }
+          }}>
+            <Menu />
+          </div>
+        }
+        <div sx={{margin: `0 auto`, botton: {verticalAlign: `middle`}}}>
+          {
+            isLoggedIn() ? <Button variant='secondary'> Log out </Button> :
+              <Button>Login</Button>
+          }
+        </div>
       </Grid>
 
     </div>
