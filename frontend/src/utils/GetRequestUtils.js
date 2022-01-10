@@ -2,8 +2,8 @@ import { formatDrupalType, drupalFieldPrefix } from "./Utils";
 
 export const processDrupalImageData = (type, value) => {
   let fields = {};
-  let images = value.field_image.map((value) => {
-
+  let images = value.field_image.map((value, key) => {
+    let delay = 200 * (key + 1)
     let innerType = formatDrupalType(value.type);
 
     fields["image"] = {
@@ -12,6 +12,7 @@ export const processDrupalImageData = (type, value) => {
       mid: value.field_media.drupal_internal__mid,
       vid: value.field_media.drupal_internal__vid
     }
+    fields["delay"] = delay
     fields["id"] = value.drupal_internal__id;
     fields["vid"] = value.drupal_internal__revision_id;
     return {
@@ -33,7 +34,8 @@ export const processDrupalImageData = (type, value) => {
 export const processDrupalFeaturesData = (type, value) => {
   let fields = {};
 
-  let features = value.field_feature.map((value) => {
+  let features = value.field_feature.map((value, key) => {
+    let delay = 200 * (key + 1)
     let innerType = formatDrupalType(value.type);
     Object.keys(value).forEach((key) => {
       if (key.startsWith(drupalFieldPrefix)) {
@@ -44,6 +46,7 @@ export const processDrupalFeaturesData = (type, value) => {
     });
     fields["id"] = value.drupal_internal__id;
     fields["vid"] = value.drupal_internal__revision_id;
+    fields["delay"] = delay;
     return {
       _template: innerType,
       ...fields,

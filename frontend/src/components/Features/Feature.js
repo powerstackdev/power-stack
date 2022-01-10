@@ -3,10 +3,11 @@ import { BlocksControls, InlineTextarea } from "react-tinacms-inline";
 import { Card, Text } from 'theme-ui';
 import Zoom from 'react-reveal/Zoom';
 
-function Feature({ index }) {
+function Feature({ index, data }) {
+
   return (
     <BlocksControls index={index}>
-      <Zoom>
+      <Zoom delay={data.delay}>
         <Card className="feature">
           <h3>
             <InlineTextarea name="heading" focusRing={false} />

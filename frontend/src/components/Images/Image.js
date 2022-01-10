@@ -15,7 +15,7 @@ function Image({ data, index }) {
           },
         }}
       >
-        <Zoom>
+        <Zoom delay={data.delay}>
           <InlineImage
             name="image.src"
             parse={(media) => `${media.src}`}
