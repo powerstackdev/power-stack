@@ -1,16 +1,18 @@
 // example theme
-import { roboto } from '@theme-ui/presets'
-import {darken} from "@theme-ui/color";
+import { roboto, tosh, swiss, system } from '@theme-ui/presets'
+import { darken } from "@theme-ui/color";
+
+const starterTheme = {...swiss}
 
 export default {
-  ...roboto,
+  ...starterTheme,
   colors: {
-    ...roboto.colors,
-    background: `#fdf7ec`,
+    ...starterTheme.colors,
+    background: `#efefef`,
     white: '#fff'
   },
   styles: {
-    ...roboto.styles,
+    ...starterTheme.styles,
   },
   cards: {
     primary: {
@@ -28,6 +30,22 @@ export default {
       borderRadius: 2,
       border: '1px solid',
       borderColor: 'muted',
+    },
+  },
+  buttons: {
+    primary: {
+      color: 'background',
+        bg: 'primary',
+        '&:hover': {
+        bg: 'text',
+      }
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+      '&:hover': {
+        backgroundImage: (theme) => `linear-gradient(45deg, ${theme.colors.secondary}, ${darken('secondary', .15)(theme)})`,
+      }
     },
   },
 }
