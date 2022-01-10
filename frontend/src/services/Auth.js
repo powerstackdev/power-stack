@@ -191,7 +191,7 @@ const drupalLogIn = async (username, password) => {
  *
  * Logs the user out on Drupal end.
  */
-const drupalLogout = async () => {
+export const drupalLogout = async () => {
   const oauthToken = await isLoggedIn();
   const logoutoken = oauthToken.access_token;
   if (logoutoken) {
