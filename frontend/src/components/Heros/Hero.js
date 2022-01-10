@@ -1,8 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { InlineText, BlocksControls, InlineWysiwyg } from 'react-tinacms-inline';
+import {Card, jsx, Text} from 'theme-ui'
+import { InlineText, BlocksControls, InlineBlocks, InlineWysiwyg } from 'react-tinacms-inline';
 import Zoom from 'react-reveal/Zoom';
 import {darken} from "@theme-ui/color";
+import { Button as TButton } from "theme-ui"
+import React from "react";
 
 export function Hero({ text_color, background_color, align, subtext }) {
   return (
@@ -37,6 +39,43 @@ export function Hero({ text_color, background_color, align, subtext }) {
     </div>
   );
 }
+
+
+
+function Button({ index, data }) {
+
+  return (
+    <BlocksControls index={index}>
+      <TButton>
+        <InlineText name="text" focusRing={false} />
+      </TButton>
+    </BlocksControls>
+  );
+}
+
+export const buttonBlock = {
+  label: "Button",
+  key: 'button',
+  defaultItem: {
+      _template: "button",
+      text: "CTA button",
+      link:
+        "/node/123 ",
+    },
+    fields: [
+      {
+        name: 'text',
+        component: 'text',
+        label: 'Text'
+      },
+      {
+        name: 'link',
+        component: 'link',
+        label: 'Link'
+      },
+    ],
+};
+
 
 export const heroBlock = {
   Component: ({ index, data }) => (

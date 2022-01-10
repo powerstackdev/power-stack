@@ -69,9 +69,7 @@ export const accordionListBlock = {
         label: 'Accordion Items',
         name: 'accordions',
         component: 'blocks',
-        templates:{
-          accordion: ACCORDION_BLOCKS,
-        },
+        templates: ACCORDION_BLOCKS,
       },
       {
         label: 'test',

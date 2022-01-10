@@ -17,9 +17,8 @@ export const Accordion = ({ data, index }) => {
 }
 
 export const accordionBlock = {
-  Component: Accordion,
-  template: {
-    label: "Accordion",
+    label: "Accordion Tab",
+    key: 'accordion',
     defaultItem: {
       _template: "accordion",
       heading: "Marie Skłodowska Curie",
@@ -38,5 +37,4 @@ export const accordionBlock = {
         label: 'Description'
       },
     ],
-  },
 };
