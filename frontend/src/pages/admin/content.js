@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { navigate } from "gatsby";
+import React, {useState, useEffect} from "react";
+import {navigate} from "gatsby";
 
-import { Switch, Badge, Button } from "theme-ui";
+import {Switch, Badge, Button, Card} from "theme-ui";
 
 import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
@@ -9,7 +9,7 @@ import en from "javascript-time-ago/locale/en.json";
 
 import Layout from "../../components/Layout/Layout";
 import Seo from "../../components/Misc/Seo";
-import { isLoggedIn } from "../../services/Auth";
+import {isLoggedIn} from "../../services/Auth";
 // This only needs to be done once; probably during your application's bootstrapping process.
 import "react-sortable-tree/style.css";
 
@@ -17,7 +17,7 @@ import "react-sortable-tree/style.css";
 import SortableTree from "react-sortable-tree";
 import FileExplorerTheme from "@nosferatu500/theme-file-explorer";
 
-const DrupalAdminPage = ({ serverData }) => {
+const DrupalAdminPage = ({serverData}) => {
   const [tree, setTree] = useState({});
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const DrupalAdminPage = ({ serverData }) => {
         Object.keys(serverData).length === 0
       ) {
         navigate("/admin/login", {
-          state: { message: "your session has been timed out, please login" },
+          state: {message: "your session has been timed out, please login"},
         });
       } else {
         const data = () => {
@@ -41,7 +41,7 @@ const DrupalAdminPage = ({ serverData }) => {
             attributes: node.attributes,
             node: node,
           }));
-          return { treeData };
+          return {treeData};
         };
         setTree(data);
       }
@@ -49,13 +49,13 @@ const DrupalAdminPage = ({ serverData }) => {
     checkIfResponse(serverData);
   }, [serverData]);
 
-  const formatDate = (date) => <ReactTimeAgo date={Date.parse(date)} />;
+  const formatDate = (date) => <ReactTimeAgo date={Date.parse(date)}/>;
 
-  const editNode = ({ node }) => {
+  const editNode = ({node}) => {
     window.location.href = `/edit/page/` + node.attributes.drupal_internal__nid;
   };
 
-  const alertNodeInfo = ({ node, path, treeIndex }) => {
+  const alertNodeInfo = ({node, path, treeIndex}) => {
     const objectString = Object.keys(node)
       .map((k) =>
         k === "children"
@@ -66,9 +66,9 @@ const DrupalAdminPage = ({ serverData }) => {
 
     alert(
       "Info passed to the icon and button generators:\n\n" +
-        `node: {\n   ${objectString}\n},\n` +
-        `path: [${path.join(", ")}],\n` +
-        `treeIndex: ${treeIndex}`
+      `node: {\n   ${objectString}\n},\n` +
+      `path: [${path.join(", ")}],\n` +
+      `treeIndex: ${treeIndex}`
     );
   };
 
@@ -77,12 +77,12 @@ const DrupalAdminPage = ({ serverData }) => {
   return (
     <>
       <Layout serverData={serverData.adminMenu}>
-        <Seo title="Content" />
+        <Seo title="Content"/>
         <h1>Content page</h1>
-        <div style={{ height: 900 }}>
+        <Card sx={{height: 1200, p: 5}}>
           <SortableTree
             treeData={tree.treeData}
-            onChange={(treeData) => setTree({ treeData })}
+            onChange={(treeData) => setTree({treeData})}
             theme={FileExplorerTheme}
             rowHeight={48}
             generateNodeProps={(rowInfo) => ({
@@ -110,7 +110,7 @@ const DrupalAdminPage = ({ serverData }) => {
                   Updated: {formatDate(rowInfo.node.attributes.changed)}&nbsp;
                 </>,
                 <>
-                  <Badge variant="primary" sx={{ textTransform: `capitalize` }}>
+                  <Badge variant="primary" sx={{textTransform: `capitalize`}}>
                     {rowInfo.node.node.type
                       .replace("node--", "")
                       .replace("-", " ")}
@@ -121,7 +121,7 @@ const DrupalAdminPage = ({ serverData }) => {
               ],
             })}
           />
-        </div>
+        </Card>
       </Layout>
     </>
   );
@@ -156,7 +156,7 @@ export async function getServerData(context) {
     }
 
     return {
-      headers: { "Set-Cookie": `access-token=${JSON.stringify(token)}` },
+      headers: {"Set-Cookie": `access-token=${JSON.stringify(token)}`},
       props: {
         adminMenu: await adminMenu.json(),
         content: await content.json(),

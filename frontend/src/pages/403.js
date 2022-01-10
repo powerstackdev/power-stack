@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import {Link} from "gatsby";
 
 // styles
 const pageStyles = {
@@ -36,15 +36,15 @@ const NotFoundPage = () => {
           😔
         </span>{" "}
         we couldn’t find what you were looking for.
-        <br />
+        <br/>
         {process.env.NODE_ENV === "development" ? (
           <>
-            <br />
+            <br/>
             Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
+            <br/>
           </>
         ) : null}
-        <br />
+        <br/>
         <Link to="/">Go home</Link>.
       </p>
     </main>

@@ -1,24 +1,24 @@
 import * as React from "react";
-import { navigate } from "gatsby";
+import {navigate} from "gatsby";
 import absolution from "absolution";
 
 import Layout from "../../components/Layout/Layout";
 import Seo from "../../components/Misc/Seo";
-import { isLoggedIn } from "../../services/Auth";
+import {isLoggedIn} from "../../services/Auth";
 
-const DrupalAdminPage = ({ serverData }) => {
+const DrupalAdminPage = ({serverData}) => {
   const html = absolution(serverData.content, process.env.GATSBY_DRUPAL_HOST);
 
   return (
     <>
       {!serverData ? (
         navigate("/admin/login", {
-          state: { message: "your session has been timed out, please login" },
+          state: {message: "your session has been timed out, please login"},
         })
       ) : (
         <Layout serverData={serverData.adminMenu}>
-          <Seo title="Using SSR" />
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <Seo title="Using SSR"/>
+          <div dangerouslySetInnerHTML={{__html: html}}/>
         </Layout>
       )}
     </>
@@ -27,7 +27,7 @@ const DrupalAdminPage = ({ serverData }) => {
 
 export default DrupalAdminPage;
 
-export async function getServerData({ params, headers }) {
+export async function getServerData({params, headers}) {
   const token = await isLoggedIn(Object.fromEntries(headers).cookie);
 
   const requestHeaders = {
