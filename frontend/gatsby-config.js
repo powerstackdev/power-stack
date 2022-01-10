@@ -19,10 +19,15 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-drupal-menus",
     {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: process.env.GATSBY_DRUPAL_HOST + `/`,
+        skipFileDownloads: true,
+        params: {
+          "api-key": process.env.GATSBY_DRUPAL_KEY, // any valid key value pair here
+        },
       },
     },
     {
@@ -45,18 +50,6 @@ module.exports = {
       resolve: "my-tinacms-plugin",
       options: {
         enabled: process.env.NODE_ENV !== "production",
-        sidebar: {
-          position: "displace",
-          theme: {
-            color: {
-              primary: {
-                light: "#007043",
-                medium: "#007043",
-                dark: "#007043",
-              },
-            },
-          },
-        },
       },
     },
   ],
