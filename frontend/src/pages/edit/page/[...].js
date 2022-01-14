@@ -8,7 +8,6 @@ import { paragraphBlock } from "../../../components/Text/Paragraph"
 import { featureListBlock } from "../../../components/Features/FeatureList"
 import { accordionListBlock } from "../../../components/Accordions/AccordionList"
 import { InlineBlocks, InlineForm } from "react-tinacms-inline"
-// import { InlineForm } from "../../../utils/TinaCMS/InlineForm"
 import { heroBlock } from "../../../components/Heros/Hero"
 import Seo from "../../../components/Misc/Seo"
 import { isLoggedIn } from "../../../services/Auth"
@@ -22,9 +21,8 @@ import Header from "../../../components/Headers/Header"
 import Footer from "../../../components/Footers/Footer"
 import { Title } from "../../../components/Text/Title"
 
-
 const EditPage = ({serverData}) => {
-
+  const isWindow = typeof window !== "undefined";
   const data = useStaticQuery(graphql`
     query TinaSiteTitleQuery {
       site {
@@ -66,7 +64,7 @@ const EditPage = ({serverData}) => {
   drupalData.blocks = blocks
 
 
-  const cms = useCMS()
+  const cms = isWindow && useCMS()
 
   const formConfig = {
     initialValues: drupalData,
@@ -83,9 +81,9 @@ const EditPage = ({serverData}) => {
     },
   }
 
-  const [, form] = useForm(formConfig)
+  const [, form] = isWindow ? useForm(formConfig) : ['', '']
 
-  usePlugin(form)
+  isWindow && usePlugin(form)
 
   if (serverData.hasOwnProperty('goto')) {
     navigate("/admin/login", {
@@ -99,10 +97,15 @@ const EditPage = ({serverData}) => {
       <Seo title="Edit page"/>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`}/>
       <div className="home">
-        <InlineForm form={form}>
-          <Title title={serverData.content.data[0].title}/>
-          <InlineBlocks name="blocks" blocks={availableBlocks}/>
-        </InlineForm>
+        { isWindow ?
+          <InlineForm form={isWindow && form}>
+            <Title title={serverData.content?.data[0].title}/>
+            <InlineBlocks name="blocks" blocks={availableBlocks}/>
+          </InlineForm>
+          :
+          <p>no render</p>
+        }
+
       </div>
       <Footer/>
     </>

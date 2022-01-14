@@ -24,7 +24,7 @@
     "absolution": "^1.0.2",
     "axios": "^0.24.0",
     "form-data": "^4.0.0",
-    "gatsby": "^4.3.0",
+    "gatsby": "4.5",
     "gatsby-plugin-drupal-menus": "^1.0.6",
     "gatsby-plugin-image": "^2.3.0",
     "gatsby-plugin-manifest": "^4.3.0",
@@ -59,6 +59,8 @@
     "util": "^0.12.4"
   },
   "devDependencies": {
+    "gatsby-plugin-perf-budgets": "^0.0.18",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
     "prettier": "^2.5.1"
   }
 }

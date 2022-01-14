@@ -20,6 +20,8 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-drupal-menus",
+    // `gatsby-plugin-perf-budgets`,
+    // `gatsby-plugin-webpack-bundle-analyser-v2`,
     {
       resolve: `gatsby-source-drupal`,
       options: {
@@ -49,7 +51,7 @@ module.exports = {
     {
       resolve: "my-tinacms-plugin",
       options: {
-        enabled: process.env.NODE_ENV !== "production",
+        enabled: true,
       },
     },
   ],
