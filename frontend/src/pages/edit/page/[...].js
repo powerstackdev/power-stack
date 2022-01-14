@@ -20,6 +20,7 @@ import { formatDrupalType } from "../../../utils/Utils"
 import Header from "../../../components/Headers/Header"
 import Footer from "../../../components/Footers/Footer"
 import { Title } from "../../../components/Text/Title"
+import { Spinner, Box } from "theme-ui";
 
 const EditPage = ({serverData}) => {
   const isWindow = typeof window !== "undefined";
@@ -103,7 +104,15 @@ const EditPage = ({serverData}) => {
             <InlineBlocks name="blocks" blocks={availableBlocks}/>
           </InlineForm>
           :
-          <p>no render</p>
+          <Box sx={{
+            minHeight: `400px`,
+            width: `100%`,
+            display: `flex`,
+            alignItems: `center`,
+            justifyContent: `center`
+          }}>
+            <Spinner />
+          </Box>
         }
 
       </div>
