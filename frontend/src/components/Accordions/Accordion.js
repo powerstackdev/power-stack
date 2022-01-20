@@ -25,6 +25,10 @@ export const accordionBlock = {
       supporting_copy:
         "Rich in mystery muse about vastness is bearable only through love Ut enim ad minima veniam at the edge of forever are creatures of the cosmos. ",
     },
+    itemProps: item => ({
+      key: item.id,
+      label: item.heading,
+    }),
     fields: [
       {
         name: 'heading',
