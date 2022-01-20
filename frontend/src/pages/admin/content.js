@@ -72,8 +72,6 @@ const DrupalAdminPage = ({serverData}) => {
     );
   };
 
-  const url = typeof window !== "undefined" ? window.location.pathname : "";
-
   return (
     <>
       <Layout serverData={serverData.adminMenu}>

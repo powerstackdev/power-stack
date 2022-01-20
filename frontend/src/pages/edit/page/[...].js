@@ -22,6 +22,23 @@ import Footer from "../../../components/Footers/Footer"
 import { Title } from "../../../components/Text/Title"
 import { Spinner, Box } from "theme-ui";
 
+// These init functions are a bit of a hack to get around the the conditional rules of hooks error
+const InitCMS = () => {
+  useCMS()
+
+  return null
+}
+
+const InitForm = (formConfig) => {
+  return useForm(formConfig)
+}
+
+const InitPlugin = (form) => {
+  usePlugin(form)
+
+  return null
+}
+
 const EditPage = ({serverData}) => {
   const isWindow = typeof window !== "undefined";
   const data = useStaticQuery(graphql`
@@ -65,11 +82,12 @@ const EditPage = ({serverData}) => {
   drupalData.blocks = blocks
 
 
-  const cms = isWindow && useCMS()
+  const cms = isWindow && InitCMS
 
   const formConfig = {
     initialValues: drupalData,
     onSubmit(data) {
+      console.log(data)
       axios.post(process.env.GATSBY_DRUPAL_HOST + `/api/tinacms/page/create`, qs.stringify({
         json_data: data
       })).then((response) => {
@@ -82,9 +100,10 @@ const EditPage = ({serverData}) => {
     },
   }
 
-  const [, form] = isWindow ? useForm(formConfig) : ['', '']
+  console.log(formConfig)
+  const [, form] = isWindow ? InitForm(formConfig) : ['', '']
 
-  isWindow && usePlugin(form)
+  isWindow && InitPlugin(form)
 
   if (serverData.hasOwnProperty('goto')) {
     navigate("/admin/login", {
