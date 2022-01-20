@@ -25,13 +25,14 @@ export default class DrupalMediaStore {
   async previewSrc(src) {
     return src;
   }
+
   async list() {
     const data = await mediaData()
     console.log(data.props.media.data)
     const items = data.props.media.data.map(
       (mediaItem) => {
         return {
-          mid: mediaItem.drupal_internal__mid,
+          id: mediaItem.drupal_internal__mid,
           vid: mediaItem.drupal_internal__vid,
           type: 'file',
           filename: mediaItem.name,

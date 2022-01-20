@@ -1,23 +1,21 @@
-import { formatDrupalType, drupalFieldPrefix } from "./Utils";
+import { drupalFieldPrefix, formatDrupalType } from "./Utils";
 
 export const processDrupalImageData = (type, value) => {
   let fields = {};
   let images = value.field_image.map((value, key) => {
-    let delay = 200 * (key + 1)
+    let delay = 200 * (key + 1);
     let innerType = formatDrupalType(value.type);
 
     fields["image"] = {
-      src: process.env.GATSBY_DRUPAL_HOST + `/` + value.field_media.field_media_image.uri.url,
-      alt: value.field_media.field_media_image.meta.alt,
-      mid: value.field_media.drupal_internal__mid,
-      vid: value.field_media.drupal_internal__vid
-    }
-    fields["delay"] = delay
+      src: process.env.GATSBY_DRUPAL_HOST + `/` + value.field_media.field_media_image.uri.url + "?id=" + value.field_media.drupal_internal__mid + "&vid=" + value.field_media.drupal_internal__vid,
+      alt: value.field_media.field_media_image.meta.alt
+    };
+    fields["delay"] = delay;
     fields["id"] = value.drupal_internal__id;
     fields["vid"] = value.drupal_internal__revision_id;
     return {
       _template: innerType,
-      ...fields,
+      ...fields
     };
   });
   images["id"] = value.drupal_internal__id;
@@ -35,7 +33,7 @@ export const processDrupalFeaturesData = (type, value) => {
   let fields = {};
 
   let features = value.field_feature.map((value, key) => {
-    let delay = 200 * (key + 1)
+    let delay = 200 * (key + 1);
     let innerType = formatDrupalType(value.type);
     Object.keys(value).forEach((key) => {
       if (key.startsWith(drupalFieldPrefix)) {
@@ -49,7 +47,7 @@ export const processDrupalFeaturesData = (type, value) => {
     fields["delay"] = delay;
     return {
       _template: innerType,
-      ...fields,
+      ...fields
     };
   });
   features["id"] = value.drupal_internal__id;
@@ -88,6 +86,6 @@ export const processDrupalParagraphData = (type, value) => {
   fields["vid"] = value.drupal_internal__revision_id;
   return {
     _template: type,
-    ...fields,
+    ...fields
   };
 };

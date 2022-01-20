@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class TinacmsJsonPageBuilderController extends ControllerBase {
 
-  protected $excludeFields = ['id', 'vid', '_template'];
+  protected $excludeFields = ['id', 'vid', '_template', 'delay'];
 
   protected $supportedTypes = [
     'paragraph',
@@ -99,29 +99,16 @@ class TinacmsJsonPageBuilderController extends ControllerBase {
 
   function processImageFields($block) {
     // @TODO this is a bit of a hack because TinaCMS isn't sending the full data of the media entity
-    $srcArray = explode('/', $block['src']);
+    $srcArray = $this->queryToArray($block['src']);
 
-    $file_name = end($srcArray);
-    $file = \Drupal::entityTypeManager()
-      ->getStorage('file')
-      ->loadByProperties(['filename' => $file_name]);
+    if(!empty($srcArray)) {
+      $mediaReferenceArray = [
+        'target_id' => $srcArray['id'],
+        'target_revision_id' => $srcArray['vid'],
+      ];
 
-    // Get First file (make a loop if you get many files)
-    $fileId = end($file)->fid->value;
-
-    // Array of Medias witch contains your file.
-    $mediaItems = \Drupal::entityTypeManager()
-      ->getStorage('media')
-      ->loadByProperties(['field_media_image' => $fileId]);
-
-    $mediaItem = array_shift($mediaItems);
-
-    $mediaReferenceArray = [
-      'target_id' => $mediaItem->id(),
-      'target_revision_id' => $mediaItem->getRevisionId(),
-    ];
-
-    return $mediaReferenceArray;
+      return $mediaReferenceArray;
+    }
   }
 
   function processNestedBlocks($value) {
@@ -165,6 +152,37 @@ class TinacmsJsonPageBuilderController extends ControllerBase {
           $blockParagraph->set('field_' . $field, $value);
       }
     }
+  }
+
+  /**
+   * Parse out url query string into an associative array
+   *
+   * $qry can be any valid url or just the query string portion.
+   * Will return false if no valid querystring found
+   *
+   * @param $qry String
+   * @return Array
+   */
+  function queryToArray($qry)
+  {
+    $result = array();
+    //string must contain at least one = and cannot be in first position
+    if(strpos($qry,'=')) {
+
+      if(strpos($qry,'?')!==false) {
+        $q = parse_url($qry);
+        $qry = $q['query'];
+      }
+    }else {
+      return false;
+    }
+
+    foreach (explode('&', $qry) as $couple) {
+      list ($key, $val) = explode('=', $couple);
+      $result[$key] = $val;
+    }
+
+    return empty($result) ? false : $result;
   }
 
 }
