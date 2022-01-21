@@ -51,9 +51,6 @@ const EditPage = ({serverData}) => {
     }
   `)
 
-
-
-
   const cms = isWindow && InitCMS
 
   const formConfig = {
