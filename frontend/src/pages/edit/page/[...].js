@@ -51,56 +51,24 @@ const EditPage = ({serverData}) => {
     }
   `)
 
-  let drupalData = {}
-  let blocks = []
 
-  if (serverData.hasOwnProperty('content')) {
-    if (!serverData.content.data[0].field_page_builder.data) {
-      serverData.content.data[0].field_page_builder.forEach((value, index) => {
-        let type = formatDrupalType(value.type)
-
-        switch (type) {
-          case "images":
-            blocks[index] = processDrupalImageData(type, value)
-            break
-
-          case "features":
-            blocks[index] = processDrupalFeaturesData(type, value)
-            break
-
-          default:
-            blocks[index] = processDrupalParagraphData(type, value)
-        }
-      })
-    }
-
-    drupalData.title = serverData.content.data[0].title
-    drupalData.nid = serverData.content.data[0].drupal_internal__nid
-    drupalData.uid = serverData.content.data[0].uid
-  }
-
-  drupalData.blocks = blocks
 
 
   const cms = isWindow && InitCMS
 
   const formConfig = {
-    initialValues: drupalData,
+    initialValues: serverData.content,
     onSubmit(data) {
-      console.log(data)
       axios.post(process.env.GATSBY_DRUPAL_HOST + `/api/tinacms/page/create`, qs.stringify({
         json_data: data
       })).then((response) => {
-        console.log(response)
         cms.alerts.success("Saved!")
       }, (error) => {
-        console.log(error)
         cms.alerts.error("Error saving")
       })
     },
   }
 
-  console.log(formConfig)
   const [, form] = isWindow ? InitForm(formConfig) : ['', '']
 
   isWindow && InitPlugin(form)
@@ -119,7 +87,7 @@ const EditPage = ({serverData}) => {
       <div className="home">
         { isWindow ?
           <InlineForm form={isWindow && form}>
-            <Title title={serverData.content?.data[0].title}/>
+            <Title title={serverData.content?.title}/>
             <InlineBlocks name="blocks" blocks={availableBlocks}/>
           </InlineForm>
           :
@@ -201,13 +169,38 @@ export async function getServerData({params, headers}) {
       throw new Error(`Response failed`)
     }
 
-    // if (!adminMenu.ok) {
-    //     throw new Error(`Response failed`, content.status);
-    // }
+    const data = await content.json()
+
+    let drupalData = {}
+
+    let blocks = []
+    data.data[0].field_page_builder.forEach((value, index) => {
+      let type = formatDrupalType(value.type)
+
+      switch (type) {
+        case "images":
+          blocks[index] = processDrupalImageData(type, value)
+          break
+
+        case "features":
+          blocks[index] = processDrupalFeaturesData(type, value)
+          break
+
+        default:
+          blocks[index] = processDrupalParagraphData(type, value)
+      }
+    })
+
+
+    drupalData.title = data.data[0].title
+    drupalData.nid = data.data[0].drupal_internal__nid
+    drupalData.uid = data.data[0].uid
+    drupalData.blocks = blocks
+
     return {
       props: {
         adminMenu: await adminMenu.json(),
-        content: await content.json(),
+        content: drupalData,
       },
     }
   } catch (error) {

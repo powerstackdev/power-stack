@@ -16,9 +16,6 @@ export default class DrupalMediaStore {
           'Content-Type': 'multipart/form-data'
         }
       })
-        .then(result=>{
-          // Do as you please with the result {uuid} of image
-          console.log(result)})
         .catch(error=>{console.log(error)})
     }
   }
@@ -28,7 +25,6 @@ export default class DrupalMediaStore {
 
   async list() {
     const data = await mediaData()
-    console.log(data.props.media.data)
     const items = data.props.media.data.map(
       (mediaItem) => {
         return {
