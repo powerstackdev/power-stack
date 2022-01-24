@@ -20,6 +20,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-drupal-menus",
+    "gatsby-plugin-no-sourcemaps",
     // `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
     {
