@@ -48,4 +48,23 @@ export default {
       }
     },
   },
+  badges: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+    },
+    outline: {
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 1px',
+    },
+    icon: {
+      padding: '10px',
+      height: '100%',
+      width: '66px',
+      textAlign: 'center',
+      fontSize: `30px`,
+      borderRadius: '100%'
+    }
+  },
 }

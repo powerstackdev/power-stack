@@ -3,6 +3,9 @@ var webpack = require('webpack');
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html" || stage === "develop-html") {
     actions.setWebpackConfig({
+      experiments: {
+        topLevelAwait: true
+      },
       module: {
         rules: [
           {
@@ -30,22 +33,25 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     })
   } else {
     actions.setWebpackConfig({
-        plugins: [
-          new webpack.ProvidePlugin({
-            stream: 'stream-browserify',
-            util: "util",
-            url: "url",
-            process: "process"
-          }),
-        ],
-        resolve: {
-          fallback: {
-            stream: 'stream-browserify',
-            util: "util",
-            url: "url",
-            process: "process"
-          }
-        },
-      })
+      experiments: {
+        topLevelAwait: true
+      },
+      plugins: [
+        new webpack.ProvidePlugin({
+          stream: 'stream-browserify',
+          util: "util",
+          url: "url",
+          process: "process"
+        }),
+      ],
+      resolve: {
+        fallback: {
+          stream: 'stream-browserify',
+          util: "util",
+          url: "url",
+          process: "process"
+        }
+      },
+    })
   }
 }

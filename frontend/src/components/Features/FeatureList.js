@@ -4,7 +4,7 @@ import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
 import { featureBlock } from "./Feature";
 import { lighten } from "@theme-ui/color"
 
-function FeatureList({ index }) {
+export function FeatureList({ index }) {
   return (
     <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
       <div
