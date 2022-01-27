@@ -31,7 +31,7 @@ export const Footer = () => (
         About
       </Link>
       <div sx={{ mx: "auto" }} />
-      <div sx={{ p: 2 }}>© 2019 Jane Doe</div>
+      <div sx={{ p: 2 }}>© {new Date().getFullYear()} Jane Doe</div>
     </div>
   </footer>
 );
