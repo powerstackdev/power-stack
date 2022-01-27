@@ -7,6 +7,7 @@ import { imageListBlock } from "../../../components/Images/ImageList"
 import { paragraphBlock } from "../../../components/Text/Paragraph"
 import { featureListBlock } from "../../../components/Features/FeatureList"
 import { accordionListBlock } from "../../../components/Accordions/AccordionList"
+import { signpostListBlock } from "../../../components/Signposts/SignpostList";
 import { InlineBlocks, InlineForm } from "react-tinacms-inline"
 import { heroBlock } from "../../../components/Heros/Hero"
 import Seo from "../../../components/Misc/Seo"
@@ -40,7 +41,7 @@ const InitPlugin = (form) => {
 }
 
 const EditPage = ({serverData}) => {
-  const isWindow = typeof window !== "undefined";
+  const isWindow = typeof window !== "undefined" && typeof window.tinacms !== "undefined";
   const data = useStaticQuery(graphql`
     query TinaSiteTitleQuery {
       site {
@@ -110,8 +111,9 @@ const availableBlocks = {
   hero: heroBlock,
   paragraph: paragraphBlock,
   images: imageListBlock,
+  signposts: signpostListBlock,
   features: featureListBlock,
-  accordions: accordionListBlock
+  accordions: accordionListBlock,
 }
 
 export default EditPage
