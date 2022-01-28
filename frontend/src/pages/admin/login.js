@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import { Button, Card, Input, Spinner } from "theme-ui";
 
 import React, { useState } from "react";

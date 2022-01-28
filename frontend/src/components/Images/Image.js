@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import React from "react";
 import { BlocksControls, InlineImage } from "react-tinacms-inline";
 import Zoom from "react-reveal/Zoom";

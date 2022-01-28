@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Card, jsx, Text } from "theme-ui";
 import { Button as TButton } from "theme-ui";
 import { BlocksControls, InlineText, InlineWysiwyg } from "react-tinacms-inline";
 import Zoom from "react-reveal/Zoom";

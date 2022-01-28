@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
 import { imageBlock } from "./Image";
 

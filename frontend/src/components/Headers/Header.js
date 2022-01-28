@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import { Grid, Heading } from "theme-ui";
 
 import PropTypes from "prop-types";

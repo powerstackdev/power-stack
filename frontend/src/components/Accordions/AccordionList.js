@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import { BlocksControls } from "react-tinacms-inline";
 import { Accordion } from "react-accessible-accordion";
 import { Accordion as AccordionInner, accordionBlock } from "./Accordion";

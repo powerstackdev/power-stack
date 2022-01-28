@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import { Badge, Card, Heading, Switch } from "theme-ui";
 
 import React, { useEffect, useState } from "react";

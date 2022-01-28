@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import { Box, Card, Paragraph, useThemeUI } from "theme-ui";
 
 import Zoom from "react-reveal/Zoom";

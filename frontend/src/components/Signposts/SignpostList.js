@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import React, { useEffect, useState } from "react";
 import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
 import { isLoggedIn } from "../../services/Auth";
