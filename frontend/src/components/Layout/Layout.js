@@ -7,10 +7,11 @@
 
 import * as React from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
-import Header from "../Headers/Header";
-const Layout = ({ children, serverData }) => {
+import Header, { AdminHeader } from "../Headers/Header";
+
+const Layout = ({isAdmin, children, serverData}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,10 +24,18 @@ const Layout = ({ children, serverData }) => {
 
   return (
     <>
-      <Header
-        siteTitle={data.site.siteMetadata?.title || `Title`}
-        serverData={serverData}
-      />
+      {isAdmin ?
+        <AdminHeader
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          serverData={serverData}
+        />
+        :
+        <Header
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          serverData={serverData}
+        />
+      }
+
       <div
         style={{
           margin: `0 auto`,

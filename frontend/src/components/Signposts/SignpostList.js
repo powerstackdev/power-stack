@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react";
 import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
-import {  isLoggedIn } from "../../services/Auth";
+import { isLoggedIn } from "../../services/Auth";
 
 const SignpostList = ({ data, index }) => {
   const SIGNPOST_BLOCKS = GenerateSignpostBlocks()
@@ -94,9 +92,9 @@ export const signpostListBlock = {
     fields: [
       {
         name: "columns",
-        label: "Number of images per row",
-        component: "number",
-      },
+        label: "Signposts per row",
+        component: "number"
+      }
     ],
   }
 };

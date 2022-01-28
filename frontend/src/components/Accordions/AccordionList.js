@@ -1,19 +1,18 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
-import { Accordion  } from "react-accessible-accordion";
-import { accordionBlock, Accordion as AccordionInner } from "./Accordion";
-import 'react-accessible-accordion/dist/fancy-example.css';
+import { BlocksControls } from "react-tinacms-inline";
+import { Accordion } from "react-accessible-accordion";
+import { Accordion as AccordionInner, accordionBlock } from "./Accordion";
+import "react-accessible-accordion/dist/fancy-example.css";
 
-function AccordionList({ data, index }) {
+function AccordionList({data, index}) {
   return (
-    <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
+    <BlocksControls index={index} focusRing={{offset: 0}} insetControls>
       <div
         sx={{
           width: `100%`,
           maxWidth: `1200px`,
           m: `0 auto`,
-          p: `5rem 4rem`,
+          p: `5rem 4rem`
         }}
       >
         <Accordion>
@@ -70,11 +69,6 @@ export const accordionListBlock = {
         name: 'accordions',
         component: 'blocks',
         templates: ACCORDION_BLOCKS,
-      },
-      {
-        label: 'test',
-        name: 'test',
-        component: 'text'
       }
     ],
   },

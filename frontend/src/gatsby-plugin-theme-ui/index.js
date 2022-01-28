@@ -1,8 +1,8 @@
 // example theme
-import { roboto, tosh, swiss, system } from '@theme-ui/presets'
+import { roboto } from "@theme-ui/presets";
 import { darken } from "@theme-ui/color";
 
-const starterTheme = {...swiss}
+const starterTheme = {...roboto};
 
 export default {
   ...starterTheme,
@@ -34,18 +34,20 @@ export default {
   },
   buttons: {
     primary: {
-      color: 'background',
-        bg: 'primary',
-        '&:hover': {
-        bg: 'text',
-      }
+      color: "background",
+      bg: "primary",
+      "&:hover": {
+        bg: "text"
+      },
+      borderRadius: `100px`
     },
     secondary: {
-      color: 'background',
-      bg: 'secondary',
-      '&:hover': {
-        backgroundImage: (theme) => `linear-gradient(45deg, ${theme.colors.secondary}, ${darken('secondary', .15)(theme)})`,
-      }
+      color: "background",
+      bg: "secondary",
+      "&:hover": {
+        backgroundImage: (theme) => `linear-gradient(45deg, ${theme.colors.secondary}, ${darken("secondary", .15)(theme)})`
+      },
+      borderRadius: `100px`
     },
   },
   badges: {

@@ -1,19 +1,18 @@
 /** @jsx jsx */
-import {Button, jsx} from 'theme-ui'
+import { Grid, Heading } from "theme-ui";
 
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { Grid } from "theme-ui"
-import { DrupalAdminMenu } from "../Menus/DrupalAdminMenu"
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import { DrupalAdminMenu } from "../Menus/DrupalAdminMenu";
 import Menu from "gatsby-plugin-drupal-menus";
-import Logo from "../../images/quantum.svg"
+import Logo from "../../images/quantum.svg";
 import { darken } from "@theme-ui/color";
-import { isLoggedIn } from "../../services/Auth";
 
-const Header = ({ siteTitle, serverData }) => (
+const Header = ({siteTitle, serverData}) => (
   <header
     sx={{
-      backgroundImage: (theme) => `linear-gradient(45deg, ${theme.colors.primary}, ${darken('primary', .15)(theme)})`,
+      backgroundImage: (theme) => `linear-gradient(45deg,${theme.rawColors.primary}, ${darken(theme.rawColors.primary, .2)(theme)})`,
+      width: `100%`
     }}
   >
     <div
@@ -56,12 +55,6 @@ const Header = ({ siteTitle, serverData }) => (
             <Menu />
           </div>
         }
-        <div sx={{margin: `0 auto`, botton: {verticalAlign: `middle`}}}>
-          {
-            isLoggedIn() ? <Button variant='secondary'> Log out </Button> :
-              <Button>Login</Button>
-          }
-        </div>
       </Grid>
 
     </div>
@@ -69,11 +62,58 @@ const Header = ({ siteTitle, serverData }) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  siteTitle: PropTypes.string
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: ``
+};
 
-export default Header
+export default Header;
+
+export const AdminHeader = ({siteTitle, serverData}) => (
+  <header
+    sx={{
+      backdropFilter: "saturate(180%) blur(20px)",
+      background: "rgba(255,255,255,0.72)",
+      width: `100%`,
+      position: "sticky",
+      top: 0,
+      zIndex: 1000,
+      height: "52px",
+      fontSize: "13px"
+    }}
+  >
+    <div
+      sx={{
+        margin: `0 auto`
+      }}
+    >
+      <Grid gap={2} columns={[2, "1fr 6fr"]}>
+        <Heading as={"h1"} sx={{m: 2}}>
+          <Link
+            to="/"
+            style={{
+              color: `#0071e3`,
+              textDecoration: `none`,
+              verticalAlign: `middle`
+            }}
+          >
+
+            {siteTitle}
+          </Link>
+        </Heading>
+
+        <div sx={{
+          margin: `0 auto`,
+          width: "100%",
+          textAlign: "right"
+        }}>
+          <DrupalAdminMenu serverData={serverData}/>
+
+        </div>
+      </Grid>
+
+    </div>
+  </header>
+);

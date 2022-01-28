@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-
 import React from "react";
 import { BlocksControls, InlineImage } from "react-tinacms-inline";
-import Zoom from 'react-reveal/Zoom';
+import Zoom from "react-reveal/Zoom";
 
 function Image({ data, index }) {
   return (
@@ -46,10 +44,10 @@ export const imageBlock = {
         name: "image.src",
         label: "Image",
         component: "image",
-        parse: (media) => `${media.src}`,
+        parse: (media) => `${media.src}?id=${media.id}&vid=${media.vid}`,
         mid: (media) => `${media.mid}`,
         previewSrc: (src) => src,
-        focusRing: false,
+        focusRing: false
       },
       {
         name: "image.alt",

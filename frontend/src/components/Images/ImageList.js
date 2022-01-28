@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
 import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
 import { imageBlock } from "./Image";
 
@@ -42,13 +41,14 @@ export const imageListBlock = {
     label: "Image Grid",
     defaultItem: {
       _template: "images",
+      columns: 2,
       images: [
         {
           _template: "image",
           image: {
             src: "/martin-sanchez-unsplash-square.jpg",
-            alt: "",
-          },
+            alt: ""
+          }
         },
         {
           _template: "image",
@@ -62,9 +62,9 @@ export const imageListBlock = {
     fields: [
       {
         name: "columns",
-        label: "Number of images per row",
-        component: "number",
-      },
+        label: "Images per row",
+        component: "number"
+      }
     ],
   },
 };

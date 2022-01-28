@@ -1,18 +1,17 @@
 /** @jsx jsx */
-import {Card, jsx, Text} from 'theme-ui'
-import { InlineText, BlocksControls, InlineBlocks, InlineWysiwyg } from 'react-tinacms-inline';
-import Zoom from 'react-reveal/Zoom';
-import {darken} from "@theme-ui/color";
-import { Button as TButton } from "theme-ui"
+import { Button as TButton } from "theme-ui";
+import { BlocksControls, InlineText, InlineWysiwyg } from "react-tinacms-inline";
+import Zoom from "react-reveal/Zoom";
+import { darken } from "@theme-ui/color";
 import React from "react";
 
-export function Hero({ text_color, background_color, align, subtext }) {
+export function Hero({text_color, background_color, align, subtext}) {
   return (
     <div
       className="hero"
       sx={{
-        color: text_color || '#000',
-        backgroundImage: (theme) => `linear-gradient(45deg, ${background_color || 'aliceblue'}, ${darken(background_color, .2)(theme)})`,
+        color: text_color || "#000",
+        backgroundImage: (theme) => `linear-gradient(45deg, ${background_color || "aliceblue"}, ${darken(background_color, .2)(theme)})`,
         textAlign: align,
         justifyContent: align === 'left' ? 'start' : align,
       }}
@@ -76,7 +75,6 @@ export const buttonBlock = {
     ],
 };
 
-
 export const heroBlock = {
   Component: ({ index, data }) => (
     <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
@@ -96,23 +94,56 @@ export const heroBlock = {
       {
         name: 'text_color',
         label: 'Text Color',
-        component: 'color',
-        widget: 'block',
-        colors: ['#051e26', '#f2dfc6', '#cfdcc8', '#ebbbbb', '#8a1414'],
+        component: "color",
+        widget: "block",
+        colors: ["#051e26", "#f2dfc6", "#cfdcc8", "#ebbbbb", "#8a1414"]
       },
       {
-        name: 'align',
-        label: 'Alignment',
-        component: 'select',
-        options: ['center', 'left'],
+        name: "align",
+        label: "Alignment",
+        component: "select",
+        options: ["center", "left"]
       },
       {
-        name: 'background_color',
-        label: 'Background Color',
-        component: 'color',
-        widget: 'block',
-        colors: ['#051e26', '#f2dfc6', '#cfdcc8', '#ebbbbb', '#8a1414'],
+        name: "image",
+        label: "Image",
+        component: "image",
+        parse: (media) => `${media.src}?id=${media.id}&vid=${media.vid}`,
+        previewSrc: (src) => src,
+        focusRing: false
       },
+      {
+        name: "background_color",
+        label: "Background Color",
+        component: "color",
+        widget: "block",
+        colors: ["#051e26", "#f2dfc6", "#cfdcc8", "#ebbbbb", "#8a1414"]
+      },
+      {
+        label: "Buttons",
+        name: "buttons",
+        component: "group-list",
+        itemProps: item => ({
+          key: item.url,
+          label: item.text
+        }),
+        defaultItem: () => ({
+          text: "Button text"
+        }),
+        fields: [
+          {
+            label: "Text",
+            name: "text",
+            component: "text"
+          },
+          {
+            label: "Link",
+            name: "url",
+            component: "text"
+          }
+        ]
+      }
     ],
   },
 };
+

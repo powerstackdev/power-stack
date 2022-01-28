@@ -1,28 +1,33 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { Button } from "theme-ui";
 
 import * as React from "react";
 import { Link } from "gatsby";
+import { isLoggedIn } from "../../services/Auth";
 
 export const DrupalAdminMenu = ({ serverData }) => {
   return (
     <nav>
-      <ul style={{ display: "flex", flex: 1, float: "right" }}>
+      <ul sx={{
+        mt: "7px"
+      }}>
         {serverData &&
-          serverData.data.map((link) => (
-            <>
-              {link.attributes.parent &&
-              link.attributes.parent === "system.admin" ? (
-                <li
-                  key={link.attributes.title}
-                  sx={{
-                    listStyleType: `none`,
-                    px: 3,
-                  }}
+        serverData.data.map((link) => (
+          <>
+            {link.attributes.parent &&
+            link.attributes.parent === "system.admin" ? (
+              <li
+                key={link.attributes.title}
+                sx={{
+                  listStyleType: `none`,
+                  display: "inline",
+                  px: 3
+                }}
                 >
-                  <Link style={{ color: `white` }} to={link.attributes.url}>
-                    {link.attributes.title}
-                  </Link>
+                <Link sx={{color: `#222`, textDecoration: "none", "&:hover": {color: `#0071e3`}}}
+                      to={link.attributes.url}>
+                  {link.attributes.title}
+                </Link>
                 </li>
               ) : (
                 <></>
@@ -72,11 +77,22 @@ export const DrupalAdminMenu = ({ serverData }) => {
                       </li>
                     ))}
                   </ul> */}
-              {/* </li>
+            {/* </li>
               ))} */}
-            </>
-          ))}
+          </>
+        ))}
+        <li sx={{
+          listStyleType: `none`,
+          display: "inline",
+          px: 3
+        }}>
+          {
+            isLoggedIn() ? <Button variant="primary" sx={{display: "inline"}}> Log out </Button> :
+              <Button>Login</Button>
+          }
+        </li>
       </ul>
+
     </nav>
   );
 };

@@ -1,10 +1,10 @@
 import * as React from "react";
-import {navigate} from "gatsby";
+import { navigate } from "gatsby";
 import absolution from "absolution";
 
 import Layout from "../../components/Layout/Layout";
 import Seo from "../../components/Misc/Seo";
-import {isLoggedIn} from "../../services/Auth";
+import { isLoggedIn } from "../../services/Auth";
 
 const DrupalAdminPage = ({serverData}) => {
   const html = absolution(serverData.content, process.env.GATSBY_DRUPAL_HOST);
@@ -16,7 +16,7 @@ const DrupalAdminPage = ({serverData}) => {
           state: {message: "your session has been timed out, please login"},
         })
       ) : (
-        <Layout serverData={serverData.adminMenu}>
+        <Layout isAdmin serverData={serverData.adminMenu}>
           <Seo title="Using SSR"/>
           <div dangerouslySetInnerHTML={{__html: html}}/>
         </Layout>

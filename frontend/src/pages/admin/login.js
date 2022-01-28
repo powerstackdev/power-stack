@@ -1,7 +1,9 @@
-import React, {useState} from "react";
-import {handleLogin} from "../../services/Auth";
+/** @jsx jsx */
+import { Button, Card, Input, Spinner } from "theme-ui";
+
+import React, { useState } from "react";
+import { handleLogin } from "../../services/Auth";
 import Layout from "../../components/Layout/Layout";
-import {Label, Input, Spinner, Card, Button} from "theme-ui";
 
 const SignIn = () => {
   const [processing, setProcessing] = useState(false);
@@ -30,7 +32,7 @@ const SignIn = () => {
   };
 
   return (
-    <Layout>
+    <Layout isAdmin>
       <Card as="form" onSubmit={(e) => e.preventDefault()} sx={{m: 6, p: 5, textAlign: `center`}}>
         {error && (
           <div className="form-error">

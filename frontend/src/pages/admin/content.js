@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
-import {navigate} from "gatsby";
+/** @jsx jsx */
+import { Badge, Card, Heading, Switch } from "theme-ui";
 
-import {Switch, Badge, Button, Card} from "theme-ui";
+import React, { useEffect, useState } from "react";
+import { navigate } from "gatsby";
 
 import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
@@ -9,7 +10,7 @@ import en from "javascript-time-ago/locale/en.json";
 
 import Layout from "../../components/Layout/Layout";
 import Seo from "../../components/Misc/Seo";
-import {isLoggedIn} from "../../services/Auth";
+import { isLoggedIn } from "../../services/Auth";
 // This only needs to be done once; probably during your application's bootstrapping process.
 import "react-sortable-tree/style.css";
 
@@ -52,7 +53,8 @@ const DrupalAdminPage = ({serverData}) => {
   const formatDate = (date) => <ReactTimeAgo date={Date.parse(date)}/>;
 
   const editNode = ({node}) => {
-    window.location.href = `/edit/page/` + node.attributes.drupal_internal__nid;
+    const page = "/edit/page/" + node.attributes.drupal_internal__nid;
+    navigate(page);
   };
 
   const alertNodeInfo = ({node, path, treeIndex}) => {
@@ -74,10 +76,16 @@ const DrupalAdminPage = ({serverData}) => {
 
   return (
     <>
-      <Layout serverData={serverData.adminMenu}>
+      <Layout isAdmin serverData={serverData.adminMenu}>
         <Seo title="Content"/>
-        <h1>Content page</h1>
-        <Card sx={{height: 1200, p: 5}}>
+        <Heading as={"h1"} sx={{m: 4, ml: 2}}>Content page</Heading>
+        <Card sx={{
+          height: 1200,
+          p: 5,
+          ".rstcustom__rowLabel": {
+            pr: "5px"
+          }
+        }}>
           <SortableTree
             treeData={tree.treeData}
             onChange={(treeData) => setTree({treeData})}
@@ -102,12 +110,6 @@ const DrupalAdminPage = ({serverData}) => {
               ],
               buttons: [
                 <>
-                  Created: {formatDate(rowInfo.node.attributes.created)}&nbsp;
-                </>,
-                <>
-                  Updated: {formatDate(rowInfo.node.attributes.changed)}&nbsp;
-                </>,
-                <>
                   <Badge variant="primary" sx={{textTransform: `capitalize`}}>
                     {rowInfo.node.node.type
                       .replace("node--", "")
@@ -115,7 +117,15 @@ const DrupalAdminPage = ({serverData}) => {
                   </Badge>
                   &nbsp;
                 </>,
-                <Button onClick={() => editNode(rowInfo)}>Edit</Button>,
+                <em>
+                  Created: {formatDate(rowInfo.node.attributes.created)}&nbsp;
+                </em>,
+                <em>
+                  Updated: {formatDate(rowInfo.node.attributes.changed)}&nbsp;
+                </em>,
+
+                <a sx={{color: `#0071e3`, textDecoration: "none", "&:hover": {color: `#222`}}}
+                   href={"/edit/page/" + rowInfo.node.attributes.drupal_internal__nid}>Edit 〉</a>
               ],
             })}
           />
