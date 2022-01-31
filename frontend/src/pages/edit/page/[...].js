@@ -43,6 +43,14 @@ const InitPlugin = (form) => {
   return null
 }
 
+const InitScreenPlugin = (screenPlugin) => {
+  useScreenPlugin(screenPlugin)
+
+  return null
+}
+
+
+
 const EditPage = ({serverData}) => {
   const isWindow = typeof window !== "undefined" && typeof window.tinacms !== "undefined";
   const data = useStaticQuery(graphql`
@@ -83,7 +91,7 @@ const EditPage = ({serverData}) => {
     layout: "fullscreen"
   };
 
-  useScreenPlugin(ScreenPlugin);
+  isWindow && InitScreenPlugin(ScreenPlugin);
 
   if (serverData.hasOwnProperty("goto")) {
     navigate("/admin/login", {
