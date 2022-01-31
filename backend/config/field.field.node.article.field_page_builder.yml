@@ -1,0 +1,52 @@
+uuid: 8171621d-585a-463a-8df5-328bb3a3d4e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_builder
+    - node.type.article
+    - paragraphs.paragraphs_type.features
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.paragraph
+  module:
+    - entity_reference_revisions
+id: node.article.field_page_builder
+field_name: field_page_builder
+entity_type: node
+bundle: article
+label: 'Page builder'
+description: ''
+required: false
+translatable: true
+default_value: { }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      features: features
+      hero: hero
+      images: images
+      paragraph: paragraph
+    negate: 0
+    target_bundles_drag_drop:
+      feature:
+        weight: 7
+        enabled: false
+      features:
+        weight: 8
+        enabled: true
+      hero:
+        weight: 9
+        enabled: true
+      image:
+        weight: 10
+        enabled: false
+      images:
+        weight: 11
+        enabled: true
+      paragraph:
+        weight: 12
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,49 @@
+uuid: 155b7f38-5abc-471a-bd8b-4ed7c05587b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.hero
+  module:
+    - entity_reference_revisions
+id: paragraph.hero.field_buttons
+field_name: field_buttons
+entity_type: paragraph
+bundle: hero
+label: Buttons
+description: ''
+required: false
+translatable: false
+default_value: { }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      button: button
+    negate: 0
+    target_bundles_drag_drop:
+      button:
+        weight: 8
+        enabled: true
+      feature:
+        weight: 9
+        enabled: false
+      features:
+        weight: 10
+        enabled: false
+      hero:
+        weight: 11
+        enabled: false
+      image:
+        weight: 12
+        enabled: false
+      images:
+        weight: 13
+        enabled: false
+      paragraph:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

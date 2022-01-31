@@ -1,0 +1,24 @@
+uuid: 693290e4-0280-4b69-843f-9e532737efd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.hero
+  module:
+    - color_field
+id: paragraph.hero.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: hero
+label: 'Background Color'
+description: ''
+required: false
+translatable: false
+default_value:
+  - color: '#000000'
+    opacity: !!float 1
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type
