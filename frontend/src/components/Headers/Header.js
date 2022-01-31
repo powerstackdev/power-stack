@@ -81,13 +81,14 @@ export const AdminHeader = ({siteTitle, serverData}) => (
       position: "sticky",
       top: 0,
       zIndex: 1000,
-      height: "52px",
+      height: "62px",
       fontSize: "13px"
     }}
   >
     <div
       sx={{
-        margin: `0 auto`
+        margin: `0 auto`,
+        pt: `7px`
       }}
     >
       <Grid gap={2} columns={[2, "1fr 6fr"]}>
