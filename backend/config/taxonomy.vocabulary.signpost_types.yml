@@ -1,8 +1,0 @@
-uuid: 6c9f2608-0d09-457f-9552-6f8e69d0e06b
-langcode: en
-status: true
-dependencies: { }
-name: 'Signpost types'
-vid: signpost_types
-description: ''
-weight: 0

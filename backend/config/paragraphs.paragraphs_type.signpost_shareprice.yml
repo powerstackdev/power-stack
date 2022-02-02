@@ -1,0 +1,10 @@
+uuid: c612a383-20f8-4175-b6ca-756aefba4acc
+langcode: en
+status: true
+dependencies: {  }
+id: signpost_shareprice
+label: 'Signpost Shareprice'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

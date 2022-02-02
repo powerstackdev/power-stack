@@ -4,7 +4,7 @@ import { Badge, Box, Button, Card, Input } from "theme-ui";
 import React from "react";
 import { MdEmail } from "react-icons/md";
 
-const SignpostEmailsignup = ({ index, data }) => {
+const SignpostEmailSignup = ({ index, data }) => {
 
   return (
     <BlocksControls index={index}>
@@ -31,12 +31,12 @@ const SignpostEmailsignup = ({ index, data }) => {
   );
 }
 
-export const signpostEmailsignupBlock = {
-  Component: SignpostEmailsignup,
+export const signpostEmailSignupBlock = {
+  Component: SignpostEmailSignup,
   template: {
     label: "Email Signup",
     defaultItem: {
-      _template: "signpostEmailsignup",
+      _template: "signpostEmailSignup",
       heading: "Sign up to our newsletter",
       supporting_copy: "We won't spam you or share your details with anyone else",
     },
@@ -44,4 +44,4 @@ export const signpostEmailsignupBlock = {
   },
 };
 
-export default signpostEmailsignupBlock
+export default signpostEmailSignupBlock
