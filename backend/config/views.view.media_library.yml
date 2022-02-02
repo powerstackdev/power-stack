@@ -83,7 +83,7 @@ display:
           hide_alter_empty: true
           action_title: Action
           include_exclude: exclude
-          selected_actions: { }
+          selected_actions: {  }
         rendered_entity:
           id: rendered_entity
           table: media
@@ -169,7 +169,7 @@ display:
           perm: 'access media overview'
       cache:
         type: tag
-        options: { }
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -251,7 +251,7 @@ display:
             use_operator: false
             operator: status_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: status
             required: true
             remember: false
@@ -268,7 +268,7 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
+            default_group_multiple: {  }
             group_items:
               1:
                 title: Published
@@ -299,7 +299,7 @@ display:
             use_operator: false
             operator: name_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: name
             required: false
             remember: false
@@ -318,8 +318,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         bundle:
           id: bundle
           table: media_field_data
@@ -331,7 +331,7 @@ display:
           entity_field: bundle
           plugin_id: bundle
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -341,7 +341,7 @@ display:
             use_operator: false
             operator: bundle_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: type
             required: false
             remember: false
@@ -361,11 +361,11 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
+            default_group_multiple: {  }
             group_items:
-              1: { }
-              2: { }
-              3: { }
+              1: {  }
+              2: {  }
+              3: {  }
         status_extra:
           id: status_extra
           table: media_field_data
@@ -386,7 +386,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -403,8 +403,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         langcode:
           id: langcode
           table: media_field_data
@@ -416,7 +416,7 @@ display:
           entity_field: langcode
           plugin_id: language
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -426,7 +426,7 @@ display:
             use_operator: false
             operator: langcode_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: langcode
             required: false
             remember: false
@@ -446,19 +446,19 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: default
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
       row:
         type: fields
         options:
           default_field_elements: true
-          inline: { }
+          inline: {  }
           separator: ''
           hide_empty: false
       query:
@@ -468,13 +468,13 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
-      relationships: { }
+          query_tags: {  }
+      relationships: {  }
       css_class: ''
       use_ajax: true
-      header: { }
-      footer: { }
-      display_extenders: { }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: 0
       contexts:
@@ -484,7 +484,7 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: { }
+      tags: {  }
   page:
     id: page
     display_title: Page
@@ -544,7 +544,7 @@ display:
           hide_alter_empty: true
           action_title: Action
           include_exclude: exclude
-          selected_actions: { }
+          selected_actions: {  }
         name:
           id: name
           table: media_field_data
@@ -601,7 +601,7 @@ display:
           settings:
             link_to_entity: false
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -769,7 +769,7 @@ display:
           view_mode: media_library
       defaults:
         fields: false
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/content/media-grid
     cache_metadata:
       max-age: 0
@@ -781,7 +781,7 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: { }
+      tags: {  }
   widget:
     id: widget
     display_title: Widget
@@ -929,7 +929,7 @@ display:
           validate:
             type: none
             fail: 'not found'
-          validate_options: { }
+          validate_options: {  }
           glossary: false
           limit: 0
           case: none
@@ -958,7 +958,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -975,8 +975,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         name:
           id: name
           table: media_field_data
@@ -998,7 +998,7 @@ display:
             use_operator: false
             operator: name_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: name
             required: false
             remember: false
@@ -1017,8 +1017,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         default_langcode:
           id: default_langcode
           table: media_field_data
@@ -1040,7 +1040,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -1057,8 +1057,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -1091,7 +1091,7 @@ display:
           empty: true
           display_id: widget_table
       rendering_language: '***LANGUAGE_language_interface***'
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/content/media-widget
     cache_metadata:
       max-age: -1
@@ -1101,7 +1101,7 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags: { }
+      tags: {  }
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'
@@ -1209,7 +1209,7 @@ display:
           validate:
             type: none
             fail: 'not found'
-          validate_options: { }
+          validate_options: {  }
           glossary: false
           limit: 0
           case: none
@@ -1238,7 +1238,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -1255,8 +1255,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         name:
           id: name
           table: media_field_data
@@ -1278,7 +1278,7 @@ display:
             use_operator: false
             operator: name_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: name
             required: false
             remember: false
@@ -1297,8 +1297,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         default_langcode:
           id: default_langcode
           table: media_field_data
@@ -1320,7 +1320,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -1337,8 +1337,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -1379,7 +1379,7 @@ display:
           empty: true
           display_id: widget_table
       rendering_language: '***LANGUAGE_language_interface***'
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/content/media-widget-table
     cache_metadata:
       max-age: -1
@@ -1389,4 +1389,4 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags: { }
+      tags: {  }

@@ -40,6 +40,8 @@ const GenerateSignpostBlocks = () => {
   const [types, setTypes] = useState({});
 
   useEffect( () => {
+    let isSubscribed = true;
+
     const fetchData = async () =>  {
       const token = await isLoggedIn(document.cookie);
 
@@ -49,20 +51,20 @@ const GenerateSignpostBlocks = () => {
         },
       };
         fetch(
-          process.env.GATSBY_DRUPAL_HOST + `/jsonapi/taxonomy_term/signpost_types?sort=weight`,
+          process.env.GATSBY_DRUPAL_HOST + `/jsonapi/field_config/field_config?api-key=${process.env.GATSBY_DRUPAL_KEY}&filter[drupal_internal__id]=paragraph.signposts.field_signpost`,
           requestHeaders
         ).then(response => response.json()).then(async data => {
           let iterator = {}
+          for (const [, value] of Object.entries(data.data[0].attributes.settings.handler_settings.target_bundles)) {
 
-          for (const [, value] of Object.entries(data.data)) {
+            const importName = `${value.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')}`
+            const blockName = `${importName.charAt(0).toLowerCase() + importName.slice(1)}`
 
-            const machineName = `signpost${value.attributes.name.replace(/\s/g, "")}`
-            const importName = `Signpost${value.attributes.name.replace(/\s/g, "")}`
             const importFilename = './' + importName + '.js'
 
             try{
               const {default: loadedDefault} = await import(`${importFilename}`)
-              iterator[machineName] = loadedDefault
+              iterator[blockName] = loadedDefault
             } catch (e) {
               console.log(e)
             }
@@ -72,6 +74,7 @@ const GenerateSignpostBlocks = () => {
         })
     };
     fetchData();
+    return () => (isSubscribed = false)
   }, []);
 
   return types

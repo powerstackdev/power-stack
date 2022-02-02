@@ -78,7 +78,7 @@ display:
           hide_alter_empty: true
           action_title: Action
           include_exclude: exclude
-          selected_actions: { }
+          selected_actions: {  }
         thumbnail__target_id:
           id: thumbnail__target_id
           table: media_field_data
@@ -136,7 +136,7 @@ display:
             image_link: ''
             image_style: thumbnail
           group_column: ''
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -183,7 +183,7 @@ display:
           settings:
             link_to_entity: true
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -248,7 +248,7 @@ display:
           settings:
             link: false
           group_column: target_id
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -313,7 +313,7 @@ display:
           settings:
             link: true
           group_column: target_id
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -380,7 +380,7 @@ display:
             format_custom_false: Unpublished
             format_custom_true: Published
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -447,7 +447,7 @@ display:
             custom_date_format: ''
             timezone: ''
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -544,7 +544,7 @@ display:
           perm: 'access media overview'
       cache:
         type: tag
-        options: { }
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -574,7 +574,7 @@ display:
             field_identifier: created
           exposed: false
           granularity: second
-      arguments: { }
+      arguments: {  }
       filters:
         name:
           id: name
@@ -597,7 +597,7 @@ display:
             use_operator: false
             operator: name_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: name
             required: false
             remember: false
@@ -616,8 +616,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         bundle:
           id: bundle
           table: media_field_data
@@ -629,7 +629,7 @@ display:
           entity_field: bundle
           plugin_id: bundle
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -639,7 +639,7 @@ display:
             use_operator: false
             operator: bundle_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: type
             required: false
             remember: false
@@ -659,8 +659,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         status:
           id: status
           table: media_field_data
@@ -682,7 +682,7 @@ display:
             use_operator: false
             operator: status_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: status
             required: true
             remember: false
@@ -699,7 +699,7 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
+            default_group_multiple: {  }
             group_items:
               1:
                 title: Published
@@ -729,7 +729,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -746,8 +746,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         langcode:
           id: langcode
           table: media_field_data
@@ -759,7 +759,7 @@ display:
           entity_field: langcode
           plugin_id: language
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -769,7 +769,7 @@ display:
             use_operator: false
             operator: langcode_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: langcode
             required: false
             remember: false
@@ -789,12 +789,12 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: table
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
@@ -863,11 +863,11 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
-      relationships: { }
-      header: { }
-      footer: { }
-      display_extenders: { }
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: 0
       contexts:
@@ -877,7 +877,7 @@ display:
         - url.query_args
         - user
         - user.permissions
-      tags: { }
+      tags: {  }
   media_page_list:
     id: media_page_list
     display_title: Media
@@ -885,7 +885,7 @@ display:
     position: 1
     display_options:
       display_description: ''
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/content/media
       menu:
         type: tab
@@ -905,4 +905,4 @@ display:
         - url.query_args
         - user
         - user.permissions
-      tags: { }
+      tags: {  }

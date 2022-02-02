@@ -19,4 +19,4 @@ settings:
   label: 'Main page content'
   label_display: '0'
   provider: system
-visibility: { }
+visibility: {  }

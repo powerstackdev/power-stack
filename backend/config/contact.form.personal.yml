@@ -1,12 +1,12 @@
 uuid: b7d7805d-8da3-4e79-bd4b-3cbf9c23028b
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: jonvgt3CkUM2eMLTFwWfHileWWDC4YtXCuIlCahTk_I
 id: personal
 label: 'Personal contact form'
-recipients: { }
+recipients: {  }
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

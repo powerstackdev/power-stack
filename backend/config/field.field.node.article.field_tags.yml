@@ -16,7 +16,7 @@ label: Tags
 description: 'Enter a comma-separated list. For example: Amsterdam, Mexico City, "Cleveland, Ohio"'
 required: false
 translatable: true
-default_value: { }
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

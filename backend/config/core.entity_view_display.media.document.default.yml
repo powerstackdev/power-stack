@@ -17,8 +17,8 @@ content:
   field_media_document:
     type: file_default
     label: visually_hidden
-    settings: { }
-    third_party_settings: { }
+    settings: {  }
+    third_party_settings: {  }
     weight: 1
     region: content
 hidden:

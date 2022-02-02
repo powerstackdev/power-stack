@@ -134,7 +134,7 @@ display:
           settings:
             link_to_entity: true
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -199,7 +199,7 @@ display:
           settings:
             link: true
           group_column: target_id
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -261,9 +261,9 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: comment_username
-          settings: { }
+          settings: {  }
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -328,7 +328,7 @@ display:
           settings:
             link: true
           group_column: target_id
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -395,7 +395,7 @@ display:
             custom_date_format: ''
             timezone: ''
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -511,7 +511,7 @@ display:
           settings:
             link_to_entity: true
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -557,7 +557,7 @@ display:
           perm: 'administer comments'
       cache:
         type: tag
-        options: { }
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -587,7 +587,7 @@ display:
             field_identifier: changed
           exposed: false
           granularity: second
-      arguments: { }
+      arguments: {  }
       filters:
         status:
           id: status
@@ -610,7 +610,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -627,8 +627,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         subject:
           id: subject
           table: comment_field_data
@@ -650,7 +650,7 @@ display:
             use_operator: false
             operator: subject_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: subject
             required: false
             remember: false
@@ -669,8 +669,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         combine:
           id: combine
           table: views
@@ -690,7 +690,7 @@ display:
             use_operator: false
             operator: combine_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: author_name
             required: false
             remember: false
@@ -709,8 +709,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
           fields:
             name: name
             name_1: name_1
@@ -725,7 +725,7 @@ display:
           entity_field: langcode
           plugin_id: language
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -735,7 +735,7 @@ display:
             use_operator: false
             operator: langcode_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: langcode
             required: false
             remember: false
@@ -755,8 +755,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -764,7 +764,7 @@ display:
       style:
         type: table
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
@@ -831,7 +831,7 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
+          query_tags: {  }
       relationships:
         uid:
           id: uid
@@ -851,10 +851,10 @@ display:
       use_more: false
       use_more_always: true
       use_more_text: more
-      header: { }
-      footer: { }
+      header: {  }
+      footer: {  }
       hide_attachment_summary: false
-      display_extenders: { }
+      display_extenders: {  }
     cache_metadata:
       max-age: 0
       contexts:
@@ -863,7 +863,7 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }
       cacheable: false
   page_published:
     id: page_published
@@ -874,7 +874,7 @@ display:
       display_description: 'The approved comments listing.'
       display_comment: ''
       exposed_block: false
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/content/comment
       menu:
         type: tab
@@ -892,7 +892,7 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }
       cacheable: false
   page_unapproved:
     id: page_unapproved
@@ -1012,7 +1012,7 @@ display:
           settings:
             link_to_entity: true
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1077,7 +1077,7 @@ display:
           settings:
             link: true
           group_column: target_id
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1139,9 +1139,9 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: comment_username
-          settings: { }
+          settings: {  }
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1206,7 +1206,7 @@ display:
           settings:
             link: true
           group_column: target_id
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1273,7 +1273,7 @@ display:
             custom_date_format: ''
             timezone: ''
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1389,7 +1389,7 @@ display:
           settings:
             link_to_entity: false
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -1420,7 +1420,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -1437,8 +1437,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         subject:
           id: subject
           table: comment_field_data
@@ -1460,7 +1460,7 @@ display:
             use_operator: false
             operator: subject_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: subject
             required: false
             remember: false
@@ -1479,8 +1479,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         combine:
           id: combine
           table: views
@@ -1500,7 +1500,7 @@ display:
             use_operator: false
             operator: combine_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: author_name
             required: false
             remember: false
@@ -1519,8 +1519,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
           fields:
             name: name
             name_1: name_1
@@ -1535,7 +1535,7 @@ display:
           entity_field: langcode
           plugin_id: language
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -1545,7 +1545,7 @@ display:
             use_operator: false
             operator: langcode_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: langcode
             required: false
             remember: false
@@ -1565,8 +1565,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -1576,7 +1576,7 @@ display:
         filters: false
         filter_groups: false
       display_description: 'The unapproved comments listing.'
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/content/comment/approval
       menu:
         type: tab
@@ -1594,5 +1594,5 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }
       cacheable: false

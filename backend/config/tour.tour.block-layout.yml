@@ -10,7 +10,8 @@ id: block-layout
 label: 'Block Layout Page'
 module: block
 routes:
-  - route_name: block.admin_display
+  -
+    route_name: block.admin_display
 tips:
   block-layout:
     id: block-layout

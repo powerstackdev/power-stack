@@ -10,8 +10,10 @@ id: views-ui
 label: 'View edit page'
 module: views_ui
 routes:
-  - route_name: entity.view.edit_form
-  - route_name: entity.view.edit_display_form
+  -
+    route_name: entity.view.edit_form
+  -
+    route_name: entity.view.edit_display_form
 tips:
   views-main:
     id: views-main

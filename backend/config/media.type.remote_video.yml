@@ -1,7 +1,7 @@
 uuid: 47aec5b1-c568-4a0d-aaa2-c9f811968e05
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: hIBTnDGgDKnCiP6HUZm1m7600DHUEpC6FN3LQ4sUgZ4
 id: remote_video

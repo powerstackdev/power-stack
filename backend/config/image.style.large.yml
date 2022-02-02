@@ -1,7 +1,7 @@
 uuid: f4990e4e-8e56-4eed-859f-7da2db692a33
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: J2n0RpFzS0-bgSyxjs6rSdgxB1rb-bTAgqywNx_964M
 name: large

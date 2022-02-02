@@ -1,0 +1,6 @@
+name: TinaCMS JSON Page Builder
+type: module
+description: Create a Drupal endpoint to recieve data and create nodes and paragraphs from.
+package: TinaCMS
+core: 8.x
+core_version_requirement: ^8 || ^9

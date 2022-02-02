@@ -203,7 +203,7 @@ display:
           expose:
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         status_node:
           id: status_node
           table: node_field_data
@@ -217,11 +217,11 @@ display:
           expose:
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
       style:
         type: html_list
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           type: ul
@@ -241,21 +241,21 @@ display:
           field: node
           plugin_id: standard
           required: true
-      display_extenders: { }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
-      tags: { }
+      tags: {  }
   block_1:
     id: block_1
     display_title: Block
     display_plugin: block
     position: 1
     display_options:
-      display_extenders: { }
+      display_extenders: {  }
       block_description: 'Recent comments'
       block_category: 'Lists (Views)'
       allow:
@@ -266,4 +266,4 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
-      tags: { }
+      tags: {  }

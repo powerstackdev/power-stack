@@ -1,9 +1,9 @@
 uuid: 3ebdb368-8a1a-47d4-9c4c-d79fb5acc29d
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 id: editor
 label: Editor
 weight: 3
 is_admin: null
-permissions: { }
+permissions: {  }

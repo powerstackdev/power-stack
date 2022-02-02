@@ -1,7 +1,7 @@
 uuid: 5464e09f-bf2c-40a0-ba30-4663eea7210a
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: hzgvcRgZHltqWf8hBmttoWh95tCJoPL25lPq9YSIRsY
 id: video

@@ -13,7 +13,9 @@ editor: ckeditor
 settings:
   toolbar:
     rows:
-      - - name: Formatting
+      -
+        -
+          name: Formatting
           items:
             - Bold
             - Italic
@@ -22,24 +24,29 @@ settings:
             - Subscript
             - '-'
             - RemoveFormat
-        - name: Linking
+        -
+          name: Linking
           items:
             - DrupalLink
             - DrupalUnlink
-        - name: Lists
+        -
+          name: Lists
           items:
             - BulletedList
             - NumberedList
-        - name: Media
+        -
+          name: Media
           items:
             - Blockquote
             - DrupalImage
             - Table
             - HorizontalRule
-        - name: 'Block Formatting'
+        -
+          name: 'Block Formatting'
           items:
             - Format
-        - name: Tools
+        -
+          name: Tools
           items:
             - ShowBlocks
             - Source

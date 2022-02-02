@@ -1,7 +1,7 @@
 uuid: c94e77f7-fbb8-4ece-a6a0-631ab2d0b11b
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: Y9NmnZHQq20ASSyTNA6JnwtWrJJiSajOehGDtmUFdM0
 name: medium

@@ -1,7 +1,7 @@
 uuid: 5681d708-7abe-4619-9c29-caaf5ceaf46e
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
 name: 'Basic page'

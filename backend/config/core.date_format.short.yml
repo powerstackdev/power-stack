@@ -1,7 +1,7 @@
 uuid: d790a1b4-13de-45fe-aa35-21f77233856d
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: AlzeyytA8InBgxIG9H2UDJYs3CG98Zj6yRsDKmlbZwA
 id: short

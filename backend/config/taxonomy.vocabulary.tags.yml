@@ -1,7 +1,7 @@
 uuid: c30ab711-2192-4319-a4bf-fbcb76da2846
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: yoNVreoTdTZTY7GuE8fI9Jmxqdz8vlo4ZJKixMNSosw
 name: Tags

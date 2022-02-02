@@ -447,9 +447,9 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: basic_string
-          settings: { }
+          settings: {  }
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -544,7 +544,7 @@ display:
             use_operator: false
             operator: combine_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: user
             required: false
             remember: false
@@ -563,8 +563,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
           fields:
             name: name
             mail: mail
@@ -589,7 +589,7 @@ display:
             use_operator: false
             operator: status_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: status
             required: false
             remember: false
@@ -608,7 +608,7 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
+            default_group_multiple: {  }
             group_items:
               1:
                 title: Active
@@ -627,7 +627,7 @@ display:
           admin_label: ''
           plugin_id: user_roles
           operator: or
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -637,7 +637,7 @@ display:
             use_operator: false
             operator: roles_target_id_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: role
             required: false
             remember: false
@@ -657,8 +657,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
           reduce_duplicates: false
         permission:
           id: permission
@@ -669,7 +669,7 @@ display:
           admin_label: ''
           plugin_id: user_permissions
           operator: or
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -679,7 +679,7 @@ display:
             use_operator: false
             operator: permission_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: permission
             required: false
             remember: false
@@ -699,8 +699,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
           reduce_duplicates: false
         default_langcode:
           id: default_langcode
@@ -723,7 +723,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -740,8 +740,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         uid_raw:
           id: uid_raw
           table: users_field_data
@@ -765,7 +765,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -782,8 +782,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -791,7 +791,7 @@ display:
       style:
         type: table
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
@@ -870,7 +870,7 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
+          query_tags: {  }
       css_class: ''
       use_ajax: false
       group_by: false
@@ -882,7 +882,7 @@ display:
       link_url: ''
       display_comment: ''
       hide_attachment_summary: false
-      display_extenders: { }
+      display_extenders: {  }
     cache_metadata:
       max-age: 0
       contexts:
@@ -891,7 +891,7 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
@@ -901,7 +901,7 @@ display:
       defaults:
         show_admin_links: false
       show_admin_links: false
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/people/list
       menu:
         type: 'default tab'
@@ -924,4 +924,4 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }

@@ -10,4 +10,4 @@ id: media_unpublish_action
 label: 'Unpublish media'
 type: media
 plugin: 'entity:unpublish_action:media'
-configuration: { }
+configuration: {  }

@@ -6,7 +6,7 @@ incrementalbuild_url: ''
 contentsync_url: ''
 build_published: true
 log_json: false
-preview_entity_types: { }
+preview_entity_types: {  }
 preview_target: ''
 preview_callback_url: ''
 publish_private_files: false

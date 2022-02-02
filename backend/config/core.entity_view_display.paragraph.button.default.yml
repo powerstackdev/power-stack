@@ -21,7 +21,7 @@ content:
       url_plain: false
       rel: ''
       target: ''
-    third_party_settings: { }
+    third_party_settings: {  }
     weight: 1
     region: content
-hidden: { }
+hidden: {  }

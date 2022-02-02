@@ -1,7 +1,7 @@
 uuid: 8073fd9c-2c16-43de-8ff0-72a9599cecf9
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: cCiWdBHgLwj5omG35lsKc4LkW4MBdmcctkVop4ol5x0
 name: thumbnail

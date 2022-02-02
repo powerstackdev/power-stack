@@ -25,7 +25,7 @@ display:
     position: 0
     display_options:
       title: ''
-      fields: { }
+      fields: {  }
       pager:
         type: full
         options:
@@ -63,7 +63,7 @@ display:
           perm: 'access content'
       cache:
         type: tag
-        options: { }
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -131,7 +131,7 @@ display:
             field_identifier: created
           exposed: false
           granularity: second
-      arguments: { }
+      arguments: {  }
       filters:
         promote:
           id: promote
@@ -154,7 +154,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -171,8 +171,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         status:
           id: status
           table: node_field_data
@@ -185,7 +185,7 @@ display:
           expose:
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         langcode:
           id: langcode
           table: node_field_data
@@ -208,7 +208,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -226,12 +226,12 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: default
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           uses_fields: false
@@ -246,11 +246,11 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
-      relationships: { }
-      header: { }
-      footer: { }
-      display_extenders: { }
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -258,7 +258,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   feed_1:
     id: feed_1
     display_title: Feed
@@ -273,7 +273,7 @@ display:
       style:
         type: rss
         options:
-          grouping: { }
+          grouping: {  }
           uses_fields: false
           description: ''
       row:
@@ -281,7 +281,7 @@ display:
         options:
           relationship: none
           view_mode: rss
-      display_extenders: { }
+      display_extenders: {  }
       path: rss.xml
       sitename_title: true
       displays:
@@ -293,14 +293,14 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: { }
+      display_extenders: {  }
       path: node
     cache_metadata:
       max-age: -1
@@ -309,4 +309,4 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }

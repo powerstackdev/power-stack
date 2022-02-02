@@ -77,7 +77,7 @@ display:
           perm: 'access user profiles'
       cache:
         type: tag
-        options: { }
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -107,7 +107,7 @@ display:
             field_identifier: access
           exposed: false
           granularity: second
-      arguments: { }
+      arguments: {  }
       filters:
         status:
           id: status
@@ -121,7 +121,7 @@ display:
           expose:
             operator: '0'
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         access:
           id: access
           table: users_field_data
@@ -147,7 +147,7 @@ display:
             use_operator: false
             operator: access_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: access
             required: false
             remember: false
@@ -166,12 +166,12 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: html_list
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           type: ul
@@ -186,8 +186,8 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
-      relationships: { }
+          query_tags: {  }
+      relationships: {  }
       header:
         result:
           id: result
@@ -199,15 +199,15 @@ display:
           plugin_id: result
           empty: false
           content: 'There are currently @total users online.'
-      footer: { }
-      display_extenders: { }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
-      tags: { }
+      tags: {  }
   who_s_online_block:
     id: who_s_online_block
     display_title: 'Who''s online'
@@ -215,7 +215,7 @@ display:
     position: 1
     display_options:
       display_description: 'A list of users that are currently logged in.'
-      display_extenders: { }
+      display_extenders: {  }
       block_description: 'Who''s online'
     cache_metadata:
       max-age: -1
@@ -223,4 +223,4 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
-      tags: { }
+      tags: {  }

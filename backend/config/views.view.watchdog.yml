@@ -378,7 +378,7 @@ display:
           settings:
             link_to_entity: true
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -470,7 +470,7 @@ display:
           perm: 'access site reports'
       cache:
         type: none
-        options: { }
+        options: {  }
       empty:
         area:
           id: area_text_custom
@@ -497,7 +497,7 @@ display:
             label: ''
             field_identifier: wid
           exposed: false
-      arguments: { }
+      arguments: {  }
       filters:
         type:
           id: type
@@ -508,7 +508,7 @@ display:
           admin_label: ''
           plugin_id: dblog_types
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -518,7 +518,7 @@ display:
             use_operator: false
             operator: type_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: type
             required: false
             remember: false
@@ -538,8 +538,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         severity:
           id: severity
           table: watchdog
@@ -549,7 +549,7 @@ display:
           admin_label: ''
           plugin_id: in_operator
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -559,7 +559,7 @@ display:
             use_operator: false
             operator: severity_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: severity
             required: false
             remember: false
@@ -579,8 +579,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -588,7 +588,7 @@ display:
       style:
         type: table
         options:
-          grouping: { }
+          grouping: {  }
           row_class: '{{ type }} {{ severity }}'
           default_row_class: true
           columns:
@@ -669,7 +669,7 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
+          query_tags: {  }
       relationships:
         uid:
           id: uid
@@ -681,9 +681,9 @@ display:
           plugin_id: standard
           required: false
       css_class: admin-dblog
-      header: { }
-      footer: { }
-      display_extenders: { }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -692,14 +692,14 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }
   page:
     id: page
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/reports/dblog
     cache_metadata:
       max-age: -1
@@ -709,4 +709,4 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }

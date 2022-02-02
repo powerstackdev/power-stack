@@ -1,7 +1,7 @@
 uuid: 91b1208b-1579-4233-9189-5764ef8fb2dd
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: _D9q3XSnP6ik9we9UuoTvZsQKPuYNp_G9PfwVtWzgnQ
 id: document

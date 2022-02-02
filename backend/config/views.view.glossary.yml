@@ -217,9 +217,9 @@ display:
           perm: 'access content'
       cache:
         type: tag
-        options: { }
-      empty: { }
-      sorts: { }
+        options: {  }
+      empty: {  }
+      sorts: {  }
       arguments:
         title:
           id: title
@@ -240,14 +240,14 @@ display:
           default_argument_options:
             argument: a
           default_argument_skip_url: false
-          summary_options: { }
+          summary_options: {  }
           summary:
             format: default_summary
           specify_validation: true
           validate:
             type: none
             fail: 'not found'
-          validate_options: { }
+          validate_options: {  }
           glossary: true
           limit: 1
           case: upper
@@ -267,7 +267,7 @@ display:
           expose:
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         langcode:
           id: langcode
           table: node_field_data
@@ -290,7 +290,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -308,12 +308,12 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: table
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           uses_fields: false
@@ -341,7 +341,7 @@ display:
         type: fields
         options:
           default_field_elements: true
-          inline: { }
+          inline: {  }
           separator: ''
           hide_empty: false
       query:
@@ -351,7 +351,7 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
+          query_tags: {  }
       relationships:
         uid:
           id: uid
@@ -363,9 +363,9 @@ display:
           plugin_id: standard
           required: false
       use_ajax: true
-      header: { }
-      footer: { }
-      display_extenders: { }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -375,7 +375,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   attachment_1:
     id: attachment_1
     display_title: Attachment
@@ -417,7 +417,7 @@ display:
           validate:
             type: none
             fail: 'not found'
-          validate_options: { }
+          validate_options: {  }
           glossary: true
           limit: 1
           case: upper
@@ -426,10 +426,10 @@ display:
           break_phrase: false
       query:
         type: views_query
-        options: { }
+        options: {  }
       defaults:
         arguments: false
-      display_extenders: { }
+      display_extenders: {  }
       displays:
         default: default
         page_1: page_1
@@ -443,7 +443,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
@@ -452,8 +452,8 @@ display:
     display_options:
       query:
         type: views_query
-        options: { }
-      display_extenders: { }
+        options: {  }
+      display_extenders: {  }
       path: glossary
       menu:
         type: normal
@@ -470,4 +470,4 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }

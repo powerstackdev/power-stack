@@ -15,7 +15,7 @@ label: URL
 description: ''
 required: false
 translatable: false
-default_value: { }
+default_value: {  }
 default_value_callback: ''
 settings:
   title: 1

@@ -1,7 +1,7 @@
 uuid: e5321127-864e-4ac8-b03c-fb3da7056d82
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: YWMv3Do9fsPFhylyFkOwcqcFP4jSU6DLRootOlgrC0M
 id: refresh_token

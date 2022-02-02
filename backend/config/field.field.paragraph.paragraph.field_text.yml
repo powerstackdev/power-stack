@@ -15,7 +15,7 @@ label: Text
 description: ''
 required: false
 translatable: false
-default_value: { }
+default_value: {  }
 default_value_callback: ''
-settings: { }
+settings: {  }
 field_type: text_long

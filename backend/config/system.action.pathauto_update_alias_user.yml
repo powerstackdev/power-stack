@@ -13,4 +13,4 @@ id: pathauto_update_alias_user
 label: 'Update URL alias'
 type: user
 plugin: pathauto_update_alias
-configuration: { }
+configuration: {  }

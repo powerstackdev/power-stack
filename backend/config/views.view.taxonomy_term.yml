@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      fields: { }
+      fields: {  }
       pager:
         type: mini
         options:
@@ -59,8 +59,8 @@ display:
           perm: 'access content'
       cache:
         type: tag
-        options: { }
-      empty: { }
+        options: {  }
+      empty: {  }
       sorts:
         sticky:
           id: sticky
@@ -123,7 +123,7 @@ display:
             type: 'entity:taxonomy_term'
             fail: 'not found'
           validate_options:
-            bundles: { }
+            bundles: {  }
             access: true
             operation: view
             multiple: 0
@@ -154,7 +154,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -172,8 +172,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         status:
           id: status
           table: taxonomy_index
@@ -193,7 +193,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -210,12 +210,12 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: default
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           uses_fields: false
@@ -230,8 +230,8 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
-      relationships: { }
+          query_tags: {  }
+      relationships: {  }
       link_display: page_1
       link_url: ''
       header:
@@ -248,8 +248,8 @@ display:
           view_mode: full
           tokenize: true
           bypass_access: false
-      footer: { }
-      display_extenders: { }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -258,7 +258,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   feed_1:
     id: feed_1
     display_title: Feed
@@ -273,7 +273,7 @@ display:
       style:
         type: rss
         options:
-          grouping: { }
+          grouping: {  }
           uses_fields: false
           description: ''
       row:
@@ -283,8 +283,8 @@ display:
           view_mode: default
       query:
         type: views_query
-        options: { }
-      display_extenders: { }
+        options: {  }
+      display_extenders: {  }
       path: taxonomy/term/%/feed
       displays:
         page_1: page_1
@@ -296,7 +296,7 @@ display:
         - url
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
@@ -305,8 +305,8 @@ display:
     display_options:
       query:
         type: views_query
-        options: { }
-      display_extenders: { }
+        options: {  }
+      display_extenders: {  }
       path: taxonomy/term/%
     cache_metadata:
       max-age: -1
@@ -316,4 +316,4 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }

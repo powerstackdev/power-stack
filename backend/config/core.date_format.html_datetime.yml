@@ -1,7 +1,7 @@
 uuid: 92b11d79-b3eb-4675-a416-004191654a0b
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: jxfClwZIRXIdcvMrE--WkcZxDGUVoOIE3Sm2NRZlFuE
 id: html_datetime

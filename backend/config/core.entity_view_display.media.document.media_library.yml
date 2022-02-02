@@ -22,7 +22,7 @@ content:
     settings:
       image_link: ''
       image_style: thumbnail
-    third_party_settings: { }
+    third_party_settings: {  }
     weight: 0
     region: content
 hidden:

@@ -19,4 +19,4 @@ settings:
   label: Help
   label_display: '0'
   provider: help
-visibility: { }
+visibility: {  }

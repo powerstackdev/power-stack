@@ -77,8 +77,8 @@ display:
           perm: 'access content'
       cache:
         type: tag
-        options: { }
-      empty: { }
+        options: {  }
+      empty: {  }
       sorts:
         created:
           id: created
@@ -96,7 +96,7 @@ display:
             field_identifier: created
           exposed: false
           granularity: second
-      arguments: { }
+      arguments: {  }
       filters:
         status:
           id: status
@@ -110,7 +110,7 @@ display:
           expose:
             operator: '0'
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         access:
           id: access
           table: users_field_data
@@ -136,7 +136,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -153,8 +153,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: html_list
       row:
@@ -166,18 +166,18 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
-      relationships: { }
-      header: { }
-      footer: { }
-      display_extenders: { }
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
-      tags: { }
+      tags: {  }
   block_1:
     id: block_1
     display_title: 'Who''s new'
@@ -185,7 +185,7 @@ display:
     position: 1
     display_options:
       display_description: 'A list of new users'
-      display_extenders: { }
+      display_extenders: {  }
       block_description: 'Who''s new'
       block_category: User
     cache_metadata:
@@ -194,4 +194,4 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
-      tags: { }
+      tags: {  }

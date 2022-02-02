@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.images
     - paragraphs.paragraphs_type.paragraph
+    - paragraphs.paragraphs_type.signposts
   module:
     - entity_reference_revisions
 id: node.page.field_page_builder
@@ -19,7 +20,7 @@ label: 'Page builder'
 description: ''
 required: false
 translatable: false
-default_value: { }
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
@@ -29,8 +30,12 @@ settings:
       images: images
       features: features
       hero: hero
+      signposts: signposts
     negate: 0
     target_bundles_drag_drop:
+      button:
+        weight: 12
+        enabled: false
       feature:
         weight: -9
         enabled: false
@@ -48,5 +53,17 @@ settings:
         enabled: true
       paragraph:
         weight: -13
+        enabled: true
+      signpost_default:
+        weight: 20
+        enabled: false
+      signpost_email_signup:
+        weight: 21
+        enabled: false
+      signpost_shareprice:
+        weight: 22
+        enabled: false
+      signposts:
+        weight: 19
         enabled: true
 field_type: entity_reference_revisions

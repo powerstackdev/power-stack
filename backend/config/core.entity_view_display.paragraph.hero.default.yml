@@ -23,8 +23,8 @@ content:
   field_align:
     type: list_default
     label: above
-    settings: { }
-    third_party_settings: { }
+    settings: {  }
+    third_party_settings: {  }
     weight: 4
     region: content
   field_background_color:
@@ -33,7 +33,7 @@ content:
     settings:
       format: hex
       opacity: true
-    third_party_settings: { }
+    third_party_settings: {  }
     weight: 0
     region: content
   field_buttons:
@@ -42,7 +42,7 @@ content:
     settings:
       view_mode: default
       link: ''
-    third_party_settings: { }
+    third_party_settings: {  }
     weight: 5
     region: content
   field_headline:
@@ -50,14 +50,14 @@ content:
     label: above
     settings:
       link_to_entity: false
-    third_party_settings: { }
+    third_party_settings: {  }
     weight: 2
     region: content
   field_subtext:
     type: text_default
     label: above
-    settings: { }
-    third_party_settings: { }
+    settings: {  }
+    third_party_settings: {  }
     weight: 3
     region: content
   field_text_color:
@@ -66,7 +66,7 @@ content:
     settings:
       format: hex
       opacity: true
-    third_party_settings: { }
+    third_party_settings: {  }
     weight: 1
     region: content
-hidden: { }
+hidden: {  }

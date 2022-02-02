@@ -10,4 +10,4 @@ id: comment_publish_action
 label: 'Publish comment'
 type: comment
 plugin: 'entity:publish_action:comment'
-configuration: { }
+configuration: {  }

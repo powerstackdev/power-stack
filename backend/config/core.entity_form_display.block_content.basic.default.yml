@@ -23,7 +23,7 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
-    third_party_settings: { }
+    third_party_settings: {  }
   info:
     type: string_textfield
     weight: -5
@@ -31,5 +31,5 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: { }
-hidden: { }
+    third_party_settings: {  }
+hidden: {  }

@@ -10,4 +10,4 @@ id: comment_delete_action
 label: 'Delete comment'
 type: comment
 plugin: 'entity:delete_action:comment'
-configuration: { }
+configuration: {  }

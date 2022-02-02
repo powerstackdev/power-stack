@@ -112,9 +112,9 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: timestamp_ago
-          settings: { }
+          settings: {  }
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -144,7 +144,7 @@ display:
           perm: 'access content'
       cache:
         type: tag
-        options: { }
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -174,7 +174,7 @@ display:
             field_identifier: changed
           exposed: false
           granularity: second
-      arguments: { }
+      arguments: {  }
       filters:
         status_extra:
           id: status_extra
@@ -196,7 +196,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -213,8 +213,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         langcode:
           id: langcode
           table: node_field_data
@@ -237,7 +237,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -255,12 +255,12 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: html_list
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           type: ul
@@ -275,7 +275,7 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
+          query_tags: {  }
       relationships:
         uid:
           id: uid
@@ -293,9 +293,9 @@ display:
       use_more_text: More
       link_display: '0'
       link_url: ''
-      header: { }
-      footer: { }
-      display_extenders: { }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -304,14 +304,14 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   block_1:
     id: block_1
     display_title: Block
     display_plugin: block
     position: 1
     display_options:
-      display_extenders: { }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -320,4 +320,4 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }

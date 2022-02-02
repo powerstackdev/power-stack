@@ -24,7 +24,7 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: { }
+    third_party_settings: {  }
   subject:
     type: string_textfield
     weight: 10
@@ -32,5 +32,5 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: { }
-hidden: { }
+    third_party_settings: {  }
+hidden: {  }

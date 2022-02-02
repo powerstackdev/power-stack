@@ -17,7 +17,8 @@ import { isLoggedIn } from "../../../services/Auth";
 import {
   processDrupalFeaturesData,
   processDrupalImageData,
-  processDrupalParagraphData
+  processDrupalParagraphData,
+  processDrupalSignpostsData
 } from "../../../utils/GetRequestUtils";
 import { formatDrupalType } from "../../../utils/Utils";
 import Header from "../../../components/Headers/Header";
@@ -63,17 +64,16 @@ const EditPage = ({serverData}) => {
     }
   `)
 
-  const cms = isWindow && InitCMS
-
   const formConfig = {
     initialValues: serverData.content,
     onSubmit(data) {
+      console.log(data)
       axios.post(process.env.GATSBY_DRUPAL_HOST + `/api/tinacms/page/create`, qs.stringify({
         json_data: data
       })).then((response) => {
-        cms.alerts.success("Saved!")
+        isWindow && window.tinacms.alerts.success("Saved!")
       }, (error) => {
-        cms.alerts.error("Error saving");
+        isWindow && window.tinacms.alerts.error("Error saving");
       })
     },
   }
@@ -196,7 +196,8 @@ export async function getServerData({params, headers}) {
     'field_page_builder',
     'field_page_builder.field_image.field_media.field_media_image',
     'field_page_builder.field_image.field_media.thumbnail',
-    'field_page_builder.field_feature'
+    'field_page_builder.field_feature',
+    'field_page_builder.field_signpost'
   ]
 
   const currentRoute =
@@ -248,6 +249,10 @@ export async function getServerData({params, headers}) {
 
         case "features":
           blocks[index] = processDrupalFeaturesData(type, value)
+          break
+
+        case "signposts":
+          blocks[index] = processDrupalSignpostsData(type, value)
           break
 
         default:

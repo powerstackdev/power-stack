@@ -10,4 +10,4 @@ id: node_delete_action
 label: 'Delete content'
 type: node
 plugin: 'entity:delete_action:node'
-configuration: { }
+configuration: {  }

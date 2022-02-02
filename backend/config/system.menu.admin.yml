@@ -1,7 +1,7 @@
 uuid: daf5f74a-82a3-4b24-bb10-3128b33d931f
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: sapEi2YDGoI9yQIT_WgIV2vUdQ6DScH0V3fAyTadAL0
 id: admin

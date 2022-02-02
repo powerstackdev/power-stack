@@ -1,10 +1,10 @@
 uuid: 9a0e0359-8839-4edd-b7c9-8050a871d462
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 id: signposts
 label: Signposts
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: { }
+behavior_plugins: {  }

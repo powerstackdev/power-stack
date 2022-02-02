@@ -1,10 +1,10 @@
 uuid: 93efde94-1965-45b1-9e35-ad014680c176
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 id: hero
 label: Hero
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: { }
+behavior_plugins: {  }

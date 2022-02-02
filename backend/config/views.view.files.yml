@@ -110,7 +110,7 @@ display:
           click_sort_column: value
           type: file_link
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -482,7 +482,7 @@ display:
           perm: 'access files overview'
       cache:
         type: tag
-        options: { }
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -491,8 +491,8 @@ display:
           plugin_id: text_custom
           empty: true
           content: 'No files available.'
-      sorts: { }
-      arguments: { }
+      sorts: {  }
+      arguments: {  }
       filters:
         filename:
           id: filename
@@ -515,7 +515,7 @@ display:
             use_operator: false
             operator: filename_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: filename
             required: false
             remember: false
@@ -534,8 +534,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         filemime:
           id: filemime
           table: file_managed
@@ -557,7 +557,7 @@ display:
             use_operator: false
             operator: filemime_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: filemime
             required: false
             remember: false
@@ -576,8 +576,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         status:
           id: status
           table: file_managed
@@ -589,7 +589,7 @@ display:
           entity_field: status
           plugin_id: file_status
           operator: in
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -599,7 +599,7 @@ display:
             use_operator: false
             operator: status_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: status
             required: false
             remember: false
@@ -619,12 +619,12 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: table
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
@@ -709,7 +709,7 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
+          query_tags: {  }
       relationships:
         fid:
           id: fid
@@ -721,9 +721,9 @@ display:
           required: true
       group_by: true
       show_admin_links: true
-      header: { }
-      footer: { }
-      display_extenders: { }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -732,7 +732,7 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }
   page_1:
     id: page_1
     display_title: 'Files overview'
@@ -752,7 +752,7 @@ display:
           admin_label: 'File usage'
           required: false
       display_description: ''
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/content/files
       menu:
         type: tab
@@ -769,7 +769,7 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }
   page_2:
     id: page_2
     display_title: 'File usage'
@@ -1001,7 +1001,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-      empty: { }
+      empty: {  }
       arguments:
         fid:
           id: fid
@@ -1037,17 +1037,17 @@ display:
           validate:
             type: none
             fail: 'not found'
-          validate_options: { }
+          validate_options: {  }
           break_phrase: false
           not: false
-      filters: { }
+      filters: {  }
       filter_groups:
         operator: AND
-        groups: { }
+        groups: {  }
       style:
         type: table
         options:
-          grouping: { }
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
@@ -1093,7 +1093,7 @@ display:
           description: ''
       row:
         type: fields
-        options: { }
+        options: {  }
       defaults:
         empty: false
         title: false
@@ -1117,7 +1117,7 @@ display:
           required: true
       group_by: false
       display_description: ''
-      display_extenders: { }
+      display_extenders: {  }
       path: admin/content/files/usage/%
     cache_metadata:
       max-age: -1
@@ -1126,4 +1126,4 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: { }
+      tags: {  }

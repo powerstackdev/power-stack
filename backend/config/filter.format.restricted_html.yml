@@ -1,7 +1,7 @@
 uuid: 1e4025bc-cf97-4ee7-b355-de563b30f16c
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: oz6NyPDAB4HB6N9hgH2LwNVtCd-sXbMG1fbn5KsRIDI
 name: 'Restricted HTML'
@@ -22,7 +22,7 @@ filters:
     provider: filter
     status: true
     weight: 0
-    settings: { }
+    settings: {  }
   filter_url:
     id: filter_url
     provider: filter

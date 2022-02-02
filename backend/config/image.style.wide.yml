@@ -1,7 +1,7 @@
 uuid: 1e85eda5-94bd-47cb-93f4-b3dc7f7cfb96
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 _core:
   default_config_hash: LswCVLg8z4Zk1u6pV1Dpj1qUj5YY2CQ7_ojx7bJQ8qk
 name: wide

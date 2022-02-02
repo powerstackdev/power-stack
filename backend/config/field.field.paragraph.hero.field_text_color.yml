@@ -16,7 +16,8 @@ description: ''
 required: false
 translatable: false
 default_value:
-  - color: '#000000'
+  -
+    color: '#000000'
     opacity: !!float 1
 default_value_callback: ''
 settings:
