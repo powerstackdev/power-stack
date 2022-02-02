@@ -55,3 +55,4 @@ hidden:
   field_image: true
   field_page_builder: true
   field_tags: true
+  langcode: true
