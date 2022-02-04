@@ -9,7 +9,7 @@ import { cssVar, rgba } from "polished";
 export const Slider = ({data, index}) => {
   return (
     <Box sx={{
-      backgroundImage: `url(${typeof data.image !== "undefined" ? data.image : ""})`,
+      backgroundImage: `url(${typeof data.image !== "undefined" ? data.image.src : ""})`,
       backgroundSize: `cover`,
       height: `100%`
     }}>
@@ -67,11 +67,11 @@ export const sliderBlock = {
       label: "Description"
     },
     {
-      name: "image",
+      name: "image.src",
       label: "Image",
       component: "image",
       parse: (media) => `${media.src}?id=${media.id}&vid=${media.vid}`,
-      previewSrc: (src) => src
+      previewSrc: (image) => image,
     },
     {
       name: "text_color",

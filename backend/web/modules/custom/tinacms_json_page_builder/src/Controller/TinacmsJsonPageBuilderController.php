@@ -23,12 +23,13 @@ class TinacmsJsonPageBuilderController extends ControllerBase {
     'feature',
     'images',
     'image',
+    'sliders',
+    'slider',
     'signposts',
     'signpostDefault',
     'signpostEmailSignup',
     'signpostShareprice',
   ];
-
 
   public function action(Request $request) {
 
@@ -154,6 +155,7 @@ class TinacmsJsonPageBuilderController extends ControllerBase {
         case "images":
         case "features":
         case "signposts":
+        case "sliders":
           $blockParagraph->set('field_' . substr($field, 0, -1), $this->processNestedBlocks($value));
           break;
         default:

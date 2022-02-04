@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, navigate, useStaticQuery } from "gatsby";
-import { useCMS, useForm, usePlugin, useScreenPlugin } from "tinacms";
+import { useForm, usePlugin, useScreenPlugin } from "tinacms";
 import { Global } from "@emotion/react";
 import axios from "axios";
 import qs from "qs";
@@ -18,7 +18,8 @@ import {
   processDrupalFeaturesData,
   processDrupalImageData,
   processDrupalParagraphData,
-  processDrupalSignpostsData
+  processDrupalSignpostsData,
+  processDrupalSlidersData
 } from "../../../utils/GetRequestUtils";
 import { formatDrupalType } from "../../../utils/Utils";
 import Header from "../../../components/Headers/Header";
@@ -28,29 +29,22 @@ import { Box, Spinner } from "theme-ui";
 import DrupalAdminPage from "../../admin/content";
 
 // These init functions are a bit of a hack to get around the the conditional rules of hooks error
-const InitCMS = () => {
-  useCMS();
+
+const InitForm = (formConfig) => {
+  return useForm(formConfig);
+};
+
+const InitPlugin = (form) => {
+  usePlugin(form);
 
   return null;
 };
 
-const InitForm = (formConfig) => {
-  return useForm(formConfig);
-}
-
-const InitPlugin = (form) => {
-  usePlugin(form)
-
-  return null
-}
-
 const InitScreenPlugin = (screenPlugin) => {
-  useScreenPlugin(screenPlugin)
+  useScreenPlugin(screenPlugin);
 
-  return null
-}
-
-
+  return null;
+};
 
 const EditPage = ({serverData}) => {
   const isWindow = typeof window !== "undefined" && typeof window.tinacms !== "undefined";
@@ -62,21 +56,21 @@ const EditPage = ({serverData}) => {
         }
       }
     }
-  `)
+  `);
 
   const formConfig = {
     initialValues: serverData.content,
     onSubmit(data) {
-      console.log(data)
+      console.log(data);
       axios.post(process.env.GATSBY_DRUPAL_HOST + `/api/tinacms/page/create`, qs.stringify({
         json_data: data
       })).then((response) => {
-        isWindow && window.tinacms.alerts.success("Saved!")
+        isWindow && window.tinacms.alerts.success("Saved!");
       }, (error) => {
         isWindow && window.tinacms.alerts.error("Error saving");
-      })
-    },
-  }
+      });
+    }
+  };
 
   const [, form] = isWindow ? InitForm(formConfig) : ["", ""];
 
@@ -179,33 +173,36 @@ const availableBlocks = {
   sliders: sliderListBlock,
   features: featureListBlock,
   accordions: accordionListBlock
-}
+};
 
-export default EditPage
+export default EditPage;
 
 export async function getServerData({params, headers}) {
-  const token = await isLoggedIn(Object.fromEntries(headers).cookie)
+  const token = await isLoggedIn(Object.fromEntries(headers).cookie);
 
   const requestHeaders = {
     headers: {
-      Authorization: `Bearer ${token.access_token}`,
-    },
-  }
+      Authorization: `Bearer ${token.access_token}`
+    }
+  };
 
   const includes = [
-    'field_page_builder',
-    'field_page_builder.field_image.field_media.field_media_image',
-    'field_page_builder.field_image.field_media.thumbnail',
-    'field_page_builder.field_feature',
-    'field_page_builder.field_signpost'
-  ]
+    "field_page_builder",
+    "field_page_builder.field_image.field_media.field_media_image",
+    "field_page_builder.field_image.field_media.thumbnail",
+    "field_page_builder.field_feature",
+    "field_page_builder.field_signpost",
+    "field_page_builder.field_slider",
+    "field_page_builder.field_slider.field_media.field_media_image",
+    "field_page_builder.field_slider.field_media.thumbnail",
+  ];
 
   const currentRoute =
     `jsonapi/node?filter[drupal_internal__nid]=` +
     params["*"] +
-    '&include=' +
+    "&include=" +
     includes.toString() +
-    `&jsonapi_include=1`
+    `&jsonapi_include=1`;
 
   try {
     const [adminMenu, content] = await Promise.all([
@@ -216,68 +213,72 @@ export async function getServerData({params, headers}) {
       fetch(
         process.env.GATSBY_DRUPAL_HOST + `/` + currentRoute,
         requestHeaders
-      ),
-    ])
+      )
+    ]);
     if (
       adminMenu.status === 401 ||
       content.status === 401
     ) {
       return {
         props: {
-          goto: 'page/edit/' + params["*"]
-        },
-      }
+          goto: "page/edit/" + params["*"]
+        }
+      };
     }
     if (
       !adminMenu.ok || !content.ok
     ) {
-      throw new Error(`Response failed`)
+      throw new Error(`Response failed`);
     }
 
-    const data = await content.json()
+    const data = await content.json();
 
-    let drupalData = {}
+    let drupalData = {};
 
-    let blocks = []
+    let blocks = [];
     data.data[0].field_page_builder.forEach((value, index) => {
-      let type = formatDrupalType(value.type)
+      let type = formatDrupalType(value.type);
 
       switch (type) {
         case "images":
-          blocks[index] = processDrupalImageData(type, value)
-          break
+          blocks[index] = processDrupalImageData(type, value);
+          break;
 
         case "features":
-          blocks[index] = processDrupalFeaturesData(type, value)
-          break
+          blocks[index] = processDrupalFeaturesData(type, value);
+          break;
 
         case "signposts":
-          blocks[index] = processDrupalSignpostsData(type, value)
-          break
+          blocks[index] = processDrupalSignpostsData(type, value);
+          break;
+
+        case "sliders":
+          blocks[index] = processDrupalSlidersData(type, value);
+          break;
 
         default:
-          blocks[index] = processDrupalParagraphData(type, value)
+          blocks[index] = processDrupalParagraphData(type, value);
       }
-    })
+    });
 
 
-    drupalData.title = data.data[0].title
-    drupalData.nid = data.data[0].drupal_internal__nid
-    drupalData.uid = data.data[0].uid
-    drupalData.blocks = blocks
+    drupalData.title = data.data[0].title;
+    drupalData.nid = data.data[0].drupal_internal__nid;
+    drupalData.uid = data.data[0].uid;
+    drupalData.blocks = blocks;
 
     return {
       props: {
         adminMenu: await adminMenu.json(),
-        content: drupalData,
-      },
-    }
+        content: drupalData
+      }
+    };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return {
       status: 500,
       headers: {},
-      props: {},
-    }
+      props: {}
+    };
   }
 }

@@ -46,7 +46,6 @@ export const imageBlock = {
         label: "Image",
         component: "image",
         parse: (media) => `${media.src}?id=${media.id}&vid=${media.vid}`,
-        mid: (media) => `${media.mid}`,
         previewSrc: (src) => src,
         focusRing: false
       },
