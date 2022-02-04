@@ -1,0 +1,37 @@
+uuid: 5b484c8a-b341-4ca4-a376-641b1143006f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sliders.field_delay
+    - field.field.paragraph.sliders.field_slider
+    - paragraphs.paragraphs_type.sliders
+  module:
+    - paragraphs
+id: paragraph.sliders.default
+targetEntityType: paragraph
+bundle: sliders
+mode: default
+content:
+  field_delay:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_slider:
+    type: entity_reference_paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.images
     - paragraphs.paragraphs_type.paragraph
     - paragraphs.paragraphs_type.signposts
+    - paragraphs.paragraphs_type.sliders
   module:
     - entity_reference_revisions
 id: node.page.field_page_builder
@@ -31,6 +32,7 @@ settings:
       features: features
       hero: hero
       signposts: signposts
+      sliders: sliders
     negate: 0
     target_bundles_drag_drop:
       button:
@@ -65,5 +67,11 @@ settings:
         enabled: false
       signposts:
         weight: 19
+        enabled: true
+      slider:
+        weight: 25
+        enabled: false
+      sliders:
+        weight: 26
         enabled: true
 field_type: entity_reference_revisions
