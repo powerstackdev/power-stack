@@ -16,9 +16,9 @@ function AccordionList({data, index}) {
           p: `5rem 4rem`
         }}
       >
-        <Accordion>
+        <Accordion className={"accordion-wrapper"}>
           {data.accordions && data.accordions.map(({ _template, ...data }, i) => {
-            return <AccordionInner key={data.heading} data={data}/>
+            return <AccordionInner className={"accordion-tab"} key={data.heading} data={data}/>
           })}
         </Accordion>
       </div>

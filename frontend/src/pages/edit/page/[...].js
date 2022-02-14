@@ -156,9 +156,8 @@ const EditPage = ({ serverData }) => {
       <div className="home">
         {isWindow ? (
           <InlineForm form={isWindow && form}>
-            {console.log(serverData.content)}
             <Title title={serverData.content?.title} />
-            <InlineBlocks name="blocks" blocks={availableBlocks} />
+            <InlineBlocks className={'blocks'} name="blocks" blocks={availableBlocks} />
           </InlineForm>
         ) : (
           <Box
