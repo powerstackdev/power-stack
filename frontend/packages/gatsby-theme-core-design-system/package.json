@@ -1,0 +1,13 @@
+{
+    "name": "gatsby-theme-core-design-system",
+    "main": "index.js",
+    "version": "1.0.0",
+    "dependencies": {
+        "@powerstack/drupal-oauth-connector": "workspace:*"
+    },
+    "peerDependencies": {
+        "gatsby": "^4.0.0",
+        "react": "^17.0.0 || ^18.0.0",
+        "react-dom": "^17.0.0 || ^18.0.0"
+    }
+}

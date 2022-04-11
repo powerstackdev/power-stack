@@ -1,0 +1,20 @@
+{
+  "name": "gatsby-theme-tina-edit",
+  "main": "index.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "@tinacms/icons": "^0.42.1",
+    "@tinacms/react-forms": "^0.43.3",
+    "@tinacms/toolkit": "^0.56.4",
+    "gatsby-plugin-page-creator": "^4.11.1",
+    "gatsby-plugin-tinacms": "workspace:^",
+    "gatsby-theme-core-design-system": "workspace:^",
+    "react-tinacms-editor": "^0.52.10",
+    "react-tinacms-inline": "0.53.3"
+  },
+  "peerDependencies": {
+    "gatsby": "^4.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  }
+}

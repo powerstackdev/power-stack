@@ -1,0 +1,14 @@
+{
+    "name": "gatsby-theme-drupal-admin",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+        "gatsby-plugin-page-creator": "^4.11.1",
+        "gatsby-theme-core-design-system": "workspace:^"
+    },
+    "peerDependencies": {
+        "gatsby": "^4.0.0",
+        "react": "^17.0.0 || ^18.0.0",
+        "react-dom": "^17.0.0 || ^18.0.0"
+    }
+}
