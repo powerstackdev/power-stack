@@ -3,8 +3,14 @@
     "version": "1.0.0",
     "main": "index.js",
     "dependencies": {
-        "gatsby-plugin-page-creator": "^4.11.1",
-        "gatsby-theme-core-design-system": "workspace:^"
+        "@nosferatu500/theme-file-explorer": "^3.0.11",
+        "absolution": "^1.0.2",
+        "gatsby-theme-core-design-system": "workspace:^",
+        "javascript-time-ago": "^2.3.10",
+        "react-sortable-tree": "^2.8.0",
+        "react-time-ago": "^7.1.4",
+        "stream-browserify": "^3.0.0",
+        "url": "^0.11.0"
     },
     "peerDependencies": {
         "gatsby": "^4.0.0",
