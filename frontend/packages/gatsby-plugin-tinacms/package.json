@@ -4,7 +4,6 @@
     "main": "index.js",
     "dependencies": {
         "axios": "^0.26.1",
-        "react-beautiful-dnd": "^13.1.0",
         "tinacms": "^0.60.3"
     },
     "peerDependencies": {

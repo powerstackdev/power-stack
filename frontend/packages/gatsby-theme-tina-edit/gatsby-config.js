@@ -4,7 +4,12 @@ module.exports = {
     {
       resolve: "gatsby-plugin-tinacms",
       options: {
+        editPath: `/edit/page`,
         enabled: true,
+        toolbar: true,
+        sidebar: {
+          position: `overlay`
+        }
       },
     },
   ],

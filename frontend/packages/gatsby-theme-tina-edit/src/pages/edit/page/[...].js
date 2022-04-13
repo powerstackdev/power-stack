@@ -25,7 +25,7 @@ import { formatDrupalType } from "@powerstack/utils"
 import Header from "gatsby-theme-core-design-system/src/components/Headers/Header"
 import Footer from "gatsby-theme-core-design-system/src/components/Footers/Footer"
 import { Title } from "gatsby-theme-core-design-system/src/components/Text/Title"
-import { Box, Spinner } from "theme-ui"
+import { Box, Spinner, Text } from "theme-ui"
 
 // These init functions are a bit of a hack to get around the the conditional rules of hooks error
 
