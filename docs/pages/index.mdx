@@ -1,0 +1,102 @@
+import {
+  ScreenContainer,
+  Button,
+  HeroSection,
+  Hero,
+  HeroBody,
+  HeroTitle,
+  HeroTeaser,
+  HeroActionList,
+  HeroAction,
+  FeatureSection,
+  FeatureList,
+  Feature,
+  FeatureTitle,
+  FeatureText,
+  FeatureImage,
+} from "smooth-doc/components"
+import { Link } from 'gatsby'
+
+import heroBackgroundURL from '../images/hero-background.png'
+
+<HeroSection>
+  <Hero backgroundImageURL={heroBackgroundURL}>
+    <HeroBody>
+      <HeroTitle>Defining digital experiences for the modern web.</HeroTitle>
+      <HeroTeaser>Quick. Extensible. Secure. Scalable.</HeroTeaser>
+      <HeroActionList>
+        <HeroAction>
+          <Button as={Link} to="/docs/getting-started/">
+            Explore Docs
+          </Button>
+        </HeroAction>
+      </HeroActionList>
+    </HeroBody>
+  </Hero>
+</HeroSection>
+
+<FeatureSection>
+  <FeatureList>
+    <Feature>
+      <FeatureTitle>Unrivalled CMS capabilities</FeatureTitle>
+      <FeatureText>
+        Built with the power of Drupal, you can have assurance
+      </FeatureText>
+    </Feature>
+    <Feature>
+      <FeatureTitle>Inline page building like no other</FeatureTitle>
+      <FeatureText>
+        Inline
+      </FeatureText>
+    </Feature>
+    <Feature>
+      <FeatureTitle>Performance </FeatureTitle>
+      <FeatureText>
+        Dark mode is natively supported and theme is fully customizable!
+      </FeatureText>
+    </Feature>
+    <Feature>
+      <FeatureTitle>Ready-to-use components</FeatureTitle>
+      <FeatureText>
+        A set of ready-to-use components to build great landing pages.
+      </FeatureText>
+    </Feature>
+    <Feature>
+      <FeatureTitle>React Live Code Editor</FeatureTitle>
+      <FeatureText>
+        Give life to your docs with Live Code Editing. Users can edit examples
+        and see changes in real-time!
+      </FeatureText>
+    </Feature>
+    <Feature>
+      <FeatureTitle>Enhanced SEO</FeatureTitle>
+      <FeatureText>
+        Smooth DOC handles all SEO metadata, sitemap and social sharing for you.
+      </FeatureText>
+    </Feature>
+    <Feature>
+      <FeatureTitle>Algolia DocSearch</FeatureTitle>
+      <FeatureText>
+        A good search is a real asset for a documentation. Algolia DocSearch is
+        built-in!
+      </FeatureText>
+    </Feature>
+    <Feature>
+      <FeatureTitle>Carbon Ads</FeatureTitle>
+      <FeatureText>
+        Monetizing your open source project is often hard. Carbon Ads support
+        makes it easier!
+      </FeatureText>
+    </Feature>
+  </FeatureList>
+</FeatureSection>
+<ScreenContainer as="section" py={5}>
+  <Article>
+    <GettingStarted />
+    <SiblingNav>
+      <SiblingNavLink type="next" to="/docs/getting-started/">
+        Read full documentation
+      </SiblingNavLink>
+    </SiblingNav>
+  </Article>
+</ScreenContainer>
