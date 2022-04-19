@@ -44,6 +44,6 @@ jobs:
 
       # Sync commits and tags for the configured subtree splits
       - name: subtree split
-        uses: acrobat/subtree-splitter@v1
+        uses: acrobat/subtree-splitter@v1.0.0
         with:
           config-path: .github/split-repo-config.json # Reference the location where you saved your config file
