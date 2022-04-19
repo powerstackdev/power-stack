@@ -3,7 +3,7 @@
 {
   "subtree-splits": [
     {
-      "name": "First Package",
+      "name": "powerstackdev/first-package",
       "directory": "backend-monorepo/packages/first-package",
       "target": "git@github.com:powerstackdev/backend_first-package.git"
     }
