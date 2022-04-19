@@ -1,5 +1,6 @@
-node_modules/
-.cache/
-public
-*.env*
-*.idea/*
+**/node_modules/*
+**/vendor/*
+**/.cache/*
+**/public/*
+**.env*
+**/.idea/*
