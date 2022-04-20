@@ -1,8 +1,8 @@
 {
-  "name": "frontend-monorepo",
+  "name": "frontend-layer",
   "private": true,
   "workspaces": [
-    "example-sites/*",
+    "starters/*",
     "packages/*",
     "packages/@powerstack/*"
   ],

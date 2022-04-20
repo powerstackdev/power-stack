@@ -11,6 +11,11 @@
       "name": "powerstackdev/scripts",
       "directory": "scripts",
       "target": "git@github.com:powerstackdev/scripts.git"
+    },
+    {
+      "name": "powerstackdev/frontend_gatsby-theme-tina-edit",
+      "directory": "frontend/packages/gatsby-theme-tina-edit",
+      "target": "git@github.com:powerstackdev/frontend_gatsby-theme-tina-edit.git"
     }
   ]
 }

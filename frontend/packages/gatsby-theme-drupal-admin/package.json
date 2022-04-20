@@ -9,6 +9,7 @@
         "javascript-time-ago": "^2.3.10",
         "react-sortable-tree": "^2.8.0",
         "react-time-ago": "^7.1.4",
+        "split-html": "^1.1.0",
         "stream-browserify": "^3.0.0",
         "url": "^0.11.0"
     },
