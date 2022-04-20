@@ -13,6 +13,31 @@
       "target": "git@github.com:powerstackdev/scripts.git"
     },
     {
+      "name": "powerstackdev/frontend_powerstack-drupal-oauth-connector",
+      "directory": "frontend/packages/@powerstack/drupal-oauth-connector",
+      "target": "git@github.com:powerstackdev/frontend_powerstack-drupal-oauth-connector.git"
+    },
+    {
+      "name": "powerstackdev/frontend_powerstack-utils",
+      "directory": "frontend/packages/@powerstack/utils",
+      "target": "git@github.com:powerstackdev/frontend_powerstack-utils.git"
+    },
+    {
+      "name": "powerstackdev/frontend_gatsby-plugin-tinacms",
+      "directory": "frontend/packages/gatsby-plugin-tinacms",
+      "target": "git@github.com:powerstackdev/frontend_gatsby-plugin-tinacms.git"
+    },
+    {
+      "name": "powerstackdev/frontend_gatsby-theme-core-design-system",
+      "directory": "frontend/packages/gatsby-theme-core-design-system",
+      "target": "git@github.com:powerstackdev/frontend_gatsby-theme-core-design-system.git"
+    },
+    {
+      "name": "powerstackdev/frontend_gatsby-theme-drupal-admin",
+      "directory": "frontend/packages/gatsby-theme-drupal-admin",
+      "target": "git@github.com:powerstackdev/frontend_gatsby-theme-drupal-admin.git"
+    },
+    {
       "name": "powerstackdev/frontend_gatsby-theme-tina-edit",
       "directory": "frontend/packages/gatsby-theme-tina-edit",
       "target": "git@github.com:powerstackdev/frontend_gatsby-theme-tina-edit.git"
