@@ -7,6 +7,7 @@ on:
       - '*'
     paths:
       - '**/packages/**'
+      - '**/starters/**'
     # Tag push events should be ignored, they will be handled with the create event below.
     tags-ignore:
       - '*'
@@ -21,7 +22,7 @@ jobs:
   sync_commits:
     runs-on: ubuntu-latest
     name: Sync commits
-    if: github.repository == 'powerstackdev/Power-Stack' # Execute this workflow job only on the main repository.
+    if: github.repository == 'powerstackdev/power-stack' # Execute this workflow job only on the main repository.
     steps:
       - uses: actions/checkout@v2
         with:
@@ -46,4 +47,4 @@ jobs:
       - name: subtree split
         uses: acrobat/subtree-splitter@v1.0.0
         with:
-          config-path: .github/split-repo-config.json # Reference the location where you saved your config file
+          config-path: ./package-config.json # Reference the location where you saved your config file

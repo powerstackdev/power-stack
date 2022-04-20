@@ -1,0 +1,16 @@
+
+
+{
+  "subtree-splits": [
+    {
+      "name": "powerstackdev/docs",
+      "directory": "docs",
+      "target": "git@github.com:powerstackdev/docs.git"
+    },
+    {
+      "name": "powerstackdev/scripts",
+      "directory": "scripts",
+      "target": "git@github.com:powerstackdev/scripts.git"
+    }
+  ]
+}

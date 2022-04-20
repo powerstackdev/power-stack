@@ -8,6 +8,7 @@ export default {
   ...starterTheme,
   colors: {
     ...starterTheme.colors,
+    primary: `#e60000`,
     background: `#efefef`,
     white: '#fff'
   },
