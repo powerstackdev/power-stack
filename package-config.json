@@ -8,9 +8,9 @@
       "target": "git@github.com:powerstackdev/docs.git"
     },
     {
-      "name": "powerstackdev/scripts",
-      "directory": "scripts",
-      "target": "git@github.com:powerstackdev/scripts.git"
+      "name": "powerstackdev/backend_tinacms-json-page-builder",
+      "directory": "backend/packages/tinacms_json_page_builder",
+      "target": "git@github.com:powerstackdev/backend_tinacms-json-page-builder.git"
     },
     {
       "name": "powerstackdev/frontend_powerstack-drupal-oauth-connector",
@@ -41,6 +41,11 @@
       "name": "powerstackdev/frontend_gatsby-theme-tina-edit",
       "directory": "frontend/packages/gatsby-theme-tina-edit",
       "target": "git@github.com:powerstackdev/frontend_gatsby-theme-tina-edit.git"
+    },
+    {
+      "name": "powerstackdev/scripts",
+      "directory": "scripts",
+      "target": "git@github.com:powerstackdev/scripts.git"
     }
   ]
 }
