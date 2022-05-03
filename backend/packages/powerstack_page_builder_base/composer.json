@@ -1,0 +1,29 @@
+{
+    "name": "drupal/powerstack_page_builder_base",
+    "type": "drupal-module",
+    "description": "Basic setup for the Drupal Page Builder settings",
+    "keywords": [
+        "Drupal"
+    ],
+    "license": "GPL-2.0+",
+    "repositories": {
+        "composer-2-workspaces": {
+            "type": "vcs",
+            "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
+        },
+        "1": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    },
+    "require": {
+        "drupal/paragraphs": "^1.14",
+        "drupal/field_group": "^3.2"
+    },
+    "require-dev": {
+        "tmdk/composer-workspaces-plugin": "dev-overrides"
+    },
+    "extra": {
+        "workspace-root": "../.."
+    }
+}

@@ -2,24 +2,27 @@
     "name": "drupal/tinacms_json_page_builder",
     "description": "Provides a connection between Tina and Drupal",
     "type": "drupal-module",
-    "license": "GPL-2",
+    "license": "GPL-2.0+",
     "authors": [
         {
             "name": "Xavier Mirabelli-Montan",
             "email": "xavier.mm@investisdigital.com"
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "composer-2-workspaces": {
             "type": "vcs",
-            "url":  "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
+            "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
+        },
+        "0": {
+            "type": "vcs",
+            "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
         }
-    ],
-    "require": {},
+    },
     "extra": {
         "workspace-root": "../.."
     },
     "require-dev": {
-        "tmdk/composer-workspaces-plugin": "dev-master"
+        "tmdk/composer-workspaces-plugin": "dev-overrides"
     }
 }
