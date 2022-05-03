@@ -3,4 +3,5 @@
 **/.cache/*
 **/public/*
 **.env*
+!*docksal.env
 **/.idea/*
