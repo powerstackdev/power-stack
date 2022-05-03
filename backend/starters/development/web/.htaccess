@@ -179,8 +179,4 @@ AddEncoding gzip svgz
   Header always set X-Content-Type-Options nosniff
   # Disable Proxy header, since it's an attack vector.
   RequestHeader unset Proxy
-  SetEnvIf Origin "http(s)?://(www\.)?(preview-quantummaster.gtsb.io|build-08f24077-1d41-48cf-998c-aee769cae6ef.gtsb.io|quantummaster.gatsbyjs.io|example.com|localhost:9000|localhost:8000)$" AccessControlAllowOrigin=$0
-  Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
-  Header set Access-Control-Allow-Headers "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, X-CSRF-Token, Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  Header set Access-Control-Allow-Credentials true
 </IfModule>
