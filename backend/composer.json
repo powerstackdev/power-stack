@@ -6,14 +6,21 @@
         }
     ],
     "require-dev": {
-        "tmdk/composer-workspaces-plugin": "dev-master"
+        "tmdk/composer-workspaces-plugin": "dev-overrides"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "workspaces": {
             "packages": [
                 "packages/*",
                 "starters/*"
             ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "tmdk/composer-workspaces-plugin": true
         }
     }
 }

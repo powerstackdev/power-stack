@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fcf0a28a9ebf2b4027106dcdfa411f9e",
+    "content-hash": "8e4cfc2a755d762ff3fc24145fbadb18",
     "packages": [],
     "packages-dev": [
         {
@@ -72,16 +72,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.37",
+            "version": "v4.4.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "b17d76d7ed179f017aad646e858c90a2771af15d"
+                "reference": "40790bdf293b462798882ef6da72bb49a4a6633a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/b17d76d7ed179f017aad646e858c90a2771af15d",
-                "reference": "b17d76d7ed179f017aad646e858c90a2771af15d",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/40790bdf293b462798882ef6da72bb49a4a6633a",
+                "reference": "40790bdf293b462798882ef6da72bb49a4a6633a",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v4.4.37"
+                "source": "https://github.com/symfony/finder/tree/v4.4.41"
             },
             "funding": [
                 {
@@ -130,7 +130,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:41:36+00:00"
+            "time": "2022-04-14T15:36:10+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -299,29 +299,28 @@
         },
         {
             "name": "tmdk/composer-workspaces-plugin",
-            "version": "dev-master",
+            "version": "dev-overrides",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xaviemirmon/composer-2-workspaces-plugin.git",
-                "reference": "418ad13bf5a5cffc04792ad16e1d28586aa5d685"
+                "reference": "9a5661178c498cd6850026613bc2ed1eba70dc1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xaviemirmon/composer-2-workspaces-plugin/zipball/418ad13bf5a5cffc04792ad16e1d28586aa5d685",
-                "reference": "418ad13bf5a5cffc04792ad16e1d28586aa5d685",
+                "url": "https://api.github.com/repos/xaviemirmon/composer-2-workspaces-plugin/zipball/9a5661178c498cd6850026613bc2ed1eba70dc1e",
+                "reference": "9a5661178c498cd6850026613bc2ed1eba70dc1e",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1 || ^2.0",
                 "ext-json": "*",
-                "php": "^7.1",
+                "php": "^7.1 || ^8.0",
                 "symfony/filesystem": "^4.2",
                 "symfony/finder": "^4.2"
             },
             "require-dev": {
                 "composer/composer": "^1.8.5 || ^2.0"
             },
-            "default-branch": true,
             "type": "composer-plugin",
             "extra": {
                 "class": "ComposerWorkspacesPlugin\\Plugin"
@@ -342,19 +341,19 @@
             ],
             "description": "Workspaces plugin for Composer",
             "support": {
-                "source": "https://github.com/xaviemirmon/composer-2-workspaces-plugin/tree/master"
+                "source": "https://github.com/xaviemirmon/composer-2-workspaces-plugin/tree/overrides"
             },
-            "time": "2022-04-20T09:01:38+00:00"
+            "time": "2022-05-03T08:42:33+00:00"
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "tmdk/composer-workspaces-plugin": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
