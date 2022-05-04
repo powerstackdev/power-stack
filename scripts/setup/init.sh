@@ -30,7 +30,7 @@ title "STEP 2" "Initializing stack"
 fin project start
 
 # CMS
-title "Installing CMS" "STEP 3"
+title "STEP 3" "Installing CMS"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/backend/install_cms.sh
 
 title "DONE!" "Completed all initialization steps"

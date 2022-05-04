@@ -72,10 +72,17 @@ create_oauth_keys()
 	if [ -f "${dest}/private.key" -a -f "${dest}/public.key" ]; then
     echo "Keys at ${dest} are already in place."
 	else
+	  chmod 755 "${dest}"
+
 	  echo "Generating keys at ${dest}..."
     openssl genrsa -out "${dest}/private.key" 2048
     openssl rsa -in "${dest}/private.key" -pubout > "${dest}/public.key"
+
+    echo "Locking down permissions on keys at ${dest}..."
+    chmod 600 "${dest}/private.key"
+    chmod 600 "${dest}/public.key"
 	fi
+
 }
 
 
