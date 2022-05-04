@@ -14,6 +14,24 @@ echo_yellow () { echo -e "${yellow}$1${NC}"; }
 
 br () { printf "\n"; }
 
+title () {
+    local step="$1"
+  	local text="$2"
+
+    br
+    echo -e "${green_bg}${step}${NC}${green} Initializing codebase...${NC}"
+    br
+
+}
+
+subtitle () {
+  	local text="$1"
+
+  	br
+  	echo_green "${text}..."
+    br
+}
+
 if [ -f .env ]
 then
   export $(cat .env | sed 's/#.*//g' | xargs)

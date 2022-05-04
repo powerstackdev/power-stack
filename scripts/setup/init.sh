@@ -4,31 +4,36 @@
 
 #-------------------------- Execution --------------------------------
 
+# Code
+title "Cleaning" "Cleaning up any old instances"
+
 # Cleanup
 fin project rm -f
 
 # Code
-echo -e "${green_bg} Step 1 ${NC}${green} Initializing codebase...${NC}"
+title "STEP 1" "Initializing codebase"
+
 # Using "fin docker-compose run cli <command>" to run a one off command using the cli service config
 # This way, we can run cli commands BEFORE starting the whole stack (which may fail without dependencies installed first)
-echo -e "${green} * CMS codebase...${NC}"
+subtitle " * CMS codebase"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/backend/install_dependencies.sh
-echo -e "${green} * Frontend codebase...${NC}"
+
+subtitle " * Frontend codebase"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/frontend/install_dependencies.sh
-echo -e "${green} * Docs codebase...${NC}"
+
+subtitle " * Docs codebase"
+
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/docs/install_dependencies.sh
 
 # Stack
-echo -e "${green_bg} Step 2 ${NC}${green} Initializing stack...${NC}"
+title "STEP 2" "Initializing stack"
 fin project start
 
 # CMS
-echo -e "${green_bg} Step 3 ${NC}${green} Installing CMS...${NC}"
+title "Installing CMS" "STEP 3"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/backend/install_cms.sh
 
-echo -e "${green_bg} DONE! ${NC}${green} Completed all initialization steps.${NC}"
-
-br
+title "DONE!" "Completed all initialization steps"
 
 echo -e "Dashboard: ${yellow} http://${VIRTUAL_HOST}${NC}"
 

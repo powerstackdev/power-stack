@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+. ./scripts/development/backend/update_install_dependencies_and_reinstall_cms.sh
