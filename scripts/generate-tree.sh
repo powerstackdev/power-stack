@@ -6,5 +6,4 @@ then
     exit
 fi
 
-cd ../
 tree -L 4 -d -I 'node_modules|vendor|public'

@@ -19,9 +19,8 @@ title () {
   	local text="$2"
 
     br
-    echo -e "${green_bg}${step}${NC}${green} Initializing codebase...${NC}"
+    echo -e "${green_bg} ${step} ${NC}${green} ${text}... ${NC}"
     br
-
 }
 
 subtitle () {
@@ -30,6 +29,30 @@ subtitle () {
   	br
   	echo_green "${text}..."
     br
+}
+
+copy_env_file()
+{
+
+  local source="${PROJECT_ROOT}/.docksal/settings/.env"
+  local dest="${PROJECT_ROOT}/.env"
+
+  echo "Copying ${source} to ${dest}..."
+
+	if [[ ! -f $dest ]]; then
+		cp $source $dest
+	else
+		echo "${dest} already in place. Creating backup first..."
+		mv $dest $dest.old
+		cp $source $dest
+	fi
+}
+
+update_env_file() {
+  local key="$1"
+  local value="$2"
+
+  sed -i "s%\(${key} *= *\).*%\1${value}%" "${PROJECT_ROOT}/.env"
 }
 
 if [ -f .env ]

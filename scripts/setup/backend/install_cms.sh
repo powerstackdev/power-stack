@@ -60,6 +60,17 @@ init_settings ()
 
 }
 
+init_cors ()
+{
+  subtitle "Copying cors.services.yml"
+
+  rm -f "${SITEDIR_PATH}/cors.services.yml"
+  copy_settings_file "${PROJECT_ROOT}/.docksal/settings/cors.services.yml" "${SITEDIR_PATH}/cors.services.yml"
+
+  sed -i "s#'AO_REPLACE_ME'#'http://backend.${VIRTUAL_HOST}', '*'#g" "${SITEDIR_PATH}/cors.services.yml"
+}
+
+
 # Create a key file
 # Skips if the destination file already exists.
 # @param $1 destination file
@@ -114,6 +125,7 @@ site_install ()
 # Project initialization steps
 fix_permissions
 init_settings
+init_cors
 create_oauth_keys "${SITE_PATH}/keys"
 time site_install
 

@@ -7,8 +7,13 @@ subtitle "Reinstalling CMS"
 title "Step 1" "Updating and installing Composer dependencies"
 
 # Installing composer dependencies
-fin docker-compose run --rm cli bash -lc /var/www/scripts/development/backend/update_dependencies.sh
-fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/backend/install_dependencies.sh
+fin exec ./scripts/development/backend/update_dependencies.sh
+fin exec ./scripts/setup/backend/install_dependencies.sh
 
 title "Step 2" "Reinstalling codebase"
-fin docker-compose run --rm cli bash -lc ./scripts/setup/backend/install_cms.sh
+fin exec ./scripts/setup/backend/install_cms.sh
+
+# Configuring frontend to link to newly provisioned backend environment
+title "STEP 3" "Linking environments"
+fin exec /var/www/scripts/misc/add_backend_creds_to_env_file.sh
+fin project restart frontend
