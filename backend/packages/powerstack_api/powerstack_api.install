@@ -1,0 +1,51 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for Power Stack API.
+ */
+
+use Drupal\consumers\Entity\Consumer;
+use Drupal\user\Entity\User;
+
+function powerstack_api_install() {
+  // Set config to simple_oauth.settings
+  $config = \Drupal::service('config.factory')
+    ->getEditable('simple_oauth.settings');
+
+  // Set new expiration values
+  $config->set('access_token_expiration', 14400);
+  $config->set('authorization_code_expiration', 144000);
+
+  // Set new values for keys.
+  $config->set('public_key', '../keys/public.key');
+  $config->set('private_key', '../keys/private.key');
+
+  // Save config
+  $config->save();
+
+  Consumer::create([
+    'label' => 'Gatsby Consumer',
+    'description' => 'This is the consumer for your Power Stack site.',
+    'new_secret' => getenv('GATSBY_CLIENT_SECRET'),
+    'is_default' => TRUE,
+  ])->save();
+
+  $role = \Drupal\user\Entity\Role::create(array('id' => 'api', 'label' => 'API'));
+  $role->grantPermission('administer menu');
+  $role->grantPermission('use key authentication');
+
+  $role->save();
+
+  $random = new \Drupal\Component\Utility\Random();
+
+  $user = User::create();
+  $user->setPassword($random->string());
+  $user->enforceIsNew();
+  $user->setEmail('test@test.com');
+  $user->setUsername('API'); //This username must be unique and accept only a-Z,0-9, - _ @ .
+  $user->activate();
+  $user->addRole('api');
+  //Save user
+  $res = $user->save();
+
+}

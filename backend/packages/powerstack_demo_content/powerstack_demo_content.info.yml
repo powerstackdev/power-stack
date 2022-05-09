@@ -1,0 +1,5 @@
+name: Demo Content
+type: module
+description: Basic content
+package: Power Stack
+core_version_requirement: ^8 || ^9

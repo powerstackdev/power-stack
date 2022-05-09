@@ -1,0 +1,56 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for Power Stack Demo Content.
+ */
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use \Drupal\node\Entity\Node;
+use Drupal\path_alias\Entity\PathAlias;
+
+function powerstack_demo_content_install() {
+
+  $type = \Drupal\node\Entity\NodeType::create([
+    'type' => 'page',
+    'name' => 'Page',
+    'description' => 'A <em>page</em> content type.',
+  ]);
+
+  $type->save();
+
+  $type = \Drupal\node\Entity\NodeType::create([
+    'type' => 'post',
+    'name' => 'Post',
+    'description' => 'A <em>post</em> content type.',
+  ]);
+
+  $type->save();
+
+
+  // Create node object with attached file.
+  $node = Node::create([
+    'type'        => 'page',
+    'title'       => 'Welcome to Power Stack',
+  ]);
+  $node->save();
+
+  PathAlias::create([
+    'path' => "/node/" . $node->id(),
+    'alias' => '/welcome',
+    'langcode' => 'en',
+  ])->save();
+
+  $items = array(
+    $node->id() => 'Menuitem 1',
+  );
+
+  foreach($items as $link => $title) {
+    $menu_link = MenuLinkContent::create([
+      'title' => $title,
+      'link' => ['uri' => 'entity:node/' . $link],
+      'menu_name' => 'main',
+      'weight' => 1,
+      'expanded' => TRUE,
+    ]);
+    $menu_link->save();
+  }
+}

@@ -32,7 +32,7 @@
     "require": {
         "drupal/gin": "^3.0",
         "drupal/powerstack_api": "dev-master",
-        "drupal/powerstack_page_builder_base": "dev-master"
+        "drupal/powerstack_page_builder": "dev-master"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

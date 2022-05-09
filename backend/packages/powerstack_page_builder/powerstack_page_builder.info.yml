@@ -1,6 +1,6 @@
-name: Power Stack API
+name: Page Builder
 type: module
-description: Base setup for Headless API
+description: Base setup for Page Bulder
 package: Power Stack
 core_version_requirement: ^8 || ^9
 

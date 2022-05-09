@@ -1,4 +1,4 @@
-name: Power Stack API
+name: API
 type: module
 description: Base setup for Headless API
 package: Power Stack
@@ -7,3 +7,10 @@ core_version_requirement: ^8 || ^9
 dependencies:
   - drupal:jsonapi
   - jsonapi_extras:jsonapi_extras
+  - powerstack_demo_content:powerstack_demo_content
+  - simple_oauth:simple_oauth
+  - gatsby:gatsby_extras
+  - key_auth:key_auth
+  - jsonapi_cross_bundles:jsonapi_cross_bundles
+  - jsonapi_menu_items:jsonapi_menu_items
+  - jsonapi_include:jsonapi_include

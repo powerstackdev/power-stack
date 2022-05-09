@@ -31,6 +31,7 @@ install:
   - options
   - path
   - path_alias
+  - powerstack_api
   - big_pipe
   - dynamic_page_cache
   - taxonomy
