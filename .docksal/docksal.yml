@@ -7,9 +7,11 @@ services:
       service: cli
 #    volumes:
 #      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-#      - drupal_vendor:/var/www/backend/starters/development/vendor
-#      - gatsby_node_modules:/var/www/frontend/node_modules
-#      - gatsby_build_cache:/var/www/frontend/.cache # gatsby build and preview cannot share the same .cache folder
+#      - backend_vendor:/var/www/backend/starters/${BACKEND_STARTER}/vendor
+#      - docs_node_modules:/var/www/docs/node_modules
+#      - docs_cache:/var/www/docs/.cache # gatsby build and preview cannot share the same .cache folder
+#      - frontend_node_modules:/var/www/frontend/node_modules
+#      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.cache # gatsby build and preview cannot share the same .cache folder
     environment:
       - DEBUG=1
       - DRUSH_OPTIONS_URI=backend.${VIRTUAL_HOST}
@@ -19,7 +21,7 @@ services:
     # Keep cli running idle
     command: ["tail", "-f", "/dev/null"]
 
-  start_page:
+  start_page_web:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: apache
@@ -31,7 +33,7 @@ services:
     depends_on:
       - php
 
-  web:
+  backend_web:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: apache
@@ -49,7 +51,7 @@ services:
       service: cli
 #    volumes:
 #      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-#      - drupal_vendor:/var/www/backend/starters/${BACKEND_STARTER}/vendor
+#      - backend_vendor:/var/www/backend/starters/${BACKEND_STARTER}/vendor
     environment:
       - DEBUG=1
       - DRUSH_OPTIONS_URI=backend.${VIRTUAL_HOST}
@@ -59,7 +61,7 @@ services:
     depends_on:
       - cli # cli has to start first to avoid race conditions in startup scripts between cli, php and preview
 
-  db:
+  backend_db:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: mysql
@@ -72,20 +74,20 @@ services:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: cli
-    #    volumes:
-    #      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-    #      - gatsby_node_modules:/var/www/frontend/node_modules
-    #      - gatsby_preview_cache:/var/www/frontend/.cache # gatsby build and preview cannot share the same .cache folder
+#    volumes:
+#      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
+#      - frontend_node_modules:/var/www/frontend/node_modules
+#      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.cache # gatsby build and preview cannot share the same .cache folder
     labels:
       - io.docksal.virtual-host=frontend.${VIRTUAL_HOST}
       - io.docksal.virtual-port=3000
+    ports:
+      - "3001:3001"
     environment:
-      - DEBUG=1
-      # This could be used for fs polling on systems where fs events are not available (Mac with NFS volumes or Windows)
-      - CHOKIDAR_USEPOLLING=${CHOKIDAR_USEPOLLING:-0}
       - DRUPAL_URI=http://web/
       - BACKEND_STARTER
       - FRONTEND_STARTER
+      - INTERNAL_STATUS_PORT=3001
     working_dir: /var/www/frontend
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
     command: [ "bash", "-lc", "yarn workspace ${FRONTEND_STARTER} develop -H 0.0.0.0 -p 3000" ]
@@ -99,16 +101,15 @@ services:
       service: cli
 #    volumes:
 #      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-#      - gatsby_node_modules:/var/www/frontend/node_modules
-#      - gatsby_preview_cache:/var/www/frontend/.cache # gatsby build and preview cannot share the same .cache folder
+#      - docs_node_modules:/var/www/docs/node_modules
+#      - docs_cache:/var/www/docs/.cache # gatsby build and preview cannot share the same .cache folder
     labels:
       - io.docksal.virtual-host=docs.${VIRTUAL_HOST}
       - io.docksal.virtual-port=3000
-#    environment:
-#      - DEBUG=1
-#      # This could be used for fs polling on systems where fs events are not available (Mac with NFS volumes or Windows)
-#      - CHOKIDAR_USEPOLLING=${CHOKIDAR_USEPOLLING:-0}
-#      - DRUPAL_URI=http://web/
+    ports:
+      - "4001:4001"
+    environment:
+      - INTERNAL_STATUS_PORT=4001
     working_dir: /var/www/docs
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
     command: ["bash", "-lc", "yarn develop -H 0.0.0.0 -p 3000"]
@@ -116,7 +117,8 @@ services:
       - cli # cli has to start first to avoid race conditions in startup scripts between cli, php and preview
 
 #volumes:
-#  drupal_vendor:        # Used with cli and php
-#  gatsby_node_modules:  # Used with cli and preview
-#  gatsby_preview_cache: # Used with preview (gatsby develop)
-#  gatsby_build_cache:   # Used with cli / fe/build (gatsby build)
+#  backend_vendor:        # Used with cli and php
+#  frontend_node_modules:  # Used with cli and frontend
+#  frontend_cache: # Used with frontend (gatsby develop)
+#  docs_node_modules:  # Used with cli and docs
+#  docs_cache: # Used with docs (gatsby develop)
