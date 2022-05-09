@@ -1,4 +1,5 @@
 import {
+  Article,
   ScreenContainer,
   Button,
   HeroSection,
@@ -14,8 +15,12 @@ import {
   FeatureTitle,
   FeatureText,
   FeatureImage,
+  SiblingNav,
+  SiblingNavLink
 } from "smooth-doc/components"
 import { Link } from 'gatsby'
+
+import GettingStarted from '../partials/getting-started.mdx'
 
 import heroBackgroundURL from '../images/hero-background.png'
 
@@ -40,26 +45,29 @@ import heroBackgroundURL from '../images/hero-background.png'
     <Feature>
       <FeatureTitle>Unrivalled CMS capabilities</FeatureTitle>
       <FeatureText>
-        Built with the power of Drupal, you can have assurance that your content is highly extensible and can be adapted
-         to meet the needs of your business.
+        Built with the power of Drupal, you can have assurance that your content is translatable, highly extensible and
+        can be adapted to meet the needs of your business.
       </FeatureText>
     </Feature>
     <Feature>
       <FeatureTitle>Inline page building like no other</FeatureTitle>
       <FeatureText>
-        Preview edits on your page in realtime
+        Create pages and preview edits on your page seeing how it will display for your users in realtime.  Edit inline
+        without compromise thanks to Tina.
       </FeatureText>
     </Feature>
     <Feature>
       <FeatureTitle>Performance, security and scalability like no other</FeatureTitle>
       <FeatureText>
-        Dark mode is natively supported and theme is fully customizable!
+        Sleep well at night knowing your customers will have a blazing fast experiences that remains secure and stable
+        thanks to the Gatsby generated frontend.
       </FeatureText>
     </Feature>
     <Feature>
       <FeatureTitle>Themeable ready-to-use components</FeatureTitle>
       <FeatureText>
-        A set of ready-to-use components to build great landing pages.
+        A design system with a set of ready-to-use components to build feature-rich landing pages. With Gatsby
+        Themes and Theme UI our design system can fully adapt to your brand.
       </FeatureText>
     </Feature>
   </FeatureList>
@@ -74,3 +82,4 @@ import heroBackgroundURL from '../images/hero-background.png'
     </SiblingNav>
   </Article>
 </ScreenContainer>
+

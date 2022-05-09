@@ -1,0 +1,37 @@
+---
+title: Configuration Variables
+section: Developing
+slug: /docs/developing/config-variables
+order: 1
+---
+
+# Configuration Variables
+
+Where to find the two types of configuration variables and how they interact with Power Stack.
+
+## Docksal config files
+
+Docksal comes with two configuration files `docksal.env` and `docksal-local.env`.
+
+### The base `docksal.env`
+
+```bash
+#  Where the backend docroot is located.  Docksal defaults to "docroot"
+DOCROOT=web
+
+# MySQL settings.
+DB_IMAGE='docksal/mysql:5.7-1.4'
+# MySQL will be exposed on a random port. By default.  This sets it to 3306
+MYSQL_PORT_MAPPING='0:3306'
+
+# Disable debugging by default
+XDEBUG_ENABLED=0
+
+# Define which starters to use
+BACKEND_STARTER="development"
+FRONTEND_STARTER="development"
+```
+
+### Overriding with `docksal-local.env`
+
+## Power Stack config files
