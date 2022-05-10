@@ -15,8 +15,11 @@ set -e
 cd "$PROJECT_ROOT/frontend"
 
 # Install dependencies
-# Using "npm ci" instead of "npm install" here to avoid unintentional package-lock.json updates
-# time npm ci
-# With node_modules being a volume, npm ci will fail with "EBUSY: resource busy or locked, rmdir '/var/www/frontend/node_modules'"
-# Stick with npm install the time being...
+
+# With node_modules being a volume, yarn will fail with "EBUSY: resource busy or locked, rmdir
+# '/var/www/frontend/node_modules'" until next version is released https://github.com/yarnpkg/berry/issues/4172
+# temporary fix is to set from sources rather than be pinned to 3.2.0
+# fin exec yarn set version from sources
+
+
 time yarn
