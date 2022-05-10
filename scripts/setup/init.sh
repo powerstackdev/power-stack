@@ -12,11 +12,13 @@ fin project rm -f
 
 # Code
 title "STEP 1" "Initializing codebase"
+
 # Using "fin docker-compose run cli <command>" to run a one off command using the cli service config
 # This way, we can run cli commands BEFORE starting the whole stack (which may fail without dependencies installed first)
 subtitle " * Globals"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/init_env_file.sh
 
+#
 subtitle " * CMS codebase"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/backend/install_dependencies.sh
 
