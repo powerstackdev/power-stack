@@ -25,3 +25,5 @@
 !load.environment.php
 
 *keys/*
+
+!*.gitkeep*
