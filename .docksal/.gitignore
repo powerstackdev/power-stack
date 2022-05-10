@@ -1,2 +1,3 @@
 docksal-local.env
 docksal-local.yml
+!settings/.env
