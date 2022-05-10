@@ -1,0 +1,34 @@
+uuid: 17c28295-fcf9-4954-9414-3e33be593ab3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sliders.field_delay
+    - field.field.paragraph.sliders.field_slider
+    - paragraphs.paragraphs_type.sliders
+  module:
+    - entity_reference_revisions
+id: paragraph.sliders.default
+targetEntityType: paragraph
+bundle: sliders
+mode: default
+content:
+  field_delay:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_slider:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

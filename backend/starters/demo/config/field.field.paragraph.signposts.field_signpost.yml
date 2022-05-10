@@ -1,0 +1,65 @@
+uuid: a86532c5-dd55-4e77-aa5d-9d48d5fab95e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_signpost
+    - paragraphs.paragraphs_type.signpost_default
+    - paragraphs.paragraphs_type.signpost_email_signup
+    - paragraphs.paragraphs_type.signpost_shareprice
+    - paragraphs.paragraphs_type.signposts
+  module:
+    - entity_reference_revisions
+id: paragraph.signposts.field_signpost
+field_name: field_signpost
+entity_type: paragraph
+bundle: signposts
+label: Signpost
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      signpost_default: signpost_default
+      signpost_email_signup: signpost_email_signup
+      signpost_shareprice: signpost_shareprice
+    negate: 0
+    target_bundles_drag_drop:
+      button:
+        weight: 13
+        enabled: false
+      feature:
+        weight: 14
+        enabled: false
+      features:
+        weight: 15
+        enabled: false
+      hero:
+        weight: 16
+        enabled: false
+      image:
+        weight: 17
+        enabled: false
+      images:
+        weight: 18
+        enabled: false
+      paragraph:
+        weight: 19
+        enabled: false
+      signpost_default:
+        weight: 12
+        enabled: true
+      signpost_email_signup:
+        weight: 20
+        enabled: true
+      signpost_shareprice:
+        weight: 21
+        enabled: true
+      signposts:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

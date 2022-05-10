@@ -1,0 +1,22 @@
+uuid: f75bc908-807c-44d3-abd2-f97cfcf1912a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_color
+    - paragraphs.paragraphs_type.slider
+  module:
+    - color_field
+id: paragraph.slider.field_text_color
+field_name: field_text_color
+entity_type: paragraph
+bundle: slider
+label: 'Text color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

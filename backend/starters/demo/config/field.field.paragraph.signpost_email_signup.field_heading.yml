@@ -1,0 +1,19 @@
+uuid: 14d86af0-697a-43b5-8a85-cc265eda9095
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.signpost_email_signup
+id: paragraph.signpost_email_signup.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: signpost_email_signup
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

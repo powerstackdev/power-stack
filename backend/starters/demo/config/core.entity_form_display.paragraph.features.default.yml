@@ -1,0 +1,29 @@
+uuid: a5ac5db7-44bb-4d0d-bd94-2d8923a2bf57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.features.field_feature
+    - paragraphs.paragraphs_type.features
+  module:
+    - paragraphs
+id: paragraph.features.default
+targetEntityType: paragraph
+bundle: features
+mode: default
+content:
+  field_feature:
+    type: entity_reference_paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

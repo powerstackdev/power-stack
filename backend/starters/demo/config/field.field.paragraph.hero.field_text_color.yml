@@ -1,0 +1,25 @@
+uuid: 0caddaa2-55da-4474-9c25-a5023c83c49b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_color
+    - paragraphs.paragraphs_type.hero
+  module:
+    - color_field
+id: paragraph.hero.field_text_color
+field_name: field_text_color
+entity_type: paragraph
+bundle: hero
+label: 'Text color'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    color: '#000000'
+    opacity: !!float 1
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

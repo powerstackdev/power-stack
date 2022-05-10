@@ -1,0 +1,4 @@
+administer tinacms_json_page_builder configuration:
+  title: 'Administer tinacms_json_page_builder configuration'
+  description: 'Optional description.'
+  restrict access: true

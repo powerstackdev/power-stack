@@ -1,0 +1,77 @@
+uuid: e2470e9c-a069-4c32-8404-91afe9ca2a41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_builder
+    - node.type.page
+    - paragraphs.paragraphs_type.features
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.paragraph
+    - paragraphs.paragraphs_type.signposts
+    - paragraphs.paragraphs_type.sliders
+  module:
+    - entity_reference_revisions
+id: node.page.field_page_builder
+field_name: field_page_builder
+entity_type: node
+bundle: page
+label: 'Page builder'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      paragraph: paragraph
+      images: images
+      features: features
+      hero: hero
+      signposts: signposts
+      sliders: sliders
+    negate: 0
+    target_bundles_drag_drop:
+      button:
+        weight: 12
+        enabled: false
+      feature:
+        weight: -9
+        enabled: false
+      features:
+        weight: -11
+        enabled: true
+      hero:
+        weight: -10
+        enabled: true
+      image:
+        weight: -8
+        enabled: false
+      images:
+        weight: -12
+        enabled: true
+      paragraph:
+        weight: -13
+        enabled: true
+      signpost_default:
+        weight: 20
+        enabled: false
+      signpost_email_signup:
+        weight: 21
+        enabled: false
+      signpost_shareprice:
+        weight: 22
+        enabled: false
+      signposts:
+        weight: 19
+        enabled: true
+      slider:
+        weight: 25
+        enabled: false
+      sliders:
+        weight: 26
+        enabled: true
+field_type: entity_reference_revisions
