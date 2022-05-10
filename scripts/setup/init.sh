@@ -4,36 +4,37 @@
 
 #-------------------------- Execution --------------------------------
 
-# Code
+# Cleanup all exiting instances
 title "Cleaning" "Cleaning up any old instances"
-
-# Cleanup
 fin project rm -f
 
-# Code
+# Initialize the codebases and download dependencies.
 title "STEP 1" "Initializing codebase"
 
 # Using "fin docker-compose run cli <command>" to run a one off command using the cli service config
 # This way, we can run cli commands BEFORE starting the whole stack (which may fail without dependencies installed first)
+
+# Setup the .env file
 subtitle " * Globals"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/init_env_file.sh
 
-#
-subtitle " * CMS codebase"
+# Download and install backend dependencies
+subtitle " * Backend codebase"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/backend/install_dependencies.sh
 
+# Download and install frontend dependencies
 subtitle " * Frontend codebase"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/frontend/install_dependencies.sh
 
+# Download and install docs dependencies
 subtitle " * Docs codebase"
-
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/docs/install_dependencies.sh
 
-# Stack
+# Power up stack for the first time
 title "STEP 2" "Initializing stack"
 fin project start
 
-# CMS
+# Install Drupal
 title "STEP 3" "Installing CMS"
 fin exec /var/www/scripts/setup/backend/install_cms.sh
 
@@ -42,17 +43,13 @@ title "STEP 4" "Linking environments"
 fin exec /var/www/scripts/misc/add_backend_creds_to_env_file.sh
 fin project restart frontend
 
+# All done! show the urls.
 title "DONE!" "Completed all initialization steps"
-
 echo -e "Dashboard: ${yellow} http://${VIRTUAL_HOST}${NC}"
-
 br
-
 echo -e "Backend: ${yellow}http://backend.${VIRTUAL_HOST}${NC}"
 echo -e "Frontend: ${yellow}http://frontend.${VIRTUAL_HOST}${NC}"
 echo -e "Docs: ${yellow}http://docs.${VIRTUAL_HOST}${NC}"
-
 br
-
 open "http://${VIRTUAL_HOST}"
 #-------------------------- END: Execution --------------------------------

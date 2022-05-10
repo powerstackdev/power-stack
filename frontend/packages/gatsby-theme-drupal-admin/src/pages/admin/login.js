@@ -1,16 +1,22 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, Card, Input, Spinner } from "theme-ui";
+// @file Creates the page at admin/login page and form.
 
+// External Imports
+import { Button, Card, Input, Spinner } from "theme-ui";
 import React, { useState } from "react";
+
+// Internal Imports
 import { handleLogin } from "@powerstack/drupal-oauth-connector";
 import Layout from "gatsby-theme-core-design-system/src/components/Layout/Layout";
 
-const SignIn = () => {
+// Login page
+const LoginPage = () => {
+  // Function constants
+  // Setup states
   const [processing, setProcessing] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  // Submit handler logic
   const handleSubmit = (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -64,4 +70,4 @@ const SignIn = () => {
     </Layout>
   );
 };
-export default SignIn;
+export default LoginPage;

@@ -1,23 +1,20 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+// External Imports
 import { Badge, Card, Heading, Switch } from "theme-ui";
-
 import React, { useEffect, useState } from "react";
 import { navigate } from "gatsby";
-
 import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
-
-import Layout from "gatsby-theme-core-design-system/src/components/Layout/Layout";
-import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo";
-import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
-// This only needs to be done once; probably during your application's bootstrapping process.
 import "react-sortable-tree/style.css";
-
-// You can import the default tree with dnd context
 import SortableTree from "react-sortable-tree";
 import FileExplorerTheme from "@nosferatu500/theme-file-explorer";
+
+// Internal package
+import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
+
+// Internal imports
+import Layout from "gatsby-theme-core-design-system/src/components/Layout/Layout";
+import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo";
 
 const DrupalAdminPage = ({serverData}) => {
   const [tree, setTree] = useState({});
@@ -38,6 +35,7 @@ const DrupalAdminPage = ({serverData}) => {
         });
       } else {
         const data = () => {
+
           let treeData = serverData.content.data.map((node) => ({
             title: node.attributes.title,
             attributes: node.attributes,
