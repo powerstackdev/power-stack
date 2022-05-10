@@ -1,6 +1,6 @@
 ---
 title: Configuration Variables
-section: Developing
+section: Development
 slug: /docs/developing/config-variables
 order: 1
 ---
@@ -14,6 +14,8 @@ Where to find the two types of configuration variables and how they interact wit
 Docksal comes with two configuration files `docksal.env` and `docksal-local.env`.
 
 ### The base `docksal.env`
+
+This file ships with all instances of Power Stack.
 
 ```bash
 #  Where the backend docroot is located.  Docksal defaults to "docroot"
@@ -33,5 +35,7 @@ FRONTEND_STARTER="development"
 ```
 
 ### Overriding with `docksal-local.env`
+
+Any Docksal environment variables can be overridden by include
 
 ## Power Stack config files
