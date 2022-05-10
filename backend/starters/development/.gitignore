@@ -22,5 +22,6 @@
 
 # Ignore .env files as they are personal
 /.env
+!load.environment.php
 
 *keys/*
