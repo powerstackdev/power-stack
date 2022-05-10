@@ -107,9 +107,9 @@ services:
       - io.docksal.virtual-host=docs.${VIRTUAL_HOST}
       - io.docksal.virtual-port=3000
     ports:
-      - "4001:4001"
+      - "5001:5001"
     environment:
-      - INTERNAL_STATUS_PORT=4001
+      - INTERNAL_STATUS_PORT=5001
     working_dir: /var/www/docs
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
     command: ["bash", "-lc", "yarn develop -H 0.0.0.0 -p 3000"]
