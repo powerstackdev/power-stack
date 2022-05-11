@@ -8,7 +8,7 @@ use Drupal\consumers\Entity\Consumer;
 use Drupal\user\Entity\User;
 
 function powerstack_api_install() {
-  // Set config to simple_oauth.settings
+  // Set config for simple_oauth.settings
   $config = \Drupal::service('config.factory')
     ->getEditable('simple_oauth.settings');
 
@@ -23,6 +23,16 @@ function powerstack_api_install() {
   // Save config
   $config->save();
 
+  // Set config for jsonapi_include.settings
+  $config = \Drupal::service('config.factory')
+    ->getEditable('jsonapi_include.settings');
+
+  $config->set('use_include_query', 1);
+
+  // Save config
+  $config->save();
+
+  // Create new consumer
   Consumer::create([
     'label' => 'Gatsby Consumer',
     'description' => 'This is the consumer for your Power Stack site.',
@@ -30,12 +40,14 @@ function powerstack_api_install() {
     'is_default' => TRUE,
   ])->save();
 
+  // Create API role
   $role = \Drupal\user\Entity\Role::create(array('id' => 'api', 'label' => 'API'));
   $role->grantPermission('administer menu');
   $role->grantPermission('use key authentication');
 
   $role->save();
 
+  // Create API user
   $random = new \Drupal\Component\Utility\Random();
 
   $user = User::create();
@@ -46,6 +58,6 @@ function powerstack_api_install() {
   $user->activate();
   $user->addRole('api');
   //Save user
-  $res = $user->save();
+  $user->save();
 
 }
