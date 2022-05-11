@@ -21,7 +21,7 @@ export const isLoggedIn = async (token) => {
     }
     // Check if we already have access token in localStorage
     token =
-      Cookies.get("auth") !== null
+      Cookies.get("auth") !== null && typeof Cookies.get("auth") !== "undefined"
         ? JSON.parse(Cookies.get("auth"))
         : null;
   } else {

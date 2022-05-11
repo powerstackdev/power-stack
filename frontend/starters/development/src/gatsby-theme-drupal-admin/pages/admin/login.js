@@ -34,7 +34,6 @@ const SignIn = () => {
 
   return (
     <Layout isAdmin>
-      {console.log('test')}
       <h2>TEST</h2>
       <Card as="form" onSubmit={(e) => e.preventDefault()} sx={{m: 6, p: 5, textAlign: `center`}}>
         {error && (

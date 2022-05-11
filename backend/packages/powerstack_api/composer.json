@@ -30,6 +30,15 @@
         "tmdk/composer-workspaces-plugin": "dev-overrides"
     },
     "extra": {
-        "workspace-root": "../.."
+        "workspace-root": "../..",
+        "patches": {
+            "drupal/jsonapi_cross_bundles": {
+                "Updating ResourceType so that include param works": "https://git.drupalcode.org/project/jsonapi_cross_bundles/-/merge_requests/2.patch",
+                "Fixing 404 error when cache is cleared": "https://www.drupal.org/files/issues/2021-10-08/3241626-fix-404-on-cross-bundle-routes-when-uninstalling-another-module-2.patch"
+            },
+            "drupal/jsonapi_extras": {
+                "Fixing decorator error": "https://git.drupalcode.org/project/jsonapi_extras/-/merge_requests/7.patch"
+            }
+        }
     }
 }
