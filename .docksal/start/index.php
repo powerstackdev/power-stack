@@ -6,11 +6,10 @@ $sites = [
 ];
 ?>
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
 <style>
     a {
-        text-decoration: none;
         color: black;
     }
 
@@ -23,6 +22,10 @@ $sites = [
         border-radius: 0.5rem;
         box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
         padding: 1rem;
+    }
+
+    .card a {
+        text-decoration: none;
     }
 
     .title {
@@ -50,6 +53,10 @@ $sites = [
     padding: 2rem;
 ">
     <h1>Dashboard</h1>
+
+    <p>Welcome to your new DXP!</p>
+    <p>Click <a href="http://frontend.<?php echo getenv('VIRTUAL_HOST') ?>/admin/content">here</a> to login.</p>
+
     <H2>Services</H2>
     <div style="
     grid-template-columns: 1fr 1fr;
@@ -57,9 +64,9 @@ $sites = [
     display: grid;
   ">
       <?php foreach ($sites as $site): ?>
-          <div class="card">
+          <div id="<?php echo strtolower($site) ?>" class="card">
               <p class="title">
-                <?php echo $site ?>
+                <?php echo $site ?>&nbsp;<span id="status-<?php echo strtolower($site) ?>" data-service_url="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . strtolower($site) . '.' . getenv('VIRTUAL_HOST') ?>"/>- Loading</span>
               </p>
               <p>
                   <strong>Site URL - </strong>
@@ -112,5 +119,26 @@ $sites = [
     </div>
 
 </div>
+<script>
+
+  var statuses = document.querySelectorAll('*[id^="status"]');
+
+  setInterval(function(){
+    statuses.forEach(function(status) {
+      fetch(status.dataset.service_url, { method: 'HEAD' } ).then(function(response) {
+        console.log(response.status); // returns 200
+        if(response.ok) {
+          document.getElementById(status.id).innerHTML = " - Up";
+        } else {
+          document.getElementById(status.id).innerHTML = " - Loading";
+        }
+      }).catch((error) => {
+        document.getElementById(status.id).innerHTML = " - Down";
+      });
+    });
+  }, 5000);
+
+
+</script>
 </body>
 </html>

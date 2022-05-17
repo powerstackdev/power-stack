@@ -21,9 +21,9 @@
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^9.3",
-        "drupal/core-project-message": "^9.3",
-        "drupal/core-recommended": "^9.3",
+        "drupal/core-composer-scaffold": "~9.3.0",
+        "drupal/core-project-message": "~9.3.0",
+        "drupal/core-recommended": "~9.3.0",
         "drupal/powerstack_profile": "dev-master",
         "drush/drush": "^10.2",
         "vlucas/phpdotenv": "^5.4"

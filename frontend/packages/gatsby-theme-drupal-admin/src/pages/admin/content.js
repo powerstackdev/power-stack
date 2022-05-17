@@ -139,11 +139,6 @@ export default DrupalAdminPage;
 export async function getServerData(context) {
   const token = await isLoggedIn(Object.fromEntries(context.headers).cookie);
 
-  // if (token === false) {
-  //   return {
-  //     props: {},
-  //   };
-  // }
   const headers = {
     headers: {
       Authorization: `Bearer ${token.access_token}`,

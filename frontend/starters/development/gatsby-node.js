@@ -1,8 +1,9 @@
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.setWebpackConfig({
     watchOptions: {
-      aggregateTimeout: 2500,
-      poll: 5000,
+      aggregateTimeout: 200,
+      poll: 1000,
+      ignored: '**/node_modules',
     },
   })
 }

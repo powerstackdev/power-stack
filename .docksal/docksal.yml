@@ -88,6 +88,7 @@ services:
       - BACKEND_STARTER
       - FRONTEND_STARTER
       - INTERNAL_STATUS_PORT=3001
+      - CHOKIDAR_USEPOLLING=true
     working_dir: /var/www/frontend
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
     command: [ "bash", "-lc", "yarn workspace ${FRONTEND_STARTER} develop -H 0.0.0.0 -p 3000" ]
@@ -110,9 +111,10 @@ services:
       - "5001:5001"
     environment:
       - INTERNAL_STATUS_PORT=5001
+      - CHOKIDAR_USEPOLLING=true
     working_dir: /var/www/docs
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
-    command: ["bash", "-lc", "yarn develop -H 0.0.0.0 -p 3000"]
+    command: ["bash", "-lc", "yarn develop -H 0.0.0.0 -p 3000 --verbose"]
     depends_on:
       - cli # cli has to start first to avoid race conditions in startup scripts between cli, php and preview
 
