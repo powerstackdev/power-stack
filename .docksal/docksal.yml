@@ -5,13 +5,13 @@ services:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: cli
-#    volumes:
-#      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-#      - backend_vendor:/var/www/backend/starters/${BACKEND_STARTER}/vendor
-#      - docs_node_modules:/var/www/docs/node_modules
-#      - docs_cache:/var/www/docs/.cache # gatsby build and preview cannot share the same .cache folder
-#      - frontend_node_modules:/var/www/frontend/node_modules
-#      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.cache # gatsby build and preview cannot share the same .cache folder
+    volumes:
+      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
+      - backend_vendor:/var/www/backend/starters/${BACKEND_STARTER}/vendor
+      - docs_node_modules:/var/www/docs/node_modules
+      - docs_cache:/var/www/docs/.cache # gatsby build and preview cannot share the same .cache folder
+      - frontend_node_modules:/var/www/frontend/node_modules
+      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.cache # gatsby build and preview cannot share the same .cache folder
     environment:
       - DEBUG=1
       - DRUSH_OPTIONS_URI=backend.${VIRTUAL_HOST}
@@ -49,9 +49,9 @@ services:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: cli
-#    volumes:
-#      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-#      - backend_vendor:/var/www/backend/starters/${BACKEND_STARTER}/vendor
+    volumes:
+      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
+      - backend_vendor:/var/www/backend/starters/${BACKEND_STARTER}/vendor
     environment:
       - DEBUG=1
       - DRUSH_OPTIONS_URI=backend.${VIRTUAL_HOST}
@@ -74,10 +74,10 @@ services:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: cli
-#    volumes:
-#      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-#      - frontend_node_modules:/var/www/frontend/node_modules
-#      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.cache # gatsby build and preview cannot share the same .cache folder
+    volumes:
+      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
+      - frontend_node_modules:/var/www/frontend/node_modules
+      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.cache # gatsby build and preview cannot share the same .cache folder
     labels:
       - io.docksal.virtual-host=frontend.${VIRTUAL_HOST}
       - io.docksal.virtual-port=3000
@@ -100,10 +100,10 @@ services:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: cli
-#    volumes:
-#      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-#      - docs_node_modules:/var/www/docs/node_modules
-#      - docs_cache:/var/www/docs/.cache # gatsby build and preview cannot share the same .cache folder
+    volumes:
+      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
+      - docs_node_modules:/var/www/docs/node_modules
+      - docs_cache:/var/www/docs/.cache # gatsby build and preview cannot share the same .cache folder
     labels:
       - io.docksal.virtual-host=docs.${VIRTUAL_HOST}
       - io.docksal.virtual-port=3000
@@ -118,9 +118,9 @@ services:
     depends_on:
       - cli # cli has to start first to avoid race conditions in startup scripts between cli, php and preview
 
-#volumes:
-#  backend_vendor:        # Used with cli and php
-#  frontend_node_modules:  # Used with cli and frontend
-#  frontend_cache: # Used with frontend (gatsby develop)
-#  docs_node_modules:  # Used with cli and docs
-#  docs_cache: # Used with docs (gatsby develop)
+volumes:
+  backend_vendor:        # Used with cli and php
+  frontend_node_modules:  # Used with cli and frontend
+  frontend_cache: # Used with frontend (gatsby develop)
+  docs_node_modules:  # Used with cli and docs
+  docs_cache: # Used with docs (gatsby develop)
