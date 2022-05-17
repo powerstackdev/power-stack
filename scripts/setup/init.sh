@@ -8,6 +8,19 @@
 title "Cleaning" "Cleaning up any old instances"
 fin project rm -f
 
+#if [ $(uname -s) == 'Darwin' ];  then
+#  title "FS" "Syncing MacOS files on mutagen"
+#  fin mutagen stop
+#  project_root=$(get_fin_variable "PROJECT_ROOT")
+#  cd "${project_root//\"/}" || { echo "Cannot start"; exit 1; }
+#
+#  if [ -z $new_project ]; then
+#    fin "$1"
+#  fi
+#
+#  mutagen project start
+#fi
+
 # Initialize the codebases and download dependencies.
 title "STEP 1" "Initializing codebase"
 
@@ -17,6 +30,9 @@ title "STEP 1" "Initializing codebase"
 # Setup the .env file
 subtitle " * Globals"
 fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/init_env_file.sh
+
+subtitle " * Fixing perms"
+fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/startup.sh
 
 # Download and install backend dependencies
 subtitle " * Backend codebase"
