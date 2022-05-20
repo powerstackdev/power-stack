@@ -39,7 +39,7 @@ const LoginPage = () => {
   };
 
   return (
-    <Layout isAdmin>
+    <Layout>
       <Card as="form" onSubmit={(e) => e.preventDefault()} sx={{m: 6, p: 5, textAlign: `center`}}>
         {error && (
           <div className="form-error">

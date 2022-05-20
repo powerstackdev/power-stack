@@ -12,5 +12,14 @@ A list to reference if you run into issues
 ## Running a Gatsby site within a Docker container
 
 When running Gatsby within a Docker container there are few specific settings that you will need to configure
-otherwise you may run into unexpected behaviours.
+otherwise you may run into unexpected behaviours.  For more information refer to
+
+## Pubkey issue with clone on install
+
+While this repo is private, there maybe some issues cloning.  If your ssh-agent for Docksal isn't loaded into the
+current terminal window, you'll need to initialise it first. This will sync the `id_rsa` key for you.
+
+```
+fin system reset ssh-agent
+```
 

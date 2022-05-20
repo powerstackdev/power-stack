@@ -1,13 +1,22 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Button } from "theme-ui";
-
-import * as React from "react";
+import { React, useEffect, useState} from "react";
 import { Link } from "gatsby";
 import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
 
 export const DrupalAdminMenu = ({ serverData }) => {
-  return (
+
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(() => {
+    isLoggedIn().then( result => {
+      setLoggedIn(result)
+    })
+  }, [])
+
+
+   return (
     <nav>
       <ul sx={{
         mt: "7px"
@@ -87,10 +96,8 @@ export const DrupalAdminMenu = ({ serverData }) => {
           display: "inline",
           px: 3
         }}>
-          {
-            isLoggedIn() ? <Button variant="primary" sx={{display: "inline"}}> Log out </Button> :
-              <Button>Login</Button>
-          }
+
+          { loggedIn ? <Button variant="primary" sx={{display: "inline"}}> Log out</Button> : <Button>Login</Button> }
         </li>
       </ul>
 
