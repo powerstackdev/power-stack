@@ -1,6 +1,6 @@
 name: Page Builder
 type: module
-description: Base setup for Page Bulder
+description: Base setup for Page Builder
 package: Power Stack
 core_version_requirement: ^8 || ^9
 
