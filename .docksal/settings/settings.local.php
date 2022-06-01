@@ -138,7 +138,7 @@ $databases['default']['default'] = [
 	'database' => 'default',
 	'username' => getenv('MYSQL_USER'),
 	'password' => getenv('MYSQL_PASSWORD'),
-	'host' => 'db',
+	'host' => 'backend_db',
 	'driver' => 'mysql',
 ];
 
