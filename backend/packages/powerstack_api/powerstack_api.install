@@ -44,6 +44,10 @@ function powerstack_api_install() {
   $role = \Drupal\user\Entity\Role::create(array('id' => 'api', 'label' => 'API'));
   $role->grantPermission('administer menu');
   $role->grantPermission('use key authentication');
+  $role->grantPermission('administer node fields');
+  $role->grantPermission('administer paragraph fields');
+  $role->grantPermission('administer node form display');
+  $role->grantPermission('administer paragraph form display');
 
   $role->save();
 
