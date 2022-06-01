@@ -9,6 +9,23 @@ $sites = [
 <html xmlns="http://www.w3.org/1999/html">
 
 <style>
+    header {
+        background-color: #FFF;
+        width: 100%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        height: 70px;
+        border-bottom: 1px solid lightGrey;
+    }
+    header div {
+        margin: 0 min(5vw, 48px);
+        padding: 16px 0;
+    }
+    header div img {
+        height: 35px;
+    }
     a {
         color: black;
     }
@@ -20,7 +37,8 @@ $sites = [
     .card {
         background: white;
         border-radius: 0.5rem;
-        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+        border: 1px solid #EAECF0;
+        box-shadow: 0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%);
         padding: 1rem;
     }
 
@@ -44,9 +62,15 @@ $sites = [
 <body style='
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-size: 18px;
-    background: #f0f2fd;
+    background: #FCFCFD;
+    margin: 0;
 '>
 
+<header>
+    <div>
+        <img src="logo.svg">
+    </div>
+</header>
 <div style="
     max-width: 60rem;
     margin: 0 auto;
