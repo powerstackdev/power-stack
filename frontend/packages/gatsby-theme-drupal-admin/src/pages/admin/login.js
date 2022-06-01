@@ -49,7 +49,7 @@ const LoginPage = () => {
         <Input
           name="username"
           type="text"
-          placeholder="Username"
+          placeholder="Enter your username here..."
           value={username}
           onChange={(event) => setUsername(event.target.value)}
           mb={3}
@@ -61,7 +61,7 @@ const LoginPage = () => {
           type="password"
           id="passwordSignin"
           value={password}
-          placeholder="Password"
+          placeholder="Enter your password here..."
           onChange={(event) => setPassword(event.target.value)}
           mb={3}
         />

@@ -1,7 +1,9 @@
+/** @jsx jsx */
+
 // External Imports
-import { Badge, Card, Heading, Switch } from "theme-ui";
+import { jsx, Badge, Card, Heading, Switch, Divider, Grid, Box } from "theme-ui";
 import React, { useEffect, useState } from "react";
-import { navigate } from "gatsby";
+import { navigate, Link } from "gatsby";
 import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
@@ -13,7 +15,7 @@ import FileExplorerTheme from "@nosferatu500/theme-file-explorer";
 import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
 
 // Internal imports
-import Layout from "gatsby-theme-core-design-system/src/components/Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo";
 
 const DrupalAdminPage = ({serverData}) => {
@@ -75,12 +77,43 @@ const DrupalAdminPage = ({serverData}) => {
 
   return (
     <>
-      <Layout isAdmin serverData={serverData.adminMenu}>
+      <Layout serverData={serverData.adminMenu}>
         <Seo title="Content"/>
-        <Heading as={"h1"} sx={{m: 4, ml: 2}}>Content page</Heading>
+        <Grid gap={2} columns={[2, "1fr 1fr"]} sx={{m: 4, ml: 0}}>
+          <Heading as={"h1"}>Content</Heading>
+          <Box sx={{
+            margin: `0 auto`,
+            width: "100%",
+            textAlign: "right"
+          }}>
+            <Link
+              variant="button"
+              to={"/admin/new-page"}
+              sx={{
+                color: "background",
+                bg: "primary",
+                fontWeight: "link",
+                borderRadius: 'medium',
+                textDecoration: none,
+                py: 2,
+                px: 3,
+                "&:hover": {
+                  bg: "text"
+                },
+              }}
+            >
+              + Add content
+            </Link>
+          </Box>
+        </Grid>
+
+        <Divider sx={{
+          my: 2,
+          mb: 4
+        }} />
         <Card sx={{
-          height: 1200,
-          p: 5,
+          height: 400,
+          p: 4,
           ".rstcustom__rowLabel": {
             pr: "5px"
           }

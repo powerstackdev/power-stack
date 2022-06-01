@@ -1,0 +1,5 @@
+{
+    "name": "@powerstack/docker-webpack-polling",
+    "main": "index.js",
+    "version": "1.0.0"
+}

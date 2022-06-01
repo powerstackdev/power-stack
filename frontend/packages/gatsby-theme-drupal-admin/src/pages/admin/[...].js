@@ -1,13 +1,38 @@
 import * as React from "react";
 import { navigate } from "gatsby";
 import absolution from "absolution";
+import { useThemeUI } from "theme-ui"
 
-import Layout from "gatsby-theme-core-design-system/src/components/Layout/Layout";
+// Internal imports
+import Layout from "../../components/Layout/Layout";
 import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo";
 import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
 
 const DrupalAdminPage = ({serverData}) => {
-  const html = absolution(serverData.content, process.env.GATSBY_DRUPAL_HOST);
+  const context = useThemeUI()
+
+  const parser = new DOMParser();
+  const serverHtml = parser.parseFromString(serverData.content, "text/html")
+  const serverHead = serverHtml.head.innerHTML
+  const title = serverHtml.title
+
+  const convertHeadToAbsolutePaths = absolution(serverHead, process.env.GATSBY_DRUPAL_HOST)
+  let html = convertHeadToAbsolutePaths + '<base target="_parent" />' + `
+    <style>
+      [data-gin-accent] {
+        --colorGinAppBackground:${context.theme.rawColors.background}
+      }
+    </style>`
+
+  const body = absolution(serverHtml.body.innerHTML, process.env.GATSBY_DRUPAL_HOST, { urlAttributes: [ 'src', 'action' ] })
+
+  html += body
+
+  const resizeIFrame = () => {
+    const iframe = document.getElementById("myIframe");
+    iframe !== null ? iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px': null
+  }
+
 
   return (
     <>
@@ -16,9 +41,9 @@ const DrupalAdminPage = ({serverData}) => {
           state: {message: "your session has been timed out, please login"},
         })
       ) : (
-        <Layout isAdmin serverData={serverData.adminMenu}>
-          <Seo title="Using SSR"/>
-          <div dangerouslySetInnerHTML={{__html: html}}/>
+        <Layout isFull serverData={serverData.adminMenu}>
+          <Seo title={title}/>
+          <iframe id="myIframe" srcDoc={html} width="100%" height="100%" onLoad={resizeIFrame} style={{border: `none`}}/>
         </Layout>
       )}
     </>
