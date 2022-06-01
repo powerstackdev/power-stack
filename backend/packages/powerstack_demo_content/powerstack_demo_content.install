@@ -54,3 +54,8 @@ function powerstack_demo_content_install() {
     $menu_link->save();
   }
 }
+
+\Drupal::configFactory()
+  ->getEditable('system.site')
+  ->set('page.front', '/welcome')
+  ->save();
