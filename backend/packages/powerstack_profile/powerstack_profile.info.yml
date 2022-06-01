@@ -27,11 +27,13 @@ install:
   - datetime
   - block_content
   - editor
+  - ckeditor
   - menu_ui
   - options
   - path
   - path_alias
   - powerstack_api
+  - powerstack_page_builder
   - big_pipe
   - dynamic_page_cache
   - taxonomy
