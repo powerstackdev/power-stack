@@ -67,7 +67,7 @@ init_cors ()
   rm -f "${SITEDIR_PATH}/cors.services.yml"
   copy_settings_file "${PROJECT_ROOT}/.docksal/settings/cors.services.yml" "${SITEDIR_PATH}/cors.services.yml"
 
-  sed -i "s#'AO_REPLACE_ME'#'http://backend.${VIRTUAL_HOST}', '*'#g" "${SITEDIR_PATH}/cors.services.yml"
+  sed -i "s#'AO_REPLACE_ME'#'http://frontend.${VIRTUAL_HOST}', '*'#g" "${SITEDIR_PATH}/cors.services.yml"
 }
 
 
@@ -116,6 +116,9 @@ site_install ()
 	drush site-install powerstack_profile -y \
 		install_configure_form.enable_update_status_module=NULL \
 		--site-name="Power Stack ${BACKEND_STARTER} Starter"
+
+	# Clear caches so that we don't have a front page error
+	drush cr
 }
 
 #-------------------------- END: Functions --------------------------------

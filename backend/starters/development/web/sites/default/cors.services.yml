@@ -6,7 +6,7 @@ parameters:
     # Specify allowed request methods, specify ['*'] to allow all possible ones.
     allowedMethods: [ '*' ]
     # Configure requests allowed from specific origins.
-    allowedOrigins: [ 'http://backend.power-stack.docksal.site', '*' ]
+    allowedOrigins: [ 'http://frontend.power-stack.docksal.site', '*' ]
     # Sets the Access-Control-Expose-Headers header.
     exposedHeaders: false
     # Sets the Access-Control-Max-Age header.

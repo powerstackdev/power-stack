@@ -89,6 +89,7 @@ services:
       - FRONTEND_STARTER
       - INTERNAL_STATUS_PORT=3001
       - CHOKIDAR_USEPOLLING=true
+      - NODE_OPTIONS=--max-old-space-size=3072
     working_dir: /var/www/frontend
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
     command: [ "bash", "-lc", "yarn workspace ${FRONTEND_STARTER} develop -H 0.0.0.0 -p 3000" ]
