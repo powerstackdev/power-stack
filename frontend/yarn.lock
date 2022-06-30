@@ -3504,6 +3504,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@powerstack/docker-webpack-polling@workspace:^, @powerstack/docker-webpack-polling@workspace:packages/@powerstack/docker-webpack-polling":
+  version: 0.0.0-use.local
+  resolution: "@powerstack/docker-webpack-polling@workspace:packages/@powerstack/docker-webpack-polling"
+  languageName: unknown
+  linkType: soft
+
 "@powerstack/drupal-oauth-connector@workspace:*, @powerstack/drupal-oauth-connector@workspace:packages/@powerstack/drupal-oauth-connector":
   version: 0.0.0-use.local
   resolution: "@powerstack/drupal-oauth-connector@workspace:packages/@powerstack/drupal-oauth-connector"
@@ -4489,6 +4495,49 @@ __metadata:
     react-is: ">=16.14.0"
     styled-components: ">=4.1"
   checksum: 52af72e48b78544b851bb300ea2099df54a56d5b39d71421243bcab171fb75978b7823c2625bbe05531b070996f2f3d2f63138525d1aaf14e43302ff92058e1d
+  languageName: node
+  linkType: hard
+
+"@tinacms/toolkit@npm:0.56.4":
+  version: 0.56.4
+  resolution: "@tinacms/toolkit@npm:0.56.4"
+  dependencies:
+    "@sambego/storybook-styles": ^1.0.0
+    "@types/atob": ^2.1.2
+    "@types/cors": ^2.8.12
+    "@types/express": ^4.17.13
+    "@types/multer": ^1.4.7
+    "@types/prop-types": ^15.7.4
+    "@udecode/plate": ^7.0.3
+    atob: 2.1.2
+    color-string: ^1.5.3
+    cors: ^2.8.5
+    express: ^4.17.1
+    final-form: ^4.20.2
+    final-form-arrays: ^3.0.1
+    lodash.get: ^4.4.2
+    moment: ">=2 <=3"
+    multer: 1.4.2
+    path: ^0.12.7
+    prop-types: 15.7.2
+    react-beautiful-dnd: ^11.0.5
+    react-color: ^2.17.3
+    react-datetime: ^2.16.3
+    react-dropzone: 10.1.8
+    react-final-form: ^6.3.0
+    react-icons: ^4.3.1
+    simple-git: 1.126.0
+    slate: ^0.66.0
+    slate-history: ^0.66.0
+    slate-hyperscript: ^0.66.0
+    slate-react: ^0.66.0
+    webfontloader: 1.6.28
+  peerDependencies:
+    react: ">=16.14"
+    react-dom: ">=16.14"
+    react-is: ">=16.14.0"
+    styled-components: ">=4.1"
+  checksum: 09c79286ce5e7f4e0661bfc03ed2299631bf5668af1de99404a9d2c34e9d269adf661e38d7de90c6a442673e1e9fe1eeaa1f678a262768a779d92c2fd26a3c03
   languageName: node
   linkType: hard
 
@@ -9739,11 +9788,11 @@ __metadata:
     gatsby-plugin-sharp: ^4.3.0
     gatsby-plugin-sitemap: ^5.3.0
     gatsby-plugin-theme-ui: ^0.12.1
+    gatsby-plugin-tinacms-pagebuilder: "workspace:*"
     gatsby-plugin-webpack-bundle-analyser-v2: ^1.1.26
     gatsby-source-drupal: ^5.3.0
     gatsby-source-filesystem: ^4.3.0
     gatsby-theme-drupal-admin: "workspace:*"
-    gatsby-theme-tina-edit: "workspace:*"
     gatsby-transformer-sharp: ^4.3.0
     prettier: ^2.5.1
     react: ^17.0.1
@@ -11666,6 +11715,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-google-fonts@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "gatsby-plugin-google-fonts@npm:1.0.1"
+  checksum: 775aee252ee1bf7d77ae6ffd8cd44e14ee3badfab4f46c3ed2a438527894cbffe9383464073e33ae5b2442d70b2434df1358749f5c2e575538143508ff68a1b5
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-image@npm:^2.3.0":
   version: 2.14.1
   resolution: "gatsby-plugin-image@npm:2.14.1"
@@ -11829,6 +11885,30 @@ __metadata:
   checksum: f8be680b41e9eb21076faeea2574f9fe5789358e985488c09f54c866d95f8ad4854d1173124c2a91b9ac9cdb8f1a222cd15e6ecbf3f7e3e722f17b68b4d8b68c
   languageName: node
   linkType: hard
+
+"gatsby-plugin-tinacms-pagebuilder@workspace:*, gatsby-plugin-tinacms-pagebuilder@workspace:packages/gatsby-plugin-tinacms-pagebuilder":
+  version: 0.0.0-use.local
+  resolution: "gatsby-plugin-tinacms-pagebuilder@workspace:packages/gatsby-plugin-tinacms-pagebuilder"
+  dependencies:
+    "@tinacms/icons": ^0.42.1
+    "@tinacms/react-forms": ^0.43.3
+    "@tinacms/toolkit": 0.56.4
+    gatsby-plugin-tinacms: "workspace:^"
+    gatsby-theme-core-design-system: "workspace:^"
+    lodash.set: ^4.3.2
+    process: ^0.11.10
+    qs: ^6.10.2
+    react-tinacms-editor: ^0.52.10
+    react-tinacms-inline: 0.52.3
+    styled-components: ^5.1.3
+    treeify-js: ^1.0.8
+    util: ^0.12.4
+  peerDependencies:
+    gatsby: ^4.0.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  languageName: unknown
+  linkType: soft
 
 "gatsby-plugin-tinacms@workspace:^, gatsby-plugin-tinacms@workspace:packages/gatsby-plugin-tinacms":
   version: 0.0.0-use.local
@@ -12007,9 +12087,11 @@ __metadata:
   resolution: "gatsby-theme-drupal-admin@workspace:packages/gatsby-theme-drupal-admin"
   dependencies:
     "@nosferatu500/theme-file-explorer": ^3.0.11
+    "@powerstack/docker-webpack-polling": "workspace:^"
     absolution: ^1.0.2
-    gatsby-theme-core-design-system: "workspace:^"
+    gatsby-plugin-google-fonts: ^1.0.1
     javascript-time-ago: ^2.3.10
+    react-icons: ^4.4.0
     react-sortable-tree: ^2.8.0
     react-time-ago: ^7.1.4
     split-html: ^1.1.0
@@ -17743,6 +17825,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "react-icons@npm:4.4.0"
+  peerDependencies:
+    react: "*"
+  checksum: dd93a1dcc8ac8a3cf46a2b33e80b586fa967331fa5fcb90d061abf276155a8363a331643e203d67cb9bab4261d00a757da854bcce1fce2c6e4258bf3e33f711b
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.10.2, react-is@npm:^16.13.1, react-is@npm:^16.7.0, react-is@npm:^16.8.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -20335,6 +20426,13 @@ __metadata:
   version: 0.0.3
   resolution: "tr46@npm:0.0.3"
   checksum: 726321c5eaf41b5002e17ffbd1fb7245999a073e8979085dacd47c4b4e8068ff5777142fc6726d6ca1fd2ff16921b48788b87225cbc57c72636f6efa8efbffe3
+  languageName: node
+  linkType: hard
+
+"treeify-js@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "treeify-js@npm:1.0.8"
+  checksum: eff431155d6978f05bb1911aff494db4fcf0d3eec758c2f85291a3d30ca9d2a4cc4b92f21034d98cd786287733d5e0e68210263c0fb85de5aab718956df6e9eb
   languageName: node
   linkType: hard
 

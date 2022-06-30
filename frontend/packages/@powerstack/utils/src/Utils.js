@@ -9,4 +9,6 @@ export const snakeToCamel = (text) => text.toLowerCase().replace(/([-_][a-z])/g,
     .replace('_', '')
 );
 
+export const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+
 export const isBrowser = () => typeof window !== "undefined"

@@ -10,12 +10,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-theme-ui',
-      options: {
-        prismPreset: 'night-owl',
-      },
-    },
+    'gatsby-plugin-theme-ui',
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
@@ -49,7 +44,7 @@ module.exports = {
       },
       __key: "images",
     },
-    "gatsby-theme-tina-edit",
+    "gatsby-plugin-tinacms-pagebuilder",
     "gatsby-theme-drupal-admin"
   ],
 };
