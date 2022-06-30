@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Post
+type: post
+description: 'A <em>post</em> content type.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

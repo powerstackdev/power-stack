@@ -9,23 +9,6 @@ use Drupal\path_alias\Entity\PathAlias;
 
 function powerstack_demo_content_install() {
 
-  $type = \Drupal\node\Entity\NodeType::create([
-    'type' => 'page',
-    'name' => 'Page',
-    'description' => 'A <em>page</em> content type.',
-  ]);
-
-  $type->save();
-
-  $type = \Drupal\node\Entity\NodeType::create([
-    'type' => 'post',
-    'name' => 'Post',
-    'description' => 'A <em>post</em> content type.',
-  ]);
-
-  $type->save();
-
-
   // Create node object with attached file.
   $node = Node::create([
     'type'        => 'page',
@@ -53,9 +36,9 @@ function powerstack_demo_content_install() {
     ]);
     $menu_link->save();
   }
-}
 
-\Drupal::configFactory()
-  ->getEditable('system.site')
-  ->set('page.front', '/welcome')
-  ->save();
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', "/welcome")
+    ->save();
+}
