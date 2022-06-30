@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.row.field_full_width
-    - field.field.paragraph.row.field_row_fields
-    - paragraphs.paragraphs_type.row
+    - field.field.paragraph.section.field_full_width
+    - field.field.paragraph.section.field_section_fields
+    - paragraphs.paragraphs_type.section
   module:
     - entity_reference_revisions
-id: paragraph.row.default
+id: paragraph.section.default
 targetEntityType: paragraph
-bundle: row
+bundle: section
 mode: default
 content:
   field_full_width:
@@ -22,7 +22,7 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_row_fields:
+  field_section_fields:
     type: entity_reference_revisions_entity_view
     label: above
     settings:

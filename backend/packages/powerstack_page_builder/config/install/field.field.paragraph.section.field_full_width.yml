@@ -3,11 +3,11 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_full_width
-    - paragraphs.paragraphs_type.row
-id: paragraph.row.field_full_width
+    - paragraphs.paragraphs_type.section
+id: paragraph.section.field_full_width
 field_name: field_full_width
 entity_type: paragraph
-bundle: row
+bundle: section
 label: 'Full width'
 description: ''
 required: false

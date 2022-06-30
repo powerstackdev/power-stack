@@ -27,7 +27,7 @@ settings:
       column:
         weight: 4
         enabled: false
-      row:
+      section:
         weight: 5
         enabled: false
       text:

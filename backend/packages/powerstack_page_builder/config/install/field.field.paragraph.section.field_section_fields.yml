@@ -2,16 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_row_fields
+    - field.storage.paragraph.field_section_fields
     - paragraphs.paragraphs_type.column
-    - paragraphs.paragraphs_type.row
+    - paragraphs.paragraphs_type.section
   module:
     - entity_reference_revisions
-id: paragraph.row.field_row_fields
-field_name: field_row_fields
+id: paragraph.section.field_section_fields
+field_name: field_section_fields
 entity_type: paragraph
-bundle: row
-label: 'Row fields'
+bundle: section
+label: 'Section fields'
 description: ''
 required: false
 translatable: false
@@ -27,7 +27,7 @@ settings:
       column:
         weight: 4
         enabled: true
-      row:
+      section:
         weight: 5
         enabled: false
       text:

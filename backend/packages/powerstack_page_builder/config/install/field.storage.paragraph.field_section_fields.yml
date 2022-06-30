@@ -4,8 +4,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-id: paragraph.field_row_fields
-field_name: field_row_fields
+id: paragraph.field_section_fields
+field_name: field_section_fields
 entity_type: paragraph
 type: entity_reference_revisions
 settings:

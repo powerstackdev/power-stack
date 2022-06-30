@@ -62,7 +62,7 @@ content:
     weight: 1
     region: content
     settings:
-      rows: 5
+      sections: 5
       placeholder: ''
     third_party_settings: {  }
 hidden:
