@@ -79,7 +79,7 @@ const DrupalAdminPage = ({serverData}) => {
     <>
       <Layout serverData={serverData.adminMenu}>
         <Seo title="Content"/>
-        <Grid gap={2} columns={[2, "1fr 1fr"]} sx={{m: 4, ml: 0}}>
+        <Grid gap={2} columns={[2, "1fr 1fr"]} sx={{my: 4, mx: 0}}>
           <Heading as={"h1"}>Content</Heading>
           <Box sx={{
             margin: `0 auto`,
@@ -88,14 +88,14 @@ const DrupalAdminPage = ({serverData}) => {
           }}>
             <Link
               variant="button"
-              to={"/admin/new-page"}
+              to={"/admin/add-content"}
               sx={{
                 color: "background",
                 bg: "primary",
                 fontWeight: "link",
                 borderRadius: 'medium',
-                textDecoration: none,
-                py: 2,
+                textDecoration: 'none',
+                py: `12px`,
                 px: 3,
                 "&:hover": {
                   bg: "text"
@@ -128,7 +128,7 @@ const DrupalAdminPage = ({serverData}) => {
                 <Switch
                   defaultChecked={rowInfo.node.attributes.status}
                   sx={{
-                    bakgroundColor: "gray",
+                    backgroundColor: "gray",
                     // This will not be visible since the input is hidden
                     // '&:checked': {
                     //   backgroundColor: 'primary'

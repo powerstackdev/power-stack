@@ -116,8 +116,11 @@ export default {
   },
   badges: {
     primary: {
-      color: 'background',
-      bg: 'primary',
+      color: 'darkGrey',
+      bg: 'lightGrey',
+      borderRadius: 'medium',
+      p: 1,
+      px: 2
     },
     outline: {
       color: 'primary',
