@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Button as ReakitButton } from 'reakit/Button'
 import styled, { css } from '@xstyled/styled-components'
+import { FiArrowRightCircle } from 'react-icons/fi'
 
 const variant =
   ({ background, backgroundHover, on }) =>
@@ -30,7 +31,7 @@ const InnerButton = styled.buttonBox`
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  font-size: 16;
+  font-size: 18px;
   padding: 2 3;
   text-decoration: none !important;
 
@@ -78,7 +79,7 @@ export const Button = React.forwardRef(
       <ReakitButton ref={ref} data-variant={variant}>
         {(buttonProps) => (
           <InnerButton {...buttonProps} {...props}>
-            {children}
+            {children}&nbsp;<FiArrowRightCircle style={{ width: 24, height: 24 }} />
           </InnerButton>
         )}
       </ReakitButton>
