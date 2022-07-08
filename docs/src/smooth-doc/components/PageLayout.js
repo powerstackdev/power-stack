@@ -51,11 +51,7 @@ export function PageLayout({ children, title }) {
           <AppHeader />
         </StickyHeader>
         <Main id="main">
-          <Article>
-            <ScreenContainer>
-              {children}
-            </ScreenContainer>
-          </Article>
+          <Article>{children}</Article>
         </Main>
         <OuterFooter>
           <ScreenContainer>

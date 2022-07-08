@@ -41,10 +41,12 @@ const InnerButton = styled.buttonBox`
   }
 
   &[data-variant='primary'] {
+     border: 2px solid black;
     ${variant({
-  background: 'primary-500',
+  background: 'transparent',
   backgroundHover: 'primary-600',
   on: 'black',
+ 
 })}
   }
 

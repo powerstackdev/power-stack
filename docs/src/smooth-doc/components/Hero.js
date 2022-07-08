@@ -57,7 +57,7 @@ const InnerHero = styled(ScreenContainer)`
       padding-top: 0;
       margin-top: 5;
       background-position: center right;
-      background-size: 58% auto;
+      background-size: 45% auto;
       min-height: 400;
       text-align: left;
     `,
@@ -90,7 +90,10 @@ export const HeroBody = React.forwardRef((props, ref) => {
 export const HeroSection = styled.sectionBox`
   overflow: hidden;
   padding-top: 2;
-  padding-bottom: 5;
+  padding-bottom: 7;
+  background: linear-gradient(#ffc800, #ffec00);
+  clip-path: ellipse(147% 100% at 77.16% 0%);
+  margin-bottom: 6;
 `
 
 export const HeroActionList = React.forwardRef((props, ref) => {
