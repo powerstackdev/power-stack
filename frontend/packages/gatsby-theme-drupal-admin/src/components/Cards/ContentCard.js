@@ -26,6 +26,7 @@ const ContentCard = ({title= 'Template title', type, isTemplate=false}) => (
           }}
         >
           <Link
+            as={'a'}
             variant="button"
             to={"/edit/new/page"}
             sx={{

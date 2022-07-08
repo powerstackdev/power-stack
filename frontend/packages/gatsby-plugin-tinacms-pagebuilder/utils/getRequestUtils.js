@@ -1,7 +1,12 @@
-import set from "lodash.set"
+import { drupalFieldPrefix, formatDrupalType, snakeToCamel } from "@powerstack/utils";
+import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
 
-import {capitalize, drupalFieldPrefix, formatDrupalType, snakeToCamel} from "@powerstack/utils";
-import {isLoggedIn} from "@powerstack/drupal-oauth-connector";
+/**
+ * Checks the headers from the getServerData() function for a cookie and sets it as a bearer token.
+ *
+ * @param headers
+ * @returns {Promise<{headers: {Authorization: string}}>}
+ */
 
 export const getRequestHeaders = async headers => {
   const token = await isLoggedIn(Object.fromEntries(headers).cookie)
@@ -13,6 +18,13 @@ export const getRequestHeaders = async headers => {
   }
 }
 
+/**
+ *
+ *
+ * @param headers
+ * @param requests
+ * @returns {Promise<{success: {}, errors: {}}|{props: {goto: string}}>}
+ */
 export const getRequestFetchMultiple = async (headers, requests) => {
   const requestHeaders = await getRequestHeaders(headers)
 
@@ -48,57 +60,15 @@ export const getRequestFetchMultiple = async (headers, requests) => {
   return requestsData
 }
 
+// DEPRECATED FUNCTIONS
 
-export const createTinaInlineBlocks = async ( bundle, data, headers, parent, path, blocks = {} ) => {
-
-  const requests = {
-    fieldConfig: `field_config/field_config?filter[bundle]=${bundle}`,
-    paragraphsData: `entity_form_display/entity_form_display?filter[targetEntityType]=paragraph&filter[bundle]=${bundle}`
-  }
-
-  const subRequestsData = await getRequestFetchMultiple(headers, requests)
-
-  if (data.type !== 'entity_reference_paragraphs'){
-    if(typeof path == 'undefined') {
-      path = bundle
-    } else {
-      path = `${path}.children.${bundle}`
-    }
-    let blockObj = {
-      template: {
-        key: bundle,
-        label: capitalize(bundle),
-        defaultItem: {
-          _template: bundle,
-          path
-        },
-        fields: [
-          {
-            name: 'text_color',
-            label: 'Text Color',
-            component: "color",
-            widget: "block",
-            colors: ["#051e26", "#f2dfc6", "#cfdcc8", "#ebbbbb", "#8a1414"]
-          },
-          {
-            name: "align",
-            label: "Alignment",
-            component: "select",
-            options: ["center", "left"]
-          }
-        ]
-      },
-    }
-    set(blocks, path, blockObj)
-    console.log(path)
-  }
-  for (const data1 of subRequestsData.success.fieldConfig.data) {
-    if(data1.hasOwnProperty('attributes') && data1.attributes.settings.handler_settings && data1.attributes.settings.handler_settings.hasOwnProperty('target_bundles')) {
-      await createTinaInlineBlocks(Object.keys(data1.attributes.settings.handler_settings.target_bundles)[0], data1, headers, bundle, path, blocks)
-    }
-  }
-  return blocks
-}
+/**
+ * @deprecated
+ *
+ * @param type
+ * @param value
+ * @returns {{vid: *, images: *, _template, columns: *, id: *}}
+ */
 
 export const processDrupalImageData = (type, value) => {
   let fields = {};
