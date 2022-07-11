@@ -105,7 +105,7 @@ export const createTinaField = (name, data, serverData) => {
 
 
 /**
- * Recursively build out the Tina Blocks data and save to nested object
+ * Recursively build out the Tina Blocks data and save to a nested object
  *
  * @param bundle
  * @param data

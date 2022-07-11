@@ -2,7 +2,7 @@ import { drupalFieldPrefix, formatDrupalType, snakeToCamel } from "@powerstack/u
 import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
 
 /**
- * Checks the headers from the getServerData() function for a cookie and sets it as a bearer token.
+ * Checks the headers provided from the getServerData() function from a cookie and returns a bearer token object.
  *
  * @param headers
  * @returns {Promise<{headers: {Authorization: string}}>}
@@ -19,10 +19,10 @@ export const getRequestHeaders = async headers => {
 }
 
 /**
- *
+ * Perform multiple Drupal API GET requests (using fetch) based on a key/value store object.
  *
  * @param headers
- * @param requests
+ * @param requests key/value store.  The key is a label and the value is the Drupal API request path.
  * @returns {Promise<{success: {}, errors: {}}|{props: {goto: string}}>}
  */
 export const getRequestFetchMultiple = async (headers, requests) => {
@@ -39,6 +39,7 @@ export const getRequestFetchMultiple = async (headers, requests) => {
         requestHeaders
       )
 
+      // If the user is logged out set goto header
       if (data.status === 401) {
         return {
           props: {
