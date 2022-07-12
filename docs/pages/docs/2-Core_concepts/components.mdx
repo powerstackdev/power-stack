@@ -1,0 +1,33 @@
+---
+title: Components
+section: Core concepts
+slug: /docs/core-concepts/components
+---
+
+# Components
+
+Components provide a cluster of fields and field groups from Drupal to be edited in the React environment.  In Drupal,
+we are using the Paragraphs module to provide the following information (grouped using "field groups") to instruct the
+React TinaCMS environment on what fields to use when building out the editorial experience.
+
+## Inline Entity Reference Revisions (Paragraphs)
+
+Tina will look for Inline Entity Reference Revisions (Paragraphs) fields to initialise the Page building experience when
+creating or editing a new instance of a content type.
+
+### Inline fields
+
+This is the information that should be edited inline in the WYSIWYG page builder.
+
+### Form fields
+
+Fields relevant to creating a component that shouldn't live within the Inline experience that will show via a settings
+modal.
+
+### Styling options
+
+A group within the Tina settings modal for all styling specific fields.
+
+## Page fields
+
+All page specific fields that aren't to be added to the inline experience will appear in the sidebar form.

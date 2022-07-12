@@ -9,29 +9,29 @@ slug: /docs/core-concepts/fields
 ## Data type mappings
 ### Drupal core fields to Tina Fields
 
-| Name | Current Support | Type | Description | Drupal | Tina | Tina Inline |
-| ---- | --------------- | ---- | ----------- | ------ | ---- | ----------- |
-| `Text` | 🟢 | string | Name of the resource | text | Text | InlineText |
-| `Long Text` | 🟢 | string | Path to the resource | text_long | Textarea | InlineTextarea |
-| `Long Text with Summary` | 🔴 | string | Path to the resource | text_with_summary | ❌ | ❌ |
-| `WYSIWYG` | 🟢 | string | Path to the resource | text_long (with HTML formatter) | HTML | InlineWysiwyg |
-| `Boolean` | 🟡 | boolean | Path to the resource | list_boolean | [Toggle](https://tina.io/docs/reference/toolkit/fields/toggle/) | ❌ |
-| `List (Text)` | 🟡 | string | Path to the resource | list_text | [Select](https://tina.io/docs/reference/toolkit/fields/select/) | ❌ |
-| `List (Integer)` | 🔵 | string | Path to the resource | list_integer | ❌ | ❌ |
-| `List (Float)` | 🔴 | string | Path to the resource | list_float | ❌ | ❌ |
-| `Integer` | 🟡 | string | Path to the resource | number_integer | [Number](https://tina.io/docs/reference/toolkit/fields/number/) | ❌ |
-| `Float` | 🔴 | string | Path to the resource | number_float | ❌ | ❌ |
-| `Decimal` | 🔴 | string | Path to the resource | number_decimal | ❌ | ❌ |
-| `Image` | 🟢 | string | Path to the resource | image | HTML | Image |
-| `File` | 🔵 | string | Path to the resource | file | ❌ | ❌ |
-| `Term Reference` | 🔵 | string | Path to the resource | taxonomy_term_reference | ❌ | ❌ |
+| Name | Current Support | Drupal | Tina | Tina Inline |
+| ---- | --------------- | ------ | ---- | ----------- |
+| `Text` | 🟢 | text | Text | InlineText |
+| `Long Text` | 🟢 | text_long | Textarea | InlineTextarea |
+| `Long Text with Summary` | 🔴 | text_with_summary | ❌ | ❌ |
+| `WYSIWYG` | 🟢 | text_long (with HTML formatter) | HTML | InlineWysiwyg |
+| `Boolean` | 🟡 | list_boolean | [Toggle](https://tina.io/docs/reference/toolkit/fields/toggle/) | ❌ |
+| `List (Text)` | 🟡 | list_text | [Select](https://tina.io/docs/reference/toolkit/fields/select/) | ❌ |
+| `List (Integer)` | 🔵 | list_integer | ❌ | ❌ |
+| `List (Float)` | 🔴 | list_float | ❌ | ❌ |
+| `Integer` | 🟡 | number_integer | [Number](https://tina.io/docs/reference/toolkit/fields/number/) | ❌ |
+| `Float` | 🔴 | number_float | ❌ | ❌ |
+| `Decimal` | 🔴 | number_decimal | ❌ | ❌ |
+| `Image` | 🟢 | image | HTML | Image |
+| `File` | 🔵 | file | ❌ | ❌ |
+| `Term Reference` | 🔵 | taxonomy_term_reference | ❌ | ❌ |
 
 <small>🟢 Full support&nbsp;&nbsp;&nbsp;&nbsp;🟡 Partial support&nbsp;&nbsp;&nbsp;&nbsp;🔴 No support&nbsp;&nbsp;&nbsp;&nbsp;🔵 Future support planned</small>
 
 ### Drupal contrib fields to Tina Fields
 
-| Name | Current Support | Type | Description | Drupal | Tina | Tina Inline |
-| ---- | --------------- | ---- | ----------- | ------ | ---- | ----------- |
-| `Color` | 🟢 | string | Name of the resource | text | Color | ❌ |
+| Name | Current Support | Drupal | Tina | Tina Inline |
+| ---- | --------------- | ------ | ---- | ----------- |
+| `Color` | 🟢 | text | Color | ❌ |
 
 <small>🟢 Full support&nbsp;&nbsp;&nbsp;&nbsp;🟡 Partial support&nbsp;&nbsp;&nbsp;&nbsp;🔴 No support&nbsp;&nbsp;&nbsp;&nbsp;🔵 Future support planned</small>

@@ -7,23 +7,31 @@ order: 4
 
 # Services
 
-Services provide the key backing processes to Applications.
-
-## What is a service?
-
-Currently, the services are as follows:
+Services provide the key backing processes to Applications. The Local development environment uses Docksal to provision
+and orchestrate the following backing services on Docker.
 
 ## Database
 
-This service contains the content data storage.  It's built using a headless instance of Drupal.
+This service contains the content data storage.
 
 ## PHP
 
+This service is a PHP proxy that executes PHP scripts before sending the data to the relevant Apache2 web services.
+
 ## Backend Web
+
+This is the Apache2 web services for the Drupal backend and API.
 
 ## Frontend Web
 
+This is the NodeJS service that initialises the Gatsby development environment to preview presentation and editing
+frontend.
+
 ## Docs Web
 
+This is the NodeJS service that initialises the Gatsby development environment for the documentation site preview.
+
 ## Start Page Web
+
+This is the Apache2 service for the Dashboard landing page.
 
