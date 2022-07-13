@@ -3,6 +3,7 @@
   "main": "index.js",
   "version": "1.0.0",
   "dependencies": {
+    "@loadable/component": "^5.15.2",
     "@tinacms/icons": "^0.42.1",
     "@tinacms/react-forms": "^0.43.3",
     "@tinacms/toolkit": "0.56.4",

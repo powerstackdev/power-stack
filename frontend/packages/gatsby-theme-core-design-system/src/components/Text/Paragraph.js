@@ -4,7 +4,7 @@ import Zoom from 'react-reveal/Zoom';
 
 import { BlocksControls, InlineWysiwyg } from "react-tinacms-inline";
 
-function Paragraph({ index, data }) {
+export const Paragraph = ({ index, data }) => {
   return (
     <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
       <div>

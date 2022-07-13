@@ -2,21 +2,22 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import set from "lodash.set"
 import { InlineBlocks, InlineForm } from "react-tinacms-inline"
-import { InitForm, InitPlugin } from "../../../../utils/inits";
+import { InitForm, InitPlugin } from "../../../utils/inits";
 import {
   createBlockComponent,
-  createTinaField,
   createTinaInlineBlocks,
   isTinaWindow
-} from "../../../../utils/tinaUtils";
+} from "../../../utils/tinaUtils";
+import { createTinaField } from "../../../utils/fields/fieldUtils";
+
+import { PageBuilderContext } from "../../../contexts/PageBuilderContext";
+
 import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo"
 import Header from "gatsby-theme-core-design-system/src/components/Headers/Header"
 import Footer from "gatsby-theme-core-design-system/src/components/Footers/Footer"
 import { Title } from "gatsby-theme-core-design-system/src/components/Text/Title"
 import { Box, Spinner } from "theme-ui"
-import { getRequestFetchMultiple } from "../../../../utils/getRequestUtils";
-
-export const PageBuilderContext = React.createContext()
+import { getRequestFetchMultiple } from "../../../api/fetch/getRequestUtils";
 
 /**
  * Page template to create a new CMS page with Tina inline blocks enabled
@@ -36,10 +37,8 @@ const NewPage = ({ serverData }) => {
     }
   `)
 
-  console.log(serverData)
-
   set(serverData, `blocksData.${Object.keys(serverData.blocksData)[0]}.Component`, createBlockComponent)
-
+  console.table(serverData.paragraphsData.data[0])
   const PageForm = {
     initialValues: {
       status: true
@@ -70,7 +69,13 @@ const NewPage = ({ serverData }) => {
           <PageBuilderContext.Provider value={serverData.blocksData}>
             <InlineForm form={isTinaWindow && form}>
               <Title title={serverData.content?.title} />
-              <InlineBlocks className={'blocks'} name="blocks" blocks={serverData.blocksData} />
+              <Box
+                sx={{
+                  minHeight: `400px`,
+                }}
+              >
+                <InlineBlocks className={'blocks'} name="blocks" blocks={serverData.blocksData} />
+              </Box>
             </InlineForm>
           </PageBuilderContext.Provider>
         ) : (
@@ -116,7 +121,7 @@ export async function getServerData({ params, headers }) {
   // Make sure that we don't have any errors returned
   if(requestsData.errors && Object.keys(requestsData.errors).length === 0 && Object.getPrototypeOf(requestsData.errors) === Object.prototype) {
     // Local variables
-    const pageFields = []
+    let pageFields = []
     let blocksData = {}
 
     // Set the current Drupal UID
@@ -136,7 +141,7 @@ export async function getServerData({ params, headers }) {
       if(!value.type.startsWith("entity_reference_paragraphs")){
         const fieldData = createTinaField(key, value, requestsData.success)
         if (typeof fieldData !== undefined) {
-          pageFields.push(fieldData)
+          pageFields = [...pageFields, fieldData]
         }
       } else {
         const fieldData = await createTinaInlineBlocks(type, value, headers)
@@ -161,7 +166,6 @@ export async function getServerData({ params, headers }) {
       props: {},
     }
   }
-
 }
 
 export default NewPage

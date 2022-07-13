@@ -8,7 +8,7 @@ import { signpostListBlock } from "gatsby-theme-core-design-system/src/component
 import { sliderListBlock } from "gatsby-theme-core-design-system/src/components/Sliders/SliderList"
 import { InlineBlocks, InlineForm } from "react-tinacms-inline"
 import { heroBlock } from "gatsby-theme-core-design-system/src/components/Heros/Hero"
-import { InitForm, InitPlugin, InitScreenPlugin } from "../../../../utils/inits";
+import { InitForm, InitPlugin, InitScreenPlugin } from "../../../utils/inits";
 import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo"
 import { isLoggedIn } from "@powerstack/drupal-oauth-connector"
 import {
@@ -17,13 +17,13 @@ import {
   processDrupalParagraphData,
   processDrupalSignpostsData,
   processDrupalSlidersData,
-} from "../../../../utils/getRequestUtils"
+} from "../../../api/fetch/getRequestUtils"
 import { formatDrupalType } from "@powerstack/utils"
 import Header from "gatsby-theme-core-design-system/src/components/Headers/Header"
 import Footer from "gatsby-theme-core-design-system/src/components/Footers/Footer"
 import { Title } from "gatsby-theme-core-design-system/src/components/Text/Title"
 import { Box, Spinner, Text } from "theme-ui"
-import {submitTinaDataToDrupal} from "../../../../utils/postRequestUtils";
+import {submitTinaDataToDrupal} from "../../../api/fetch/postRequestUtils";
 
 const EditPage = ({ serverData }) => {
   const isWindow =
