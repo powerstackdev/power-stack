@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, navigate, useStaticQuery } from "gatsby"
 import { imageListBlock } from "gatsby-theme-core-design-system/src/components/Images/ImageList"
-import { paragraphBlock } from "gatsby-theme-core-design-system/src/components/Text/Paragraph"
 import { featureListBlock } from "gatsby-theme-core-design-system/src/components/Features/FeatureList"
 import { accordionListBlock } from "gatsby-theme-core-design-system/src/components/Accordions/AccordionList"
 import { signpostListBlock } from "gatsby-theme-core-design-system/src/components/Signposts/SignpostList"
@@ -101,7 +100,6 @@ const EditPage = ({ serverData }) => {
 
 const availableBlocks = {
   hero: heroBlock,
-  paragraph: paragraphBlock,
   images: imageListBlock,
   signposts: signpostListBlock,
   sliders: sliderListBlock,

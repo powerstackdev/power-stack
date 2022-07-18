@@ -1,9 +1,6 @@
 import React from 'react'
 import set from "lodash.set";
 import get from "lodash.get"
-import { isSet } from 'lodash';
-import { BlocksControls, InlineBlocks, InlineWysiwyg } from "react-tinacms-inline";
-import { Box } from "theme-ui";
 import loadable from '@loadable/component'
 
 import { capitalize } from "@powerstack/utils";
@@ -104,52 +101,44 @@ export const createTinaInlineBlocks = async (bundle, data, headers, parent, bloc
 
   // Check if field has children and nest appropriately
   for (const data1 of subRequestsData.success.fieldConfig.data) {
-    if (data1.hasOwnProperty('attributes') && data1.attributes.settings.handler_settings && data1.attributes.settings.handler_settings.hasOwnProperty('target_bundles')) {
+    if (data1?.attributes?.settings?.handler_settings && 'target_bundles' in data1.attributes.settings.handler_settings) {
       await createTinaInlineBlocks(Object.keys(data1.attributes.settings.handler_settings.target_bundles)[0], data1, headers, bundle, blockPath, blocks)
     }
   }
   return blocks
 }
 
+
+
 export const createBlockComponent = ({index, data}) => {
-
-
-  const LoadedComponent = loadable(props => import(`gatsby-theme-core-design-system/src/components/${props.component}`), {
-    resolveComponent: (components) => components.Paragraph,
+  const LoadedComponent = loadable(( { group, component } ) => import(`gatsby-theme-core-design-system/src/components/${group}/${component}`),  {
+    resolveComponent: (components, { component }) => components[`Edit${component}`]
   })
 
   const blocksDataContext = React.useContext(PageBuilderContext)
 
-  if (get(blocksDataContext, data.blockPath) && !get(blocksDataContext, data.blockPath).hasOwnProperty("children")) {
-    return (
-      <LoadedComponent component={'Text/Paragraph'} index data />
-    )
+  if (get(blocksDataContext, data.blockPath) && !('children' in get(blocksDataContext, data.blockPath))) {
+
   }
 
-  if (get(blocksDataContext, data.blockPath) && get(blocksDataContext, data.blockPath).hasOwnProperty("children")) {
-    const blockKey = Object.keys(get(blocksDataContext, data.blockPath).children)[0]
+  if (get(blocksDataContext, data.blockPath) && 'children' in get(blocksDataContext, data.blockPath)) {
+
+    const parentBlockKey = data["_template"]
+    const childBlockKey = Object.keys(get(blocksDataContext, data.blockPath).children)[0]
     const availableBlocks = {}
 
-    set(availableBlocks, `${blockKey}`, Object.values(get(blocksDataContext, data.blockPath).children)[0])
-    set(availableBlocks, `${blockKey}.Component`, createBlockComponent)
+    set(availableBlocks, `${childBlockKey}`, Object.values(get(blocksDataContext, data.blockPath).children)[0])
+    set(availableBlocks, `${childBlockKey}.Component`, createBlockComponent)
+
+    console.log(parentBlockKey, childBlockKey, availableBlocks)
+
     return (
-      <Box sx={{
-        width: data?.group_styling_options?.field_full_width ? `100%`: '1200px',
-        m: `0 auto`
-      }}>
-        <BlocksControls index={index} focusRing={{offset: 0}} insetControls>
-          <Section data={data} />
-          <InlineBlocks className={`${blockKey}-blocks`} name={`blocks`} blocks={availableBlocks}/>
-        </BlocksControls>
-      </Box>
+      <LoadedComponent key={`block-text-${parentBlockKey}-${index}`} group={'Blocks'} component={capitalize(parentBlockKey)} blockKey={parentBlockKey} availableBlocks={availableBlocks} index={index} data={data}/>
     )
   }
-}
 
-const Section = ({index, data}) => {
   return (
-    <Box sx={{
-      p: 2,
-    }}> test</Box>
+    <LoadedComponent key={`block-text-paragraph-${index}`} group='Text' component='Paragraph' index={index} data={data}/>
   )
 }
+

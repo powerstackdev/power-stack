@@ -13,19 +13,19 @@ export const publishStatusToggleField = (name, fieldData) => {
 export const userSelectField = (name, fieldData, serverData) => {
   if (serverData.usersData.hasOwnProperty('data')) {
     let options = []
-
+    console.log(serverData.currentUser)
     Object.entries(serverData.usersData.data).forEach(entry => {
       const [, value] = entry;
       let uid = 0
-      if (typeof value.attributes.drupal_internal__uid !== undefined) {
-        uid = value.attributes.drupal_internal__uid
-      }
-      if (value.attributes.drupal_internal__uid === serverData.currentUser) {
+      uid = value?.attributes?.drupal_internal__uid
+      console.log(uid, serverData.currentUser)
+      if (uid === serverData.currentUser) {
         options = [{
           value: uid,
           label: value.attributes.display_name
         }, ...options]
-      } else {
+      }
+      if (uid) {
         options = [...options, {
           value: uid,
           label: value.attributes.display_name

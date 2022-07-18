@@ -38,7 +38,7 @@ const NewPage = ({ serverData }) => {
   `)
 
   set(serverData, `blocksData.${Object.keys(serverData.blocksData)[0]}.Component`, createBlockComponent)
-  console.table(serverData.paragraphsData.data[0])
+
   const PageForm = {
     initialValues: {
       status: true
@@ -120,41 +120,42 @@ export async function getServerData({ params, headers }) {
 
   // Make sure that we don't have any errors returned
   if(requestsData.errors && Object.keys(requestsData.errors).length === 0 && Object.getPrototypeOf(requestsData.errors) === Object.prototype) {
+
     // Local variables
+    let responses = requestsData.success
     let pageFields = []
     let blocksData = {}
 
     // Set the current Drupal UID
-    const currentUserUuid = requestsData.success.apiBaseData.meta.links.me.meta.id
+    const currentUserUuid = responses.apiBaseData.meta.links.me.meta.id
     let currentUserId = 0
 
-    Object.entries(requestsData.success.usersData.data).forEach(entry => {
+    Object.entries(responses.usersData.data).forEach(entry => {
       const [, value] = entry;
       if(value.id === currentUserUuid) {
         currentUserId = value.attributes.drupal_internal__uid
       }
     })
+    responses = {...responses, currentUser: currentUserId}
 
     // Iterate over data to build out form fields and
-    for (const entry of Object.entries(requestsData.success.contentTypeData.data[0].attributes.content).sort((a, b) => (a[1].weight > b[1].weight) ? 1 : -1 )){
+    for (const entry of Object.entries(responses.contentTypeData.data[0].attributes.content).sort((a, b) => (a[1].weight > b[1].weight) ? 1 : -1 )){
       const [key, value] = entry;
       if(!value.type.startsWith("entity_reference_paragraphs")){
-        const fieldData = createTinaField(key, value, requestsData.success)
-        if (typeof fieldData !== undefined) {
-          pageFields = [...pageFields, fieldData]
-        }
+        const fieldData = createTinaField(key, value, responses)
+        pageFields = [...pageFields, fieldData]
       } else {
         const fieldData = await createTinaInlineBlocks(type, value, headers)
         blocksData = fieldData
       }
     }
 
+    responses.fields = pageFields
+    responses.blocksData = blocksData
+
     return {
       props: {
-        ...requestsData.success,
-        currentUser: currentUserId,
-        fields: pageFields,
-        blocksData
+        ...responses,
       },
     }
   } else {
