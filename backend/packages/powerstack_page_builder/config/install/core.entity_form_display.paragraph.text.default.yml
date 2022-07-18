@@ -10,7 +10,8 @@ dependencies:
 third_party_settings:
   field_group:
     group_inline_fields:
-      children: {  }
+      children:
+        - field_text
       label: 'Inline fields'
       region: content
       parent_name: ''
@@ -24,8 +25,7 @@ third_party_settings:
         description: ''
         required_fields: true
     group_form_fields:
-      children:
-        - field_text
+      children: {  }
       label: 'Form fields'
       region: content
       parent_name: ''
@@ -52,6 +52,8 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+_core:
+  default_config_hash: wOMLkpBN_SlIPYgg0wIddKh89CqgFcOkGkmO2xe71PE
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text
@@ -62,7 +64,7 @@ content:
     weight: 1
     region: content
     settings:
-      sections: 5
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
 hidden:
