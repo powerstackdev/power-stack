@@ -1,0 +1,9 @@
+name: JSON:API Base Fields
+type: module
+description: Exposes base field properties from an entity type
+package: Web services
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - drupal:jsonapi
+  - jsonapi_resources:jsonapi_resources
