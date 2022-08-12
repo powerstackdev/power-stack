@@ -7,7 +7,7 @@ import { signpostListBlock } from "gatsby-theme-core-design-system/src/component
 import { sliderListBlock } from "gatsby-theme-core-design-system/src/components/Sliders/SliderList"
 import { InlineBlocks, InlineForm } from "react-tinacms-inline"
 import { heroBlock } from "gatsby-theme-core-design-system/src/components/Heros/Hero"
-import { InitForm, InitPlugin, InitScreenPlugin } from "../../../utils/inits";
+import { InitForm, InitPlugin, InitScreenPlugin } from "../../../utils/inits"
 import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo"
 import { isLoggedIn } from "@powerstack/drupal-oauth-connector"
 import {
@@ -22,7 +22,7 @@ import Header from "gatsby-theme-core-design-system/src/components/Headers/Heade
 import Footer from "gatsby-theme-core-design-system/src/components/Footers/Footer"
 import { Title } from "gatsby-theme-core-design-system/src/components/Text/Title"
 import { Box, Spinner, Text } from "theme-ui"
-import {submitTinaDataToDrupal} from "../../../api/fetch/postRequestUtils";
+import { submitTinaDataToDrupal } from "../../../api/fetch/postRequestUtils"
 
 const EditPage = ({ serverData }) => {
   const isWindow =
@@ -40,7 +40,7 @@ const EditPage = ({ serverData }) => {
   const formConfig = {
     initialValues: serverData.content,
     onSubmit(data) {
-      submitTinaDataToDrupal(data);
+      submitTinaDataToDrupal(data)
     },
   }
 
@@ -77,7 +77,11 @@ const EditPage = ({ serverData }) => {
         {isWindow ? (
           <InlineForm form={isWindow && form}>
             <Title title={serverData.content?.title} />
-            <InlineBlocks className={'blocks'} name="blocks" blocks={availableBlocks} />
+            <InlineBlocks
+              className={"blocks"}
+              name="blocks"
+              blocks={availableBlocks}
+            />
           </InlineForm>
         ) : (
           <Box
@@ -164,7 +168,7 @@ export async function getServerData({ params, headers }) {
 
     let blocks = []
 
-    if(!data.data[0].field_page_builder.hasOwnProperty('data')) {
+    if (!data.data[0].field_page_builder.hasOwnProperty("data")) {
       data.data[0].field_page_builder.forEach((value, index) => {
         let type = formatDrupalType(value.type)
 

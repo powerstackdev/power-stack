@@ -10,10 +10,10 @@ export const submitTinaDataToDrupal = (data) => {
       })
     )
     .then(
-      response => {
+      (response) => {
         isWindow && window.tinacms.alerts.success("Saved!")
       },
-      error => {
+      (error) => {
         isWindow && window.tinacms.alerts.error("Error saving")
       }
     )

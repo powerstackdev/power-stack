@@ -11,9 +11,9 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-theme-ui',
+      resolve: "gatsby-plugin-theme-ui",
       options: {
-        prismPreset: 'night-owl',
+        prismPreset: "night-owl",
       },
     },
     "gatsby-plugin-image",
@@ -50,6 +50,6 @@ module.exports = {
       __key: "images",
     },
     "gatsby-theme-tina-edit",
-    "gatsby-theme-drupal-admin"
+    "gatsby-theme-drupal-admin",
   ],
-};
+}

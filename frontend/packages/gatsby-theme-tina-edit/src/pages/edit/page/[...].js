@@ -29,17 +29,17 @@ import { Box, Spinner, Text } from "theme-ui"
 
 // These init functions are a bit of a hack to get around the the conditional rules of hooks error
 
-const InitForm = formConfig => {
+const InitForm = (formConfig) => {
   return useForm(formConfig)
 }
 
-const InitPlugin = form => {
+const InitPlugin = (form) => {
   usePlugin(form)
 
   return null
 }
 
-const InitScreenPlugin = screenPlugin => {
+const InitScreenPlugin = (screenPlugin) => {
   useScreenPlugin(screenPlugin)
 
   return null
@@ -69,10 +69,10 @@ const EditPage = ({ serverData }) => {
           })
         )
         .then(
-          response => {
+          (response) => {
             isWindow && window.tinacms.alerts.success("Saved!")
           },
-          error => {
+          (error) => {
             isWindow && window.tinacms.alerts.error("Error saving")
           }
         )
@@ -107,7 +107,7 @@ const EditPage = ({ serverData }) => {
   return (
     <>
       <Global
-        styles={theme => ({
+        styles={(theme) => ({
           ":root": {
             "--tina-font-family":
               '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
@@ -155,7 +155,11 @@ const EditPage = ({ serverData }) => {
         {isWindow ? (
           <InlineForm form={isWindow && form}>
             <Title title={serverData.content?.title} />
-            <InlineBlocks className={'blocks'} name="blocks" blocks={availableBlocks} />
+            <InlineBlocks
+              className={"blocks"}
+              name="blocks"
+              blocks={availableBlocks}
+            />
           </InlineForm>
         ) : (
           <Box
@@ -243,7 +247,7 @@ export async function getServerData({ params, headers }) {
 
     let blocks = []
 
-    if(!data.data[0].field_page_builder.hasOwnProperty('data')) {
+    if (!data.data[0].field_page_builder.hasOwnProperty("data")) {
       data.data[0].field_page_builder.forEach((value, index) => {
         let type = formatDrupalType(value.type)
 

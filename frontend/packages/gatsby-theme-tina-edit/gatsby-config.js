@@ -8,8 +8,8 @@ module.exports = {
         enabled: true,
         toolbar: true,
         sidebar: {
-          position: `overlay`
-        }
+          position: `overlay`,
+        },
       },
     },
   ],

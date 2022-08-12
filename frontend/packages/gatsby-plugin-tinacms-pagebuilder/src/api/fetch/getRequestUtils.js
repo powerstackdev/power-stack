@@ -1,4 +1,4 @@
-import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
+import { isLoggedIn } from "@powerstack/drupal-oauth-connector"
 
 /**
  * Checks the headers provided from the getServerData() function from a cookie and returns a bearer token object.
@@ -7,7 +7,7 @@ import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
  * @returns {Promise<{headers: {Authorization: string}}>}
  */
 
-export const getRequestHeaders = async headers => {
+export const getRequestHeaders = async (headers) => {
   const token = await isLoggedIn(Object.fromEntries(headers).cookie)
 
   return {
@@ -29,7 +29,7 @@ export const getRequestFetchMultiple = async (headers, requests) => {
 
   const requestsData = {
     success: {},
-    errors: {}
+    errors: {},
   }
 
   // Iterate over endpoints and attempt to request
@@ -48,15 +48,15 @@ export const getRequestFetchMultiple = async (headers, requests) => {
           },
         }
       }
-      if ( !data.ok ) {
+      if (!data.ok) {
         throw new Error(`${key} Response failed`)
       }
 
       const dataJson = await data.json()
-      requestsData['success'][`${key}`] = dataJson
-    }  catch (error) {
+      requestsData["success"][`${key}`] = dataJson
+    } catch (error) {
       console.log(error)
-      requestsData['errors'][`${key}`] = error
+      requestsData["errors"][`${key}`] = error
     }
   }
   return requestsData

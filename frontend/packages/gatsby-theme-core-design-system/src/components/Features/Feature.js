@@ -1,10 +1,9 @@
-import React from "react";
-import { BlocksControls, InlineTextarea } from "react-tinacms-inline";
-import { Card, Text } from 'theme-ui';
-import Zoom from 'react-reveal/Zoom';
+import React from "react"
+import { BlocksControls, InlineTextarea } from "react-tinacms-inline"
+import { Card, Text } from "theme-ui"
+import Zoom from "react-reveal/Zoom"
 
 function Feature({ index, data }) {
-
   return (
     <BlocksControls index={index}>
       <Zoom delay={data.delay}>
@@ -18,7 +17,7 @@ function Feature({ index, data }) {
         </Card>
       </Zoom>
     </BlocksControls>
-  );
+  )
 }
 
 export const featureBlock = {
@@ -33,4 +32,4 @@ export const featureBlock = {
     },
     fields: [],
   },
-};
+}

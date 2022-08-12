@@ -1,19 +1,23 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Grid, Heading } from "theme-ui";
+import { jsx } from "theme-ui"
+import { Grid, Heading } from "theme-ui"
 
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import { DrupalAdminMenu } from "../../../../gatsby-theme-drupal-admin/src/components/Menus/DrupalAdminMenu";
-import Menu from "gatsby-plugin-drupal-menus";
-import Logo from "../../images/quantum.svg";
-import { darken } from "@theme-ui/color";
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
+import { DrupalAdminMenu } from "../../../../gatsby-theme-drupal-admin/src/components/Menus/DrupalAdminMenu"
+import Menu from "gatsby-plugin-drupal-menus"
+import Logo from "../../images/quantum.svg"
+import { darken } from "@theme-ui/color"
 
-const Header = ({siteTitle, serverData}) => (
+const Header = ({ siteTitle, serverData }) => (
   <header
     sx={{
-      backgroundImage: (theme) => `linear-gradient(45deg,${theme.rawColors.primary}, ${darken(theme.rawColors.primary, .2)(theme)})`,
-      width: `100%`
+      backgroundImage: (theme) =>
+        `linear-gradient(45deg,${theme.rawColors.primary}, ${darken(
+          theme.rawColors.primary,
+          0.2
+        )(theme)})`,
+      width: `100%`,
     }}
   >
     <div
@@ -22,11 +26,15 @@ const Header = ({siteTitle, serverData}) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <Grid gap={2} columns={[3, '1fr 6fr 1fr']}>
+      <Grid gap={2} columns={[3, "1fr 6fr 1fr"]}>
         <h1 style={{ margin: 0 }}>
-          <img src={ Logo } height={35} sx={{
-            verticalAlign: `middle`
-          }} />
+          <img
+            src={Logo}
+            height={35}
+            sx={{
+              verticalAlign: `middle`,
+            }}
+          />
           &nbsp;
           <Link
             to="/"
@@ -36,43 +44,47 @@ const Header = ({siteTitle, serverData}) => (
               verticalAlign: `middle`,
             }}
           >
-
             {siteTitle}
           </Link>
         </h1>
-        {serverData
-          ?
+        {serverData ? (
           <DrupalAdminMenu serverData={serverData} />
-          :
-          <div sx={{
-            a: {
-              color: `white`,
-              textDecoration: "none"
-            },
-            nav: {
-              ul: {display: "flex", flex: 1, float: "right", listStyle: "none"}
-            }
-          }}>
+        ) : (
+          <div
+            sx={{
+              a: {
+                color: `white`,
+                textDecoration: "none",
+              },
+              nav: {
+                ul: {
+                  display: "flex",
+                  flex: 1,
+                  float: "right",
+                  listStyle: "none",
+                },
+              },
+            }}
+          >
             <Menu />
           </div>
-        }
+        )}
       </Grid>
-
     </div>
   </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
-};
+  siteTitle: PropTypes.string,
+}
 
 Header.defaultProps = {
-  siteTitle: ``
-};
+  siteTitle: ``,
+}
 
-export default Header;
+export default Header
 
-export const AdminHeader = ({siteTitle, serverData}) => (
+export const AdminHeader = ({ siteTitle, serverData }) => (
   <header
     sx={{
       backdropFilter: "saturate(180%) blur(20px)",
@@ -82,40 +94,39 @@ export const AdminHeader = ({siteTitle, serverData}) => (
       top: 0,
       zIndex: 1000,
       height: "62px",
-      fontSize: "13px"
+      fontSize: "13px",
     }}
   >
     <div
       sx={{
         margin: `0 auto`,
-        pt: `7px`
+        pt: `7px`,
       }}
     >
       <Grid gap={2} columns={[2, "1fr 6fr"]}>
-        <Heading as={"h1"} sx={{m: 2}}>
+        <Heading as={"h1"} sx={{ m: 2 }}>
           <Link
             to="/"
             style={{
               color: `#0071e3`,
               textDecoration: `none`,
-              verticalAlign: `middle`
+              verticalAlign: `middle`,
             }}
           >
-
             {siteTitle}
           </Link>
         </Heading>
 
-        <div sx={{
-          margin: `0 auto`,
-          width: "100%",
-          textAlign: "right"
-        }}>
-          <DrupalAdminMenu serverData={serverData}/>
-
+        <div
+          sx={{
+            margin: `0 auto`,
+            width: "100%",
+            textAlign: "right",
+          }}
+        >
+          <DrupalAdminMenu serverData={serverData} />
         </div>
       </Grid>
-
     </div>
   </header>
-);
+)

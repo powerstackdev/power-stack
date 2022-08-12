@@ -8,7 +8,7 @@ module.exports = {
         enabled: true,
         toolbar: true,
         sidebar: {
-          position: `displace`
+          position: `displace`,
         },
       },
     },
