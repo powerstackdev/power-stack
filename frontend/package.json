@@ -5,7 +5,7 @@
     "starters/*",
     "packages/*",
     "packages/@powerstack/*",
-    "deprecated-packages"
+    "deprecated-packages/*"
   ],
   "packageManager": "yarn@3.2.0",
   "devDependencies": {
