@@ -1,5 +1,6 @@
 import axios from "axios"
 import qs from "qs"
+import { isTinaWindow } from "../../utils/tinaUtils"
 
 export const submitTinaDataToDrupal = (data) => {
   axios
@@ -11,10 +12,10 @@ export const submitTinaDataToDrupal = (data) => {
     )
     .then(
       (response) => {
-        isWindow && window.tinacms.alerts.success("Saved!")
+        isTinaWindow && window.tinacms.alerts.success("Saved!")
       },
       (error) => {
-        isWindow && window.tinacms.alerts.error("Error saving")
+        isTinaWindow && window.tinacms.alerts.error("Error saving")
       }
     )
 }

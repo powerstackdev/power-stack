@@ -24,7 +24,7 @@ export const getRequestHeaders = async (headers) => {
  * @param requests key/value store.  The key is a label and the value is the Drupal API request path.
  * @returns {Promise<{success: {}, errors: {}}|{props: {goto: string}}>}
  */
-export const getRequestFetchMultiple = async (headers, requests) => {
+export const getRequestFetchMultiple = async (headers, requests, params) => {
   const requestHeaders = await getRequestHeaders(headers)
 
   const requestsData = {

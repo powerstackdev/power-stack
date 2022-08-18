@@ -2,22 +2,22 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import set from "lodash.set"
 import { InlineBlocks, InlineForm } from "react-tinacms-inline"
-import { InitForm, InitPlugin } from "../../../utils/inits";
+import { InitForm, InitPlugin } from "../../../utils/inits"
 import {
   createBlockComponent,
   createTinaInlineBlocks,
-  isTinaWindow
-} from "../../../utils/tinaUtils";
-import { createTinaField } from "../../../utils/fields/fieldUtils";
+  isTinaWindow,
+} from "../../../utils/tinaUtils"
+import { createTinaField } from "../../../utils/fieldUtils"
 
-import { PageBuilderContext } from "../../../contexts/PageBuilderContext";
+import { PageBuilderContext } from "../../../contexts/PageBuilderContext"
 
 import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo"
 import Header from "gatsby-theme-core-design-system/src/components/Headers/Header"
 import Footer from "gatsby-theme-core-design-system/src/components/Footers/Footer"
 import { Title } from "gatsby-theme-core-design-system/src/components/Text/Title"
 import { Box, Spinner } from "theme-ui"
-import { getRequestFetchMultiple } from "../../../api/fetch/getRequestUtils";
+import { getRequestFetchMultiple } from "../../../api/fetch/getRequestUtils"
 
 /**
  * Page template to create a new CMS page with Tina inline blocks enabled
@@ -36,14 +36,17 @@ const NewPage = ({ serverData }) => {
       }
     }
   `)
-
-  set(serverData, `blocksData.${Object.keys(serverData.blocksData)[0]}.Component`, createBlockComponent)
+  set(
+    serverData,
+    `blocksData.${Object.keys(serverData.blocksData)[0]}.Component`,
+    createBlockComponent
+  )
 
   const PageForm = {
     initialValues: {
-      status: true
+      status: true,
     },
-    fields: serverData.fields
+    fields: serverData.fields,
   }
 
   const [, form] = isTinaWindow ? InitForm(PageForm) : ["", ""]
@@ -74,7 +77,11 @@ const NewPage = ({ serverData }) => {
                   minHeight: `400px`,
                 }}
               >
-                <InlineBlocks className={'blocks'} name="blocks" blocks={serverData.blocksData} />
+                <InlineBlocks
+                  className={"blocks"}
+                  name="blocks"
+                  blocks={serverData.blocksData}
+                />
               </Box>
             </InlineForm>
           </PageBuilderContext.Provider>
@@ -98,29 +105,33 @@ const NewPage = ({ serverData }) => {
 }
 
 /**
- * Gatsby API's get server data function
+ * Gatsby API's getServerData function for loading in data via SSR
  * @param params
  * @param headers
  * @returns {Promise<{props: (*&{headers: {[p: string]: any}, currentUser: number})}|{headers: {ErrorMessage: string}, status: number, props: {}}>}
  */
 export async function getServerData({ params, headers }) {
-  const [type, templateId] = params['*'].split('/')
+  const [type, templateId] = params["*"].split("/")
 
   // An object of the requests we are going to execute against Drupal's API
   const requests = {
     contentTypeData: `entity_form_display/entity_form_display?filter[bundle]=${type}`,
-    paragraphsData: 'entity_form_display/entity_form_display?filter[targetEntityType]=paragraph',
-    usersData: 'user/user',
-    languagesData: 'configurable_language/configurable_language',
-    apiBaseData: ''
+    paragraphsData:
+      "entity_form_display/entity_form_display?filter[targetEntityType]=paragraph",
+    usersData: "user/user",
+    languagesData: "configurable_language/configurable_language",
+    apiBaseData: "",
   }
 
   // Execute the requests
-  const requestsData = await getRequestFetchMultiple(headers, requests)
+  const requestsData = await getRequestFetchMultiple(headers, requests, params)
 
   // Make sure that we don't have any errors returned
-  if(requestsData.errors && Object.keys(requestsData.errors).length === 0 && Object.getPrototypeOf(requestsData.errors) === Object.prototype) {
-
+  if (
+    requestsData.errors &&
+    Object.keys(requestsData.errors).length === 0 &&
+    Object.getPrototypeOf(requestsData.errors) === Object.prototype
+  ) {
     // Local variables
     let responses = requestsData.success
     let pageFields = []
@@ -130,18 +141,20 @@ export async function getServerData({ params, headers }) {
     const currentUserUuid = responses.apiBaseData.meta.links.me.meta.id
     let currentUserId = 0
 
-    Object.entries(responses.usersData.data).forEach(entry => {
-      const [, value] = entry;
-      if(value.id === currentUserUuid) {
+    Object.entries(responses.usersData.data).forEach((entry) => {
+      const [, value] = entry
+      if (value.id === currentUserUuid) {
         currentUserId = value.attributes.drupal_internal__uid
       }
     })
-    responses = {...responses, currentUser: currentUserId}
+    responses = { ...responses, currentUser: currentUserId }
 
     // Iterate over data to build out form fields and
-    for (const entry of Object.entries(responses.contentTypeData.data[0].attributes.content).sort((a, b) => (a[1].weight > b[1].weight) ? 1 : -1 )){
-      const [key, value] = entry;
-      if(!value.type.startsWith("entity_reference_paragraphs")){
+    for (const entry of Object.entries(
+      responses.contentTypeData.data[0].attributes.content
+    ).sort((a, b) => (a[1].weight > b[1].weight ? 1 : -1))) {
+      const [key, value] = entry
+      if (!value.type.startsWith("entity_reference_paragraphs")) {
         const fieldData = createTinaField(key, value, responses)
         pageFields = [...pageFields, fieldData]
       } else {
@@ -162,7 +175,7 @@ export async function getServerData({ params, headers }) {
     return {
       status: 500,
       headers: {
-        ErrorMessage: JSON.stringify( {...requestsData.errors})
+        ErrorMessage: JSON.stringify({ ...requestsData.errors }),
       },
       props: {},
     }
