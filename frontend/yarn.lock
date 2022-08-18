@@ -14457,9 +14457,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"gatsby-theme-tina-edit@workspace:*, gatsby-theme-tina-edit@workspace:packages/gatsby-theme-tina-edit":
+"gatsby-theme-tina-edit@workspace:*, gatsby-theme-tina-edit@workspace:deprecated-packages/gatsby-theme-tina-edit":
   version: 0.0.0-use.local
-  resolution: "gatsby-theme-tina-edit@workspace:packages/gatsby-theme-tina-edit"
+  resolution: "gatsby-theme-tina-edit@workspace:deprecated-packages/gatsby-theme-tina-edit"
   dependencies:
     "@tinacms/icons": ^0.42.1
     "@tinacms/react-forms": ^0.43.3
