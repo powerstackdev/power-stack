@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install modules
-        run: yarn --cwd frontend
+        run: cd frontend && yarn
       - name: Run tests
         run: sh ./scripts/tests/frontend/tests.sh
