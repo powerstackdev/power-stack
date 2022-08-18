@@ -8,4 +8,4 @@ jobs:
       - name: Install modules
         run: cd frontend && yarn
       - name: Run tests
-        run: sh ./scripts/tests/frontend/tests.sh
+        run: sh ./scripts/testing/frontend/tests.sh
