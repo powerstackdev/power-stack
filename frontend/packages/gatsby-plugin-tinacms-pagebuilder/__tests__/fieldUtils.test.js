@@ -4,7 +4,7 @@ import {
 } from "../src/utils/fieldUtils"
 
 it("Drupal fields convert to Tina fields", () => {
-  expect(drupalFieldTypeToTinaFieldType("string_textfield")).toEqual("text")
+  expect(drupalFieldTypeToTinaFieldType("string_textfield")).toEqual("text123")
   expect(drupalFieldTypeToTinaFieldType("boolean_checkbox")).toEqual("toggle")
   expect(drupalFieldTypeToTinaFieldType("boolean")).toEqual("toggle")
   expect(drupalFieldTypeToTinaFieldType("language_select")).toEqual("select")
