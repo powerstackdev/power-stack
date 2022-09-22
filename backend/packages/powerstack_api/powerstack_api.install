@@ -1,18 +1,24 @@
 <?php
+
 /**
  * @file
  * Install, update and uninstall functions for Power Stack API.
  */
 
+use Drupal\Component\Utility\Random;
+use Drupal\user\Entity\Role;
 use Drupal\consumers\Entity\Consumer;
 use Drupal\user\Entity\User;
 
+/**
+ *
+ */
 function powerstack_api_install() {
-  // Set config for simple_oauth.settings
+  // Set config for simple_oauth.settings.
   $config = \Drupal::service('config.factory')
     ->getEditable('simple_oauth.settings');
 
-  // Set new expiration values
+  // Set new expiration values.
   $config->set('access_token_expiration', 14400);
   $config->set('authorization_code_expiration', 144000);
 
@@ -20,19 +26,19 @@ function powerstack_api_install() {
   $config->set('public_key', '../keys/public.key');
   $config->set('private_key', '../keys/private.key');
 
-  // Save config
+  // Save config.
   $config->save();
 
-  // Set config for jsonapi_include.settings
+  // Set config for jsonapi_include.settings.
   $config = \Drupal::service('config.factory')
     ->getEditable('jsonapi_include.settings');
 
   $config->set('use_include_query', 1);
 
-  // Save config
+  // Save config.
   $config->save();
 
-  // Create new consumer
+  // Create new consumer.
   Consumer::create([
     'label' => 'Gatsby Consumer',
     'description' => 'This is the consumer for your Power Stack site.',
@@ -40,8 +46,8 @@ function powerstack_api_install() {
     'is_default' => TRUE,
   ])->save();
 
-  // Create API role
-  $role = \Drupal\user\Entity\Role::create(array('id' => 'api', 'label' => 'API'));
+  // Create API role.
+  $role = Role::create(['id' => 'api', 'label' => 'API']);
   $role->grantPermission('administer menu');
   $role->grantPermission('use key authentication');
   $role->grantPermission('administer node fields');
@@ -51,17 +57,18 @@ function powerstack_api_install() {
 
   $role->save();
 
-  // Create API user
-  $random = new \Drupal\Component\Utility\Random();
+  // Create API user.
+  $random = new Random();
 
   $user = User::create();
   $user->setPassword($random->string());
   $user->enforceIsNew();
   $user->setEmail('test@test.com');
-  $user->setUsername('API'); //This username must be unique and accept only a-Z,0-9, - _ @ .
+  // This username must be unique and accept only a-Z,0-9, - _ @ .
+  $user->setUsername('API');
   $user->activate();
   $user->addRole('api');
-  //Save user
+  // Save user.
   $user->save();
 
 }

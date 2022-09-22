@@ -2,6 +2,7 @@
     "name": "drupal/powerstack_api",
     "type": "drupal-module",
     "description": "Basic setup for the Headless API",
+    "version": "0.0.1",
     "keywords": [
         "Drupal"
     ],
@@ -10,6 +11,10 @@
         "composer-2-workspaces": {
             "type": "vcs",
             "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
+        },
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
         },
         "1": {
             "type": "composer",
@@ -21,25 +26,30 @@
         "drupal/simple_oauth": "^5.0",
         "drupal/key_auth": "^1.1",
         "drupal/gatsby": "^2.0@beta",
-        "drupal/jsonapi_cross_bundles": "^1.0",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/jsonapi_include": "^1.4",
-        "drupal/powerstack_demo_content": "dev-master",
-        "drupal/jsonapi_base_fields": "dev-master"
+        "drupal/jsonapi_schema":"^1.0@beta",
+        "drupal/powerstack_demo_content": "^0.0.1"
     },
     "require-dev": {
         "tmdk/composer-workspaces-plugin": "dev-overrides"
     },
     "extra": {
         "workspace-root": "../..",
+
         "patches": {
             "drupal/jsonapi_cross_bundles": {
                 "Updating ResourceType so that include param works.": "https://git.drupalcode.org/project/jsonapi_cross_bundles/-/merge_requests/2.patch",
                 "Fixing 404 error when cache is cleared.": "https://www.drupal.org/files/issues/2021-10-08/3241626-fix-404-on-cross-bundle-routes-when-uninstalling-another-module-2.patch"
             },
-            "drupal/jsonapi_extras": {
-                "Fixing decorator error.": "https://git.drupalcode.org/project/jsonapi_extras/-/merge_requests/7.patch"
+            "drupal/jsonapi_schema": {
+                "Fixing null values.": "https://www.drupal.org/files/issues/2019-10-31/3091633-3.patch"
             }
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "tmdk/composer-workspaces-plugin": true
         }
     }
 }

@@ -1,0 +1,9 @@
+# Defines a route where a site's featured content can be found.
+jsonapi_base_fields.base_field_config:
+  path: '/%jsonapi%/base_field_config/base_field_config'
+  defaults:
+    _jsonapi_resource: Drupal\jsonapi_base_fields\Resource\BaseFields
+  requirements:
+    # The same route requirements for any route definition may also be used
+    # by a JSON:API resource route.
+    _permission: 'access content'

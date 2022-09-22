@@ -14,4 +14,4 @@ dependencies:
   - jsonapi_cross_bundles:jsonapi_cross_bundles
   - jsonapi_menu_items:jsonapi_menu_items
   - jsonapi_include:jsonapi_include
-  - jsonapi_base_fields:jsonapi_base_fields
+  - jsonapi_schema:jsonapi_schema

@@ -1,0 +1,30 @@
+{
+  "name": "drupal/jsonapi_base_fields",
+  "type": "drupal-module",
+  "description": " JSON:API Base Fields",
+  "keywords": [
+    "Drupal"
+  ],
+  "license": "GPL-2.0+",
+  "repositories": {
+    "composer-2-workspaces": {
+      "type": "vcs",
+      "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
+    },
+    "1": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  },
+  "require-dev": {
+    "../../vendor/tmdk/composer-workspaces-plugin": "dev-overrides"
+  },
+  "extra": {
+    "workspace-root": "../.."
+  },
+  "config": {
+    "allow-plugins": {
+      "tmdk/composer-workspaces-plugin": true
+    }
+  }
+}
