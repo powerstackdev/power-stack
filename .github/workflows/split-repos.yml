@@ -6,7 +6,7 @@ on:
     branches:
       - '*'
     paths:
-      - '**/packages/**'
+      - '**packages/**'
       - '**/starters/**'
       - '**/docs/**'
     # Tag push events should be ignored, they will be handled with the create event below.

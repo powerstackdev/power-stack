@@ -1,0 +1,26 @@
+[INFO ] 2022-09-05 11:38:40.781 [main] Configuration - ***********************************************************************************
+[INFO ] 2022-09-05 11:38:40.784 [main] Configuration -    _____ _                   _              _          
+[INFO ] 2022-09-05 11:38:40.785 [main] Configuration -   / ____| |                 | |            (_)         
+[INFO ] 2022-09-05 11:38:40.785 [main] Configuration -  | (___ | |_ _ __ _   _  ___| |_ _   _ _ __ _ _____ __ 
+[INFO ] 2022-09-05 11:38:40.785 [main] Configuration -   \___ \| __| '__| | | |/ __| __| | | | '__| |_  / '__|
+[INFO ] 2022-09-05 11:38:40.785 [main] Configuration -   ____) | |_| |  | |_| | (__| |_| |_| | |  | |/ /| |   
+[INFO ] 2022-09-05 11:38:40.786 [main] Configuration -  |_____/ \__|_|   \__,_|\___|\__|\__,_|_|  |_/___|_|   
+[INFO ] 2022-09-05 11:38:40.786 [main] Configuration -                                                        
+[INFO ] 2022-09-05 11:38:40.786 [main] Configuration -  Structurizr Lite
+[INFO ] 2022-09-05 11:38:40.787 [main] Configuration -  Build: 2779
+[INFO ] 2022-09-05 11:38:40.788 [main] Configuration -  Built: 2022-08-16T14:31:05Z
+[INFO ] 2022-09-05 11:38:40.798 [main] Configuration -  Structurizr DSL: v1.20.0
+[INFO ] 2022-09-05 11:38:40.798 [main] Configuration - 
+[INFO ] 2022-09-05 11:38:40.799 [main] Configuration -  Workspace path: /usr/local/structurizr/architecture-diagrams
+[INFO ] 2022-09-05 11:38:40.799 [main] Configuration -  URL: 
+[INFO ] 2022-09-05 11:38:40.803 [main] Configuration -  Memory: used=51MB; free=204MB; total=256MB; max=256MB
+[INFO ] 2022-09-05 11:38:40.803 [main] Configuration - ***********************************************************************************
+[ERROR] 2022-09-05 11:39:07.663 [http-nio-8080-exec-10] FileSystemWorkspaceComponent - com.structurizr.dsl.StructurizrDslParserException: ../logo-manifest.png does not exist at line 33: logo "../logo-manifest.png"
+[ERROR] 2022-09-05 11:39:07.669 [http-nio-8080-exec-10] Http500Controller - null
+[ERROR] 2022-09-05 11:39:09.956 [http-nio-8080-exec-2] FileSystemWorkspaceComponent - com.structurizr.dsl.StructurizrDslParserException: ../logo-manifest.png does not exist at line 33: logo "../logo-manifest.png"
+[ERROR] 2022-09-05 11:39:09.957 [http-nio-8080-exec-2] ApiController - com.structurizr.lite.web.ApiException: workspace.dsl: ../logo-manifest.png does not exist at line 33: logo "../logo-manifest.png"
+[WARN ] 2022-09-05 11:39:17.058 [http-nio-8080-exec-3] PageNotFound - No mapping for POST /error
+[WARN ] 2022-09-05 11:39:17.062 [http-nio-8080-exec-3] DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+[INFO ] 2022-09-06 12:12:15.731 [Thread-2] Configuration - ********************************************************
+[INFO ] 2022-09-06 12:12:15.754 [Thread-2] Configuration -  Stopping Structurizr Lite
+[INFO ] 2022-09-06 12:12:15.759 [Thread-2] Configuration - ********************************************************
