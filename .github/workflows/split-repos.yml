@@ -23,7 +23,6 @@ jobs:
   sync_commits:
     runs-on: ubuntu-latest
     name: Sync commits
-    needs: frontend-tests
     if: github.repository == 'powerstackdev/power-stack' # Execute this workflow job only on the main repository.
     steps:
       - uses: actions/checkout@v2
