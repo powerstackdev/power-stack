@@ -56,9 +56,9 @@ export function AppNav() {
             </NavLink>
           </NavListItem>
         ) : null}
-        <NavListItem>
-          <NavLink as={ColorModeSwitcher} />
-        </NavListItem>
+        {/*<NavListItem>*/}
+        {/*  <NavLink as={ColorModeSwitcher} />*/}
+        {/*</NavListItem>*/}
       </NavList>
     </Nav>
   )

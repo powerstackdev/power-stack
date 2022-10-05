@@ -29,6 +29,13 @@ import heroBackgroundURL from '../images/hero-demo.gif'
     <HeroBody>
       <HeroTitle>Supercharging digital experiences for the modern web.</HeroTitle>
       <HeroTeaser>Quick. Extensible. Secure. Scalable.</HeroTeaser>
+      <HeroActionList>
+        <HeroAction>
+          <Button as={Link} to="/docs/intro/overview/">
+            Explore the docs
+          </Button>
+        </HeroAction>
+      </HeroActionList>
     </HeroBody>
   </Hero>
 </HeroSection>
@@ -108,6 +115,11 @@ import heroBackgroundURL from '../images/hero-demo.gif'
 <ScreenContainer as="section" py={5}>
   <Article>
     <GettingStarted />
+    <SiblingNav>
+      <SiblingNavLink type="next" to="/docs/getting-started/">
+        Read full documentation
+      </SiblingNavLink>
+    </SiblingNav>
   </Article>
 </ScreenContainer>
 

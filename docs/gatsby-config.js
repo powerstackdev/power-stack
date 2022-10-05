@@ -8,7 +8,7 @@ module.exports = {
         siteUrl: "https://example.com",
         author: 'Xavier Mirabelli-Montan',
         sections: [ 'Introduction', 'Core concepts', 'Development', 'Components', 'Guides', 'Reference' ],
-        navItems: [{ title: 'Docs', url: '/docs/intro/overview' }, { title: 'Blog', url: '/blog' }, { title: 'Contribute', url: '/contribute' }],
+        navItems: [],
         githubRepositoryURL: 'https://github.com/power-stack-dev/power-stack/',
       },
     },
