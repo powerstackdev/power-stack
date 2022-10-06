@@ -12,13 +12,14 @@ module.exports = {
         githubRepositoryURL: 'https://github.com/power-stack-dev/power-stack/',
       },
     },
-    // `gatsby-transformer-documentationjs`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `source`,
-    //     path: `${__dirname}/../frontend/packages`,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'mulish:600,900', // you can also specify font weights and styles
+        ],
+        display: 'swap',
+      },
+    }
   ],
 };

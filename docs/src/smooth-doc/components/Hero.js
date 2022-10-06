@@ -4,7 +4,7 @@ import { ScreenContainer } from './ScreenContainer'
 
 export const HeroTitle = styled.h1Box`
   font-size: 38;
-  font-weight: 600;
+  font-weight: 900;
   line-height: 1.2;
   letter-spacing: -1.12px;
   margin: 0 0 2;
@@ -58,7 +58,7 @@ const InnerHero = styled(ScreenContainer)`
       margin-top: 5;
       background-position: center right;
       background-size: 45% auto;
-      min-height: 400;
+      min-height: 200;
       text-align: left;
     `,
   )}

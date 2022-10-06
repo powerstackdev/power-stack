@@ -7,6 +7,7 @@ export const theme = {
   ...baseTheme,
   fonts: {
     ...baseTheme.fonts,
+    base: 'Mulish',
   },
   colors: {
     ...baseTheme.colors,

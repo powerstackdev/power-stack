@@ -27,7 +27,6 @@ export const Article = styled.article`
     margin: 3 0;
     font-size: 18;
     line-height: 1.6;
-    max-width: 52em;
   }
 
   /* Intro */
