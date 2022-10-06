@@ -2896,6 +2896,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@slixites/gatsby-plugin-google-fonts@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@slixites/gatsby-plugin-google-fonts@npm:1.1.1"
+  checksum: 0bbde1c8bef20527e6c7f85cee40fc72fd98db461d54df1451485cf28575c6ed253d2a85a8e708f2c35768656471c08bfa9b88f1c31dd686acdaabca6cefe59b
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:^0.4.2":
   version: 0.4.11
   resolution: "@swc/helpers@npm:0.4.11"
@@ -8708,13 +8715,6 @@ __metadata:
     react: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
     react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
   checksum: 390fe9d54a2241d208953472f3e58f6e6273b71872104c1fc757dd2a37fa74c52e06876d8f5de0e6fd150d8cfecbf1f21ffd4ed559bfe1b295587ae626e2741d
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-google-fonts@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "gatsby-plugin-google-fonts@npm:1.0.1"
-  checksum: 775aee252ee1bf7d77ae6ffd8cd44e14ee3badfab4f46c3ed2a438527894cbffe9383464073e33ae5b2442d70b2434df1358749f5c2e575538143508ff68a1b5
   languageName: node
   linkType: hard
 
@@ -16302,11 +16302,11 @@ __metadata:
   resolution: "smooth-doc-starter@workspace:."
   dependencies:
     "@babel/core": ^7.16.12
+    "@slixites/gatsby-plugin-google-fonts": ^1.1.1
     "@xstyled/styled-components": ^3.5.1
     gatsby: ^4.23.1
     gatsby-cli: ^4.12.1
     gatsby-plugin-google-analytics: ^4.6.0
-    gatsby-plugin-google-fonts: ^1.0.1
     gatsby-transformer-documentationjs: ^6.17.0
     react: ^17.0.2
     react-dom: ^17.0.2
