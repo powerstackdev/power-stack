@@ -24,7 +24,7 @@
         "drupal/core-composer-scaffold": "~9.3.0",
         "drupal/core-project-message": "~9.3.0",
         "drupal/core-recommended": "~9.3.0",
-        "drupal/powerstack_profile": "dev-master",
+        "drupal/powerstack_profile": "^0.0.1",
         "drush/drush": "^10.2",
         "vlucas/phpdotenv": "^5.4"
     },
@@ -44,7 +44,8 @@
             "composer/installers": true,
             "drupal/*": true,
             "tmdk/composer-workspaces-plugin": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {
@@ -107,6 +108,8 @@
         "workspace-root": "../.."
     },
     "require-dev": {
+        "drupal/core-dev": "^9.4",
+        "phpspec/prophecy-phpunit": "^2",
         "tmdk/composer-workspaces-plugin": "dev-overrides"
     }
 }

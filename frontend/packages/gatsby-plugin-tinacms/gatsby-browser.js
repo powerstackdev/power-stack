@@ -1,14 +1,12 @@
 import * as React from "react"
 import { TinaProvider, TinaCMS } from "tinacms"
-import DrupalMediaStore from './src/DrupalMediaStore';
+import DrupalMediaStore from "./src/DrupalMediaStore"
 
-export const wrapRootElement = ({ element }, {
-  editPath,
-  enabled,
-  toolbar,
-  sidebar
-}) => {
-  if (window.location.pathname.startsWith(editPath)){
+export const wrapRootElement = (
+  { element },
+  { editPath, enabled, toolbar, sidebar }
+) => {
+  if (window.location.pathname.startsWith(editPath)) {
     window.tinacms = new TinaCMS({
       enabled,
       toolbar,
@@ -17,5 +15,4 @@ export const wrapRootElement = ({ element }, {
     })
     return <TinaProvider cms={window.tinacms}>{element}</TinaProvider>
   }
-
 }

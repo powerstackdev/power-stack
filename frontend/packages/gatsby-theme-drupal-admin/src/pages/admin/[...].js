@@ -1,67 +1,86 @@
-import * as React from "react";
-import { navigate } from "gatsby";
-import absolution from "absolution";
+import * as React from "react"
+import { navigate } from "gatsby"
+import absolution from "absolution"
 import { useThemeUI } from "theme-ui"
 
 // Internal imports
-import Layout from "../../components/Layout/Layout";
-import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo";
-import { isLoggedIn } from "@powerstack/drupal-oauth-connector";
+import Layout from "../../components/Layout/Layout"
+import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo"
+import { isLoggedIn } from "@powerstack/drupal-oauth-connector"
 
-const DrupalAdminPage = ({serverData}) => {
+const DrupalAdminPage = ({ serverData }) => {
   const context = useThemeUI()
 
-  const parser = new DOMParser();
+  const parser = new DOMParser()
   const serverHtml = parser.parseFromString(serverData.content, "text/html")
   const serverHead = serverHtml.head.innerHTML
   const title = serverHtml.title
 
-  const convertHeadToAbsolutePaths = absolution(serverHead, process.env.GATSBY_DRUPAL_HOST)
-  let html = convertHeadToAbsolutePaths + '<base target="_parent" />' + `
+  const convertHeadToAbsolutePaths = absolution(
+    serverHead,
+    process.env.GATSBY_DRUPAL_HOST
+  )
+  let html =
+    convertHeadToAbsolutePaths +
+    '<base target="_parent" />' +
+    `
     <style>
       [data-gin-accent] {
         --colorGinAppBackground:${context.theme.rawColors.background}
       }
     </style>`
 
-  const body = absolution(serverHtml.body.innerHTML, process.env.GATSBY_DRUPAL_HOST, { urlAttributes: [ 'src', 'action' ] })
+  const body = absolution(
+    serverHtml.body.innerHTML,
+    process.env.GATSBY_DRUPAL_HOST,
+    { urlAttributes: ["src", "action"] }
+  )
 
   html += body
 
   const resizeIFrame = () => {
-    const iframe = document.getElementById("myIframe");
-    iframe !== null ? iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px': null
+    const iframe = document.getElementById("myIframe")
+    iframe !== null
+      ? (iframe.style.height =
+          iframe.contentWindow.document.body.scrollHeight + "px")
+      : null
   }
-
 
   return (
     <>
       {!serverData ? (
         navigate("/admin/login", {
-          state: {message: "your session has been timed out, please login"},
+          state: { message: "your session has been timed out, please login" },
         })
       ) : (
         <Layout isFull serverData={serverData.adminMenu}>
-          <Seo title={title}/>
-          <iframe id="myIframe" srcDoc={html} width="100%" height="100%" onLoad={resizeIFrame} style={{border: `none`}}/>
+          <Seo title={title} />
+          <iframe
+            id="myIframe"
+            srcDoc={html}
+            width="100%"
+            height="100%"
+            onLoad={resizeIFrame}
+            style={{ border: `none` }}
+          />
         </Layout>
       )}
     </>
-  );
-};
+  )
+}
 
-export default DrupalAdminPage;
+export default DrupalAdminPage
 
-export async function getServerData({params, headers}) {
-  const token = await isLoggedIn(Object.fromEntries(headers).cookie);
+export async function getServerData({ params, headers }) {
+  const token = await isLoggedIn(Object.fromEntries(headers).cookie)
 
   const requestHeaders = {
     headers: {
       Authorization: `Bearer ${token.access_token}`,
     },
-  };
+  }
 
-  const currentRoute = `admin/` + params["*"];
+  const currentRoute = `admin/` + params["*"]
 
   try {
     const [adminMenu, content] = await Promise.all([
@@ -73,7 +92,7 @@ export async function getServerData({params, headers}) {
         process.env.GATSBY_DRUPAL_HOST + `/` + currentRoute,
         requestHeaders
       ),
-    ]);
+    ])
 
     // if (
     //   adminMenu.status !== 200 ||
@@ -85,19 +104,19 @@ export async function getServerData({params, headers}) {
     // }
 
     if (!adminMenu.ok) {
-      throw new Error(`Response failed`);
+      throw new Error(`Response failed`)
     }
     return {
       props: {
         adminMenu: await adminMenu.json(),
         content: await content.text(),
       },
-    };
+    }
   } catch (error) {
     return {
       status: 500,
       headers: {},
       props: {},
-    };
+    }
   }
 }

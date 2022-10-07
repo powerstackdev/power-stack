@@ -1,8 +1,8 @@
 // example theme
-import { roboto } from "@theme-ui/presets";
-import { darken } from "@theme-ui/color";
+import { roboto } from "@theme-ui/presets"
+import { darken } from "@theme-ui/color"
 
-const starterTheme = {...roboto};
+const starterTheme = { ...roboto }
 
 export default {
   ...starterTheme,
@@ -10,7 +10,7 @@ export default {
     ...starterTheme.colors,
     primary: `#e60000`,
     background: `#efefef`,
-    white: '#fff'
+    white: "#fff",
   },
   styles: {
     ...starterTheme.styles,
@@ -19,18 +19,18 @@ export default {
     primary: {
       padding: 3,
       borderRadius: 4,
-      boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
-      bg: 'white',
+      boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
+      bg: "white",
       // color: 'background',
       // backgroundImage: (theme) => `linear-gradient(45deg, ${theme.colors.secondary}, ${darken('secondary', .15)(theme)})`,
       pb: 4,
-      pt: 2
+      pt: 2,
     },
     compact: {
       padding: 1,
       borderRadius: 2,
-      border: '1px solid',
-      borderColor: 'muted',
+      border: "1px solid",
+      borderColor: "muted",
     },
   },
   buttons: {
@@ -38,36 +38,40 @@ export default {
       color: "background",
       bg: "primary",
       "&:hover": {
-        bg: "text"
+        bg: "text",
       },
-      borderRadius: `100px`
+      borderRadius: `100px`,
     },
     secondary: {
       color: "background",
       bg: "secondary",
       "&:hover": {
-        backgroundImage: (theme) => `linear-gradient(45deg, ${theme.colors.secondary}, ${darken("secondary", .15)(theme)})`
+        backgroundImage: theme =>
+          `linear-gradient(45deg, ${theme.colors.secondary}, ${darken(
+            "secondary",
+            0.15
+          )(theme)})`,
       },
-      borderRadius: `100px`
+      borderRadius: `100px`,
     },
   },
   badges: {
     primary: {
-      color: 'background',
-      bg: 'primary',
+      color: "background",
+      bg: "primary",
     },
     outline: {
-      color: 'primary',
-      bg: 'transparent',
-      boxShadow: 'inset 0 0 0 1px',
+      color: "primary",
+      bg: "transparent",
+      boxShadow: "inset 0 0 0 1px",
     },
     icon: {
-      padding: '10px',
-      height: '100%',
-      width: '66px',
-      textAlign: 'center',
+      padding: "10px",
+      height: "100%",
+      width: "66px",
+      textAlign: "center",
       fontSize: `30px`,
-      borderRadius: '100%'
-    }
+      borderRadius: "100%",
+    },
   },
 }

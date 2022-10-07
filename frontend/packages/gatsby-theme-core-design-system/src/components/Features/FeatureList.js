@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
-import { featureBlock } from "./Feature";
+import { jsx } from "theme-ui"
+import { BlocksControls, InlineBlocks } from "react-tinacms-inline"
+import { featureBlock } from "./Feature"
 import { lighten } from "@theme-ui/color"
 
 export function FeatureList({ index }) {
@@ -28,14 +28,13 @@ export function FeatureList({ index }) {
           }}
         />
       </div>
-
     </BlocksControls>
-  );
+  )
 }
 
 const FEATURE_BLOCKS = {
   feature: featureBlock,
-};
+}
 
 export const featureListBlock = {
   Component: FeatureList,
@@ -63,4 +62,4 @@ export const featureListBlock = {
     },
     fields: [],
   },
-};
+}

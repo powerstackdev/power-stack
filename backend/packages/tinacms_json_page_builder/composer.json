@@ -3,6 +3,7 @@
     "description": "Provides a connection between Tina and Drupal",
     "type": "drupal-module",
     "license": "GPL-2.0+",
+    "version": "0.0.1",
     "authors": [
         {
             "name": "Xavier Mirabelli-Montan",
@@ -15,8 +16,8 @@
             "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
         },
         "0": {
-            "type": "vcs",
-            "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
         }
     },
     "extra": {
@@ -24,5 +25,10 @@
     },
     "require-dev": {
         "tmdk/composer-workspaces-plugin": "dev-overrides"
+    },
+    "config": {
+        "allow-plugins": {
+            "tmdk/composer-workspaces-plugin": true
+        }
     }
 }

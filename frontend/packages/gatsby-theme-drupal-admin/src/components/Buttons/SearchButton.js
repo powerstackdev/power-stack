@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Button } from "theme-ui";
-import { FiSearch } from "react-icons/fi";
+import { jsx, Button } from "theme-ui"
+import { FiSearch } from "react-icons/fi"
 
 export const SearchButton = () => (
   <Button variant="clear">

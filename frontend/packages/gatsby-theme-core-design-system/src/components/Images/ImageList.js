@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { BlocksControls, InlineBlocks } from "react-tinacms-inline";
-import { imageBlock } from "./Image";
+import { jsx } from "theme-ui"
+import { BlocksControls, InlineBlocks } from "react-tinacms-inline"
+import { imageBlock } from "./Image"
 
 function ImageList({ data, index }) {
   const columns = `1fr `.repeat(data.columns ? data.columns : 2)
@@ -29,12 +29,12 @@ function ImageList({ data, index }) {
         />
       </div>
     </BlocksControls>
-  );
+  )
 }
 
 const IMAGE_BLOCKS = {
   image: imageBlock,
-};
+}
 
 export const imageListBlock = {
   Component: ImageList,
@@ -48,8 +48,8 @@ export const imageListBlock = {
           _template: "image",
           image: {
             src: "/martin-sanchez-unsplash-square.jpg",
-            alt: ""
-          }
+            alt: "",
+          },
         },
         {
           _template: "image",
@@ -64,8 +64,8 @@ export const imageListBlock = {
       {
         name: "columns",
         label: "Images per row",
-        component: "number"
-      }
+        component: "number",
+      },
     ],
   },
-};
+}

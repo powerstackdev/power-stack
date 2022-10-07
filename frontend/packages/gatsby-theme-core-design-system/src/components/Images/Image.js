@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import React from "react";
-import { BlocksControls, InlineImage } from "react-tinacms-inline";
-import Zoom from "react-reveal/Zoom";
+import { jsx } from "theme-ui"
+import React from "react"
+import { BlocksControls, InlineImage } from "react-tinacms-inline"
+import Zoom from "react-reveal/Zoom"
 
 function Image({ data, index }) {
   return (
@@ -23,11 +23,9 @@ function Image({ data, index }) {
             focusRing={false}
           />
         </Zoom>
-
       </div>
-
     </BlocksControls>
-  );
+  )
 }
 
 export const imageBlock = {
@@ -47,7 +45,7 @@ export const imageBlock = {
         component: "image",
         parse: (media) => `${media.src}?id=${media.id}&vid=${media.vid}`,
         previewSrc: (src) => src,
-        focusRing: false
+        focusRing: false,
       },
       {
         name: "image.alt",
@@ -56,4 +54,4 @@ export const imageBlock = {
       },
     ],
   },
-};
+}
