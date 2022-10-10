@@ -4,24 +4,19 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Quantum`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Power Stack`,
+    description: `Development starter for Power Stack`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-theme-ui',
-      options: {
-        prismPreset: 'night-owl',
-      },
-    },
+    "gatsby-plugin-theme-ui",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-drupal-menus",
     "gatsby-plugin-no-sourcemaps",
-    // `gatsby-plugin-perf-budgets`,
+    `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
     {
       resolve: `gatsby-source-drupal`,
@@ -49,7 +44,7 @@ module.exports = {
       },
       __key: "images",
     },
-    "gatsby-theme-tina-edit",
-    "gatsby-theme-drupal-admin"
+    "gatsby-plugin-tinacms-pagebuilder",
+    "gatsby-theme-drupal-admin",
   ],
-};
+}

@@ -9,33 +9,26 @@ import {
   HeroTeaser,
   HeroActionList,
   HeroAction,
+  SiblingNav,
+  SiblingNavLink,
   FeatureSection,
   FeatureList,
   Feature,
   FeatureTitle,
   FeatureText,
-  FeatureImage,
-  SiblingNav,
-  SiblingNavLink
 } from "smooth-doc/components"
 import { Link } from 'gatsby'
+import { FiDatabase, FiLayout, FiLock, FiPenTool } from 'react-icons/fi'
 
 import GettingStarted from '../partials/getting-started.mdx'
 
-import heroBackgroundURL from '../images/hero-background.png'
+import heroBackgroundURL from '../images/hero-demo.gif'
 
 <HeroSection>
   <Hero backgroundImageURL={heroBackgroundURL}>
     <HeroBody>
-      <HeroTitle>Defining digital experiences for the modern web.</HeroTitle>
+      <HeroTitle>Supercharging digital experiences for the modern web.</HeroTitle>
       <HeroTeaser>Quick. Extensible. Secure. Scalable.</HeroTeaser>
-      <HeroActionList>
-        <HeroAction>
-          <Button as={Link} to="/docs/intro/overview/">
-            Explore Docs
-          </Button>
-        </HeroAction>
-      </HeroActionList>
     </HeroBody>
   </Hero>
 </HeroSection>
@@ -43,6 +36,16 @@ import heroBackgroundURL from '../images/hero-background.png'
 <FeatureSection>
   <FeatureList>
     <Feature>
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M161.163 52.7351C179.869 69.0725 194.43 92.0397 190.879 111.455C187.327 130.871 165.662 146.735 146.957 155.14C128.252 163.664 112.388 164.848 92.6172 168.755C72.8465 172.661 49.1691 179.409 33.3052 170.886C17.5597 162.362 9.74614 138.684 8.68066 114.06C7.73356 89.4351 13.7713 63.7451 29.5168 47.4077C45.2623 30.9519 70.9523 23.8486 95.2217 25.1509C119.491 26.5715 142.458 36.3977 161.163 52.7351Z" fill="url(#paint0_linear_1_10)"/>
+        <defs>
+          <linearGradient id="paint0_linear_1_10" x1="100" y1="25" x2="100" y2="175" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFED00"/>
+            <stop offset="1" stop-color="#FFC800"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <FiDatabase />
       <FeatureTitle>Unrivalled CMS capabilities</FeatureTitle>
       <FeatureText>
         Built with the power of Drupal, you can have assurance that your content is translatable, highly extensible and
@@ -50,6 +53,16 @@ import heroBackgroundURL from '../images/hero-background.png'
       </FeatureText>
     </Feature>
     <Feature>
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M178.576 48.1753C192.121 67.7566 186.232 102.208 169.743 128.709C153.4 155.21 126.605 173.761 97.4536 174.939C68.4496 176.117 37.3845 160.216 23.1034 134.893C8.96945 109.717 11.7668 75.4125 27.2258 54.5061C42.8319 33.7469 71.247 26.5327 101.87 25.2077C132.494 23.8826 165.179 28.5939 178.576 48.1753Z" fill="url(#paint0_linear_1_8)"/>
+        <defs>
+          <linearGradient id="paint0_linear_1_8" x1="100" y1="25" x2="100" y2="175" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFED00"/>
+            <stop offset="1" stop-color="#FFC800"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <FiLayout />
       <FeatureTitle>Inline page building like no other</FeatureTitle>
       <FeatureText>
         Create pages and preview edits on your page seeing how it will display for your users in realtime.  Edit inline
@@ -57,13 +70,33 @@ import heroBackgroundURL from '../images/hero-background.png'
       </FeatureText>
     </Feature>
     <Feature>
-      <FeatureTitle>Performance, security and scalability like no other</FeatureTitle>
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M189.958 59.4582C205.502 86.4842 194.02 129.408 172.47 151.311C151.097 173.391 119.655 174.628 87.8593 174.981C56.064 175.158 23.7388 174.451 10.4908 157.14C-2.9339 139.653 2.36531 105.561 18.6162 78.3587C34.6905 50.9794 61.5399 30.6657 96.5147 26.0731C131.313 21.3038 174.237 32.4322 189.958 59.4582Z" fill="url(#paint0_linear_1_6)"/>
+        <defs>
+          <linearGradient id="paint0_linear_1_6" x1="100" y1="32" x2="100" y2="175" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFED00"/>
+            <stop offset="1" stop-color="#FFC800"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <FiLock />
+      <FeatureTitle>Performance, security and scalability by default</FeatureTitle>
       <FeatureText>
         Sleep well at night knowing your customers will have a blazing fast experiences that remains secure and stable
         thanks to the Gatsby generated frontend.
       </FeatureText>
     </Feature>
     <Feature>
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M147.719 35.9202C163.118 43.8075 177.516 56.202 185.153 72.4775C192.79 88.753 193.416 108.91 188.158 127.939C182.899 146.844 171.757 164.497 155.982 171.257C140.208 177.893 120.051 173.761 100.019 173.386C80.1132 172.885 60.5826 176.265 50.3165 167.752C40.1756 159.113 39.4244 138.706 30.9111 119.301C22.5229 99.8955 6.37258 81.3664 8.62611 67.2193C11.0048 53.0721 31.7874 43.3067 50.0661 36.4209C68.3448 29.5351 83.9943 25.4037 100.019 25.0281C116.045 24.6525 132.32 28.0328 147.719 35.9202Z" fill="url(#paint0_linear_1_4)"/>
+        <defs>
+          <linearGradient id="paint0_linear_1_4" x1="100" y1="25" x2="100" y2="175" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFED00"/>
+            <stop offset="1" stop-color="#FFC800"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <FiPenTool />
       <FeatureTitle>Themeable ready-to-use components</FeatureTitle>
       <FeatureText>
         A design system with a set of ready-to-use components to build feature-rich landing pages. With Gatsby
@@ -72,14 +105,9 @@ import heroBackgroundURL from '../images/hero-background.png'
     </Feature>
   </FeatureList>
 </FeatureSection>
-<ScreenContainer as="section" py={5}>
+<ScreenContainer py={5}>
   <Article>
     <GettingStarted />
-    <SiblingNav>
-      <SiblingNavLink type="next" to="/docs/getting-started/">
-        Read full documentation
-      </SiblingNavLink>
-    </SiblingNav>
   </Article>
 </ScreenContainer>
 

@@ -50,12 +50,17 @@ fin docker-compose run --rm cli bash -lc /var/www/scripts/setup/docs/install_dep
 title "STEP 2" "Initializing stack"
 fin project start
 
+
+# Upgrade global Drupal coder
+title "STEP 3" "Upgrading global drupal/coder"
+fin exec "cd /home/docker/.composer && composer update --with-dependencies drupal/coder"
+
 # Install Drupal
-title "STEP 3" "Installing CMS"
+title "STEP 4" "Installing CMS"
 fin exec /var/www/scripts/setup/backend/install_cms.sh
 
 # Configuring frontend to link to newly provisioned backend environment
-title "STEP 4" "Linking environments"
+title "STEP 5" "Linking environments"
 fin exec /var/www/scripts/misc/add_backend_creds_to_env_file.sh
 fin project restart frontend
 

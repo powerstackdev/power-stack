@@ -1,14 +1,14 @@
 // example theme
-import { system } from "@theme-ui/presets";
-import { darken } from "@theme-ui/color";
+import { system } from "@theme-ui/presets"
+import { darken } from "@theme-ui/color"
 
-const starterTheme = {...system};
+const starterTheme = { ...system }
 
 export default {
   ...starterTheme,
   colors: {
     ...starterTheme.colors,
-    white: '#fff',
+    white: "#fff",
     primary: `#0550e6`,
     background: `#FCFCFD`,
     darkGrey: `#344054`,
@@ -17,49 +17,49 @@ export default {
     modes: {
       dark: {
         ...starterTheme.colors.modes.dark,
-        white: '#1e1e1e',
+        white: "#1e1e1e",
         darkGrey: `white`,
-      }
-    }
+      },
+    },
   },
   fonts: {
     body: 'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'inherit',
-    monospace: 'Menlo, monospace'
+    heading: "inherit",
+    monospace: "Menlo, monospace",
   },
   fontWeights: {
     body: 400,
     heading: 700,
     link: 500,
-    bold: 700
+    bold: 700,
   },
   radii: {
     medium: `8px`,
-    large: `12px`
+    large: `12px`,
   },
   styles: {
     ...starterTheme.styles,
     h1: {
       fontSize: `1.6em`,
       letterSpacing: `-0.05em`,
-      color: `red`
-    }
+      color: `red`,
+    },
   },
   cards: {
     primary: {
       padding: 2,
-      borderRadius: 'large',
+      borderRadius: "large",
       border: `1px solid`,
       borderColor: `border`,
       boxShadow: `0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)`,
-      bg: 'white',
-      color: 'text',
+      bg: "white",
+      color: "text",
     },
     compact: {
       padding: 1,
       borderRadius: 2,
-      border: '1px solid',
-      borderColor: 'muted',
+      border: "1px solid",
+      borderColor: "muted",
     },
   },
   links: {
@@ -67,29 +67,33 @@ export default {
       color: "background",
       bg: "primary",
       fontWeight: "link",
-      borderRadius: 'medium',
+      borderRadius: "medium",
       "&:hover": {
-        bg: "text"
+        bg: "text",
       },
-    }
+    },
   },
   buttons: {
     primary: {
       color: "background",
       bg: "primary",
       fontWeight: "link",
-      borderRadius: 'medium',
+      borderRadius: "medium",
       "&:hover": {
-        bg: "text"
+        bg: "text",
       },
     },
     secondary: {
       color: "background",
       bg: "secondary",
       "&:hover": {
-        backgroundImage: (theme) => `linear-gradient(45deg, ${theme.colors.secondary}, ${darken("secondary", .15)(theme)})`
+        backgroundImage: (theme) =>
+          `linear-gradient(45deg, ${theme.colors.secondary}, ${darken(
+            "secondary",
+            0.15
+          )(theme)})`,
       },
-      borderRadius: `100px`
+      borderRadius: `100px`,
     },
     clear: {
       bg: `transparent`,
@@ -97,12 +101,12 @@ export default {
       py: `2px`,
       fontSize: 4,
       verticalAlign: `bottom`,
-      borderRadius: 'medium',
-      "svg": {
-        mb: `-4px`
+      borderRadius: "medium",
+      svg: {
+        mb: `-4px`,
       },
       "&:hover": {
-        bg: "lightGrey"
+        bg: "lightGrey",
       },
     },
     outline: {
@@ -111,29 +115,29 @@ export default {
       color: `darkGrey`,
       border: `1px solid`,
       borderColor: `border`,
-      borderRadius: 'medium',
-    }
+      borderRadius: "medium",
+    },
   },
   badges: {
     primary: {
-      color: 'darkGrey',
-      bg: 'lightGrey',
-      borderRadius: 'medium',
+      color: "darkGrey",
+      bg: "lightGrey",
+      borderRadius: "medium",
       p: 1,
-      px: 2
+      px: 2,
     },
     outline: {
-      color: 'primary',
-      bg: 'transparent',
-      boxShadow: 'inset 0 0 0 1px',
+      color: "primary",
+      bg: "transparent",
+      boxShadow: "inset 0 0 0 1px",
     },
     icon: {
-      padding: '10px',
-      height: '100%',
-      width: '66px',
-      textAlign: 'center',
+      padding: "10px",
+      height: "100%",
+      width: "66px",
+      textAlign: "center",
       fontSize: `30px`,
-      borderRadius: '100%'
-    }
+      borderRadius: "100%",
+    },
   },
 }

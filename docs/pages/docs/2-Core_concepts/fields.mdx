@@ -1,45 +1,37 @@
 ---
-title: fields
-section: Reference
-slug: /docs/components/fields
+title: Fields
+section: Core concepts
+slug: /docs/core-concepts/fields
 ---
 
 # Fields
 
+## Data type mappings
+### Drupal core fields to Tina Fields
 
-| Name | Type | Description | Drupal | Tina |
-| ---- | ---- | ----------- | ------ | ---- |
-| `Text` | string | Name of the resource |  |  |
-| `path` | string | Path to the resource |  |  |
+| Name | Current Support | Drupal | Tina | Tina Inline |
+| ---- | --------------- | ------ | ---- | ----------- |
+| `Text` | 🟢 | text | Text | InlineText |
+| `Long Text` | 🟢 | text_long | Textarea | InlineTextarea |
+| `Long Text with Summary` | 🔴 | text_with_summary | ❌ | ❌ |
+| `WYSIWYG` | 🟢 | text_long (with HTML formatter) | HTML | InlineWysiwyg |
+| `Boolean` | 🟡 | list_boolean | [Toggle](https://tina.io/docs/reference/toolkit/fields/toggle/) | ❌ |
+| `List (Text)` | 🟡 | list_text | [Select](https://tina.io/docs/reference/toolkit/fields/select/) | ❌ |
+| `List (Integer)` | 🔵 | list_integer | ❌ | ❌ |
+| `List (Float)` | 🔴 | list_float | ❌ | ❌ |
+| `Integer` | 🟡 | number_integer | [Number](https://tina.io/docs/reference/toolkit/fields/number/) | ❌ |
+| `Float` | 🔴 | number_float | ❌ | ❌ |
+| `Decimal` | 🔴 | number_decimal | ❌ | ❌ |
+| `Image` | 🟢 | image | HTML | Image |
+| `File` | 🔵 | file | ❌ | ❌ |
+| `Term Reference` | 🔵 | taxonomy_term_reference | ❌ | ❌ |
 
-file (File)
-image (Image)
-taxonomy_term_reference (Term Reference)
-list_boolean (Boolean)
-list_float (List (Float))
-list_integer (List (Integer))
-list_text (List (Text))
-number_decimal (Decimal)
-number_float (Float)
-number_integer (Integer)
-Text fields
-text (Text)
-text_long (Long Text)
-text_with_summary (Long Text with Summary)
+<small>🟢 Full support&nbsp;&nbsp;&nbsp;&nbsp;🟡 Partial support&nbsp;&nbsp;&nbsp;&nbsp;🔴 No support&nbsp;&nbsp;&nbsp;&nbsp;🔵 Future support planned</small>
 
+### Drupal contrib fields to Tina Fields
 
-Text
-Textarea
-Number
-Image
-Color
-Toggle
-Select
-Tags
-List
-Group
-Group List
-Blocks
-Date & Time
-Markdown
-HTML
+| Name | Current Support | Drupal | Tina | Tina Inline |
+| ---- | --------------- | ------ | ---- | ----------- |
+| `Color` | 🟢 | text | Color | ❌ |
+
+<small>🟢 Full support&nbsp;&nbsp;&nbsp;&nbsp;🟡 Partial support&nbsp;&nbsp;&nbsp;&nbsp;🔴 No support&nbsp;&nbsp;&nbsp;&nbsp;🔵 Future support planned</small>

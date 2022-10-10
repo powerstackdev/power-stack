@@ -1,12 +1,17 @@
 <?php
+
 /**
  * @file
  * Install, update and uninstall functions for Power Stack Demo Content.
  */
+
 use Drupal\menu_link_content\Entity\MenuLinkContent;
-use \Drupal\node\Entity\Node;
+use Drupal\node\Entity\Node;
 use Drupal\path_alias\Entity\PathAlias;
 
+/**
+ *
+ */
 function powerstack_demo_content_install() {
 
   // Create node object with attached file.
@@ -22,11 +27,11 @@ function powerstack_demo_content_install() {
     'langcode' => 'en',
   ])->save();
 
-  $items = array(
+  $items = [
     $node->id() => 'Menuitem 1',
-  );
+  ];
 
-  foreach($items as $link => $title) {
+  foreach ($items as $link => $title) {
     $menu_link = MenuLinkContent::create([
       'title' => $title,
       'link' => ['uri' => 'entity:node/' . $link],

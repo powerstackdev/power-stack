@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Link } from "theme-ui";
+import { jsx, Link } from "theme-ui"
 
 export const Footer = () => (
   <footer
@@ -34,6 +34,6 @@ export const Footer = () => (
       <div sx={{ p: 2 }}>© {new Date().getFullYear()} Jane Doe</div>
     </div>
   </footer>
-);
+)
 
-export default Footer;
+export default Footer

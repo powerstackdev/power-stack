@@ -1,14 +1,14 @@
 {
-    "name": "@powerstack/drupal-oauth-connector",
-    "main": "index.js",
-    "version": "1.0.0",
-    "dependencies": {
-        "@powerstack/utils": "workspace:*",
-        "js-cookie": "^3.0.1",
-        "set-cookie-parser": "^2.4.8"
-    },
-    "peerDependencies": {
-        "form-data": "^4.0.0",
-        "gatsby": "^4.5"
-    }
+  "name": "@powerstack/drupal-oauth-connector",
+  "main": "index.js",
+  "version": "1.0.1",
+  "dependencies": {
+    "@powerstack/utils": "workspace:*",
+    "js-cookie": "^3.0.1",
+    "set-cookie-parser": "^2.4.8"
+  },
+  "peerDependencies": {
+    "form-data": "^4.0.0",
+    "gatsby": "^4.5"
+  }
 }

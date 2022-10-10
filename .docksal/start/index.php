@@ -103,8 +103,8 @@ $sites = [
             <?php if ($site === "FRONTEND" || $site === "BACKEND"): ?>
                 <p><strong>Starter
                         - </strong> <?php echo getenv("${site}_STARTER"); ?></p>
-                <p><strong>Directory -</strong> <?php echo strtolower($site); ?>
-                    /starters/<?php echo getenv("${site}_STARTER"); ?>/ </p>
+                <p><strong>Directory -</strong>
+                  <?php echo strtolower($site); ?>/starters/<?php echo getenv("${site}_STARTER"); ?>/ </p>
             <?php else: ?>
                 <p><strong>Directory
                         - </strong> <?php echo strtolower($site); ?>/</p>

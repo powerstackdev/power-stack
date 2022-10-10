@@ -94,7 +94,8 @@ services:
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
     command: [ "bash", "-lc", "yarn workspace ${FRONTEND_STARTER} develop -H 0.0.0.0 -p 3000" ]
     depends_on:
-      - cli # cli has to start first to avoid race conditions in startup scripts between cli, php and preview
+      - cli
+      - php # cli has to start first to avoid race conditions in startup scripts between cli, php and preview
 
   docs:
     hostname: docs

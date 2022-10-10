@@ -11,11 +11,12 @@ dependencies:
 third_party_settings:
   field_group:
     group_inline_fields:
-      children: {  }
+      children:
+        - field_section_fields
       label: 'Inline fields'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 0
       format_type: details
       format_settings:
         classes: ''
@@ -25,12 +26,11 @@ third_party_settings:
         description: ''
         required_fields: true
     group_form_fields:
-      children:
-        - field_section_fields
+      children: {  }
       label: 'Form fields'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 1
       format_type: details
       format_settings:
         classes: ''
@@ -45,7 +45,7 @@ third_party_settings:
       label: 'Styling options'
       region: content
       parent_name: ''
-      weight: 6
+      weight: 2
       format_type: details
       format_settings:
         classes: ''
@@ -54,6 +54,8 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+_core:
+  default_config_hash: KF5JcwnGFwDO-1Ko8frAuvyw1eAMQNPEzUMgMBGWbZ8
 id: paragraph.section.default
 targetEntityType: paragraph
 bundle: section

@@ -1,4 +1,4 @@
-var webpack = require('webpack');
+var webpack = require("webpack")
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html" || stage === "develop-html") {
@@ -13,30 +13,30 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       },
       plugins: [
         new webpack.ProvidePlugin({
-          stream: 'stream-browserify',
+          stream: "stream-browserify",
           url: "url",
         }),
       ],
       resolve: {
         fallback: {
-          stream: 'stream',
+          stream: "stream",
           url: "url",
-        }
+        },
       },
     })
   } else {
     actions.setWebpackConfig({
       plugins: [
         new webpack.ProvidePlugin({
-          stream: 'stream-browserify',
+          stream: "stream-browserify",
           url: "url",
         }),
       ],
       resolve: {
         fallback: {
-          stream: 'stream-browserify',
+          stream: "stream-browserify",
           url: "url",
-        }
+        },
       },
     })
   }

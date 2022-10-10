@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Grid, Heading, Flex } from "theme-ui";
+import { jsx } from "theme-ui"
+import { Grid, Heading, Flex } from "theme-ui"
 
-import { Link } from "gatsby";
-import { DrupalAdminMenu } from "../Menus/DrupalAdminMenu";
-import Logo from "../../images/logo.svg";
-import LoginLogoutButton from "../Buttons/LoginLogoutButton";
-import ToggleColorModeButton from "../Buttons/ToggleColorModeButton";
-import SearchButton from "../Buttons/SearchButton";
-import NotificationsButton from "../Buttons/NotificationsButton";
-import SettingsButton from "../Buttons/SettingsButton";
+import { Link } from "gatsby"
+import { DrupalAdminMenu } from "../Menus/DrupalAdminMenu"
+import Logo from "../../images/logo.svg"
+import LoginLogoutButton from "../Buttons/LoginLogoutButton"
+import ToggleColorModeButton from "../Buttons/ToggleColorModeButton"
+import SearchButton from "../Buttons/SearchButton"
+import NotificationsButton from "../Buttons/NotificationsButton"
+import SettingsButton from "../Buttons/SettingsButton"
 
-export const AdminHeader = ({siteTitle, serverData}) => (
+export const AdminHeader = ({ siteTitle, serverData }) => (
   <header
     sx={{
       bg: `white`,
@@ -26,33 +26,43 @@ export const AdminHeader = ({siteTitle, serverData}) => (
     <div
       sx={{
         margin: `0 auto`,
-        pt: `7px`
+        pt: `7px`,
       }}
     >
-      <Grid gap={2} columns={[2, "3fr 1fr"]} sx={{m: `0 min(5vw, 48px)`, pt: 2 }}>
+      <Grid
+        gap={2}
+        columns={[2, "3fr 1fr"]}
+        sx={{ m: `0 min(5vw, 48px)`, pt: 2 }}
+      >
         <Flex>
-          <Heading as={"h1"} >
+          <Heading as={"h1"}>
             <Link
               to="/"
               style={{
                 textDecoration: `none`,
-                verticalAlign: `middle`
+                verticalAlign: `middle`,
               }}
             >
-              <img src={Logo} alt="logo" sx={{
-                height: `35px`
-              }} />
+              <img
+                src={Logo}
+                alt="logo"
+                sx={{
+                  height: `35px`,
+                }}
+              />
             </Link>
           </Heading>
 
-          <DrupalAdminMenu serverData={serverData}/>
+          <DrupalAdminMenu serverData={serverData} />
         </Flex>
 
-        <div sx={{
-          margin: `0 auto`,
-          width: "100%",
-          textAlign: "right"
-        }}>
+        <div
+          sx={{
+            margin: `0 auto`,
+            width: "100%",
+            textAlign: "right",
+          }}
+        >
           <SearchButton />
           <SettingsButton />
           <ToggleColorModeButton />
@@ -60,7 +70,6 @@ export const AdminHeader = ({siteTitle, serverData}) => (
           <LoginLogoutButton />
         </div>
       </Grid>
-
     </div>
   </header>
-);
+)
