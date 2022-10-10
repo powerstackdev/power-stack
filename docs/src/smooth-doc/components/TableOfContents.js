@@ -114,9 +114,8 @@ const TocContainer = styled.div`
 
   h4 {
     margin: 0;
-    font-size: 14;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-size: 20;
+    font-weight: 800;
     color: on-background-light;
   }
 
@@ -126,9 +125,9 @@ const TocContainer = styled.div`
 
     li {
       margin: 2 0;
-
+      font-weight: 800;
       &[data-depth='3'] {
-        padding-left: 2;
+        font-weight: 500;
       }
     }
   }

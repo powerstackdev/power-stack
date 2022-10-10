@@ -174,11 +174,24 @@ function PrevNextLinks(props) {
   )
 }
 
+export const DocsAlert = styled.sectionBox`
+  overflow: hidden;
+  padding-top: 2;
+  padding-bottom: 2;
+  background: #ffec00;
+  margin-bottom: 2;
+`
+
 export function DocLayout({ children, tableOfContents, editLink, ...props }) {
   const upMd = useUp('md')
   const sideNav = useSideNavState()
   return (
     <PageLayout {...props}>
+      <DocsAlert>
+        <ScreenContainer px={0}>
+          <p align={'center'}>While the project is in alpha, the docs may be outdated and might not fully reflect the current status of the codebase.</p>
+        </ScreenContainer>
+      </DocsAlert>
       <ScreenContainer px={0}>
         <Container>
           <SidebarSticky>

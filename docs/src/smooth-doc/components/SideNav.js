@@ -70,10 +70,9 @@ const NavGroup = styled.div`
 `
 
 const NavGroupTitle = styled.h4`
-  font-size: 14;
-  font-weight: 500;
+  font-size: 20;
+  font-weight: 800;
   color: on-background-light;
-  text-transform: uppercase;
   margin: 0 0 3 0;
 `
 

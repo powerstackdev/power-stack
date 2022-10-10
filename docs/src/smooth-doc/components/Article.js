@@ -31,19 +31,6 @@ export const Article = styled.article`
 
   /* Intro */
   > h1 + p {
-    font-size: 18;
-    font-weight: 300;
-    color: on-background-light;
-    margin: 2 0 !important;
-
-    ${up(
-      'xl',
-      css`
-        font-size: 22;
-        line-height: 1.2;
-      `,
-    )};
-
     a,
     strong {
       font-weight: 400;
@@ -66,7 +53,7 @@ export const Article = styled.article`
   > h1 {
     font-size: 32;
     line-height: 1.1;
-    font-weight: 600;
+    font-weight: 800;
     margin: 40 0 2;
   }
 
