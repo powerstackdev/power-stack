@@ -11,4 +11,4 @@ then
     exit
 fi
 
-tree -L 4 -d -I 'node_modules|vendor|public'
+tree -L 4 -d -I 'node_modules|vendor|public|coverage'
