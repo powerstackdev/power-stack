@@ -15,7 +15,7 @@ export const Nav = styled.navBox`
 const InnerNavLink = styled.aBox`
   display: inline-flex;
   color: on-link;
-  font-weight: 500;
+  font-weight: 800;
   transition: base;
   transition-property: color;
   text-decoration: none;

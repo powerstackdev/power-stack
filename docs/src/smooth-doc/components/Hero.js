@@ -45,19 +45,12 @@ export const HeroTeaser = styled.pBox`
 `
 
 const InnerHero = styled(ScreenContainer)`
-  background-repeat: no-repeat;
-  background-position: top -5% center;
-  background-size: 100% auto;
-  padding-top: 65%;
-  text-align: center;
+  margin-top: 4;
 
   ${up(
     'md',
     css`
-      padding-top: 0;
       margin-top: 5;
-      background-position: center right;
-      background-size: 45% auto;
       min-height: 200;
       text-align: left;
     `,
@@ -76,7 +69,6 @@ export const Hero = React.forwardRef(
     return (
       <InnerHero
         ref={ref}
-        backgroundImage={`url(${backgroundImageURL})`}
         {...props}
       />
     )
@@ -84,7 +76,7 @@ export const Hero = React.forwardRef(
 )
 
 export const HeroBody = React.forwardRef((props, ref) => {
-  return <x.div ref={ref} w={{ md: 0.5 }} {...props} />
+  return <x.div ref={ref} display="grid" gap={{ md: 2 }} gridTemplateColumns={{ md:2 }} {...props} />
 })
 
 export const HeroSection = styled.sectionBox`

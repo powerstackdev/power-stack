@@ -1,34 +1,34 @@
 import {
   Article,
   ScreenContainer,
-  Button,
   HeroSection,
   Hero,
   HeroBody,
   HeroTitle,
   HeroTeaser,
-  HeroActionList,
-  HeroAction,
-  SiblingNav,
-  SiblingNavLink,
   FeatureSection,
   FeatureList,
   Feature,
   FeatureTitle,
   FeatureText,
 } from "smooth-doc/components"
-import { Link } from 'gatsby'
+import Iframe from 'react-iframe'
+import { x } from '@xstyled/styled-components'
+
 import { FiDatabase, FiLayout, FiLock, FiPenTool } from 'react-icons/fi'
 
 import GettingStarted from '../partials/getting-started.mdx'
 
-import heroBackgroundURL from '../images/hero-demo.gif'
-
 <HeroSection>
   <Hero backgroundImageURL={heroBackgroundURL}>
     <HeroBody>
-      <HeroTitle>Supercharging digital experiences for the modern web.</HeroTitle>
-      <HeroTeaser>Quick. Extensible. Secure. Scalable.</HeroTeaser>
+      <x.div >
+        <HeroTitle>Supercharging digital experiences for the modern web.</HeroTitle>
+        <HeroTeaser>Quick. Extensible. Secure. Scalable.</HeroTeaser>
+      </x.div>
+      <x.div >
+        <Iframe width="100%" height="315" src="https://www.youtube.com/embed/dD-Z3pWjtLg?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&playlist=dD-Z3pWjtLg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+      </x.div>
     </HeroBody>
   </Hero>
 </HeroSection>
