@@ -1,8 +1,8 @@
 // example theme
-import { system } from "@theme-ui/presets";
+import { roboto } from "@theme-ui/presets";
 import { darken } from "@theme-ui/color";
 
-const starterTheme = {...system};
+const starterTheme = {...roboto};
 
 export default {
   ...starterTheme,
