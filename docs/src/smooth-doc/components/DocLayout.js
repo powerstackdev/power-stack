@@ -174,12 +174,17 @@ function PrevNextLinks(props) {
   )
 }
 
-export const DocsAlert = styled.sectionBox`
+export const DocsAlert = styled(ScreenContainer)`
   overflow: hidden;
   padding-top: 2;
   padding-bottom: 2;
   background: #ffec00;
   margin-bottom: 2;
+  margin-top:2;
+  background: linear-gradient(0.45turn, #ffec00, #ffc800);
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 800;
 `
 
 export function DocLayout({ children, tableOfContents, editLink, ...props }) {
@@ -188,9 +193,7 @@ export function DocLayout({ children, tableOfContents, editLink, ...props }) {
   return (
     <PageLayout {...props}>
       <DocsAlert>
-        <ScreenContainer px={0}>
-          <p align={'center'}>While the project is pre-alpha, the docs may be outdated and might not fully reflect the current status of the codebase.</p>
-        </ScreenContainer>
+        <p align={'center'}>While the project is pre-alpha, the docs may be outdated and might not fully reflect the current status of the codebase.</p>
       </DocsAlert>
       <ScreenContainer px={0}>
         <Container>
