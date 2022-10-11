@@ -1,6 +1,6 @@
 {
   "name": "development",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Gatsby Drupal Admin Demo",
   "author": "Xavier Mirabelli-Montan",
@@ -20,7 +20,7 @@
     "@theme-ui/presets": "^0.12.1",
     "axios": "^0.24.0",
     "dotenv": "^16.0.0",
-    "gatsby": "^4.4.0",
+    "gatsby": "^4.23.0",
     "gatsby-plugin-drupal-menus": "^1.0.6",
     "gatsby-plugin-image": "^2.3.0",
     "gatsby-plugin-manifest": "^4.3.0",
@@ -28,7 +28,7 @@
     "gatsby-plugin-react-helmet": "^5.3.0",
     "gatsby-plugin-sharp": "^4.3.0",
     "gatsby-plugin-sitemap": "^5.3.0",
-    "gatsby-plugin-theme-ui": "^0.12.1",
+    "gatsby-plugin-theme-ui": "^0.14.7",
     "gatsby-plugin-tinacms-pagebuilder": "workspace:*",
     "gatsby-source-drupal": "^5.3.0",
     "gatsby-source-filesystem": "^4.3.0",
@@ -37,7 +37,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "theme-ui": "^0.12.1"
+    "theme-ui": "^0.14.7"
   },
   "devDependencies": {
     "gatsby-plugin-perf-budgets": "^0.0.18",

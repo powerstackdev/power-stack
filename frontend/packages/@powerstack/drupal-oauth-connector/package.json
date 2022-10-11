@@ -1,7 +1,7 @@
 {
   "name": "@powerstack/drupal-oauth-connector",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@powerstack/utils": "workspace:*",
     "js-cookie": "^3.0.1",

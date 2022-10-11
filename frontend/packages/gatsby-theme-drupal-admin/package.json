@@ -1,12 +1,13 @@
 {
   "name": "gatsby-theme-drupal-admin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "dependencies": {
     "@nosferatu500/theme-file-explorer": "^3.0.11",
     "@powerstack/docker-webpack-polling": "workspace:^",
     "absolution": "^1.0.2",
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-theme-core-design-system": "workspace:^",
     "javascript-time-ago": "^2.3.10",
     "react-icons": "^4.4.0",
     "react-sortable-tree": "^2.8.0",
@@ -17,6 +18,7 @@
   },
   "peerDependencies": {
     "gatsby": "^4.0.0",
+    "gatsby-plugin-theme-ui": "^0.12.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   }
