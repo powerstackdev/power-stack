@@ -5,41 +5,76 @@
       "directory": "docs",
       "target": "git@github.com:powerstackdev/docs.git"
     },
+
     {
-      "name": "powerstackdev/backend_tinacms-json-page-builder",
+      "name": "powerstackdev/backend-jsonapi_base_fields",
+      "directory": "backend/deprecated-packages/jsonapi_base_fields",
+      "target": "git@github.com:powerstackdev/backend-jsonapi_base_fields.git"
+    },
+
+    {
+      "name": "powerstackdev/backend-powerstack_api",
+      "directory": "backend/packages/powerstack_api",
+      "target": "git@github.com:powerstackdev/backend-powerstack_api.git"
+    },
+    {
+      "name": "powerstackdev/backend-powerstack_demo_content",
+      "directory": "backend/packages/powerstack_demo_content",
+      "target": "git@github.com:powerstackdev/backend-powerstack_demo_content.git"
+    },
+    {
+      "name": "powerstackdev/backend-powerstack_page_builder",
+      "directory": "backend/packages/powerstack_page_builder",
+      "target": "git@github.com:powerstackdev/backend-powerstack_page_builder.git"
+    },
+    {
+      "name": "powerstackdev/backend-powerstack_profile",
+      "directory": "backend/packages/powerstack_profile",
+      "target": "git@github.com:powerstackdev/backend-powerstack_profile.git"
+    },
+    {
+      "name": "powerstackdev/backend-tinacms-json-page-builder",
       "directory": "backend/packages/tinacms_json_page_builder",
-      "target": "git@github.com:powerstackdev/backend_tinacms-json-page-builder.git"
+      "target": "git@github.com:powerstackdev/backend-tinacms-json-page-builder.git"
     },
+
     {
-      "name": "powerstackdev/frontend_powerstack-drupal-oauth-connector",
+      "name": "powerstackdev/backend-starter-development",
+      "directory": "backend/starters/development",
+      "target": "git@github.com:powerstackdev/backend-starter-development.git"
+    },
+
+    {
+      "name": "powerstackdev/frontend-powerstack-drupal-oauth-connector",
       "directory": "frontend/packages/@powerstack/drupal-oauth-connector",
-      "target": "git@github.com:powerstackdev/frontend_powerstack-drupal-oauth-connector.git"
+      "target": "git@github.com:powerstackdev/frontend-powerstack-drupal-oauth-connector.git"
     },
     {
-      "name": "powerstackdev/frontend_powerstack-utils",
+      "name": "powerstackdev/frontend-powerstack-utils",
       "directory": "frontend/packages/@powerstack/utils",
-      "target": "git@github.com:powerstackdev/frontend_powerstack-utils.git"
+      "target": "git@github.com:powerstackdev/frontend-powerstack-utils.git"
     },
     {
-      "name": "powerstackdev/frontend_gatsby-plugin-tinacms",
+      "name": "powerstackdev/frontend-gatsby-plugin-tinacms",
       "directory": "frontend/packages/gatsby-plugin-tinacms",
-      "target": "git@github.com:powerstackdev/frontend_gatsby-plugin-tinacms.git"
+      "target": "git@github.com:powerstackdev/frontend-gatsby-plugin-tinacms.git"
     },
     {
-      "name": "powerstackdev/frontend_gatsby-theme-core-design-system",
+      "name": "powerstackdev/frontend-gatsby-theme-core-design-system",
       "directory": "frontend/packages/gatsby-theme-core-design-system",
-      "target": "git@github.com:powerstackdev/frontend_gatsby-theme-core-design-system.git"
+      "target": "git@github.com:powerstackdev/frontend-gatsby-theme-core-design-system.git"
     },
     {
-      "name": "powerstackdev/frontend_gatsby-theme-drupal-admin",
+      "name": "powerstackdev/frontend-gatsby-theme-drupal-admin",
       "directory": "frontend/packages/gatsby-theme-drupal-admin",
-      "target": "git@github.com:powerstackdev/frontend_gatsby-theme-drupal-admin.git"
+      "target": "git@github.com:powerstackdev/frontend-gatsby-theme-drupal-admin.git"
     },
     {
-      "name": "powerstackdev/frontend_gatsby-theme-tina-edit",
+      "name": "powerstackdev/frontend-gatsby-theme-tina-edit",
       "directory": "frontend/packages/gatsby-theme-tina-edit",
-      "target": "git@github.com:powerstackdev/frontend_gatsby-theme-tina-edit.git"
+      "target": "git@github.com:powerstackdev/frontend-gatsby-theme-tina-edit.git"
     },
+
     {
       "name": "powerstackdev/scripts",
       "directory": "scripts",
