@@ -124,6 +124,7 @@ export function AppHeader() {
                   col="auto"
                   px={2}
                   height={35}
+                  width={232}
                   src={logo.publicURL}
                   alt={data.site.siteMetadata.title}
                 />

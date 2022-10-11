@@ -77,7 +77,7 @@ export const Article = styled.article`
   > h3 {
     font-size: 18;
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 800;
     margin: 4 0 3;
 
     ${down(

@@ -6,6 +6,10 @@ import {
   HeroBody,
   HeroTitle,
   HeroTeaser,
+  HeroAction,
+  HeroButton,
+  Button,
+  HeroActionList,
   FeatureSection,
   FeatureList,
   Feature,
@@ -28,6 +32,13 @@ import GettingStarted from '../partials/getting-started.mdx'
       <x.div >
         <HeroTitle>Supercharging digital experiences for the modern web.</HeroTitle>
         <HeroTeaser>Quick. Extensible. Secure. Scalable.</HeroTeaser>
+        <HeroActionList>
+          <HeroAction>
+            <Button as={Link} to="/docs/intro/overview/">
+              Explore the docs
+            </Button>
+          </HeroAction>
+        </HeroActionList>
       </x.div>
       <x.div >
         <LiteYouTubeEmbed
@@ -41,6 +52,7 @@ import GettingStarted from '../partials/getting-started.mdx'
         />
       </x.div>
     </HeroBody>
+
   </Hero>
 </HeroSection>
 

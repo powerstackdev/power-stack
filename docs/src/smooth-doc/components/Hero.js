@@ -83,7 +83,7 @@ export const HeroSection = styled.sectionBox`
   overflow: hidden;
   padding-top: 2;
   padding-bottom: 7;
-  background: linear-gradient(#ffc800, #ffec00);
+  background: linear-gradient(0.45turn, #ffc800, #ffec00);
   clip-path: ellipse(147% 100% at 77.16% 0%);
   margin-bottom: 6;
 `

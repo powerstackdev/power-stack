@@ -41,7 +41,8 @@ export const NavListItem = styled.liBox`
   list-style-type: none;
   white-space: nowrap;
   margin: 0;
-  padding: 0 3;
+  padding: 0;
+  padding-right: 3;
   display: flex;
   align-items: center;
 `
