@@ -54,10 +54,27 @@
       "directory": "frontend/packages/@powerstack/utils",
       "target": "git@github.com:powerstackdev/frontend-powerstack-utils.git"
     },
+
+    {
+      "name": "powerstackdev/frontend-gatsby-theme-tina-edit",
+      "directory": "frontend/deprecated-packages/gatsby-theme-tina-edit",
+      "target": "git@github.com:powerstackdev/frontend-gatsby-theme-tina-edit.git"
+    },
+
+    {
+      "name": "powerstackdev/frontend-gatsby-plugin-craftjs",
+      "directory": "frontend/packages/gatsby-plugin-craftjs",
+      "target": "git@github.com:powerstackdev/frontend-gatsby-plugin-craftjs.git"
+    },
     {
       "name": "powerstackdev/frontend-gatsby-plugin-tinacms",
       "directory": "frontend/packages/gatsby-plugin-tinacms",
       "target": "git@github.com:powerstackdev/frontend-gatsby-plugin-tinacms.git"
+    },
+    {
+      "name": "powerstackdev/frontend-gatsby-plugin-tinacms-pagebuilder",
+      "directory": "frontend/packages/gatsby-plugin-tinacms-pagebuilder",
+      "target": "git@github.com:powerstackdev/frontend-gatsby-plugin-tinacms-pagebuilder.git"
     },
     {
       "name": "powerstackdev/frontend-gatsby-theme-core-design-system",
@@ -69,10 +86,17 @@
       "directory": "frontend/packages/gatsby-theme-drupal-admin",
       "target": "git@github.com:powerstackdev/frontend-gatsby-theme-drupal-admin.git"
     },
+
     {
-      "name": "powerstackdev/frontend-gatsby-theme-tina-edit",
-      "directory": "frontend/packages/gatsby-theme-tina-edit",
-      "target": "git@github.com:powerstackdev/frontend-gatsby-theme-tina-edit.git"
+      "name": "powerstackdev/frontend-starter-development",
+      "directory": "frontend/starters/development",
+      "target": "git@github.com:powerstackdev/frontend-starter-development.git"
+    },
+
+    {
+      "name": "powerstackdev/frontend-starter-development-craft",
+      "directory": "frontend/starters/development-craft",
+      "target": "git@github.com:powerstackdev/frontend-starter-development-craft.git"
     },
 
     {
