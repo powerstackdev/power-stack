@@ -5,7 +5,6 @@ import { useThemeUI } from "theme-ui"
 
 // Internal imports
 import Layout from "../../components/Layout/Layout"
-import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo"
 import { isLoggedIn } from "@powerstack/drupal-oauth-connector"
 
 const DrupalAdminPage = ({ serverData }) => {
@@ -93,15 +92,6 @@ export async function getServerData({ params, headers }) {
         requestHeaders
       ),
     ])
-
-    // if (
-    //   adminMenu.status !== 200 ||
-    //   adminMenu.status !== 403 ||
-    //   content.status !== 200 ||
-    //   content.status !== 403
-    // ) {
-    //   throw new Error(`Response failed`);
-    // }
 
     if (!adminMenu.ok) {
       throw new Error(`Response failed`)

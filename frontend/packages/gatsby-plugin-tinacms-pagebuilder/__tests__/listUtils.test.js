@@ -48,12 +48,6 @@ it("User list with Admin at top", () => {
           data: [
             {
               attributes: {
-                drupal_internal__uid: 1,
-                display_name: "Admin",
-              },
-            },
-            {
-              attributes: {
                 drupal_internal__uid: 0,
                 display_name: "Anonymous",
               },
@@ -62,6 +56,12 @@ it("User list with Admin at top", () => {
               attributes: {
                 drupal_internal__uid: 2,
                 display_name: "Other",
+              },
+            },
+            {
+              attributes: {
+                drupal_internal__uid: 1,
+                display_name: "Admin",
               },
             },
           ],

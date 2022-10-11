@@ -1,10 +1,12 @@
 {
-  "name": "gatsby-plugin-tinacms",
+  "name": "gatsby-plugin-craftjs",
   "version": "1.0.1",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.26.1",
-    "tinacms": "^0.60.3"
+    "@craftjs/core": "^0.2.0-beta.6",
+    "@craftjs/utils": "^0.2.0-beta.6",
+    "gatsby-theme-drupal-admin": "workspace:*",
+    "react-tabs": "^5.1.0"
   },
   "peerDependencies": {
     "gatsby": "^4.0.0",

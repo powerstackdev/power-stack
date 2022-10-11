@@ -7,7 +7,7 @@
     "packages/@powerstack/*",
     "deprecated-packages/*"
   ],
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.2.2",
   "devDependencies": {
     "@babel/preset-env": "^7.18.10",
     "eslint": "8.21.0",

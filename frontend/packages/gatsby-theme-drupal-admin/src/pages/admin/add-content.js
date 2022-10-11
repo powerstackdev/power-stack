@@ -10,14 +10,12 @@ import { isLoggedIn } from "@powerstack/drupal-oauth-connector"
 
 // Internal imports
 import Layout from "../../components/Layout/Layout"
-import Seo from "gatsby-theme-core-design-system/src/components/Misc/Seo"
 import ContentCard from "../../components/Cards/ContentCard"
 
 const DrupalAdminPage = ({ serverData }) => {
   return (
     <>
       <Layout serverData={serverData.adminMenu}>
-        <Seo title="Content" />
         <Grid gap={2} columns={[2, "1fr 1fr"]} sx={{ my: 4, mx: 0 }}>
           <Heading as={"h1"} sx={{ m: 4, ml: 0 }}>
             Add content

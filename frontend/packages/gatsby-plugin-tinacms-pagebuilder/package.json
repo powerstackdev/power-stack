@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-tinacms-pagebuilder",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@loadable/component": "^5.15.2",
     "@tinacms/icons": "^0.42.1",

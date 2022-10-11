@@ -57,7 +57,17 @@ const EditPage = ({ serverData }) => {
     layout: "fullscreen",
   }
 
+  const ThemeScreenPlugin = {
+    name: "Theme Screen",
+    Component() {
+      return <Text>test2</Text>
+    },
+    Icon: () => "",
+    layout: "fullscreen",
+  }
+
   isWindow && InitScreenPlugin(ScreenPlugin)
+  isWindow && InitScreenPlugin(ThemeScreenPlugin)
 
   if (serverData.hasOwnProperty("goto")) {
     navigate("/admin/login", {

@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    "gatsby-theme-core-design-system",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
