@@ -140,10 +140,8 @@ const TocContainer = styled.div`
     opacity: 0.85;
 
     &[aria-current] {
-      font-weight: 500;
-      color: on-background;
-      transform: translateX(2px);
-      opacity: 1;
+      color: primary-500;
+      font-weight: 800;
     }
 
     &:hover {

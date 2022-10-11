@@ -189,7 +189,7 @@ export function DocLayout({ children, tableOfContents, editLink, ...props }) {
     <PageLayout {...props}>
       <DocsAlert>
         <ScreenContainer px={0}>
-          <p align={'center'}>While the project is in alpha, the docs may be outdated and might not fully reflect the current status of the codebase.</p>
+          <p align={'center'}>While the project is pre-alpha, the docs may be outdated and might not fully reflect the current status of the codebase.</p>
         </ScreenContainer>
       </DocsAlert>
       <ScreenContainer px={0}>
