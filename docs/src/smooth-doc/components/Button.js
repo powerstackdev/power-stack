@@ -68,8 +68,8 @@ const InnerButton = styled.buttonBox`
 
   &[data-variant='neutral'] {
     ${variant({
-  background: 'gray-300',
-  backgroundHover: 'gray-400',
+  background: 'primary-500',
+  backgroundHover: 'primary-700',
   on: 'black',
 })}
   }

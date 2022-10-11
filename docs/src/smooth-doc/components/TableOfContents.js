@@ -140,7 +140,7 @@ const TocContainer = styled.div`
     opacity: 0.85;
 
     &[aria-current] {
-      color: primary-500;
+      color: on-background;
       font-weight: 800;
     }
 
