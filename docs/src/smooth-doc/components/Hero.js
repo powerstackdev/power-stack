@@ -46,7 +46,7 @@ export const HeroTeaser = styled.pBox`
 
 const InnerHero = styled(ScreenContainer)`
   margin-top: 4;
-
+  text-align: center;
   ${up(
     'md',
     css`
