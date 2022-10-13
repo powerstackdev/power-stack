@@ -5,19 +5,11 @@ import styled from '@xstyled/styled-components'
 export const InnerSiblingNavLink = styled.aBox`
   font-size: 18;
   transition: fast;
-  text-decoration: underline;
-  color: on-background-primary;
+  text-decoration: none;
+  color: on-link;
 
   &:hover {
     color: on-background-primary-dark;
-  }
-
-  &[data-type='next']:hover {
-    transform: translateX(2px);
-  }
-
-  &[data-type='previous']:hover {
-    transform: translateX(-2px);
   }
 `
 

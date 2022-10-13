@@ -212,11 +212,11 @@ export const Article = styled.article`
 
   a {
     transition: fast;
-    text-decoration: underline;
-    color: on-background-primary;
+    color: on-background-primary-dark;
 
     &:hover {
       color: on-background-primary-dark;
+      text-decoration: underline;
     }
   }
   

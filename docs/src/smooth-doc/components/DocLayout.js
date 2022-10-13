@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { x, css, up, down, th, useUp } from '@xstyled/styled-components'
 import { useDialogState, Dialog, DialogDisclosure } from 'reakit/Dialog'
 import { Portal } from 'reakit/Portal'
-import { VscChevronUp } from 'react-icons/vsc'
+import { FiMenu, FiX } from 'react-icons/fi'
 import { RiPencilLine } from 'react-icons/ri'
 import { ScreenContainer } from './ScreenContainer'
 import { SideNav, useSideNavState, useSideNavPrevNext } from './SideNav'
@@ -126,16 +126,6 @@ const MenuButton = styled.button`
       transform: translate(-1px) rotate(180deg);
     }
   }
-
-  &[aria-expanded='true'] {
-    > svg:first-child {
-      transform: translate(-1px, 16px);
-    }
-
-    > svg:last-child {
-      transform: translate(-1px, -16px) rotate(180deg);
-    }
-  }
 `
 
 function MobileSidebar({ children }) {
@@ -147,8 +137,7 @@ function MobileSidebar({ children }) {
       </Dialog>
       <Portal>
         <DialogDisclosure {...dialog} as={MenuButton}>
-          <VscChevronUp />
-          <VscChevronUp />
+          {dialog.visible? <FiX /> : <FiMenu /> }
         </DialogDisclosure>
       </Portal>
     </>
