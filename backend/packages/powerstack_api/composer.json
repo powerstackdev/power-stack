@@ -26,6 +26,7 @@
         "drupal/simple_oauth": "^5.0",
         "drupal/key_auth": "^1.1",
         "drupal/gatsby": "^2.0@beta",
+        "drupal/jsonapi_cross_bundles": "^1.0",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/jsonapi_include": "^1.4",
         "drupal/jsonapi_schema":"^1.0@beta",
