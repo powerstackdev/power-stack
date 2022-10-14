@@ -5,7 +5,7 @@ import { Grid, Heading } from "theme-ui"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { DrupalAdminMenu } from "../../../../gatsby-theme-drupal-admin/src/components/Menus/DrupalAdminMenu"
-import Menu from "gatsby-plugin-drupal-menus"
+// import Menu from "gatsby-plugin-drupal-menus"
 import Logo from "../../images/quantum.svg"
 import { darken } from "@theme-ui/color"
 
@@ -66,7 +66,7 @@ const Header = ({ siteTitle, serverData }) => (
               },
             }}
           >
-            <Menu />
+            {/*<Menu />*/}
           </div>
         )}
       </Grid>
