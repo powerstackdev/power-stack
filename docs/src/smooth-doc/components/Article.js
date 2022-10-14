@@ -16,7 +16,8 @@ export const Article = styled.article`
     background-color: background-light;
     color: on-background-primary;
     border-radius: base;
-    padding: 0 1;
+    padding: 16;
+    font-size: 85%;
   }
 
   mark {
@@ -79,6 +80,7 @@ export const Article = styled.article`
     line-height: 1.2;
     font-weight: 800;
     margin: 4 0 3;
+    padding-top: 3;
 
     ${down(
       'sm',
@@ -141,12 +143,12 @@ export const Article = styled.article`
   ol,
   ul {
     margin-top: 4;
-    font-size: 16;
+    font-size: 18;
     padding-left: 4;
 
     p,
     p:first-of-type {
-      font-size: 16;
+      font-size: 18;
       margin-top: 0;
       line-height: 1.2;
     }
