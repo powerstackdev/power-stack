@@ -26,7 +26,7 @@ export const Article = styled.article`
 
   > p {
     margin: 3 0;
-    font-size: 18;
+    font-size: 16;
     line-height: 1.6;
   }
 
@@ -59,7 +59,7 @@ export const Article = styled.article`
   }
 
   > h2 {
-    font-size: 1.5em;
+    font-size: 24px;
     line-height: 1.2;
     font-weight: bold;
     margin: 4 0;
@@ -93,9 +93,10 @@ export const Article = styled.article`
 
   > h4 {
     font-weight: 500;
-    font-size: 16;
+    font-size: 18;
     line-height: 1.2;
     margin: 3 0;
+    padding-top: 3;
   }
 
   > h4 + p {
@@ -143,12 +144,12 @@ export const Article = styled.article`
   ol,
   ul {
     margin-top: 4;
-    font-size: 18;
+    font-size: 16;
     padding-left: 4;
 
     p,
     p:first-of-type {
-      font-size: 18;
+      font-size: 16;
       margin-top: 0;
       line-height: 1.2;
     }
