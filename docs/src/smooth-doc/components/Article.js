@@ -16,7 +16,7 @@ export const Article = styled.article`
     background-color: background-light;
     color: on-background-primary;
     border-radius: base;
-    padding: 16;
+    padding: 3;
     font-size: 85%;
   }
 
@@ -92,7 +92,7 @@ export const Article = styled.article`
   }
 
   > h4 {
-    font-weight: 500;
+    font-weight: 900;
     font-size: 18;
     line-height: 1.2;
     margin: 3 0;

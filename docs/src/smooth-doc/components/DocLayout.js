@@ -169,7 +169,7 @@ export const DocsAlert = styled(ScreenContainer)`
   padding-bottom: 2;
   background: #ffec00;
   margin-bottom: 2;
-  margin-top:2;
+  margin-top: 5;
   background: linear-gradient(0.45turn, #ffec00, #ffc800);
   padding: 16px;
   border-radius: 10px;

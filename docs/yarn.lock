@@ -5411,6 +5411,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.2.6":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2"
+  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -14911,6 +14918,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-intersection-observer@npm:^8.26.2":
+  version: 8.34.0
+  resolution: "react-intersection-observer@npm:8.34.0"
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
+  checksum: 7713fecfd1512c7f5a60f9f0bf15403b8f8bbd4110bcafaeaea6de36a0e0eb60368c3638f99e9c97b75ad8fc787ea48c241dcb5c694f821d7f2976f709082cc5
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -14995,6 +15011,17 @@ __metadata:
     react: "*"
     react-dom: "*"
   checksum: 15a03bfd7fef4efd73f0c25136e2eb253990ec9878199083853d8bcfad2246ac9750edfb64183c9dc33ad27d38f5e0e12052005c2ef7c80cbb6b1d4a9a4da511
+  languageName: node
+  linkType: hard
+
+"react-vertical-timeline-component@npm:^3.5.2":
+  version: 3.5.2
+  resolution: "react-vertical-timeline-component@npm:3.5.2"
+  dependencies:
+    classnames: ^2.2.6
+    prop-types: ^15.7.2
+    react-intersection-observer: ^8.26.2
+  checksum: 004189057c37f6d97d2973b7fe87a361d0b6655d346f00445041e1839362122f66ca988302e9b93bf4fd2df23e9e1e84d421706249b20d325516ab0430c60e38
   languageName: node
   linkType: hard
 
@@ -16372,6 +16399,7 @@ __metadata:
     react-icons: ^4.3.1
     react-is: ^17.0.2
     react-lite-youtube-embed: ^2.3.1
+    react-vertical-timeline-component: ^3.5.2
     reakit: ^1.3.11
     smooth-doc: ^9.0.0
     styled-components: ^5.3.3
