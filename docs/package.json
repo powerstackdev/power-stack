@@ -20,6 +20,7 @@
     "react-icons": "^4.3.1",
     "react-is": "^17.0.2",
     "react-lite-youtube-embed": "^2.3.1",
+    "react-vertical-timeline-component": "^3.5.2",
     "reakit": "^1.3.11",
     "smooth-doc": "^9.0.0",
     "styled-components": "^5.3.3"

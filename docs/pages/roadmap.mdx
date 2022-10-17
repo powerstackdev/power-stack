@@ -1,0 +1,123 @@
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { FiCode, FiCheck } from 'react-icons/fi'
+
+import {
+  ScreenContainer,
+  HeroSection,
+  Hero,
+  HeroBody,
+  HeroTitle,
+  Article
+} from  "smooth-doc/components"
+
+import { Link } from 'gatsby-link'
+
+
+<HeroSection>
+  <Hero >
+    <HeroBody>
+      <HeroTitle>Roadmap</HeroTitle>
+    </HeroBody>
+  </Hero>
+</HeroSection>
+<ScreenContainer py={5}>
+  <Article>
+    <h2>The Power Stack plan</h2>
+    <p>Power Stack is currently under active development. We are working hard towards a beta release but there are still
+     a lot of tasks to complete. You can see a detailed breakdown on our <a href="">GitHub Project</a> and if you're interested please
+      feel free to <a href="/contributing">contribute</a>!</p>
+    <p> Otherwise, below is a high-level breakdown of where we are at and aiming to go for a beta release.</p>
+    <h2>Timeline</h2>
+    <VerticalTimeline lineColor="#111111">
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: 'linear-gradient(0.45turn, #ffc800, #ffec00)', color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        iconStyle={{ background: 'rgb(255,200,0)', color: '#111111', boxShadow: 'none' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">Monorepo setup and package creation</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: 'linear-gradient(0.45turn, #ffc800, #ffec00)', color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        iconStyle={{ background: 'rgb(255,200,0)', color: '#111111', boxShadow: 'none' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">Integrate Gatsby and Drupal</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ background: 'linear-gradient(0.45turn, #ffc800, #ffec00)', color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCheck />}
+      >
+        <h3 className="vertical-timeline-element-title">Pre-beta open sourced</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        iconStyle={{ background: 'rgb(17,17,17)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">Design and build Admin UI</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        iconStyle={{ background: 'rgb(17,17,17)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">Design and build global design system</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        iconStyle={{ background: 'rgb(17,17,17)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">Design and build media management</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        iconStyle={{ background: 'rgb(17,17,17)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">Create content architectures</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        iconStyle={{ background: 'rgb(17,17,17)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">Crete content editorial workflows</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        iconStyle={{ background: 'rgb(17,17,17)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">3rd party integrations</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        iconStyle={{ background: 'rgb(17,17,17)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCode />}
+      >
+        <h3 className="vertical-timeline-element-title">Project deployment & releases</h3>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff', boxShadow: 'none' }}
+        contentStyle={{ color: '#111111', fontWeight: '900', textAlign: 'center', boxShadow: '0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%)' }}
+        icon={<FiCheck />}
+      >
+        <h3 className="vertical-timeline-element-title">Beta launch</h3>
+      </VerticalTimelineElement>
+    </VerticalTimeline>
+  </Article>
+</ScreenContainer>
+
