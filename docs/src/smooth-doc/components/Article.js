@@ -7,7 +7,6 @@ export const Article = styled.article`
       fill: on-background;
       width: 1em;
       height: 1em;
-      display: inline;
       vertical-align: -15%;
     }
   }
