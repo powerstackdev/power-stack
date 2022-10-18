@@ -11,6 +11,10 @@ export const Article = styled.article`
     }
   }
 
+  .vertical-timeline-element-icon svg {
+    top: 40%
+  }
+
   code {
     background-color: background-light;
     color: on-background-primary;
