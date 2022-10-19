@@ -1,4 +1,4 @@
-import styled, { css, up, down } from '@xstyled/styled-components'
+import styled, { css, down } from '@xstyled/styled-components'
 
 export const Article = styled.article`
   .anchor {
@@ -10,16 +10,22 @@ export const Article = styled.article`
       vertical-align: -15%;
     }
   }
-
+  
   .vertical-timeline-element-icon svg {
-    top: 40%
+    top: 40%;
+    ${down(
+      'lg',
+      css`
+        top: 34%;
+      `,
+    )}  
   }
 
   code {
     background-color: background-light;
     color: on-background-primary;
     border-radius: base;
-    padding: 3;
+    padding: 1;
     font-size: 85%;
   }
 
