@@ -16,6 +16,40 @@ Power Stack is using a monorepo to create and manage packages.
 One of the key goals for our packages is to be centrally managed but then distributed to their respective open-source
 project (e.g. a Drupal module or Gatsby Theme/Plugin).
 
+A new package should contain the following in addition to any specific code.
+
+```
+.github/workflows/auto_close_prs.yml
+README.md
+LICENSE.md
+```
+
+In the `.github/workflows/auto_close_prs.yml` there should be a workflow definition to close package PRs automatically
+and advise to go to the main project
+
+```yaml
+name: Auto Closer PR
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: superbrothers/close-pull-request@v3
+        with:
+          # Optional. Post a issue comment just before closing a pull request.
+          comment: |
+            Hi, thank you for your contribution.
+            Unfortunately, this repository is read-only. It's a split from our main monorepo repository.
+            We'd like to kindly ask you to move the contribution there - https://github.com/powerstackdev/power-stack.
+            We'll check it, review it and give you feed back right way.
+            Thank you.
+```
+
+
 ## Creating a new package
 
 The naming convention for the package repos is `{service}-{package}`.
