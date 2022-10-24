@@ -7,9 +7,11 @@ $sites = [
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
+<head>
 
-<style>
-    header {
+    <title>Power Stack — Dashboard</title>
+    <style>
+      header {
         background-color: #FFF;
         width: 100%;
         position: -webkit-sticky;
@@ -18,45 +20,43 @@ $sites = [
         z-index: 1000;
         height: 70px;
         border-bottom: 1px solid lightGrey;
-    }
-    header div {
+      }
+      header div {
         margin: 0 min(5vw, 48px);
         padding: 16px 0;
-    }
-    header div img {
+      }
+      header div img {
         height: 35px;
-    }
-    a {
+      }
+      a {
         color: black;
-    }
+      }
 
-    a:hover {
+      a:hover {
         text-decoration: underline;
-    }
+      }
 
-    .card {
+      .card {
         background: white;
         border-radius: 0.5rem;
         border: 1px solid #EAECF0;
         box-shadow: 0px 1px 3px rgb(16 24 40 / 10%), 0px 1px 2px rgb(16 24 40 / 6%);
         padding: 1rem;
-    }
+      }
 
-    .card a {
+      .card a {
         text-decoration: none;
-    }
+      }
 
-    .title {
+      .title {
         text-transform: uppercase;
         font-weight: 600;
         font-size: 0.875rem;
         letter-spacing: 0.025em;
         color: #69778c;
-    }
-</style>
+      }
+    </style>
 
-<head>
-    <title>Power Stack — Dashboard</title>
 </head>
 
 <body style='
