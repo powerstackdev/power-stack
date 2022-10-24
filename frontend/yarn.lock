@@ -8388,6 +8388,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"camelcase-css@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "camelcase-css@npm:2.0.1"
+  checksum: 1cec2b3b3dcb5026688a470b00299a8db7d904c4802845c353dbd12d9d248d3346949a814d83bfd988d4d2e5b9904c07efe76fecd195a1d4f05b543e7c0b56b1
+  languageName: node
+  linkType: hard
+
 "camelcase@npm:^5.0.0, camelcase@npm:^5.3.1":
   version: 5.3.1
   resolution: "camelcase@npm:5.3.1"
@@ -9435,7 +9442,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:^5.0.0":
+"cssnano@npm:^5.0.0, cssnano@npm:^5.1.7":
   version: 5.1.13
   resolution: "cssnano@npm:5.1.13"
   dependencies:
@@ -9880,42 +9887,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"development-craft@workspace:starters/development-craft":
+"development-tina@workspace:starters/development-tina":
   version: 0.0.0-use.local
-  resolution: "development-craft@workspace:starters/development-craft"
-  dependencies:
-    "@mdx-js/react": v1
-    "@powerstack/utils": "workspace:*"
-    "@theme-ui/color": ^0.12.1
-    "@theme-ui/presets": ^0.12.1
-    axios: ^0.24.0
-    dotenv: ^16.0.0
-    gatsby: ^4.23.0
-    gatsby-plugin-craftjs: "workspace:*"
-    gatsby-plugin-image: ^2.3.0
-    gatsby-plugin-manifest: ^4.3.0
-    gatsby-plugin-no-sourcemaps: ^4.5.0
-    gatsby-plugin-perf-budgets: ^0.0.18
-    gatsby-plugin-react-helmet: ^5.3.0
-    gatsby-plugin-sharp: ^4.3.0
-    gatsby-plugin-sitemap: ^5.3.0
-    gatsby-plugin-theme-ui: ^0.14.7
-    gatsby-plugin-webpack-bundle-analyser-v2: ^1.1.26
-    gatsby-source-drupal: ^5.3.0
-    gatsby-source-filesystem: ^4.3.0
-    gatsby-theme-drupal-admin: "workspace:*"
-    gatsby-transformer-sharp: ^4.3.0
-    prettier: ^2.5.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-helmet: ^6.1.0
-    theme-ui: ^0.14.7
-  languageName: unknown
-  linkType: soft
-
-"development@workspace:starters/development":
-  version: 0.0.0-use.local
-  resolution: "development@workspace:starters/development"
+  resolution: "development-tina@workspace:starters/development-tina"
   dependencies:
     "@powerstack/utils": "workspace:*"
     "@theme-ui/color": ^0.12.1
@@ -9941,6 +9915,39 @@ __metadata:
     prettier: ^2.5.1
     react: ^17.0.1
     react-dom: ^17.0.1
+    react-helmet: ^6.1.0
+    theme-ui: ^0.14.7
+  languageName: unknown
+  linkType: soft
+
+"development@workspace:starters/development":
+  version: 0.0.0-use.local
+  resolution: "development@workspace:starters/development"
+  dependencies:
+    "@mdx-js/react": v1
+    "@powerstack/utils": "workspace:*"
+    "@theme-ui/color": ^0.12.1
+    "@theme-ui/presets": ^0.12.1
+    axios: ^0.24.0
+    dotenv: ^16.0.0
+    gatsby: ^4.23.0
+    gatsby-plugin-craftjs: "workspace:*"
+    gatsby-plugin-image: ^2.3.0
+    gatsby-plugin-manifest: ^4.3.0
+    gatsby-plugin-no-sourcemaps: ^4.5.0
+    gatsby-plugin-perf-budgets: ^0.0.18
+    gatsby-plugin-react-helmet: ^5.3.0
+    gatsby-plugin-sharp: ^4.3.0
+    gatsby-plugin-sitemap: ^5.3.0
+    gatsby-plugin-theme-ui: ^0.14.7
+    gatsby-plugin-webpack-bundle-analyser-v2: ^1.1.26
+    gatsby-source-drupal: ^5.3.0
+    gatsby-source-filesystem: ^4.3.0
+    gatsby-theme-drupal-admin: "workspace:*"
+    gatsby-transformer-sharp: ^4.3.0
+    prettier: ^2.5.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
     react-helmet: ^6.1.0
     theme-ui: ^0.14.7
   languageName: unknown
@@ -11763,7 +11770,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.1.0":
+"fs-extra@npm:^10.0.1, fs-extra@npm:^10.1.0":
   version: 10.1.0
   resolution: "fs-extra@npm:10.1.0"
   dependencies:
@@ -12035,13 +12042,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-google-fonts@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "gatsby-plugin-google-fonts@npm:1.0.1"
-  checksum: 775aee252ee1bf7d77ae6ffd8cd44e14ee3badfab4f46c3ed2a438527894cbffe9383464073e33ae5b2442d70b2434df1358749f5c2e575538143508ff68a1b5
-  languageName: node
-  linkType: hard
-
 "gatsby-plugin-image@npm:^2.3.0":
   version: 2.23.0
   resolution: "gatsby-plugin-image@npm:2.23.0"
@@ -12285,6 +12285,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-webfonts@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "gatsby-plugin-webfonts@npm:2.2.2"
+  dependencies:
+    axios: ^0.26.1
+    cssnano: ^5.1.7
+    fs-extra: ^10.0.1
+    lodash.isempty: ^4.4.0
+    postcss: ^8.4.12
+    postcss-js: ^4.0.0
+  peerDependencies:
+    gatsby: ^3.0.0 || ^4.0.0
+  checksum: cf486db0d72ab677cd0d1b4992d4c37e0d44d02c5d4bf8355fe8a216ad9ec59c5393f07b8b35e09cc51c3d75e32637a396c4d9bafe816e640c5e69c380e87970
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-webpack-bundle-analyser-v2@npm:^1.1.26":
   version: 1.1.27
   resolution: "gatsby-plugin-webpack-bundle-analyser-v2@npm:1.1.27"
@@ -12421,7 +12437,7 @@ __metadata:
     "@nosferatu500/theme-file-explorer": ^3.0.11
     "@powerstack/docker-webpack-polling": "workspace:^"
     absolution: ^1.0.2
-    gatsby-plugin-google-fonts: ^1.0.1
+    gatsby-plugin-webfonts: ^2.2.2
     gatsby-theme-core-design-system: "workspace:^"
     javascript-time-ago: ^2.3.10
     react-icons: ^4.4.0
@@ -15205,6 +15221,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.isempty@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.isempty@npm:4.4.0"
+  checksum: a8118f23f7ed72a1dbd176bf27f297d1e71aa1926288449cb8f7cef99ba1bc7527eab52fe7899ab080fa1dc150aba6e4a6367bf49fa4e0b78da1ecc095f8d8c5
+  languageName: node
+  linkType: hard
+
 "lodash.isequal@npm:^4.5.0":
   version: 4.5.0
   resolution: "lodash.isequal@npm:4.5.0"
@@ -17112,6 +17135,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-js@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "postcss-js@npm:4.0.0"
+  dependencies:
+    camelcase-css: ^2.0.1
+  peerDependencies:
+    postcss: ^8.3.3
+  checksum: 14be8a58670b4c5d037d40f179240a4f736d53530db727e2635638fa296bc4bff18149ca860928398aace422e55d07c9f5729eeccd395340944985199cdc82a5
+  languageName: node
+  linkType: hard
+
 "postcss-load-config@npm:^3.0.0":
   version: 3.1.4
   resolution: "postcss-load-config@npm:3.1.4"
@@ -17451,6 +17485,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: 10eee25efd77868036403858577da0cefaf2e0905feeaba5770d5438ccdddba3d01cba8063e96b8aac4c6daa0ed413dd5ae0554a433a3c4db38df1d134cffc1f
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.12":
+  version: 8.4.18
+  resolution: "postcss@npm:8.4.18"
+  dependencies:
+    nanoid: ^3.3.4
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 9349fd99849b2e3d2e134ff949b7770ecb12375f352723ce2bcc06167eba3850ea7844c1b191a85cd915d6a396b4e8ee9a5267e6cc5d8d003d0cbc7a97555d39
   languageName: node
   linkType: hard
 

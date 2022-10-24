@@ -95,9 +95,15 @@
 
     {
       "name": "powerstackdev/frontend-starter-development-craft",
-      "directory": "frontend/starters/development-craft",
+      "directory": "frontend/starters/development",
       "target": "git@github.com:powerstackdev/frontend-starter-development-craft.git"
     },
+    {
+      "name": "powerstackdev/frontend-starter-development-tina",
+      "directory": "frontend/starters/development-tina",
+      "target": "git@github.com:powerstackdev/frontend-starter-development-tina.git"
+    },
+
 
     {
       "name": "powerstackdev/scripts",

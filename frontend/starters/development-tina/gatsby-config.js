@@ -14,6 +14,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    // "gatsby-plugin-drupal-menus",
     "gatsby-plugin-no-sourcemaps",
     `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
@@ -43,7 +44,7 @@ module.exports = {
       },
       __key: "images",
     },
-    "gatsby-plugin-craftjs",
+    "gatsby-plugin-tinacms-pagebuilder",
     "gatsby-theme-drupal-admin",
   ],
 }
