@@ -2906,13 +2906,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slixites/gatsby-plugin-google-fonts@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@slixites/gatsby-plugin-google-fonts@npm:1.1.1"
-  checksum: 0bbde1c8bef20527e6c7f85cee40fc72fd98db461d54df1451485cf28575c6ed253d2a85a8e708f2c35768656471c08bfa9b88f1c31dd686acdaabca6cefe59b
-  languageName: node
-  linkType: hard
-
 "@swc/helpers@npm:^0.4.2":
   version: 0.4.12
   resolution: "@swc/helpers@npm:0.4.12"
@@ -4368,6 +4361,15 @@ __metadata:
   dependencies:
     follow-redirects: ^1.14.0
   checksum: 44245f24ac971e7458f3120c92f9d66d1fc695e8b97019139de5b0cc65d9b8104647db01e5f46917728edfc0cfd88eb30fc4c55e6053eef4ace76768ce95ff3c
+  languageName: node
+  linkType: hard
+
+"axios@npm:^0.26.1":
+  version: 0.26.1
+  resolution: "axios@npm:0.26.1"
+  dependencies:
+    follow-redirects: ^1.14.8
+  checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
   languageName: node
   linkType: hard
 
@@ -6435,7 +6437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:^5.0.0":
+"cssnano@npm:^5.0.0, cssnano@npm:^5.1.7":
   version: 5.1.13
   resolution: "cssnano@npm:5.1.13"
   dependencies:
@@ -8355,7 +8357,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0":
+"follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.14.8":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -8458,7 +8460,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.0.0, fs-extra@npm:^10.1.0":
+"fs-extra@npm:^10.0.0, fs-extra@npm:^10.0.1, fs-extra@npm:^10.1.0":
   version: 10.1.0
   resolution: "fs-extra@npm:10.1.0"
   dependencies:
@@ -9007,6 +9009,22 @@ __metadata:
     gatsby: ^4.0.0-next
     graphql: ^15.0.0
   checksum: 34c9e1f9cbe6ecd54dbd1ccd5e57a9129cb14022a8e0c7379abaaa4260b5a6c7014091f72d9b4533e4afbbf2158a17b6058929497d69004e17ad0ec11ee09e50
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-webfonts@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "gatsby-plugin-webfonts@npm:2.2.2"
+  dependencies:
+    axios: ^0.26.1
+    cssnano: ^5.1.7
+    fs-extra: ^10.0.1
+    lodash.isempty: ^4.4.0
+    postcss: ^8.4.12
+    postcss-js: ^4.0.0
+  peerDependencies:
+    gatsby: ^3.0.0 || ^4.0.0
+  checksum: cf486db0d72ab677cd0d1b4992d4c37e0d44d02c5d4bf8355fe8a216ad9ec59c5393f07b8b35e09cc51c3d75e32637a396c4d9bafe816e640c5e69c380e87970
   languageName: node
   linkType: hard
 
@@ -11740,6 +11758,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.isempty@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.isempty@npm:4.4.0"
+  checksum: a8118f23f7ed72a1dbd176bf27f297d1e71aa1926288449cb8f7cef99ba1bc7527eab52fe7899ab080fa1dc150aba6e4a6367bf49fa4e0b78da1ecc095f8d8c5
+  languageName: node
+  linkType: hard
+
 "lodash.ismatch@npm:^4.4.0":
   version: 4.4.0
   resolution: "lodash.ismatch@npm:4.4.0"
@@ -14146,6 +14171,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-js@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "postcss-js@npm:4.0.0"
+  dependencies:
+    camelcase-css: ^2.0.1
+  peerDependencies:
+    postcss: ^8.3.3
+  checksum: 14be8a58670b4c5d037d40f179240a4f736d53530db727e2635638fa296bc4bff18149ca860928398aace422e55d07c9f5729eeccd395340944985199cdc82a5
+  languageName: node
+  linkType: hard
+
 "postcss-loader@npm:^5.3.0":
   version: 5.3.0
   resolution: "postcss-loader@npm:5.3.0"
@@ -14460,6 +14496,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: a6d9096dd711e17f7b1d18ff5dcb4fdedf3941d5a3dc8b0e4ea873b8f31972d57f73d6da9a8aed7ff389eb52190ed34f6a94f299a7f5ddc68b08a24a48f77eb9
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.12":
+  version: 8.4.18
+  resolution: "postcss@npm:8.4.18"
+  dependencies:
+    nanoid: ^3.3.4
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 9349fd99849b2e3d2e134ff949b7770ecb12375f352723ce2bcc06167eba3850ea7844c1b191a85cd915d6a396b4e8ee9a5267e6cc5d8d003d0cbc7a97555d39
   languageName: node
   linkType: hard
 
@@ -16387,11 +16434,11 @@ __metadata:
   resolution: "smooth-doc-starter@workspace:."
   dependencies:
     "@babel/core": ^7.16.12
-    "@slixites/gatsby-plugin-google-fonts": ^1.1.1
     "@xstyled/styled-components": ^3.5.1
     gatsby: ^4.23.1
     gatsby-cli: ^4.12.1
     gatsby-plugin-google-analytics: ^4.6.0
+    gatsby-plugin-webfonts: ^2.2.2
     gatsby-transformer-documentationjs: ^6.17.0
     react: ^17.0.2
     react-dom: ^17.0.2
