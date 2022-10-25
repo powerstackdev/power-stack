@@ -2,13 +2,22 @@ module.exports = {
   plugins: [
     "gatsby-theme-core-design-system",
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          `inter\:300,400,400i,500,600,700`, // you can also specify font weights and styles
-        ],
-        display: "swap",
-      },
+        fonts: {
+          google: [
+            {
+              family: "Inter",
+              variants: ["300", "400", "500"],
+              //subsets: ['latin']
+              //text: 'Hello'
+              //fontDisplay: 'swap',
+              //strategy: 'selfHosted' // 'base64' || 'cdn'
+            },
+          ],
+        },
+      }
     },
+    "gatsby-plugin-theme-ui"
   ],
 }
