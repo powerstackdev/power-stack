@@ -16,8 +16,8 @@ module.exports = {
     "gatsby-plugin-sitemap",
     // "gatsby-plugin-drupal-menus",
     "gatsby-plugin-no-sourcemaps",
-    `gatsby-plugin-perf-budgets`,
-    // `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `${process.env.NODE_ENV == 'development' && 'gatsby-plugin-perf-budgets'}`,
+    `${process.env.NODE_ENV == 'development' && 'gatsby-plugin-webpack-bundle-analyser-v2'}`,
     {
       resolve: `gatsby-source-drupal`,
       options: {
@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: `${process.env.NODE_ENV == 'development' ? "src/images/local-icon.png" :  "src/images/icon.png"}`,
       },
     },
     "gatsby-plugin-sharp",
