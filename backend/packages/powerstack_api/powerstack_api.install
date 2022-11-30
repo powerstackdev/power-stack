@@ -40,6 +40,7 @@ function powerstack_api_install() {
 
   // Create new consumer.
   Consumer::create([
+    'client_id' => 'gatsby_consumer',
     'label' => 'Gatsby Consumer',
     'description' => 'This is the consumer for your Power Stack site.',
     'new_secret' => getenv('GATSBY_CLIENT_SECRET'),

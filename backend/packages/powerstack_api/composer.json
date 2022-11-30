@@ -27,9 +27,9 @@
         "drupal/key_auth": "^1.1",
         "drupal/gatsby": "^2.0@beta",
         "drupal/jsonapi_cross_bundles": "^1.0",
-        "drupal/jsonapi_menu_items": "^1.2",
         "drupal/jsonapi_include": "^1.4",
         "drupal/jsonapi_schema":"^1.0@beta",
+        "drupal/jsonapi_menu_items":"^1.2",
         "drupal/powerstack_demo_content": "^0.0.1"
     },
     "require-dev": {
@@ -45,6 +45,9 @@
             },
             "drupal/jsonapi_schema": {
                 "Fixing null values.": "https://www.drupal.org/files/issues/2019-10-31/3091633-3.patch"
+            },
+            "drupal/jsonapi_menu_items": {
+                "Fixing string int mismatch on weights.": "https://git.drupalcode.org/project/jsonapi_menu_items/-/merge_requests/9.patch"
             }
         }
     },
