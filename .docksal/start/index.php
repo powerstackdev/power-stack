@@ -79,7 +79,7 @@ $sites = [
     <h1>Dashboard</h1>
 
     <p>Welcome to your new DXP!</p>
-    <p>Click <a href="http://frontend.<?php echo getenv('VIRTUAL_HOST') ?>/admin/content">here</a> to login.</p>
+    <p>Click <a href="http://frontend.<?php echo getenv('VIRTUAL_HOST') ?>/admin/login">here</a> to login.</p>
 
     <H2>Services</H2>
     <div style="
