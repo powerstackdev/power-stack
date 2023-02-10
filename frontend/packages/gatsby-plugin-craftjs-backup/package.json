@@ -1,11 +1,10 @@
 {
-  "name": "gatsby-plugin-craftjs",
+  "name": "gatsby-plugin-craftjs-backup",
   "version": "1.0.1",
   "main": "index.js",
   "dependencies": {
     "@craftjs/core": "^0.2.0-beta.6",
     "@craftjs/utils": "^0.2.0-beta.6",
-    "gatsby-source-mongodb": "^5.5.0",
     "gatsby-theme-drupal-admin": "workspace:*",
     "react-contenteditable": "^3.3.6",
     "react-tabs": "^4.2"
