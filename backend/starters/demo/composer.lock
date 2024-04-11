@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b1472ff2a05a1c1036142a43fa2edca",
+    "content-hash": "34419f71c2c6b708b72e2f654e365d7b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8851,17 +8851,67 @@
             "time": "2018-09-02T14:59:54+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "tmdk/composer-workspaces-plugin",
+            "version": "dev-overrides",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xaviemirmon/composer-2-workspaces-plugin.git",
+                "reference": "f85cc181e7792aa78b17ebb59132456a18082a0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xaviemirmon/composer-2-workspaces-plugin/zipball/f85cc181e7792aa78b17ebb59132456a18082a0c",
+                "reference": "f85cc181e7792aa78b17ebb59132456a18082a0c",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "ext-json": "*",
+                "php": ">=7.1",
+                "symfony/filesystem": ">=4.2",
+                "symfony/finder": ">=4.2"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ComposerWorkspacesPlugin\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ComposerWorkspacesPlugin\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tmdk",
+                    "email": "tobiasvandijk@gmail.com"
+                }
+            ],
+            "description": "Workspaces plugin for Composer",
+            "support": {
+                "source": "https://github.com/xaviemirmon/composer-2-workspaces-plugin/tree/overrides"
+            },
+            "time": "2023-09-26T11:54:16+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/gatsby": 10,
         "drupal/graphql_menu": 15,
-        "drupal/typed_data": 10
+        "drupal/typed_data": 10,
+        "tmdk/composer-workspaces-plugin": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

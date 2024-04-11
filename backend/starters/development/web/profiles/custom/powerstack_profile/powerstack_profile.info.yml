@@ -1,0 +1,43 @@
+name: Power Stack Profile
+type: profile
+description: Base installation profile for Power Stack
+package: profile
+core_version_requirement: ^8 || ^9 || ^10
+distribution:
+  name: Power Stack
+  install:
+    theme: stark
+install:
+  - node
+  - ban
+  - media
+  - media_library
+  - serialization
+  - paragraphs
+  - content_translation
+  - language
+  - datetime_range
+  - telephone
+  - field_group
+  - locale
+  - block
+  - config
+  - menu_link_content
+  - datetime
+  - block_content
+  - editor
+  - ckeditor5
+  - menu_ui
+  - options
+  - path
+  - path_alias
+  - powerstack_api
+  - powerstack_page_builder
+  - big_pipe
+  - dynamic_page_cache
+  - taxonomy
+  - field_ui
+  - user
+
+themes:
+  - gin

@@ -22,7 +22,8 @@ $sites = [
         border-bottom: 1px solid lightGrey;
       }
       header div {
-        margin: 0 min(5vw, 48px);
+        margin: 0 auto;
+        max-width: 1400px;
         padding: 16px 0;
       }
       header div img {
@@ -102,9 +103,9 @@ $sites = [
               </p>
             <?php if ($site === "FRONTEND" || $site === "BACKEND"): ?>
                 <p><strong>Starter
-                        - </strong> <?php echo getenv("${site}_STARTER"); ?></p>
+                        - </strong> <?php echo getenv("{$site}_STARTER"); ?></p>
                 <p><strong>Directory -</strong>
-                  <?php echo strtolower($site); ?>/starters/<?php echo getenv("${site}_STARTER"); ?>/ </p>
+                  <?php echo strtolower($site); ?>/starters/<?php echo getenv("{$site}_STARTER"); ?>/ </p>
             <?php else: ?>
                 <p><strong>Directory
                         - </strong> <?php echo strtolower($site); ?>/</p>

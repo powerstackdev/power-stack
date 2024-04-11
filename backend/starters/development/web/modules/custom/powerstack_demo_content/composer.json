@@ -1,0 +1,34 @@
+{
+    "name": "powerstack/demo_content",
+    "description": "Basic setup for the Headless API",
+    "version": "0.0.1",
+    "keywords": [
+        "Drupal"
+    ],
+    "license": "GPL-2.0+",
+    "repositories": {
+        "composer-2-workspaces": {
+            "type": "vcs",
+            "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
+        },
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "1": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    },
+    "require-dev": {
+        "tmdk/composer-workspaces-plugin": "dev-overrides"
+    },
+    "extra": {
+        "workspace-root": "../.."
+    },
+    "config": {
+        "allow-plugins": {
+            "tmdk/composer-workspaces-plugin": true
+        }
+    }
+}

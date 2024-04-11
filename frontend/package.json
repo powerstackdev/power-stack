@@ -3,9 +3,7 @@
   "private": true,
   "workspaces": [
     "starters/*",
-    "packages/*",
-    "packages/@powerstack/*",
-    "deprecated-packages/*"
+    "packages/*"
   ],
   "packageManager": "yarn@3.2.2",
   "devDependencies": {

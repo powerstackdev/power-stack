@@ -1,0 +1,8 @@
+name: Demo Content
+type: module
+description: Basic content
+package: Power Stack
+core_version_requirement: ^8 || ^9 || ^10
+
+dependencies:
+  - powerstack_page_builder:powerstack_page_builder

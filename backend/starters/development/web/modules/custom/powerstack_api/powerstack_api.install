@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for Power Stack API.
+ */
+
+use Drupal\Component\Utility\Random;
+use Drupal\user\Entity\Role;
+use Drupal\consumers\Entity\Consumer;
+use Drupal\user\Entity\User;
+
+/**
+ *
+ */
+function powerstack_api_install() {
+  // Set config for simple_oauth.settings.
+  $config = \Drupal::service('config.factory')
+    ->getEditable('simple_oauth.settings');
+
+  // Set new expiration values.
+  $config->set('access_token_expiration', 14400);
+  $config->set('authorization_code_expiration', 144000);
+
+  // Set new values for keys.
+  $config->set('public_key', '../keys/public.key');
+  $config->set('private_key', '../keys/private.key');
+
+  // Save config.
+  $config->save();
+
+  // Set config for jsonapi_include.settings.
+  $config = \Drupal::service('config.factory')
+    ->getEditable('jsonapi_include.settings');
+
+  $config->set('use_include_query', 1);
+
+  // Save config.
+  $config->save();
+
+  // Create new consumer.
+  Consumer::create([
+    'label' => 'Next.js Consumer',
+    'description' => 'This is the consumer for your Power Stack site.',
+    'new_secret' => getenv('NEXT_CLIENT_SECRET'),
+    'is_default' => TRUE,
+  ])->save();
+
+  // Create API role.
+  $role = Role::create(['id' => 'api', 'label' => 'API']);
+  $role->grantPermission('administer menu');
+  //$role->grantPermission('use key authentication');
+  $role->grantPermission('administer node fields');
+  $role->grantPermission('administer paragraph fields');
+  $role->grantPermission('administer node form display');
+  $role->grantPermission('administer paragraph form display');
+
+  $role->save();
+
+  // Create API user.
+  $random = new Random();
+
+  $user = User::create();
+  $user->setPassword($random->string());
+  $user->enforceIsNew();
+  $user->setEmail('test@test.com');
+  // This username must be unique and accept only a-Z,0-9, - _ @ .
+  $user->setUsername('API');
+  $user->activate();
+  $user->addRole('api');
+  // Save user.
+  $user->save();
+
+  // Set config for simple_oauth.settings.
+  $config = \Drupal::service('config.factory')
+    ->getEditable('next.next_site.local');
+  
+  $config->set('id', 'local');
+  $config->set('label', 'Power Stack Local Dev');
+  $config->set('base_url', getenv('NEXT_HOST'));
+  $config->set('preview_url', getenv('NEXT_HOST').'/api/draft');
+  $config->set('preview_secret', getenv('NEXT_PREVIEW_SECRET'));
+  $config->set('revalidate_url', getenv('NEXT_HOST').'/api/revalidate');
+  $config->set('revalidate_secret', getenv('NEXT_REVALIDATE_SECRET'));
+
+  // Save config.
+  $config->save();
+}

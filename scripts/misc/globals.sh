@@ -31,40 +31,27 @@ subtitle () {
     br
 }
 
-copy_env_file()
-{
+# copy_env_file()
+# {
 
-  local source="${PROJECT_ROOT}/.docksal/settings/.env"
-  local dest="${PROJECT_ROOT}/.env"
+#   local source="${PROJECT_ROOT}/.docksal/settings/.env"
+#   local dest="${PROJECT_ROOT}/.env"
 
-  echo "Copying ${source} to ${dest}..."
+#   echo "Copying ${source} to ${dest}..."
 
-	if [[ ! -f $dest ]]; then
-		cp $source $dest
-	else
-		echo "${dest} already in place. Creating backup first..."
-		mv $dest $dest.old
-		cp $source $dest
-	fi
-}
+# 	if [[ ! -f $dest ]]; then
+# 		cp $source $dest
+# 	else
+# 		echo "${dest} already in place. Creating backup first..."
+# 		mv $dest $dest.old
+# 		cp $source $dest
+# 	fi
+# }
 
 update_env_file() {
   local key="$1"
   local value="$2"
 
-  sed -i "s%\(${key} *= *\).*%\1${value}%" "${PROJECT_ROOT}/.env"
+  fin config set --env=local "${key}=${value}"
 }
-
-if [ -f .env ]
-then
-  export $(cat .env | sed 's/#.*//g' | xargs)
-fi
-
-
-if [ ! -z "$BUILD_VARS" ]
-then
-  echo $BUILD_VARS | base64 -d > ./.env
-fi
-
-
 
