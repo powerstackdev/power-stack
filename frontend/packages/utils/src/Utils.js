@@ -1,5 +1,7 @@
 export const drupalFieldPrefix = "field_"
 
+export const formatDrupalField = (type) => type.replace(drupalFieldPrefix, "")
+
 export const formatDrupalType = (type) => type.replace("paragraph--", "")
 
 export const snakeToCamel = (text) =>

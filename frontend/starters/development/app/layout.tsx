@@ -37,10 +37,7 @@ export default function RootLayout({
       </head>
       <body>
         <DraftAlert />
-        <div className="max-w-screen-md px-6 mx-auto">
-          <HeaderNav />
-          <MantineProvider theme={theme}>{children}</MantineProvider>
-        </div>
+        <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>
   )

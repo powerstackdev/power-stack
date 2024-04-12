@@ -19,6 +19,19 @@ const nextConfig = {
     }
     return config
   },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: `http://${process.env.VIRTUAL_HOST}`, // Set your origin
+          },
+        ],
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig

@@ -86,6 +86,7 @@ services:
       - DRUPAL_CLIENT_SECRET
       - DRUPAL_PREVIEW_SECRET
       - NEXT_REVALIDATE_SECRET
+      - VIRTUAL_HOST
     working_dir: /var/www/frontend
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
     command: [ "bash", "-lc", "yarn workspace ${FRONTEND_STARTER} dev" ]

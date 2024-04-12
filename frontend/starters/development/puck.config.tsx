@@ -44,7 +44,7 @@ export const config: Config<Props> = {
           arrayFields: {
             stats: { type: "text" },
             title: { type: "text" },
-            description: {type: "textarea"}
+            description: { type: "textarea" }
           }
         },
       },

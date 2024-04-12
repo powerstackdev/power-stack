@@ -78,10 +78,6 @@ $sites = [
     padding: 2rem;
 ">
     <h1>Dashboard</h1>
-
-    <p>Welcome to your new DXP!</p>
-    <p>Click <a href="http://frontend.<?php echo getenv('VIRTUAL_HOST') ?>/admin/login">here</a> to login.</p>
-
     <H2>Services</H2>
     <div style="
     grid-template-columns: 1fr 1fr;
@@ -151,7 +147,6 @@ $sites = [
   setInterval(function(){
     statuses.forEach(function(status) {
       fetch(status.dataset.service_url, { method: 'HEAD' } ).then(function(response) {
-        console.log(response.status); // returns 200
         if(response.ok) {
           document.getElementById(status.id).innerHTML = " - Up";
         } else {
@@ -161,7 +156,7 @@ $sites = [
         document.getElementById(status.id).innerHTML = " - Down";
       });
     });
-  }, 5000);
+  }, 2000);
 
 
 </script>

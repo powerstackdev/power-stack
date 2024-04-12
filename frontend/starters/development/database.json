@@ -1,1 +1,70 @@
-{"/":{"content":[{"type":"Hero","props":{"title":"Power Stack","id":"Hero-a8a69850-d5dc-4cf0-8348-15142671a427","subtitle":"Supercharging digital experiences for the modern web.","description":"Build more reliable software with AI companion. AI is also trained to detect lazy developers who do nothing and just complain on Twitter."}},{"type":"Text","props":{"title":"Brilliance is upon us","id":"Text-9abe7f09-4665-462e-935e-2f8cc48665ad","text":"This is sooo good."}},{"type":"Stats","props":{"title":"Heading","id":"Stats-05ac6b81-dcfa-4ebc-9c39-f9d96faa63fa","stats":[{"title":"Page views","subtitle":"test","description":"24% more than in the same month last year, 33% more that two years ago","stats":"456,133"},{"title":"New users","stats":"2,175","description":"13% less compared to last month, new user engagement up by 6%"},{"title":"Completed orders","stats":"1,994","description":"1994 orders were completed this month, 97% satisfaction rate"}]}},{"type":"Text","props":{"title":"Never looking back","id":"Text-0267de45-a97d-45b4-a861-dc50b430bd4e","text":"Good tech stands the test of time"}},{"type":"Text","props":{"title":"Simple. Beautiful. Easy.","id":"Text-b52062cb-fc95-4877-8e33-82d013611ec7","text":"How all editing experiences should be"}}],"root":{"props":{"title":"Home"}},"zones":{}}}
+{
+    "/": {
+        "content": [
+            {
+                "type": "Hero",
+                "props": {
+                    "title": "Power Stack",
+                    "id": "Hero-a8a69850-d5dc-4cf0-8348-15142671a427",
+                    "subtitle": "Supercharging digital experiences for the modern web.",
+                    "description": "Build more reliable software with AI companion. AI is also trained to detect lazy developers who do nothing and just complain on Twitter."
+                }
+            },
+            {
+                "type": "Text",
+                "props": {
+                    "title": "Brilliance is upon us",
+                    "id": "Text-9abe7f09-4665-462e-935e-2f8cc48665ad",
+                    "text": "This is sooo good."
+                }
+            },
+            {
+                "type": "Stats",
+                "props": {
+                    "title": "Heading",
+                    "id": "Stats-05ac6b81-dcfa-4ebc-9c39-f9d96faa63fa",
+                    "stats": [
+                        {
+                            "title": "Page views",
+                            "subtitle": "test",
+                            "description": "24% more than in the same month last year, 33% more that two years ago",
+                            "stats": "456,133"
+                        },
+                        {
+                            "title": "New users",
+                            "stats": "2,175",
+                            "description": "13% less compared to last month, new user engagement up by 6%"
+                        },
+                        {
+                            "title": "Completed orders",
+                            "stats": "1,994",
+                            "description": "1994 orders were completed this month, 97% satisfaction rate"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "Text",
+                "props": {
+                    "title": "Never looking back",
+                    "id": "Text-0267de45-a97d-45b4-a861-dc50b430bd4e",
+                    "text": "Good tech stands the test of time"
+                }
+            },
+            {
+                "type": "Text",
+                "props": {
+                    "title": "Simple. Beautiful. Easy.",
+                    "id": "Text-b52062cb-fc95-4877-8e33-82d013611ec7",
+                    "text": "How all editing experiences should be"
+                }
+            }
+        ],
+        "root": {
+            "props": {
+                "title": "Home"
+            }
+        },
+        "zones": {}
+    }
+}

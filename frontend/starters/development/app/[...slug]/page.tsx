@@ -33,7 +33,7 @@ async function getNode(slug: string[]) {
   }
 
   if (type === "node--page") {
-    params.include = "field_page_builder,field_page_builder.field_section_fields,field_page_builder.field_section_fields.field_column_fields,uid"
+    params.include = "field_page_builder,uid"
   }
 
   const resource = await drupal.getResource<DrupalNode>(type, uuid, {

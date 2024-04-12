@@ -1,24 +1,55 @@
 "use client"
 
 import type { DrupalNode } from "next-drupal"
+import config from "../../puck.config";
+import { Render } from "@measured/puck";
+import { capitalize, formatDrupalType, formatDrupalField, drupalFieldPrefix } from "@powerstack/utils"
+
 
 interface BasicPageProps {
   node: DrupalNode
 }
 
 export function BasicPage({ node, ...props }: BasicPageProps) {
-  console.log(node)
+
+  function extractFieldKeys(data) {
+    const result = {};
+    for (const key in data) {
+        if (data.hasOwnProperty(key) && key.startsWith(drupalFieldPrefix)) {
+            const newKey = formatDrupalField(key); // Remove 'field_' prefix
+            const fieldData = data[key].hasOwnProperty('value') ? data[key].value : data[key]
+            result[newKey] = fieldData;
+        }
+    }
+    return result;
+}
+
+  const content = node?.field_page_builder.map((block) => {
+
+    const type = capitalize(formatDrupalType(block.type));
+    if (type === 'Hero' ||  'Text') {
+      
+      console.log(extractFieldKeys(block))
+      return {
+        type: type,
+        id: `${type}-${block.id}`,
+        props: extractFieldKeys(block)
+      }
+    }
+  }
+    
+  )
+
+  const data = {
+    root: {
+      props: {
+        title: node.title
+      }
+    },
+    content: content
+  }
 
   return (
-    <article {...props}>
-      <h1 className="mb-4 text-6xl font-black leading-tight">{node.title}</h1>
-
-      {node?.field_page_builder[0]?.field_section_fields[0].field_column_fields[0].field_text.processed && (
-        <div
-          dangerouslySetInnerHTML={{ __html: node?.field_page_builder[0].field_section_fields[0].field_column_fields[0].field_text.processed}}
-          className="mt-6 font-serif text-xl leading-loose prose"
-        />
-      )}
-    </article>
+    <Render config={config} data={data} />
   )
 }

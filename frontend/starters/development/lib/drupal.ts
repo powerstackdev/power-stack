@@ -5,10 +5,10 @@ const clientId = process.env.DRUPAL_CLIENT_ID as string
 const clientSecret = process.env.DRUPAL_CLIENT_SECRET as string
 
 export const drupal = new NextDrupal(baseUrl, {
-  // auth: {
-  //   clientId,
-  //   clientSecret,
-  // },
+  auth: {
+    clientId,
+    clientSecret,
+  },
   // debug: true,
   // useDefaultResourceTypeEntry: true,
 })

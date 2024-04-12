@@ -13,16 +13,17 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "next": "^14",
-    "next-drupal": "workspace:^",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@mantine/core": "^7.7.1",
     "@mantine/hooks": "^7.7.1",
     "@measured/puck": "*",
+    "@powerstack/utils": "workspace:^",
     "@tabler/icons-react": "^3.1.0",
     "classnames": "^2.3.2",
-    "postcss-preset-mantine": "^1.13.0"
+    "next": "^14",
+    "next-drupal": "workspace:^",
+    "postcss-preset-mantine": "^1.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
