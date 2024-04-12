@@ -61,7 +61,6 @@ fin exec "/var/www/scripts/setup/backend/install_cms.sh"
 
 # Configuring frontend to link to newly provisioned backend environment
 title "STEP 5" "Linking environments"
-fin exec "/scripts/misc/add_backend_creds_to_env_file.sh"
 fin project restart frontend
 
 # All done! show the urls.

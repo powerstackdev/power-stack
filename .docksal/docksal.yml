@@ -72,10 +72,6 @@ services:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: cli
-    volumes:
-      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-      # - frontend_node_modules:/var/www/frontend/node_modules
-      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.next # gatsby build and preview cannot share the same .cache folder
     labels:
       - io.docksal.virtual-host=frontend.${VIRTUAL_HOST}
       - io.docksal.virtual-port=3000
@@ -86,7 +82,7 @@ services:
       - NEXT_IMAGE_DOMAIN
       - NEXT_DRUPAL_HOST
       - NEXT_HOST
-      - DRUPAL_CLIENT_SECRET
+      - DRUPAL_CLIENT_ID
       - DRUPAL_CLIENT_SECRET
       - DRUPAL_PREVIEW_SECRET
       - NEXT_REVALIDATE_SECRET

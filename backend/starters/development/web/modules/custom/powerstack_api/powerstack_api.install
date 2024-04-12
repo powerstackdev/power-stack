@@ -41,7 +41,9 @@ function powerstack_api_install() {
   // Create new consumer.
   Consumer::create([
     'label' => 'Next.js Consumer',
+    'client_id' => 'next',
     'description' => 'This is the consumer for your Power Stack site.',
+    'uuid' => \Drupal::service('uuid')->generate(),
     'new_secret' => getenv('NEXT_CLIENT_SECRET'),
     'is_default' => TRUE,
   ])->save();
