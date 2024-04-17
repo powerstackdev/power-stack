@@ -10,8 +10,6 @@ services:
       - backend_vendor:/var/www/backend/starters/${BACKEND_STARTER}/vendor
       - docs_node_modules:/var/www/docs/node_modules
       - docs_cache:/var/www/docs/.cache # gatsby build and preview cannot share the same .cache folder
-      - frontend_node_modules:/var/www/frontend/node_modules
-      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.cache # gatsby build and preview cannot share the same .cache folder
     environment:
       - DEBUG=1
       - DRUSH_OPTIONS_URI=backend.${VIRTUAL_HOST}
@@ -74,25 +72,24 @@ services:
     extends:
       file: ${HOME}/.docksal/stacks/services.yml
       service: cli
-    volumes:
-      # Keep write-heavy folders in a volumes (improves fs performance on non-Linux platforms)
-      - frontend_node_modules:/var/www/frontend/node_modules
-      - frontend_cache:/var/www/frontend/starters/${FRONTEND_STARTER}/.cache # gatsby build and preview cannot share the same .cache folder
     labels:
       - io.docksal.virtual-host=frontend.${VIRTUAL_HOST}
       - io.docksal.virtual-port=3000
-    ports:
-      - "3001:3001"
     environment:
       - DRUPAL_URI=http://web/
       - BACKEND_STARTER
       - FRONTEND_STARTER
-      - INTERNAL_STATUS_PORT=3001
-      - CHOKIDAR_USEPOLLING=true
-      - NODE_OPTIONS=--max-old-space-size=3072
+      - NEXT_IMAGE_DOMAIN
+      - NEXT_PUBLIC_DRUPAL_HOST
+      - NEXT_HOST
+      - NEXT_PUBLIC_DRUPAL_CLIENT_ID
+      - NEXT_PUBLIC_DRUPAL_CLIENT_SECRET
+      - DRUPAL_PREVIEW_SECRET
+      - NEXT_REVALIDATE_SECRET
+      - VIRTUAL_HOST
     working_dir: /var/www/frontend
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
-    command: [ "bash", "-lc", "yarn workspace ${FRONTEND_STARTER} develop -H 0.0.0.0 -p 3000" ]
+    command: [ "bash", "-lc", "yarn workspace ${FRONTEND_STARTER} dev" ]
     depends_on:
       - cli
       - php # cli has to start first to avoid race conditions in startup scripts between cli, php and preview
@@ -122,7 +119,5 @@ services:
 
 volumes:
   backend_vendor:        # Used with cli and php
-  frontend_node_modules:  # Used with cli and frontend
-  frontend_cache: # Used with frontend (gatsby develop)
   docs_node_modules:  # Used with cli and docs
   docs_cache: # Used with docs (gatsby develop)

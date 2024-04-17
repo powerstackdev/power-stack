@@ -22,7 +22,8 @@ $sites = [
         border-bottom: 1px solid lightGrey;
       }
       header div {
-        margin: 0 min(5vw, 48px);
+        margin: 0 auto;
+        max-width: 1400px;
         padding: 16px 0;
       }
       header div img {
@@ -77,10 +78,6 @@ $sites = [
     padding: 2rem;
 ">
     <h1>Dashboard</h1>
-
-    <p>Welcome to your new DXP!</p>
-    <p>Click <a href="http://frontend.<?php echo getenv('VIRTUAL_HOST') ?>/admin/login">here</a> to login.</p>
-
     <H2>Services</H2>
     <div style="
     grid-template-columns: 1fr 1fr;
@@ -102,9 +99,9 @@ $sites = [
               </p>
             <?php if ($site === "FRONTEND" || $site === "BACKEND"): ?>
                 <p><strong>Starter
-                        - </strong> <?php echo getenv("${site}_STARTER"); ?></p>
+                        - </strong> <?php echo getenv("{$site}_STARTER"); ?></p>
                 <p><strong>Directory -</strong>
-                  <?php echo strtolower($site); ?>/starters/<?php echo getenv("${site}_STARTER"); ?>/ </p>
+                  <?php echo strtolower($site); ?>/starters/<?php echo getenv("{$site}_STARTER"); ?>/ </p>
             <?php else: ?>
                 <p><strong>Directory
                         - </strong> <?php echo strtolower($site); ?>/</p>
@@ -150,7 +147,6 @@ $sites = [
   setInterval(function(){
     statuses.forEach(function(status) {
       fetch(status.dataset.service_url, { method: 'HEAD' } ).then(function(response) {
-        console.log(response.status); // returns 200
         if(response.ok) {
           document.getElementById(status.id).innerHTML = " - Up";
         } else {
@@ -160,7 +156,7 @@ $sites = [
         document.getElementById(status.id).innerHTML = " - Down";
       });
     });
-  }, 5000);
+  }, 30000);
 
 
 </script>

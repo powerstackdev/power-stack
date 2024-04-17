@@ -1,0 +1,19 @@
+{
+    "name": "powerstack/page_builder_base",
+    "description": "Basic setup for the Power Stack paragraphs",
+    "version": "0.0.1",
+    "keywords": [
+        "Drupal"
+    ],
+    "license": "GPL-2.0+",
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "1": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    }
+}

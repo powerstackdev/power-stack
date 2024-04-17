@@ -9,23 +9,34 @@
         "chat": "https://www.drupal.org/node/314178"
     },
     "repositories": {
-        "composer-2-workspaces": {
-            "type": "vcs",
-            "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
-        },
         "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "powerstack_profile": {
+            "type": "path",
+            "url": "web/profiles/custom/powerstack_profile"
+        },
+        "powerstack_api": {
+            "type": "path",
+            "url": "web/modules/custom/powerstack_api"
+        },
+        "powerstack_demo_content": {
+            "type": "path",
+            "url": "web/modules/custom/powerstack_demo_content"
+        },
+        "powerstack_page_builder": {
+            "type": "path",
+            "url": "web/modules/custom/powerstack_page_builder"
         }
     },
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "~9.3.0",
-        "drupal/core-project-message": "~9.3.0",
-        "drupal/core-recommended": "~9.3.0",
-        "drupal/powerstack_profile": "^0.0.1",
-        "drush/drush": "^10.2",
+        "drupal/core-composer-scaffold": "~10.2.0",
+        "drupal/core-project-message": "~10.2.0",
+        "drupal/core-recommended": "~10.2.0",
+        "powerstack/profile": "^1.0",
         "vlucas/phpdotenv": "^5.4"
     },
     "conflict": {
@@ -43,15 +54,28 @@
         "allow-plugins": {
             "composer/installers": true,
             "drupal/*": true,
-            "tmdk/composer-workspaces-plugin": true,
             "cweagans/composer-patches": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            }
+        },
+        "merge-plugin": {
+            "include": [
+                "*/custom/*/composer.json"
+            ],
+            "replace": false,
+            "ignore-duplicates": true
+        },
+        "patches": {
+            "drupal/core": {
+                "Bearer token patch": "https://www.drupal.org/files/issues/2019-07-05/3055260-skip-csrf-token-check-when-using-bearer-auth-11-8.8.x.patch"
             }
         },
         "enable-patching": true,
@@ -104,12 +128,12 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
-        },
-        "workspace-root": "../.."
+        }
     },
     "require-dev": {
-        "drupal/core-dev": "^9.4",
-        "phpspec/prophecy-phpunit": "^2",
-        "tmdk/composer-workspaces-plugin": "dev-overrides"
+        "drush/drush": "^12.5",
+        "drupal/composer_deploy": "^1.7",
+        "drupal/core-dev": "^10.2",
+        "phpspec/prophecy-phpunit": "^2"
     }
 }

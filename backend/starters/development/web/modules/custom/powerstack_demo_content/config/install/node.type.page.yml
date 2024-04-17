@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: aYESmZu0Q6SS-9TdLwi10WxGcxG3p2ZkFc-klO8D_f4
+name: Page
+type: page
+description: 'A <em>page</em> content type.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

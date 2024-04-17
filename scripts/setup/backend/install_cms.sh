@@ -108,17 +108,17 @@ fix_permissions ()
 # Install site
 site_install ()
 {
-	cd "$DOCROOT_PATH"
-
+	cd "$SITE_PATH"
   subtitle "Installing Drupal"
 	# We disable email sending here so site-install does not return an error
 	# Credit: https://www.drupal.org/project/phpconfig/issues/1826652#comment-12071700
-	drush site-install powerstack_profile -y \
+	
+	vendor/bin/drush site-install powerstack_profile -y \
 		install_configure_form.enable_update_status_module=NULL \
 		--site-name="Power Stack ${BACKEND_STARTER} Starter"
 
 	# Clear caches so that we don't have a front page error
-	drush cr
+	vendor/bin/drush cr
 }
 
 #-------------------------- END: Functions --------------------------------
@@ -132,7 +132,7 @@ init_cors
 create_oauth_keys "${SITE_PATH}/keys"
 time site_install
 
-login_link=$(cd "$DOCROOT_PATH" && drush uli)
+login_link=$(cd "${SITE_PATH}" && vendor/bin/drush uli)
 
 echo -e "${yellow}Drupal admin login:${NC} ${login_link}"
 

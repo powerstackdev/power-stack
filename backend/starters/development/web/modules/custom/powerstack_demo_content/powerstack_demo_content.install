@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for Power Stack Demo Content.
+ */
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\path_alias\Entity\PathAlias;
+
+/**
+ *
+ */
+function powerstack_demo_content_install() {
+
+  // Create node object with attached file.
+  $node = Node::create([
+    'type'        => 'page',
+    'title'       => 'Welcome to Power Stack',
+  ]);
+
+  $paragraph = Paragraph::create([
+    'type' => 'hero',
+    'field_title' => 'Welcome to Power Stack',
+    'field_subtitle' => 'Supercharging digital experiences for the modern web.',
+    'field_description' => 'Quick. Extensible. Secure. Scalable.'
+  ]);
+  // Add the paragraphs to the node's paragraphs field one by one.
+  $node->field_page_builder->appendItem($paragraph);
+  $paragraph->save();
+
+  $paragraph_text = Paragraph::create([
+    'type' => 'text',
+    'field_title' => 'Unrivalled CMS capabilities',
+    'field_text' => 'Built with the power of Drupal, you can have assurance that your content is translatable, highly extensible and can be adapted to meet the needs of your business'
+  ]);
+  // Add the paragraphs to the node's paragraphs field one by one.
+  $node->field_page_builder->appendItem($paragraph_text);
+  $paragraph_text->save();
+
+  $node->save();
+
+  PathAlias::create([
+    'path' => "/node/" . $node->id(),
+    'alias' => '/welcome',
+    'langcode' => 'en',
+  ])->save();
+
+  $items = [
+    $node->id() => 'Menuitem 1',
+  ];
+
+  foreach ($items as $link => $title) {
+    $menu_link = MenuLinkContent::create([
+      'title' => $title,
+      'link' => ['uri' => 'entity:node/' . $link],
+      'menu_name' => 'main',
+      'weight' => 1,
+      'expanded' => TRUE,
+    ]);
+    $menu_link->save();
+  }
+
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', "/welcome")
+    ->save();
+}

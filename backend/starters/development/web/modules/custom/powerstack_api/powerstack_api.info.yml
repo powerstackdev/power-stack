@@ -1,0 +1,13 @@
+name: API
+type: module
+description: Base setup for Headless API
+package: Power Stack
+core_version_requirement: ^8 || ^9 || ^10
+
+dependencies:
+  - drupal:jsonapi
+  - powerstack_demo_content:powerstack_demo_content
+  - simple_oauth:simple_oauth
+  - next:next
+  - next:next_extras
+  - next:next_jsonapi

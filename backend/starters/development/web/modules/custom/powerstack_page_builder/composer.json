@@ -1,0 +1,24 @@
+{
+    "name": "powerstack/page_builder",
+    "description": "Basic setup for the Drupal Page Builder settings",
+    "version": "0.0.1",
+    "keywords": [
+        "Drupal"
+    ],
+    "license": "GPL-2.0+",
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "1": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    },
+    "require": {
+        "drupal/paragraphs": "^1.14",
+        "drupal/field_group": "^3.4",
+        "drupal/pathauto": "^1.8"
+    }
+}

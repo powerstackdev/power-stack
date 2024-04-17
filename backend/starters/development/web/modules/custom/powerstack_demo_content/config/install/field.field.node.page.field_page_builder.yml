@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_builder
+    - node.type.page
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.stats
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: LbfUPe3CAedD200qzWG6zgnEcB9sqgN7FsG49wYGJXQ
+id: node.page.field_page_builder
+field_name: field_page_builder
+entity_type: node
+bundle: page
+label: 'Page builder'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hero: hero
+      text: text
+      stats: stats
+    negate: 0
+    target_bundles_drag_drop:
+      hero:
+        weight: 6
+        enabled: true
+      stat:
+        weight: 5
+        enabled: false
+      stats:
+        weight: 7
+        enabled: true
+      text:
+        weight: 6
+        enabled: true
+field_type: entity_reference_revisions
