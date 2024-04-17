@@ -1,15 +1,10 @@
 {
   "subtree-splits": [
+    
     {
       "name": "powerstackdev/docs",
       "directory": "docs",
       "target": "git@github.com:powerstackdev/docs.git"
-    },
-
-    {
-      "name": "powerstackdev/backend-jsonapi_base_fields",
-      "directory": "backend/deprecated-packages/jsonapi_base_fields",
-      "target": "git@github.com:powerstackdev/backend-jsonapi_base_fields.git"
     },
 
     {
@@ -32,11 +27,6 @@
       "directory": "backend/packages/powerstack_profile",
       "target": "git@github.com:powerstackdev/backend-powerstack_profile.git"
     },
-    {
-      "name": "powerstackdev/backend-tinacms-json-page-builder",
-      "directory": "backend/packages/tinacms_json_page_builder",
-      "target": "git@github.com:powerstackdev/backend-tinacms-json-page-builder.git"
-    },
 
     {
       "name": "powerstackdev/backend-starter-development",
@@ -55,27 +45,7 @@
       "target": "git@github.com:powerstackdev/frontend-powerstack-utils.git"
     },
 
-    {
-      "name": "powerstackdev/frontend-gatsby-theme-tina-edit",
-      "directory": "frontend/deprecated-packages/gatsby-theme-tina-edit",
-      "target": "git@github.com:powerstackdev/frontend-gatsby-theme-tina-edit.git"
-    },
-
-    {
-      "name": "powerstackdev/frontend-gatsby-plugin-craftjs",
-      "directory": "frontend/packages/gatsby-plugin-craftjs",
-      "target": "git@github.com:powerstackdev/frontend-gatsby-plugin-craftjs.git"
-    },
-    {
-      "name": "powerstackdev/frontend-gatsby-plugin-tinacms",
-      "directory": "frontend/packages/gatsby-plugin-tinacms",
-      "target": "git@github.com:powerstackdev/frontend-gatsby-plugin-tinacms.git"
-    },
-    {
-      "name": "powerstackdev/frontend-gatsby-plugin-tinacms-pagebuilder",
-      "directory": "frontend/packages/gatsby-plugin-tinacms-pagebuilder",
-      "target": "git@github.com:powerstackdev/frontend-gatsby-plugin-tinacms-pagebuilder.git"
-    },
+   
     {
       "name": "powerstackdev/frontend-gatsby-theme-core-design-system",
       "directory": "frontend/packages/gatsby-theme-core-design-system",
@@ -91,12 +61,6 @@
       "name": "powerstackdev/frontend-starter-development",
       "directory": "frontend/starters/development",
       "target": "git@github.com:powerstackdev/frontend-starter-development.git"
-    },
-
-    {
-      "name": "powerstackdev/frontend-starter-development-craft",
-      "directory": "frontend/starters/development-craft",
-      "target": "git@github.com:powerstackdev/frontend-starter-development-craft.git"
     },
 
     {
