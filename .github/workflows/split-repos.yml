@@ -18,7 +18,7 @@ on:
   delete:
     tags:
       - '*'
-
+      
 jobs:
   sync_commits:
     runs-on: ubuntu-latest
@@ -46,6 +46,6 @@ jobs:
 
       # Sync commits and tags for the configured subtree splits
       - name: subtree split
-        uses: acrobat/subtree-splitter@v1.0.0
+        uses: acrobat/subtree-splitter@v1.1.4
         with:
           config-path: ./package-config.json # Reference the location where you saved your config file
