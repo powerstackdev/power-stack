@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: text
-label: Text
-icon_uuid: null
-icon_default: null
-description: ''
-behavior_plugins: {  }
