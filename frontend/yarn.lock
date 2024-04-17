@@ -2132,6 +2132,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@measured/auto-frame-component@npm:0.1.7":
+  version: 0.1.7
+  resolution: "@measured/auto-frame-component@npm:0.1.7"
+  dependencies:
+    object-hash: ^3.0.0
+    react-frame-component: 5.2.6
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0
+  checksum: 479759876810ab371d797fea3f013f95256655b3c61a167d7b8e6c5ac8eb830641f21802313983177368899c6a2d11c6722859f71815f84531512f16e0a73a35
+  languageName: node
+  linkType: hard
+
+"@measured/dnd@npm:16.6.0-canary.4cba1d1":
+  version: 16.6.0-canary.4cba1d1
+  resolution: "@measured/dnd@npm:16.6.0-canary.4cba1d1"
+  dependencies:
+    "@babel/runtime": ^7.23.2
+    css-box-model: ^1.2.1
+    lru-cache: ^10.2.0
+    memoize-one: ^6.0.0
+    raf-schd: ^4.0.3
+    react-redux: ^8.1.3
+    redux: ^4.2.1
+    use-memo-one: ^1.1.3
+  peerDependencies:
+    react: ^16.8.5 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.5 || ^17.0.0 || ^18.0.0
+  checksum: 117c6876791ca4d8c238ae2697cb09f68d1c37c911fe72c28d9da2538c1e060a86d69be9b64076558642c5aa348b2ac60697196da275fa5723d5b8067a985c3a
+  languageName: node
+  linkType: hard
+
 "@measured/dnd@npm:16.6.0-canary.c7c88e8":
   version: 16.6.0-canary.c7c88e8
   resolution: "@measured/dnd@npm:16.6.0-canary.c7c88e8"
@@ -2164,6 +2195,24 @@ __metadata:
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   checksum: c1fc0378c9f4b8b8fc09edce485464ff9aea3a0dde15a06a8b2d9ef3a91a210876cfcd36087aedcbb7402381451a56085d8519d43196f2a044b7f56f872eb085
+  languageName: node
+  linkType: hard
+
+"@measured/puck@npm:0.14.2":
+  version: 0.14.2
+  resolution: "@measured/puck@npm:0.14.2"
+  dependencies:
+    "@measured/auto-frame-component": 0.1.7
+    "@measured/dnd": 16.6.0-canary.4cba1d1
+    deep-diff: ^1.0.2
+    react-hotkeys-hook: ^4.4.1
+    react-spinners: ^0.13.8
+    ua-parser-js: ^1.0.37
+    use-debounce: ^9.0.4
+    uuid: ^9.0.1
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0
+  checksum: d2f347c8ea5271568b36c989f5368e040d9a64eff1bd5b082b168995c6826603cd69e6d33d96500586d6211311326f7d1f7a2fc2e0b814afe6ecb708c3410979
   languageName: node
   linkType: hard
 
@@ -3852,7 +3901,7 @@ __metadata:
   dependencies:
     "@mantine/core": ^7.7.1
     "@mantine/hooks": ^7.7.1
-    "@measured/puck": "*"
+    "@measured/puck": 0.14.2
     "@powerstack/utils": "workspace:^"
     "@tabler/icons-react": ^3.1.0
     "@types/node": ^20.10.0
@@ -8495,6 +8544,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 2373c693f3b328f3b2387c3efafe6d257b057a142f9a79291854b14ff4d5367d3d730810aee981726b677ae0fd8329b23309da3b6aaab8263dbdccf1da07a3ba
+  languageName: node
+  linkType: hard
+
+"ua-parser-js@npm:^1.0.37":
+  version: 1.0.37
+  resolution: "ua-parser-js@npm:1.0.37"
+  checksum: 4d481c720d523366d7762dc8a46a1b58967d979aacf786f9ceceb1cd767de069f64a4bdffb63956294f1c0696eb465ddb950f28ba90571709e33521b4bd75e07
   languageName: node
   linkType: hard
 

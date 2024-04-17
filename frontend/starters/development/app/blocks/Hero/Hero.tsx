@@ -27,7 +27,7 @@ export function HeroBlock({title, subtitle, description, buttons}) {
         </Container>
 
         <div className={classes.controls}>
-          <Button className={classes.control} size="lg" >
+          <Button className={classes.control} size="lg" color="powerstack">
             Book a demo
           </Button>
           <Button className={classes.control} size="lg" color="gray">

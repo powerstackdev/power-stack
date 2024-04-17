@@ -9,6 +9,7 @@ distribution:
     theme: stark
 install:
   - node
+  - dblog
   - ban
   - media
   - media_library

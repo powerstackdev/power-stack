@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: w-unT_MJAbOkYJ6PV62Qa2dxCjQWMWD4J2VPdn83Usc
 name: Post
 type: post
 description: 'A <em>post</em> content type.'

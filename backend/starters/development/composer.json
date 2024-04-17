@@ -73,6 +73,11 @@
             "replace": false,
             "ignore-duplicates": true
         },
+        "patches": {
+            "drupal/core": {
+                "Bearer token patch": "https://www.drupal.org/files/issues/2019-07-05/3055260-skip-csrf-token-check-when-using-bearer-auth-11-8.8.x.patch"
+            }
+        },
         "enable-patching": true,
         "installer-paths": {
             "web/core": [

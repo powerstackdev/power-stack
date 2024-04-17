@@ -1,7 +1,7 @@
 "use client";
 import { createTheme, MantineColorsTuple } from '@mantine/core';
 
-const myColor: MantineColorsTuple = [
+const powerstack: MantineColorsTuple = [
   "#fff8e1",
   "#ffefcc",
   "#ffdd9b",
@@ -14,8 +14,8 @@ const myColor: MantineColorsTuple = [
   "#af7100"
 ]
 
-const theme = createTheme({
+export const theme = createTheme({
   colors: {
-    myColor,
+    powerstack,
   }
 });

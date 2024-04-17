@@ -3,65 +3,28 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.text.field_text
+    - field.field.paragraph.text.field_title
     - paragraphs.paragraphs_type.text
   module:
-    - field_group
     - text
-third_party_settings:
-  field_group:
-    group_inline_fields:
-      children:
-        - field_text
-      label: 'Inline fields'
-      region: content
-      parent_name: ''
-      weight: 4
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-    group_form_fields:
-      children: {  }
-      label: 'Form fields'
-      region: content
-      parent_name: ''
-      weight: 5
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-    group_styling_options:
-      children: {  }
-      label: 'Styling options'
-      region: content
-      parent_name: ''
-      weight: 6
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
 _core:
-  default_config_hash: wOMLkpBN_SlIPYgg0wIddKh89CqgFcOkGkmO2xe71PE
+  default_config_hash: 8g7LY-Y-Ob3csTB_0C_TsCwHYBCm-hbiqhEeGPt6TFc
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text
 mode: default
 content:
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_text:
     type: text_textarea
-    weight: 1
+    weight: 0
     region: content
     settings:
       rows: 5

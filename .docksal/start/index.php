@@ -156,7 +156,7 @@ $sites = [
         document.getElementById(status.id).innerHTML = " - Down";
       });
     });
-  }, 2000);
+  }, 30000);
 
 
 </script>

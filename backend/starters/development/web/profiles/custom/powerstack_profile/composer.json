@@ -8,10 +8,6 @@
     ],
     "license": "GPL-2.0+",
     "repositories": {
-        "composer-2-workspaces": {
-            "type": "vcs",
-            "url": "git@github.com:xaviemirmon/composer-2-workspaces-plugin.git"
-        },
         "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
@@ -37,19 +33,13 @@
     "require": {
         "drupal/gin": "^3.0",
         "powerstack/api": "^0.0.1",
-        "powerstack/page_builder": "^0.0.1"
+        "powerstack/page_builder": "^0.0.1",
+        "powerstack/page_builder_base": "^0.0.1",
+        "powerstack/permissions": "^0.0.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
         "tmdk/composer-workspaces-plugin": "dev-overrides"
-    },
-    "extra": {
-        "workspace-root": "../.."
-    },
-    "config": {
-        "allow-plugins": {
-            "tmdk/composer-workspaces-plugin": true
-        }
     }
 }

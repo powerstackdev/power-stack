@@ -44,6 +44,7 @@ function powerstack_api_install() {
     'client_id' => 'next',
     'description' => 'This is the consumer for your Power Stack site.',
     'uuid' => \Drupal::service('uuid')->generate(),
+    'user_id' => 1,
     'new_secret' => getenv('NEXT_CLIENT_SECRET'),
     'is_default' => TRUE,
   ])->save();
@@ -87,4 +88,15 @@ function powerstack_api_install() {
 
   // Save config.
   $config->save();
+
+
+  // Set config for jsonapi.settings.
+  $config = \Drupal::service('config.factory')
+    ->getEditable('jsonapi.settings');
+  
+  $config->set('read_only', FALSE);
+
+  // Save config.
+  $config->save();
+
 }

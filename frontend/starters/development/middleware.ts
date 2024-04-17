@@ -12,6 +12,16 @@ export async function middleware(req: NextRequest) {
         0,
         req.nextUrl.pathname.length - 5
       );
+      const pathWithEditPrefix = `/edit${pathWithoutEdit}`;
+
+      return NextResponse.rewrite(new URL(pathWithEditPrefix, req.url));
+    }
+
+    if (req.nextUrl.pathname === "/create/page/new") {
+      const pathWithoutEdit = req.nextUrl.pathname.slice(
+        0,
+        req.nextUrl.pathname.length - 5
+      );
       const pathWithEditPrefix = `/puck${pathWithoutEdit}`;
 
       return NextResponse.rewrite(new URL(pathWithEditPrefix, req.url));

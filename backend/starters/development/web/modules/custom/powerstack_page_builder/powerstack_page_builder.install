@@ -1,0 +1,23 @@
+<?php
+
+use Drupal\user\Entity\Role;
+
+function powerstack_page_builder_install() {
+
+   // Define the role and the permissions to add.
+  $roles = ['anonymous', 'authenticated', 'api'];
+  $permissions = ['view paragraph content hero', 'view paragraph content stat', 'view paragraph content stats', 'view paragraph content text' ];
+  
+  foreach ( $roles as $role_id ) {
+    // Load the role object.
+    $role = Role::load($role_id);
+    if ($role) {
+      // Add permissions to the role.
+      foreach ($permissions as $permission) {
+        $role->grantPermission($permission);
+      }
+      $role->save();
+    }
+  }
+
+}

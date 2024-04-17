@@ -1,0 +1,9 @@
+name: Page builder base
+type: module
+description: Base setup for Power Stack Page builder base
+package: Power Stack
+core_version_requirement: ^8 || ^9 || ^10
+
+dependencies:
+  - paragraphs:paragraphs
+  - paragraphs:paragraphs_type_permissions

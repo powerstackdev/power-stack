@@ -7,6 +7,8 @@ dependencies:
   module:
     - paragraphs
     - path
+_core:
+  default_config_hash: ByH-zt0TzWb-WBdbRjs4V4QmvEIpg3LzHYs_SHWKWqs
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -71,4 +73,3 @@ content:
 hidden:
   promote: true
   sticky: true
-
