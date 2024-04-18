@@ -39,6 +39,7 @@ install:
   - taxonomy
   - field_ui
   - user
+  - gin_toolbar
 
 themes:
   - gin

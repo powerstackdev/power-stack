@@ -18,7 +18,6 @@ import type { Metadata } from "next"
 import type { DrupalNode, JsonApiParams } from "next-drupal"
 import "@measured/puck/puck.css";
 import { Client } from "./client";
-import { getPage } from "../../../lib/get-page";
 import { capitalize, formatDrupalType, formatDrupalField, drupalFieldPrefix } from "@powerstack/utils"
 
 export async function generateMetadata({
@@ -94,13 +93,11 @@ export default async function Page({
     // If getNode throws an error, tell Next.js the path is 404.
     notFound()
   }
-  
-  console.log(node)
 
   function extractFieldKeys(data) {
     const result = {};
     for (const key in data) {
-        if (data.hasOwnProperty(key) && key.startsWith(drupalFieldPrefix)) {
+        if (data.hasOwnProperty(key) && key.startsWith(drupalFieldPrefix) && data[key] !== null) {
             const newKey = formatDrupalField(key); // Remove 'field_' prefix
             const fieldData = data[key].hasOwnProperty('value') ? data[key].value : data[key]
             result[newKey] = fieldData;
@@ -116,6 +113,7 @@ export default async function Page({
       return {
         type: type,
         props: {
+          uuid: block.id,
           id: `${type}-${block.id}`,
           ...extractFieldKeys(block)
         }
@@ -127,12 +125,13 @@ export default async function Page({
     root: {
       props: {
         title: node.title,
-        nid: node.nid
+        nid: node.drupal_internal__nid,
+        uuid: node.id,
+        path: node.path?.alias ? node.path?.alias : `node/${node.drupal_internal__nid}`
       }
     },
     content: content
   }
-
-  console.log(data)
+  
   return <Client path={path} data={data} />;
 }

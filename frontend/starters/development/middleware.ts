@@ -17,15 +17,15 @@ export async function middleware(req: NextRequest) {
       return NextResponse.rewrite(new URL(pathWithEditPrefix, req.url));
     }
 
-    if (req.nextUrl.pathname === "/create/page/new") {
-      const pathWithoutEdit = req.nextUrl.pathname.slice(
-        0,
-        req.nextUrl.pathname.length - 5
-      );
-      const pathWithEditPrefix = `/puck${pathWithoutEdit}`;
+    // if (req.nextUrl.pathname === "/create/page/new") {
+    //   const pathWithoutEdit = req.nextUrl.pathname.slice(
+    //     0,
+    //     req.nextUrl.pathname.length - 5
+    //   );
+    //   const pathWithEditPrefix = `/puck${pathWithoutEdit}`;
 
-      return NextResponse.rewrite(new URL(pathWithEditPrefix, req.url));
-    }
+    //   return NextResponse.rewrite(new URL(pathWithEditPrefix, req.url));
+    // }
 
     // Disable "/puck/[...puckPath]"
     if (req.nextUrl.pathname.startsWith("/puck")) {

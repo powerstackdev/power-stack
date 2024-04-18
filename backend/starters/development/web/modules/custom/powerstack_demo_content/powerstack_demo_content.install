@@ -65,6 +65,6 @@ function powerstack_demo_content_install() {
 
   \Drupal::configFactory()
     ->getEditable('system.site')
-    ->set('page.front', "/welcome")
+    ->set('page.front', "/admin/content")
     ->save();
 }
