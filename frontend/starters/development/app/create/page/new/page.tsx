@@ -1,11 +1,12 @@
 "use client"
 import type { Data } from "@measured/puck";
 import { Puck } from "@measured/puck";
-import config from "../../../puck.config";
+import "@measured/puck/puck.css";
+import config from "@/puck.config";
 import { drupal } from "@/lib/drupal";
 import { drupalFieldPrefix } from "@powerstack/utils";
 
-export function Client({ path, data }: { path: string; data: Data }) {
+export default function Page({ path, data }: { path: string; data: Data }) {
   const backendUrl = process.env.NEXT_PUBLIC_DRUPAL_HOST
 
   return (
@@ -22,22 +23,11 @@ export function Client({ path, data }: { path: string; data: Data }) {
                   Object.keys(block.props).forEach(field => {
                       const fieldName = `${drupalFieldPrefix}${field}`;
       
-                      if (field !== 'id' && field !== 'uuid') {
+                      if (field !== 'id') {
                           fields[fieldName] = block.props[field];
                       }
                   });
-                  if ( Object.hasOwn(block.props, 'uuid')) {
-                    return drupal.updateResource(`paragraph--${blockType}`, block.props.uuid ,{
-                        data: {
-                            attributes: {...fields},
-                        },
-                    }, {
-                        withAuth: {
-                            clientId: process.env.NEXT_PUBLIC_DRUPAL_CLIENT_ID as string,
-                            clientSecret: process.env.NEXT_PUBLIC_DRUPAL_CLIENT_SECRET as string,
-                        },
-                    });
-                  }
+      
                   return drupal.createResource(`paragraph--${blockType}`, {
                       data: {
                           attributes: {...fields},
@@ -65,7 +55,7 @@ export function Client({ path, data }: { path: string; data: Data }) {
         }
     }));
 
-    const page = await drupal.updateResource("node--page", data.root.props?.uuid, {
+    const page = await drupal.createResource("node--page", {
         data: {
             attributes: {
                 title: data.root?.props?.title || 'Default Title',

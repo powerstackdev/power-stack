@@ -15,7 +15,7 @@ export function BasicPage({ node, ...props }: BasicPageProps) {
   function extractFieldKeys(data) {
     const result = {};
     for (const key in data) {
-        if (data.hasOwnProperty(key) && key.startsWith(drupalFieldPrefix)) {
+        if (data.hasOwnProperty(key) && key.startsWith(drupalFieldPrefix) && data[key] !== null) {
             const newKey = formatDrupalField(key); // Remove 'field_' prefix
             const fieldData = data[key].hasOwnProperty('value') ? data[key].value : data[key]
             result[newKey] = fieldData;
@@ -29,7 +29,6 @@ export function BasicPage({ node, ...props }: BasicPageProps) {
     const type = capitalize(formatDrupalType(block.type));
     if (type === 'Hero' ||  'Text') {
       
-      console.log(extractFieldKeys(block))
       return {
         type: type,
         id: `${type}-${block.id}`,

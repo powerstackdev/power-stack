@@ -8,26 +8,26 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: 8g7LY-Y-Ob3csTB_0C_TsCwHYBCm-hbiqhEeGPt6TFc
+  default_config_hash: MFwQ_e96ZqygJh2DWYf8UW8j3Uq7TSQ3e2Mr-wNYmHE
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text
 mode: default
 content:
-  field_title:
-    type: string_textfield
+  field_text:
+    type: text_textarea
     weight: 1
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_text:
-    type: text_textarea
+  field_title:
+    type: string_textfield
     weight: 0
     region: content
     settings:
-      rows: 5
+      size: 60
       placeholder: ''
     third_party_settings: {  }
 hidden:
