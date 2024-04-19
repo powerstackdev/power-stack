@@ -37,7 +37,8 @@
         "drupal/core-project-message": "~10.2.0",
         "drupal/core-recommended": "~10.2.0",
         "powerstack/profile": "^1.0",
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "php": ">= 8.2"
     },
     "conflict": {
         "drupal/drupal": "*"
