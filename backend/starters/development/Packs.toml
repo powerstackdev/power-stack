@@ -1,0 +1,6 @@
+[build]
+builders = ["heroku/php"]
+
+[[processes]]
+type = "web"
+command = "apache2-foreground"
