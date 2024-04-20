@@ -779,7 +779,7 @@ $databases['default']['default'] = [
 	'username' => getenv('MYSQL_USER'),
 	'password' => getenv('MYSQL_PASSWORD'),
 	'host' => getenv('MYSQL_HOST'),
-  'port' => getenv('MYSQL_PORT')
+  'port' => getenv('MYSQL_PORT'),
 	'driver' => 'mysql',
 ];
 
