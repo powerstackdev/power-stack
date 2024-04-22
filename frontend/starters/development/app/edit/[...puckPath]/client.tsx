@@ -6,6 +6,7 @@ import { drupal } from "@/lib/drupal";
 import { drupalFieldPrefix } from "@powerstack/utils";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import { Header } from "@/components/admin/Header/Header";
 
 export function Client({ path, data }: { path: string; data: Data }) {
   const backendUrl = process.env.NEXT_PUBLIC_DRUPAL_HOST

@@ -5,6 +5,9 @@ import type { NextRequest } from "next/server";
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
 
+  const { cookies } = req;
+  const sessionToken = cookies.get('next-auth.session-token');
+
   if (req.method === "GET") {
     // Rewrite routes that match "/[...puckPath]/edit" to "/puck/[...puckPath]"
     if (req.nextUrl.pathname.endsWith("/edit")) {
@@ -14,6 +17,9 @@ export async function middleware(req: NextRequest) {
       );
       const pathWithEditPrefix = `/edit${pathWithoutEdit}`;
 
+      if (!sessionToken) {
+        return NextResponse.redirect(new URL('/api/auth/signin', req.url));
+      }
       return NextResponse.rewrite(new URL(pathWithEditPrefix, req.url));
     }
 

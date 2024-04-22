@@ -84,6 +84,7 @@ export default async function Page({
 }: {
   params: { puckPath: string[] };
 }) {
+
   const path = `/${puckPath.join("/")}`;
 
   let node
