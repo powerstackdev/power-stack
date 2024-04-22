@@ -24,7 +24,7 @@ export const Header = () => {
         href="#"
         className="flex items-center gap-2 text-lg font-semibold md:text-base"
       >
-        <Image src={smallLogo} alt="small logo" height={50} />
+        <Image src={smallLogo} alt="small logo" height={50} width={50} className="w-10 h-10"/>
       </Link>
       {/* <Link
         href="#"

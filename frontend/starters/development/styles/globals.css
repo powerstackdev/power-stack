@@ -83,3 +83,7 @@
   .Puck > div header > div {
     padding: 8px
   }
+
+  img {
+    max-width: unset;
+  }
