@@ -4,6 +4,8 @@ import { Puck } from "@measured/puck";
 import config from "../../../puck.config";
 import { drupal } from "@/lib/drupal";
 import { drupalFieldPrefix } from "@powerstack/utils";
+import toast from "react-hot-toast";
+import Link from "next/link";
 
 export function Client({ path, data }: { path: string; data: Data }) {
   const backendUrl = process.env.NEXT_PUBLIC_DRUPAL_HOST
@@ -53,6 +55,7 @@ export function Client({ path, data }: { path: string; data: Data }) {
               return blocks; // Returns the fully resolved array of blocks
           } catch (error) {
               console.error('Error processing blocks:', error);
+              toast.error("This didn't work.")
           }
       }
       const blocks = await processBlocks(data)
@@ -64,24 +67,37 @@ export function Client({ path, data }: { path: string; data: Data }) {
           target_revision_id: block.drupal_internal__revision_id
         }
     }));
-
-    const page = await drupal.updateResource("node--page", data.root.props?.uuid, {
-        data: {
-            attributes: {
-                title: data.root?.props?.title || 'Default Title',
-            },
-            relationships: {
-                field_page_builder: {
-                    data: blocksRef
+    try {
+        const page = await drupal.updateResource("node--page", data.root.props?.uuid, {
+            data: {
+                attributes: {
+                    title: data.root?.props?.title || 'Default Title',
+                },
+                relationships: {
+                    field_page_builder: {
+                        data: blocksRef
+                    }
                 }
-            }
-        },
-    }, {
-        withAuth: {
-            clientId: process.env.NEXT_PUBLIC_DRUPAL_CLIENT_ID,
-            clientSecret: process.env.NEXT_PUBLIC_DRUPAL_CLIENT_SECRET,
-        },
-    });
+            },
+        }, {
+            withAuth: {
+                clientId: process.env.NEXT_PUBLIC_DRUPAL_CLIENT_ID,
+                clientSecret: process.env.NEXT_PUBLIC_DRUPAL_CLIENT_SECRET,
+            },
+        });
+        toast.success((t) => (
+            <>
+             Published! &nbsp;
+              <Link href={path} target="_blank">
+                View page
+              </Link>
+            </>
+          ))
+    } catch (error) {
+        console.error('Error processing page:', error);
+        toast.error("This didn't work.")
+    }
+
       }}
     />
   );

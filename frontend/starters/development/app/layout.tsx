@@ -7,6 +7,7 @@ import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { theme } from "../theme";
 
 import "@/styles/globals.css"
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: {
@@ -37,6 +38,7 @@ export default function RootLayout({
       </head>
       <body>
         <DraftAlert />
+        <Toaster position="bottom-right" />
         <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>
