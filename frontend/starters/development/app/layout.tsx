@@ -40,7 +40,7 @@ export default async function RootLayout({
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
       </head>
-      <body>
+      <body className={`${session && 'logged-in'}`}>
         <DraftAlert />
         <Toaster position="bottom-right" />
         {session && <Header />}

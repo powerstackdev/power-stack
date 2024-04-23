@@ -32,6 +32,7 @@ import { drupal } from "@/lib/drupal"
 import type { DrupalNode, JsonApiParams } from "next-drupal"
 
 async function getNodes(type: string) {
+
   const params: JsonApiParams = {}
   if (type === "node--article") {
     params.include = "field_image,uid"
@@ -46,86 +47,70 @@ async function getNodes(type: string) {
   })
 
   if (!resource) {
-    throw new Error(`Failed to fetch resource:`, {
-      cause: "DrupalError",
-    })
+    throw new Error(
+      `Failed to fetch resource:`,
+      {
+        cause: "DrupalError",
+      }
+    )
   }
 
   return resource
 }
 
 type NodePageParams = {
-  slug: string[]
-}
-type NodePageProps = {
-  params: NodePageParams
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+    slug: string[]
+  }
+  type NodePageProps = {
+    params: NodePageParams
+    searchParams: { [key: string]: string | string[] | undefined }
+  }
 
 export async function generateMetadata() {
-  return {
-    title: `Admin: Content`,
+  
+    return {
+      title: `Admin: Content`,
+    }
   }
-}
 
 export async function ContentList() {
-  let nodes
-  try {
-    nodes = await getNodes("node--page")
-  } catch (e) {
-    // If we fail to fetch the node, don't return any metadata.
-    return {}
-  }
-  const tableRows = nodes.map((node) => (
-    <TableRow>
-      <TableCell className="font-medium">{node.title}</TableCell>
-      <TableCell>
-        {node.status ? (
-          <Badge variant="outline">Pubished</Badge>
-        ) : (
-          <Badge variant="outline">Unpublished</Badge>
-        )}
-      </TableCell>
-      <TableCell className="hidden md:table-cell">{node.created}</TableCell>
-      <TableCell className="hidden md:table-cell">{node.changed}</TableCell>
-      <TableCell>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button aria-haspopup="true" size="icon" variant="ghost">
-              <MoreHorizontal className="h-4 w-4" />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem>
-              <Link
-                href={
-                  node?.path?.alias
-                    ? node?.path?.alias
-                    : `/node/${node.drupal_internal__nid}`
-                }
-              >
-                View
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link
-                href={
-                  node?.path?.alias
-                    ? `${node?.path?.alias}/edit`
-                    : `/node/${node.drupal_internal__nid}/edit`
-                }
-              >
-                Edit
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>Delete</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </TableCell>
-    </TableRow>
-  ))
+    let nodes
+    try {
+      nodes = await getNodes('node--page')
+    } catch (e) {
+      // If we fail to fetch the node, don't return any metadata.
+      return {}
+    }
+    const tableRows = nodes.map(node => (
+        <TableRow>
+              <TableCell className="font-medium">
+                {node.title}
+              </TableCell>
+              <TableCell>
+                {node.status ? <Badge variant="outline">Pubished</Badge> : <Badge variant="outline">Unpublished</Badge> }
+              </TableCell>
+              <TableCell className="hidden md:table-cell">{node.created}</TableCell>
+              <TableCell className="hidden md:table-cell">
+                {node.changed}
+              </TableCell>
+              <TableCell>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button aria-haspopup="true" size="icon" variant="ghost">
+                      <MoreHorizontal className="h-4 w-4" />
+                      <span className="sr-only">Toggle menu</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                    <DropdownMenuItem><Link href={node?.path?.alias ? node?.path?.alias : `/node/${node.drupal_internal__nid}`}>View</Link></DropdownMenuItem>
+                    <DropdownMenuItem><Link href={node?.path?.alias ? `${node?.path?.alias}/edit` : `/node/${node.drupal_internal__nid}/edit`}>Edit</Link></DropdownMenuItem>
+                    <DropdownMenuItem>Delete</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </TableCell>
+            </TableRow>
+    ))
   return (
     <Card>
       <CardContent>
@@ -135,11 +120,17 @@ export async function ContentList() {
               <TableHead>Title</TableHead>
               <TableHead>Status</TableHead>
               <TableHead className="hidden md:table-cell">Created</TableHead>
-              <TableHead className="hidden md:table-cell">Updated</TableHead>
-              <TableHead>Actions</TableHead>
+              <TableHead className="hidden md:table-cell">
+                Updated
+              </TableHead>
+              <TableHead>
+                Actions
+              </TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>{tableRows}</TableBody>
+          <TableBody>
+            {tableRows}
+          </TableBody>
         </Table>
       </CardContent>
       <CardFooter>
@@ -150,6 +141,7 @@ export async function ContentList() {
     </Card>
   )
 }
+
 
 export default function Dashboard() {
   return (
