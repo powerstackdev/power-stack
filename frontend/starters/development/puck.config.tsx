@@ -1,13 +1,13 @@
-import type { Config } from "@measured/puck";
-import { HeaderMenu } from "./components/Header/Header";
-import { FooterLinks } from "./components/Footer/Footer";
-import { HeroBlock } from "./app/blocks/Hero/Hero";
-import { TextBlock } from "./app/blocks/Text/Text";
-import { StatsBlock } from "./app/blocks/Stats/Stats";
+import type { Config } from "@measured/puck"
+import { HeaderMenu } from "./components/Header/Header"
+import { FooterLinks } from "./components/Footer/Footer"
+import { HeroBlock } from "./app/blocks/Hero/Hero"
+import { TextBlock } from "./app/blocks/Text/Text"
+import { StatsBlock } from "./app/blocks/Stats/Stats"
 
 type Props = {
-  HeadingBlock: { title: string };
-};
+  HeadingBlock: { title: string }
+}
 
 export const config: Config<Props> = {
   components: {
@@ -15,31 +15,33 @@ export const config: Config<Props> = {
       fields: {
         title: { type: "text" },
         subtitle: { type: "text" },
-        description: {type: "textarea"}
+        description: { type: "textarea" },
       },
       defaultProps: {
         title: "Heading",
       },
       render: ({ title, subtitle, description }) => (
-        <HeroBlock title={title} subtitle={subtitle} description={description}/>
+        <HeroBlock
+          title={title}
+          subtitle={subtitle}
+          description={description}
+        />
       ),
     },
     Text: {
       fields: {
         title: { type: "text" },
-        text: { type: "textarea" }
+        text: { type: "textarea" },
       },
       defaultProps: {
         title: "Heading",
         text: "Enter text here",
       },
-      render: ({ title, text }) => (
-        <TextBlock title={title} text={text}/>
-      ),
+      render: ({ title, text }) => <TextBlock title={title} text={text} />,
     },
     // Stats: {
     //   fields: {
-    //     stats: { 
+    //     stats: {
     //       type: "array",
     //       arrayFields: {
     //         stats: { type: "text" },
@@ -80,9 +82,9 @@ export const config: Config<Props> = {
           {children}
           <FooterLinks />
         </>
-      );
+      )
     },
   },
-};
+}
 
-export default config;
+export default config

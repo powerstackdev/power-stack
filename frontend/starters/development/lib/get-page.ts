@@ -1,14 +1,13 @@
-import { Data } from "@measured/puck";
-import fs from "fs";
+import { Data } from "@measured/puck"
+import fs from "fs"
 
 // Replace with call to your database
 export const getPage = (path: string) => {
-
   console.log(path)
 
   const allData: Record<string, Data> | null = fs.existsSync("database.json")
     ? JSON.parse(fs.readFileSync("database.json", "utf-8"))
-    : null;
+    : null
 
-  return allData ? allData[path] : null;
-};
+  return allData ? allData[path] : null
+}

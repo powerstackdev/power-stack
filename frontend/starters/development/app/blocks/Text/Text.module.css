@@ -1,43 +1,41 @@
 .wrapper {
-    position: relative;
-    padding-top: rem(40px);
-    padding-bottom: rem(40px);
-  
-    @media (max-width: $mantine-breakpoint-sm) {
-      padding-top: rem(30px);
-      padding-bottom: rem(30px);
-    }
-  }
-  
-  .inner {
-    position: relative;
-    z-index: 1;
-  }
+  position: relative;
+  padding-top: rem(40px);
+  padding-bottom: rem(40px);
 
-  .title {
-    text-align: left;
-    font-weight: 800;
-    font-size: rem(40px);
-    letter-spacing: -1px;
-    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-    margin-bottom: var(--mantine-spacing-xs);
-    font-family:
-      Greycliff CF,
-      var(--mantine-font-family);
-  
-    @media (max-width: $mantine-breakpoint-xs) {
-      font-size: rem(28px);
-    }
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding-top: rem(30px);
+    padding-bottom: rem(30px);
   }
-  
-  .highlight {
-    color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4));
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  text-align: left;
+  font-weight: 800;
+  font-size: rem(40px);
+  letter-spacing: -1px;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  margin-bottom: var(--mantine-spacing-xs);
+  font-family: Greycliff CF, var(--mantine-font-family);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: rem(28px);
   }
-  
-  .description {
-    text-align: left;
-  
-    @media (max-width: $mantine-breakpoint-xs) {
-      font-size: var(--mantine-font-size-md);
-    }
+}
+
+.highlight {
+  color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4));
+}
+
+.description {
+  text-align: left;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: var(--mantine-font-size-md);
   }
+}

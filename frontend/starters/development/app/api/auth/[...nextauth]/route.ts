@@ -14,7 +14,10 @@ const handler = NextAuth({
         const formData = new URLSearchParams()
         formData.append("grant_type", "password")
         formData.append("client_id", process.env.NEXT_PUBLIC_DRUPAL_CLIENT_ID)
-        formData.append("client_secret", process.env.NEXT_PUBLIC_DRUPAL_CLIENT_SECRET)
+        formData.append(
+          "client_secret",
+          process.env.NEXT_PUBLIC_DRUPAL_CLIENT_SECRET
+        )
         formData.append("username", credentials.username)
         formData.append("password", credentials.password)
 
@@ -66,7 +69,7 @@ const handler = NextAuth({
         session.error = token.error
       }
       return session
-    }
+    },
   },
 })
 
@@ -77,7 +80,10 @@ async function refreshAccessToken(token) {
 
     formData.append("grant_type", "refresh_token")
     formData.append("client_id", process.env.NEXT_PUBLIC_DRUPAL_CLIENT_ID)
-    formData.append("client_secret", process.env.NEXT_PUBLIC_DRUPAL_CLIENT_SECRET)
+    formData.append(
+      "client_secret",
+      process.env.NEXT_PUBLIC_DRUPAL_CLIENT_SECRET
+    )
     formData.append("refresh_token", token.refreshToken)
 
     const response = await fetch(

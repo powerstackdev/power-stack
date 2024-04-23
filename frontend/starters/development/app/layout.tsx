@@ -1,13 +1,13 @@
 import { DraftAlert } from "@/components/misc/DraftAlert"
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
-import "@mantine/core/styles.css";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
-import { theme } from "../theme";
+import "@mantine/core/styles.css"
+import { MantineProvider, ColorSchemeScript } from "@mantine/core"
+import { theme } from "../theme"
 
 import "@/styles/globals.css"
-import { Toaster } from "react-hot-toast";
-import { Header } from "@/components/admin/Header/Header";
+import { Toaster } from "react-hot-toast"
+import { Header } from "@/components/admin/Header/Header"
 
 import { getServerSession } from "next-auth/next"
 
@@ -25,12 +25,11 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
-  children
+  children,
 }: {
-  children: ReactNode,
+  children: ReactNode
   session: any
 }) {
-
   const session = await getServerSession()
   return (
     <html lang="en">
@@ -44,8 +43,8 @@ export default async function RootLayout({
       <body>
         <DraftAlert />
         <Toaster position="bottom-right" />
-          {session && <Header />}
-          <MantineProvider theme={theme}>{children}</MantineProvider>
+        {session && <Header />}
+        <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>
   )

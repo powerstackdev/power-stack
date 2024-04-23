@@ -10,7 +10,7 @@ const SignIn = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState(null)
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     setProcessing(true)
 
@@ -18,7 +18,7 @@ const SignIn = () => {
       setProcessing(false)
       setError("Incorrect username or password, please try again.")
     } else {
-      handleLogin(username, password).then(res => {
+      handleLogin(username, password).then((res) => {
         if (res !== undefined && res) {
           localStorage.setItem("username", JSON.stringify(username))
           setProcessing(false)
@@ -44,7 +44,7 @@ const SignIn = () => {
       <Box>
         <Box
           as="form"
-          onSubmit={e => e.preventDefault()}
+          onSubmit={(e) => e.preventDefault()}
           sx={{ m: [2, 3, null, 5], p: 5, textAlign: `center` }}
         >
           {error && (
@@ -60,7 +60,7 @@ const SignIn = () => {
             type="text"
             placeholder="Username"
             value={username}
-            onChange={event => setUsername(event.target.value)}
+            onChange={(event) => setUsername(event.target.value)}
             mb={3}
           />
           <Label>Password</Label>
@@ -72,7 +72,7 @@ const SignIn = () => {
             id="passwordSignin"
             value={password}
             placeholder="Password"
-            onChange={event => setPassword(event.target.value)}
+            onChange={(event) => setPassword(event.target.value)}
             mb={3}
           />
           {processing ? (

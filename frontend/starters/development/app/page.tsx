@@ -8,17 +8,14 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  const nodes = await drupal.getResourceCollection<DrupalNode[]>(
-    "node--page",
-    {
-      params: {
-        "filter[status]": 1,
-        "fields[node-page]": "field_page_builder,title,path,uid,created",
-        include: "field_page_builder,uid",
-        sort: "-created",
-      },
-    }
-  )
+  const nodes = await drupal.getResourceCollection<DrupalNode[]>("node--page", {
+    params: {
+      "filter[status]": 1,
+      "fields[node-page]": "field_page_builder,title,path,uid,created",
+      include: "field_page_builder,uid",
+      sort: "-created",
+    },
+  })
 
   return (
     <>

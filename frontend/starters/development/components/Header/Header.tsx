@@ -1,46 +1,51 @@
-import { Menu, Group, Center, Burger, Container } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown } from '@tabler/icons-react';
-import classes from './Header.module.css'
-import Image from 'next/image';
-import logo from '../../images/logo-nav-light.svg'
+import { Menu, Group, Center, Burger, Container } from "@mantine/core"
+import { useDisclosure } from "@mantine/hooks"
+import { IconChevronDown } from "@tabler/icons-react"
+import classes from "./Header.module.css"
+import Image from "next/image"
+import logo from "../../images/logo-nav-light.svg"
 
 const links = [
-  { link: '/about', label: 'Features' },
+  { link: "/about", label: "Features" },
   {
-    link: '#1',
-    label: 'Learn',
+    link: "#1",
+    label: "Learn",
     links: [
-      { link: '/docs', label: 'Documentation' },
-      { link: '/resources', label: 'Resources' },
-      { link: '/community', label: 'Community' },
-      { link: '/blog', label: 'Blog' },
+      { link: "/docs", label: "Documentation" },
+      { link: "/resources", label: "Resources" },
+      { link: "/community", label: "Community" },
+      { link: "/blog", label: "Blog" },
     ],
   },
-  { link: '/about', label: 'About' },
-  { link: '/pricing', label: 'Pricing' },
+  { link: "/about", label: "About" },
+  { link: "/pricing", label: "Pricing" },
   {
-    link: '#2',
-    label: 'Support',
+    link: "#2",
+    label: "Support",
     links: [
-      { link: '/faq', label: 'FAQ' },
-      { link: '/demo', label: 'Book a demo' },
-      { link: '/forums', label: 'Forums' },
+      { link: "/faq", label: "FAQ" },
+      { link: "/demo", label: "Book a demo" },
+      { link: "/forums", label: "Forums" },
     ],
   },
-];
+]
 
 export function HeaderMenu() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { toggle }] = useDisclosure(false)
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
       <Menu.Item key={item.link}>{item.label}</Menu.Item>
-    ));
+    ))
 
     if (menuItems) {
       return (
-        <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
+        <Menu
+          key={link.label}
+          trigger="hover"
+          transitionProps={{ exitDuration: 0 }}
+          withinPortal
+        >
           <Menu.Target>
             <a
               href={link.link}
@@ -55,7 +60,7 @@ export function HeaderMenu() {
           </Menu.Target>
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
         </Menu>
-      );
+      )
     }
 
     return (
@@ -67,14 +72,14 @@ export function HeaderMenu() {
       >
         {link.label}
       </a>
-    );
-  });
+    )
+  })
 
   return (
     <header className={classes.header}>
       <Container size={1400}>
         <div className={classes.inner}>
-          <Image src={logo} alt="Logo" height={35}/>
+          <Image src={logo} alt="Logo" height={35} />
           <Group gap={5} visibleFrom="sm">
             {items}
           </Group>
@@ -82,5 +87,5 @@ export function HeaderMenu() {
         </div>
       </Container>
     </header>
-  );
+  )
 }

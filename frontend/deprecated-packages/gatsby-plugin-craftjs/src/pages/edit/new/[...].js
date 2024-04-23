@@ -1,9 +1,23 @@
 /** @jsx jsx */
-import { jsx, Heading, Box, Card, Input, Button, Slider, Label, Flex, Textarea, Checkbox, Select, Radio } from "theme-ui"
+import {
+  jsx,
+  Heading,
+  Box,
+  Card,
+  Input,
+  Button,
+  Slider,
+  Label,
+  Flex,
+  Textarea,
+  Checkbox,
+  Select,
+  Radio,
+} from "theme-ui"
 import React from "react"
 import { Tabs, Tab, TabList, TabPanel } from "react-tabs"
 
-import Layout  from "gatsby-theme-drupal-admin/src/components/Layout/Layout"
+import Layout from "gatsby-theme-drupal-admin/src/components/Layout/Layout"
 
 /**
  * Page template to create a new CMS page with Tina inline blocks enabled
@@ -16,87 +30,70 @@ const NewPage = () => {
       <div
         sx={{
           display: "grid",
-          gridTemplateColumns: "1fr 4fr 1fr"
+          gridTemplateColumns: "1fr 4fr 1fr",
         }}
       >
-        <aside sx={{
-          px: 4,
-          background: "white"
-        }}>
+        <aside
+          sx={{
+            px: 4,
+            background: "white",
+          }}
+        >
           <Tabs>
-            <TabList sx={{
-              p: 0,
-              li: {
-                display: `inline-block`,
-                border: `1px solid transparent`,
-                borderBottom: `none`,
-                bottom: `-1px`,
-                position: `relative`,
-                listStyle: `none`,
-                padding: `6px 12px`,
-                cursor: `pointer`
-              }
-            }}>
+            <TabList
+              sx={{
+                p: 0,
+                li: {
+                  display: `inline-block`,
+                  border: `1px solid transparent`,
+                  borderBottom: `none`,
+                  bottom: `-1px`,
+                  position: `relative`,
+                  listStyle: `none`,
+                  padding: `6px 12px`,
+                  cursor: `pointer`,
+                },
+              }}
+            >
               <Tab>Blocks</Tab>
               <Tab>Page settings</Tab>
             </TabList>
             <TabPanel>
               <Heading>Blocks</Heading>
-              <Input placeholder="Search blocks..."/>
+              <Input placeholder="Search blocks..." />
               <Heading as="h3">Templates</Heading>
-              <Box sx={{
-                display: "grid",
-                gridTemplateColumns: ["1fr", "1fr", "1fr", "1fr 1fr"],
-                div: {
-                  m:2
-                }
-              }}>
-                <Card>
-                  Test
-                </Card>
-                <Card>
-                  Test 2
-                </Card>
-                <Card>
-                  Test 3
-                </Card>
-                <Card>
-                  Test 4
-                </Card>
-                <Card>
-                  Test 5
-                </Card>
-                <Card>
-                  Test 6
-                </Card>
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: ["1fr", "1fr", "1fr", "1fr 1fr"],
+                  div: {
+                    m: 2,
+                  },
+                }}
+              >
+                <Card>Test</Card>
+                <Card>Test 2</Card>
+                <Card>Test 3</Card>
+                <Card>Test 4</Card>
+                <Card>Test 5</Card>
+                <Card>Test 6</Card>
               </Box>
               <Heading as="h3">Components</Heading>
-              <Box sx={{
-                display: "grid",
-                gridTemplateColumns: ["1fr", "1fr", "1fr", "1fr 1fr"],
-                div: {
-                  m:2
-                }
-              }}>
-
-                <Card>
-                  Test
-                </Card>
-                <Card>
-                  Test 2
-                </Card>
-                <Card>
-                  Test 3
-                </Card>
-                <Card>
-                  Test 4
-                </Card>
-                <Card>
-                  Test 5
-                </Card>
-                <Card>
-                  Test 6
-                </Card>
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: ["1fr", "1fr", "1fr", "1fr 1fr"],
+                  div: {
+                    m: 2,
+                  },
+                }}
+              >
+                <Card>Test</Card>
+                <Card>Test 2</Card>
+                <Card>Test 3</Card>
+                <Card>Test 4</Card>
+                <Card>Test 5</Card>
+                <Card>Test 6</Card>
               </Box>
             </TabPanel>
             <TabPanel>
@@ -138,12 +135,8 @@ const NewPage = () => {
             </TabPanel>
           </Tabs>
         </aside>
-        <main>
-          Canvas
-        </main>
-        <aside>
-          Sidebar
-        </aside>
+        <main>Canvas</main>
+        <aside>Sidebar</aside>
       </div>
       <footer
         sx={{

@@ -23,7 +23,7 @@
       "@/*": ["./*"],
       "next-drupal": ["../../packages/next-drupal/src/"],
       "next-drupal/*": ["../../packages/next-drupal/src/*"],
-      "@powerstack/utils": ["../../packages/utils/*"],
+      "@powerstack/utils": ["../../packages/utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -126,7 +126,7 @@ export default async function NodePage({
 
   return (
     <>
-      {node.type === "node--page" && <BasicPage node={node} />}
+      {node.type === "node--page" && <BasicPage node={node} path={slug} />}
       {node.type === "node--article" && <Article node={node} />}
     </>
   )

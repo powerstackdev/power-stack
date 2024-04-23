@@ -16,22 +16,26 @@ import { getDraftData } from "next-drupal/draft"
 import { drupal } from "@/lib/drupal"
 import type { Metadata } from "next"
 import type { DrupalNode, JsonApiParams } from "next-drupal"
-import "@measured/puck/puck.css";
-import { Client } from "./client";
-import { capitalize, formatDrupalType, formatDrupalField, drupalFieldPrefix } from "@powerstack/utils"
+import "@measured/puck/puck.css"
+import { Client } from "./client"
+import {
+  capitalize,
+  formatDrupalType,
+  formatDrupalField,
+  drupalFieldPrefix,
+} from "@powerstack/utils"
 
 export async function generateMetadata({
   params: { puckPath = [] },
 }: {
-  params: { puckPath: string[] };
+  params: { puckPath: string[] }
 }): Promise<Metadata> {
-  const path = `/${puckPath.join("/")}`;
+  const path = `/${puckPath.join("/")}`
 
   return {
     title: "Editing: " + path,
-  };
+  }
 }
-
 
 async function getNode(slug: string[]) {
   const path = `/${slug.join("/")}`
@@ -78,14 +82,12 @@ async function getNode(slug: string[]) {
   return resource
 }
 
-
 export default async function Page({
   params: { puckPath = [] },
 }: {
-  params: { puckPath: string[] };
+  params: { puckPath: string[] }
 }) {
-
-  const path = `/${puckPath.join("/")}`;
+  const path = `/${puckPath.join("/")}`
 
   let node
   try {
@@ -96,28 +98,33 @@ export default async function Page({
   }
 
   function extractFieldKeys(data) {
-    const result = {};
+    const result = {}
     for (const key in data) {
-        if (data.hasOwnProperty(key) && key.startsWith(drupalFieldPrefix) && data[key] !== null) {
-            const newKey = formatDrupalField(key); // Remove 'field_' prefix
-            const fieldData = data[key].hasOwnProperty('value') ? data[key].value : data[key]
-            result[newKey] = fieldData;
-        }
+      if (
+        data.hasOwnProperty(key) &&
+        key.startsWith(drupalFieldPrefix) &&
+        data[key] !== null
+      ) {
+        const newKey = formatDrupalField(key) // Remove 'field_' prefix
+        const fieldData = data[key].hasOwnProperty("value")
+          ? data[key].value
+          : data[key]
+        result[newKey] = fieldData
+      }
     }
-    return result;
-}
+    return result
+  }
 
   const content = node?.field_page_builder.map((block) => {
-
-    const type = capitalize(formatDrupalType(block.type));
-    if (type === 'Hero' ||  'Text') {
+    const type = capitalize(formatDrupalType(block.type))
+    if (type === "Hero" || "Text") {
       return {
         type: type,
         props: {
           uuid: block.id,
           id: `${type}-${block.id}`,
-          ...extractFieldKeys(block)
-        }
+          ...extractFieldKeys(block),
+        },
       }
     }
   })
@@ -128,11 +135,13 @@ export default async function Page({
         title: node.title,
         nid: node.drupal_internal__nid,
         uuid: node.id,
-        path: node.path?.alias ? node.path?.alias : `node/${node.drupal_internal__nid}`
-      }
+        path: node.path?.alias
+          ? node.path?.alias
+          : `node/${node.drupal_internal__nid}`,
+      },
     },
-    content: content
+    content: content,
   }
-  
-  return <Client path={path} data={data} />;
+
+  return <Client path={path} data={data} />
 }
