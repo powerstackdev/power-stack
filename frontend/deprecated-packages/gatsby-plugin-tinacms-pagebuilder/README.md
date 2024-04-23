@@ -15,4 +15,3 @@ This plugin provides the integration between Drupal, TinaCMS and Gatsby.
     │       └── page
     └── utils
 ```
-

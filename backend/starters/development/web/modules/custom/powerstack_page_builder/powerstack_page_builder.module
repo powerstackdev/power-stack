@@ -7,11 +7,11 @@ use Drupal\Core\Link;
  * Implements hook_entity_operation_alter().
  */
 function powerstack_page_builder_entity_operation_alter(array &$operations, \Drupal\Core\Entity\EntityInterface $entity) {
-  if ($entity->getEntityTypeId() === 'node') {
+  if ($entity->getEntityTypeId() === 'node' && getenv('NEXT_HOST')) {
     // Adding an external operation
     $operations['edit'] = [
       'title' => t('Edit'),
-      'url' => \Drupal\Core\Url::fromUri('http://frontend.power-stack.docksal.site/node/' . $entity->id() . '/edit'),
+      'url' => \Drupal\Core\Url::fromUri(getenv('NEXT_HOST') .'/node/' . $entity->id() . '/edit'),
       'attributes' => [
         'target' => '_blank', // Optionally open in a new tab.
       ],
@@ -19,7 +19,7 @@ function powerstack_page_builder_entity_operation_alter(array &$operations, \Dru
     ];
     $operations['view'] = [
       'title' => t('View'),
-      'url' => \Drupal\Core\Url::fromUri('http://frontend.power-stack.docksal.site/node/' . $entity->id()),
+      'url' => \Drupal\Core\Url::fromUri(getenv('NEXT_HOST') .'/node/' . $entity->id()),
       'attributes' => [
         'target' => '_blank', // Optionally open in a new tab.
       ],
@@ -35,9 +35,9 @@ function powerstack_page_builder_preprocess_views_view_field(&$variables) {
   $view = $variables['view'];
   $field = $variables['field'];
 
-  if ($view->id() == 'content' && $view->current_display == 'page_1' && $field->field == 'title') {
+  if ($view->id() == 'content' && $view->current_display == 'page_1' && $field->field == 'title' && getenv('NEXT_HOST')) {
     $nid = $variables['row']->nid;
-    $url = Url::fromUri('http://frontend.power-stack.docksal.site/node/' . $nid, [
+    $url = Url::fromUri(getenv('NEXT_HOST') . '/node/' . $nid, [
       'attributes' => [
         'target' => '_blank',
         'rel' => 'noopener noreferrer', // For security and performance reasons.

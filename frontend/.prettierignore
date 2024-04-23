@@ -1,4 +1,7 @@
 .cache
+.next
+.yarn
+tailwind.config.ts
 package.json
 package-lock.json
 public

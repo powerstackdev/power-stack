@@ -91,7 +91,7 @@ export class NextDrupal extends NextDrupalFetch {
       deserialize: true,
       withAuth: true,
       ...options,
-      credentials: 'same-origin'
+      credentials: "same-origin",
     }
 
     const apiPath = await this.getEntryForResourceType(

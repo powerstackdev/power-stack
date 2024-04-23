@@ -605,8 +605,9 @@ describe("getResourceCollectionPathSegments()", () => {
   test("returns path segments", async () => {
     const drupal = new NextDrupal(BASE_URL)
 
-    const paths =
-      await drupal.getResourceCollectionPathSegments("node--article")
+    const paths = await drupal.getResourceCollectionPathSegments(
+      "node--article"
+    )
 
     expect(paths).toMatchSnapshot()
   })

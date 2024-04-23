@@ -16,6 +16,7 @@ services:
       - DRUPAL_URI=http://web/
       - BACKEND_STARTER
       - FRONTEND_STARTER
+      - NEXT_HOST
     # Keep cli running idle
     command: ["tail", "-f", "/dev/null"]
 
@@ -40,6 +41,7 @@ services:
     environment:
       - APACHE_DOCUMENTROOT=/var/www/backend/starters/${BACKEND_STARTER}/${DOCROOT}
       - APACHE_FCGI_HOST_PORT=php:9000
+      - NEXT_HOST
     depends_on:
       - php
 
@@ -56,6 +58,7 @@ services:
       - BACKEND_STARTER
       - FRONTEND_STARTER
       - VIRTUAL_HOST
+      - NEXT_HOST
     depends_on:
       - cli # cli has to start first to avoid race conditions in startup scripts between cli, php and preview
 
@@ -87,6 +90,8 @@ services:
       - DRUPAL_PREVIEW_SECRET
       - NEXT_REVALIDATE_SECRET
       - VIRTUAL_HOST
+      - NEXTAUTH_SECRET
+      - NEXTAUTH_URL
     working_dir: /var/www/frontend
     # Optionally run in debug mode by setting PREVIEW_START_COMMAND to "npm run debug"
     command: [ "bash", "-lc", "yarn workspace ${FRONTEND_STARTER} dev" ]

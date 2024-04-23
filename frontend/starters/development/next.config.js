@@ -15,7 +15,7 @@ const nextConfig = {
     config.watchOptions = {
       aggregateTimeout: 200,
       poll: 1000,
-      ignored: '**/node_modules',
+      ignored: "**/node_modules",
     }
     return config
   },
@@ -30,7 +30,7 @@ const nextConfig = {
           },
         ],
       },
-    ];
+    ]
   },
 }
 

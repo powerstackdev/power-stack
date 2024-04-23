@@ -295,7 +295,7 @@ $config_directories = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '5-8ABPetu2c1b__bq3kiQJZB_5P1MfkN9ykpym1zvksi3DIsmSBb2lIrv8dyMo8Td1xJTzGtFg';
+$settings['hash_salt'] = 'r0makX3ogmbVAhTfl1JkFeU5YyND0K-Cwy12DIWjnKnU8Xdp0Ded1V2CwfEFS8KCGZIdo59cSw';
 
 /**
  * Deployment identifier.
@@ -772,19 +772,19 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * Keep this code block at the end of this file to take full effect.
  */
 
-
-// Docksal DB connection settings.
-$databases['default']['default'] = [
-  'database' => getenv('MYSQL_DB'),
-	'username' => getenv('MYSQL_USER'),
-	'password' => getenv('MYSQL_PASSWORD'),
-	'host' => getenv('MYSQL_HOST'),
-  'port' => getenv('MYSQL_PORT'),
-	'driver' => 'mysql',
-];
-
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
-
-$settings['config_sync_directory'] = '../config';
+$databases['default']['default'] = array (
+  'database' => 'default',
+  'username' => 'user',
+  'password' => 'user',
+  'prefix' => '',
+  'host' => 'backend_db',
+  'port' => '3306',
+  'isolation_level' => 'READ COMMITTED',
+  'driver' => 'mysql',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+);
+$settings['config_sync_directory'] = 'sites/default/files/config_9nu_OfPlmXpYfp2Zovw4sdEMmr9h0PlRLHyfxji7kXdMmRp4M5ET9aZecyQ53wqQSHVFMPpoUA/sync';
