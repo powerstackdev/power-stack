@@ -31,10 +31,12 @@
     "next": "^14",
     "next-auth": "^4.24.7",
     "next-drupal": "workspace:^",
+    "next-themes": "^0.3.0",
     "postcss-preset-mantine": "^1.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
+    "sonner": "^1.4.41",
     "tailwind": "^4.0.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"

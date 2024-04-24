@@ -75,6 +75,30 @@
   }
 }
 
+body.logged-in {
+  margin-top: 64px;
+}
+
+body:not(.logged-in) #signin-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+body.logged-in #signin-button {
+  display: none;
+}
+
+body.logged-in #edit-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+body:not(.logged-in) #edit-button {
+  display: none;
+}
+
 .Puck > div {
   top: 66px;
 }

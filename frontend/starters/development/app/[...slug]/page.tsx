@@ -110,7 +110,7 @@ export default async function NodePage({
   searchParams,
 }: NodePageProps) {
   const isDraftMode = draftMode().isEnabled
-
+  const path = `/${slug.join("/")}`
   let node
   try {
     node = await getNode(slug)
@@ -126,7 +126,7 @@ export default async function NodePage({
 
   return (
     <>
-      {node.type === "node--page" && <BasicPage node={node} path={slug} />}
+      {node.type === "node--page" && <BasicPage node={node} path={path} />}
       {node.type === "node--article" && <Article node={node} />}
     </>
   )

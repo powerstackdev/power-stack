@@ -4,12 +4,13 @@ import { Puck } from "@measured/puck"
 import config from "../../../puck.config"
 import { drupal } from "@/lib/drupal"
 import { drupalFieldPrefix } from "@powerstack/utils"
-import toast from "react-hot-toast"
-import Link from "next/link"
-import { Header } from "@/components/admin/Header/Header"
+import { toast } from "sonner"
+import { useRouter } from "next/navigation"
+import { triggerRevalidation } from "@/lib/trigger-revalidation"
+import { useEffect } from "react"
 
 export function Client({ path, data }: { path: string; data: Data }) {
-  const backendUrl = process.env.NEXT_PUBLIC_DRUPAL_HOST
+  const router = useRouter()
 
   return (
     <Puck
@@ -109,17 +110,17 @@ export function Client({ path, data }: { path: string; data: Data }) {
               },
             }
           )
-          toast.success((t) => (
-            <>
-              Published! &nbsp;
-              <Link href={path} target="_blank">
-                View page
-              </Link>
-            </>
-          ))
+          triggerRevalidation(path)
+          toast.success(`Published ${data.root?.props?.title}`, {
+            action: {
+              label: "View",
+              onClick: () => router.push(path),
+            },
+            duration: 5000,
+          })
         } catch (error) {
           console.error("Error processing page:", error)
-          toast.error("This didn't work.")
+          toast("Something didn't work.")
         }
       }}
     />

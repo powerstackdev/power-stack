@@ -5,6 +5,9 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { Check, ChevronRight, Circle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { toast } from "sonner"
+import { drupal } from "@/lib/drupal"
+import { useRouter } from "next/navigation"
 
 const DropdownMenu = DropdownMenuPrimitive.Root
 
@@ -90,6 +93,42 @@ const DropdownMenuItem = React.forwardRef<
     {...props}
   />
 ))
+
+const DropdownMenuDeleteItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
+    inset?: boolean
+  }
+>(({ className, inset, node, ...props }, ref) => {
+  const router = useRouter()
+  return (
+    <DropdownMenuPrimitive.Item
+      ref={ref}
+      className={cn(
+        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        inset && "pl-8",
+        className
+      )}
+      onClick={() => {
+        toast.warning(`Are you sure you want to delete ${node.title}`, {
+          action: {
+            label: "Delete",
+            onClick: () => {
+              drupal.deleteResource(node.type, node.id)
+              router.refresh()
+            },
+          },
+          cancel: {
+            label: "Cancel",
+            onClick: () => {},
+          },
+        })
+      }}
+      {...props}
+    />
+  )
+})
+
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
 
 const DropdownMenuCheckboxItem = React.forwardRef<
@@ -186,6 +225,7 @@ export {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuDeleteItem,
   DropdownMenuCheckboxItem,
   DropdownMenuRadioItem,
   DropdownMenuLabel,
