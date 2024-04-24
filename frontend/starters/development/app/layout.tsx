@@ -1,4 +1,3 @@
-import { DraftAlert } from "@/components/misc/DraftAlert"
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import "@mantine/core/styles.css"
@@ -6,7 +5,7 @@ import { MantineProvider, ColorSchemeScript } from "@mantine/core"
 import { theme } from "../theme"
 
 import "@/styles/globals.css"
-import { Toaster } from "react-hot-toast"
+import { Toaster } from "@/components/ui/sonner"
 import { Header } from "@/components/admin/Header/Header"
 
 import { getServerSession } from "next-auth/next"
@@ -40,9 +39,8 @@ export default async function RootLayout({
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
       </head>
-      <body className={`${session && 'logged-in'}`}>
-        <DraftAlert />
-        <Toaster position="bottom-right" />
+      <body className={`${session && "logged-in"}`}>
+        <Toaster />
         {session && <Header />}
         <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>

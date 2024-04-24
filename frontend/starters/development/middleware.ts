@@ -8,6 +8,10 @@ export async function middleware(req: NextRequest) {
   const { cookies } = req
   const sessionToken = cookies.get("next-auth.session-token")
 
+  if (sessionToken) {
+    res.headers.set("x-middleware-cache", "no-cache")
+  }
+
   if (req.method === "GET") {
     // Rewrite routes that match "/[...puckPath]/edit" to "/puck/[...puckPath]"
     if (req.nextUrl.pathname.endsWith("/edit")) {
@@ -20,7 +24,12 @@ export async function middleware(req: NextRequest) {
       if (!sessionToken) {
         return NextResponse.redirect(new URL("/api/auth/signin", req.url))
       }
-      return NextResponse.rewrite(new URL(pathWithEditPrefix, req.url))
+      const response = NextResponse.rewrite(
+        new URL(pathWithEditPrefix, req.url)
+      )
+      response.headers.set("x-middleware-cache", "no-cache")
+
+      return response
     }
 
     if (req.nextUrl.pathname === "/") {

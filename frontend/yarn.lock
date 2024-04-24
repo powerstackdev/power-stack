@@ -4773,12 +4773,14 @@ __metadata:
     next: ^14
     next-auth: ^4.24.7
     next-drupal: "workspace:^"
+    next-themes: ^0.3.0
     postcss: ^8.4.31
     postcss-preset-mantine: ^1.13.0
     prettier: ^3.1.0
     react: ^18.2.0
     react-dom: ^18.2.0
     react-hot-toast: ^2.4.1
+    sonner: ^1.4.41
     tailwind: ^4.0.0
     tailwind-merge: ^2.3.0
     tailwindcss: ^3.4.3
@@ -8074,6 +8076,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"next-themes@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "next-themes@npm:0.3.0"
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18
+    react-dom: ^16.8 || ^17 || ^18
+  checksum: 4285c4969eac517ad7addd773bcb71e7d14bc6c6e3b24eb97b80a6e06ac03fb6cb345e75dfb448156d14430d06289948eb8cfdeb52402ca7ce786093d01d2878
+  languageName: node
+  linkType: hard
+
 "next@npm:^13.4 || ^14, next@npm:^14":
   version: 14.2.2
   resolution: "next@npm:14.2.2"
@@ -9645,6 +9657,16 @@ __metadata:
     ip-address: ^9.0.5
     smart-buffer: ^4.2.0
   checksum: 7a6b7f6eedf7482b9e4597d9a20e09505824208006ea8f2c49b71657427f3c137ca2ae662089baa73e1971c62322d535d9d0cf1c9235cf6f55e315c18203eadd
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^1.4.41":
+  version: 1.4.41
+  resolution: "sonner@npm:1.4.41"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: 312055fdd88fc2bb738462c5a2f03b268e23162b6fdc91eb4dc4e5cac9bad926087fe1f488a8b82bc2a9ff92f14843aa5a579a4923917f3db2e82b47d4073cb6
   languageName: node
   linkType: hard
 

@@ -59,9 +59,14 @@ export async function BasicPage({ node, path }: BasicPageProps) {
   return (
     <>
       <Render config={config} data={data} />
-      <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
+      <div id="edit-button">
         <Button asChild>
           <Link href={`${path}/edit`}>Edit</Link>
+        </Button>
+      </div>
+      <div id="signin-button">
+        <Button asChild>
+          <Link href={`/api/auth/signin`}>Login</Link>
         </Button>
       </div>
     </>
