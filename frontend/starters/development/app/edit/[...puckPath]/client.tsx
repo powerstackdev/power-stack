@@ -5,11 +5,9 @@ import config from "../../../puck.config"
 import { drupal } from "@/lib/drupal"
 import { drupalFieldPrefix } from "@powerstack/utils"
 import { toast } from "sonner"
-import { useRouter } from "next/navigation"
 import { triggerRevalidation } from "@/lib/trigger-revalidation"
 
 export function Client({ path, data }: { path: string; data: Data }) {
-  const router = useRouter()
 
   return (
     <Puck
@@ -113,13 +111,13 @@ export function Client({ path, data }: { path: string; data: Data }) {
               },
             }
           )
-          triggerRevalidation(path)
+          await triggerRevalidation(path)
           toast.success(`Published ${data.root?.props?.title}`, {
             action: {
               label: "View",
-              onClick: () => router.push(path),
+              onClick: () => window.location.href = path,
             },
-            duration: 5000,
+            duration: 10000,
           })
         } catch (error) {
           console.error("Error processing page:", error)

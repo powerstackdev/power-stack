@@ -17,7 +17,7 @@ async function handler(request: NextRequest) {
   }
 
   try {
-    revalidatePath(path, "layout")
+    revalidatePath(path)
 
     return new Response("Revalidated.")
   } catch (error) {

@@ -1,35 +1,21 @@
 "use server"
 
+import { revalidatePath } from 'next/cache';
+
 export const triggerRevalidation = async (path) => {
-  const secret = process.env.NEXT_REVALIDATE_SECRET
-  const baseUrl = process.env.NEXT_HOST // This should ideally be kept secure
-  const revalidateUrl = `${baseUrl}/api/revalidate?path=${path}&secret=${secret}`
+  const revalidateUrl = `/${path}`;
+  const revalidateEditUrl = `/edit/[...puckPath]`;
 
   try {
-    const response = await fetch(revalidateUrl, {
-      method: "GET",
-    })
-    const result = await response
-    if (result.ok) {
-      console.log("Page revalidated successfully")
-    } else {
-      console.error("Failed to revalidate")
-    }
+    await revalidatePath(revalidateUrl, 'page'); // Assuming revalidatePath is an async operation
+    console.log("Page revalidated");
+
+    await revalidatePath(revalidateEditUrl, 'page');
+    console.log("Edit page revalidated");
+
+    return "Both pages revalidated successfully"; // Resolving the promise with a success message
   } catch (error) {
-    console.error("Error triggering revalidation:", error)
+    console.error("Error triggering revalidation:", error);
+    throw error; // Rejecting the promise with the caught error
   }
-  const revalidateEditUrl = `${baseUrl}/api/revalidate?path=/edit/[...puckPath]/page&secret=${secret}`
-  try {
-    const response = await fetch(revalidateEditUrl, {
-      method: "GET",
-    })
-    const result = await response
-    if (result.ok) {
-      console.log("Edit page revalidated successfully")
-    } else {
-      console.error("Failed to revalidate")
-    }
-  } catch (error) {
-    console.error("Error triggering revalidation:", error)
-  }
-}
+};
