@@ -1,6 +1,12 @@
-import NextAuth from "next-auth"
+import NextAuth, { Session } from "next-auth"
+import type { JWT } from "next-auth/jwt"
 import CredentialsProvider from "next-auth/providers/credentials"
-import jwt_decode from "jwt-decode"
+import { jwtDecode as jwt_decode } from "jwt-decode"
+
+interface ExtendedSession extends Session {
+  accessToken?: string | unknown
+  error?: string | unknown
+}
 
 const handler = NextAuth({
   providers: [
@@ -43,7 +49,13 @@ const handler = NextAuth({
   ],
   callbacks: {
     async jwt({ token, user, account }) {
-      if (account && user) {
+      if (
+        account &&
+        user &&
+        "access_token" in user &&
+        "expires_in" in user &&
+        "refresh_token" in user
+      ) {
         token.accessToken = user.access_token
         token.accessTokenExpires =
           Date.now() + (user.expires_in as number) * 1000
@@ -51,14 +63,24 @@ const handler = NextAuth({
       }
 
       // If token has not expired, return it,
-      if (Date.now() < token.accessTokenExpires) {
+      if (
+        token.accessTokenExpires &&
+        typeof token.accessTokenExpires === "number" &&
+        Date.now() < token.accessTokenExpires
+      ) {
         return token
       }
 
       // Otherwise, refresh the token.
       return refreshAccessToken(token)
     },
-    async session({ session, token }) {
+    async session({
+      session,
+      token,
+    }: {
+      session: ExtendedSession
+      token: JWT
+    }) {
       if (token?.accessToken) {
         session.accessToken = token.accessToken
         const decoded = jwt_decode<{ email: string; username: string }>(

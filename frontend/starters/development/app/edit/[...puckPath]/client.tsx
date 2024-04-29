@@ -7,7 +7,6 @@ import { drupalFieldPrefix } from "@powerstack/utils"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 import { triggerRevalidation } from "@/lib/trigger-revalidation"
-import { useEffect } from "react"
 
 export function Client({ path, data }: { path: string; data: Data }) {
   const router = useRouter()
@@ -76,7 +75,11 @@ export function Client({ path, data }: { path: string; data: Data }) {
           }
         }
         const blocks = await processBlocks(data)
-        const blocksRef: { id: string; type: string }[] = []
+        const blocksRef: {
+          id: string
+          type: string
+          meta?: Record<string, any>
+        }[] = []
         blocks &&
           blocks.forEach((block) =>
             blocksRef.push({

@@ -25,7 +25,7 @@ export const triggerRevalidation = async (path) => {
     })
     const result = await response
     if (result.ok) {
-      console.log("Page revalidated successfully")
+      console.log("Edit page revalidated successfully")
     } else {
       console.error("Failed to revalidate")
     }

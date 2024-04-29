@@ -6,7 +6,8 @@ import { TextBlock } from "./app/blocks/Text/Text"
 import { StatsBlock } from "./app/blocks/Stats/Stats"
 
 type Props = {
-  HeadingBlock: { title: string }
+  Hero: { title?: string; subtitle?: string; description?: string }
+  Text: { title?: string; text?: string }
 }
 
 export const config: Config<Props> = {

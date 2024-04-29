@@ -2,7 +2,7 @@ import { Title, Text, Button, Container } from "@mantine/core"
 import { Dots } from "./Dots"
 import classes from "./Hero.module.css"
 
-export function HeroBlock({ title, subtitle, description, buttons }) {
+export function HeroBlock({ title, subtitle, description }) {
   return (
     <Container className={classes.wrapper} size={1400}>
       <Dots className={classes.dots} style={{ left: 0, top: 0 }} />

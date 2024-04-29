@@ -64,7 +64,7 @@ type NodePageProps = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function ContentList() {
+async function ContentList() {
   async function fetchNodes() {
     try {
       const fetchedNodes = await getNodes("node--page")
@@ -76,7 +76,7 @@ export async function ContentList() {
   const nodes = await fetchNodes()
 
   const tableRows = nodes.map((node) => (
-    <TableRow>
+    <TableRow key={`admin-content-list-${node.title}`}>
       <TableCell className="font-medium">
         <Link
           href={

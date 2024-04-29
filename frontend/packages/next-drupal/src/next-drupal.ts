@@ -93,7 +93,6 @@ export class NextDrupal extends NextDrupalFetch {
       ...options,
       credentials: "same-origin",
     }
-
     const apiPath = await this.getEntryForResourceType(
       type,
       options?.locale !== options?.defaultLocale
