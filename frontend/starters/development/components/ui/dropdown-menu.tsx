@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import { toast } from "sonner"
 import { drupal } from "@/lib/drupal"
 import { useRouter } from "next/navigation"
+import { DrupalNode } from "next-drupal/types"
 
 const DropdownMenu = DropdownMenuPrimitive.Root
 
@@ -94,10 +95,13 @@ const DropdownMenuItem = React.forwardRef<
   />
 ))
 
+DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
+
 const DropdownMenuDeleteItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
     inset?: boolean
+    node: DrupalNode
   }
 >(({ className, inset, node, ...props }, ref) => {
   const router = useRouter()
@@ -129,7 +133,7 @@ const DropdownMenuDeleteItem = React.forwardRef<
   )
 })
 
-DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
+DropdownMenuDeleteItem.displayName = DropdownMenuPrimitive.Item.displayName
 
 const DropdownMenuCheckboxItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,

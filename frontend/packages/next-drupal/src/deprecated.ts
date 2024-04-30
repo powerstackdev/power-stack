@@ -1,4 +1,3 @@
-export * from "./deprecated/get-access-token"
 export * from "./deprecated/get-menu"
 export * from "./deprecated/get-paths"
 export * from "./deprecated/get-resource-collection"

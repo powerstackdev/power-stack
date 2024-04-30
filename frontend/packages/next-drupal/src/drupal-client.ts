@@ -45,7 +45,7 @@ export class DrupalClient extends NextDrupal {
     this.deserializer = (
       body: Parameters<JsonDeserializer>[0],
       options: Parameters<JsonDeserializer>[1]
-    ) => this.serializer.deserialize(body, options)
+    ) => this.serializer!.deserialize(body, options)
   }
 
   async getResourceFromContext<T extends JsonApiResource>(
@@ -56,7 +56,7 @@ export class DrupalClient extends NextDrupal {
       isVersionable?: boolean
     } & JsonApiOptions
   ): Promise<T> {
-    const type = typeof input === "string" ? input : input.jsonapi.resourceName
+    const type = typeof input === "string" ? input : input.jsonapi!.resourceName
 
     const previewData = context.previewData as {
       resourceVersion?: string

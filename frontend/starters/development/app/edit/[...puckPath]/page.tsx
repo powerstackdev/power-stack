@@ -12,9 +12,8 @@
  */
 
 import { notFound } from "next/navigation"
-import { getDraftData } from "next-drupal/draft"
 import { drupal } from "@/lib/drupal"
-import type { Metadata } from "next"
+import type { Metadata, NextPage } from "next"
 import type { DrupalNode, JsonApiParams } from "next-drupal"
 import "@measured/puck/puck.css"
 import { Client } from "./client"
@@ -24,6 +23,7 @@ import {
   formatDrupalField,
   drupalFieldPrefix,
 } from "@powerstack/utils"
+import { unstable_noStore as noStore } from "next/cache"
 
 export async function generateMetadata({
   params: { puckPath = [] },
@@ -42,12 +42,6 @@ async function getNode(slug: string[]) {
 
   const params: JsonApiParams = {}
 
-  const draftData = getDraftData()
-
-  if (draftData.path === path) {
-    params.resourceVersion = draftData.resourceVersion
-  }
-
   // Translating the path also allows us to discover the entity type.
   const translatedPath = await drupal.translatePath(path)
 
@@ -65,7 +59,7 @@ async function getNode(slug: string[]) {
   if (type === "node--page") {
     params.include = "field_page_builder,uid"
   }
-
+  noStore()
   const resource = await drupal.getResource<DrupalNode>(type, uuid, {
     params,
   })

@@ -5,5 +5,3 @@ export * from "./jsonapi-errors"
 export * from "./next-drupal"
 
 export type * from "./types"
-
-export * from "./deprecated"

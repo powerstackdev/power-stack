@@ -20,17 +20,28 @@ export interface JsonApiResponse extends Record<string, any> {
 }
 
 export interface JsonApiResourceBodyRelationship {
-  data: {
-    type: string
-    id: string
-  }
+  data:
+    | {
+        type: string
+        id: string
+        meta?: Record<string, any> | Record<string, any>[]
+      }
+    | {
+        type?: string
+        attributes?: Record<string, any>
+        relationships?:
+          | Record<string, JsonApiResourceBodyRelationship>
+          | Record<string, JsonApiResourceBodyRelationship>[]
+      }[]
 }
 
 export interface JsonApiCreateResourceBody {
   data: {
     type?: string
     attributes?: Record<string, any>
-    relationships?: Record<string, JsonApiResourceBodyRelationship>
+    relationships?:
+      | Record<string, JsonApiResourceBodyRelationship>
+      | Record<string, JsonApiResourceBodyRelationship>[]
   }
 }
 

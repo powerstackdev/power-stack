@@ -9,7 +9,10 @@ import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { useState } from "react"
 
-export default function Page({ path, data }: { path: string; data: Data }) {
+export const dynamic = "force-dynamic"
+
+export default function Page({ params }) {
+  const data = params
   const backendUrl = process.env.NEXT_PUBLIC_DRUPAL_HOST
   const [loading, setLoading] = useState(false)
   const router = useRouter()
@@ -62,7 +65,11 @@ export default function Page({ path, data }: { path: string; data: Data }) {
 
           // Check that we are already POSTing to Drupal
           const blocks = await processBlocks(data)
-          const blocksRef: { id: string; type: string }[] = []
+          const blocksRef: {
+            id: string
+            type: string
+            meta?: Record<string, any>
+          }[] = []
           blocks &&
             blocks.forEach((block) =>
               blocksRef.push({
